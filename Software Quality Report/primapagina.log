@@ -1,0 +1,335 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.11.7)  7 NOV 2017 23:44
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**primapagina.tex
+(./primapagina.tex
+LaTeX2e <2017-04-15>
+Babel <3.12> and hyphenation patterns for 5 language(s) loaded.
+
+! LaTeX Error: Environment titlepage undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \begin{titlepage}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2 \begin{center}
+                  
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 2--2
+[] 
+ []
+
+
+! LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3 \normalsize
+               
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 7.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 7.
+! Undefined control sequence.
+<argument> ...store \raggedright \includegraphics 
+                                                  [width=0.15\textwidth ]{lo...
+l.8 ...ncludegraphics[width=0.15\textwidth]{logo}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 5 in font nullfont!
+! Missing number, treated as zero.
+<to be read again> 
+                   ]
+l.8 ...ncludegraphics[width=0.15\textwidth]{logo}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   ]
+l.8 ...ncludegraphics[width=0.15\textwidth]{logo}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+Missing character: There is no ] in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no Ã in font cmbx10!
+Missing character: There is no   in font cmbx10!
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
+(Font)              using `OT1/cmr/bx/n' instead on input line 16.
+
+! Undefined control sequence.
+<argument> ...1pt} \\ {\centering \scshape \small 
+                                                  Dipartimento di Ingegneria...
+l.16 }
+      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> ...estore \raggedleft \includegraphics 
+                                                  [width=0.15\textwidth ]{di...
+l.18 ...ludegraphics[width=0.15\textwidth]{disim}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 5 in font nullfont!
+! Missing number, treated as zero.
+<to be read again> 
+                   ]
+l.18 ...ludegraphics[width=0.15\textwidth]{disim}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   ]
+l.18 ...ludegraphics[width=0.15\textwidth]{disim}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+Missing character: There is no ] in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no m in font nullfont!
+
+Overfull \hbox (8191.87498pt too wide) in paragraph at lines 7--20
+ [] 
+ []
+
+! Undefined control sequence.
+l.32 {\bfseries \huge
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (54.14557pt too wide) in paragraph at lines 33--33
+ []\OT1/cmr/bx/n/10 Homework 
+ []
+
+
+Overfull \hbox (17.72908pt too wide) in paragraph at lines 33--33
+ \OT1/cmr/bx/n/10 Re- 
+ []
+
+
+Overfull \hbox (21.66656pt too wide) in paragraph at lines 33--33
+ \OT1/cmr/bx/n/10 port 
+ []
+
+! Undefined control sequence.
+l.36 {\large
+            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.41 {\bfseries \large
+                       Professor \\ }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (46.69003pt too wide) in paragraph at lines 41--41
+ []\OT1/cmr/bx/n/10 Professor 
+ []
+
+
+Overfull \hbox (39.7178pt too wide) in paragraph at lines 43--43
+ []\OT1/cmr/bx/n/10 Prof.ssa 
+ []
+
+
+Overfull \hbox (17.39987pt too wide) in paragraph at lines 43--43
+ \OT1/cmr/m/it/10 Vit- 
+ []
+
+
+Overfull \hbox (12.01102pt too wide) in paragraph at lines 43--43
+ \OT1/cmr/m/it/10 to- 
+ []
+
+
+Overfull \hbox (12.39436pt too wide) in paragraph at lines 43--43
+ \OT1/cmr/m/it/10 rio 
+ []
+
+
+Overfull \hbox (30.53865pt too wide) in paragraph at lines 43--43
+ \OT1/cmr/m/it/10 Cortel- 
+ []
+
+
+Overfull \hbox (21.21146pt too wide) in paragraph at lines 43--43
+ \OT1/cmr/m/it/10 lessa 
+ []
+
+! Undefined control sequence.
+l.46 {\bfseries \large
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (42.64561pt too wide) in paragraph at lines 51--51
+ []\OT1/cmr/bx/n/10 Studenti 
+ []
+
+
+Overfull \hbox (8191.99998pt too wide) in paragraph at lines 57--78
+ [][] 
+ []
+
+
+Overfull \hbox (8191.99998pt too wide) in paragraph at lines 84--84
+ [][] 
+ []
+
+
+Overfull \hbox (26.76097pt too wide) in paragraph at lines 85--86
+ []\OT1/cmr/m/sc/10 Anno 
+ []
+
+
+Overfull \hbox (17.53595pt too wide) in paragraph at lines 85--86
+ \OT1/cmr/m/sc/10 Ac- 
+ []
+
+
+Overfull \hbox (15.82213pt too wide) in paragraph at lines 85--86
+ \OT1/cmr/m/sc/10 ca- 
+ []
+
+
+Overfull \hbox (34.5776pt too wide) in paragraph at lines 85--86
+ \OT1/cmr/m/sc/10 demico 
+ []
+
+
+Overfull \hbox (27.63863pt too wide) in paragraph at lines 85--86
+ \OT1/cmr/m/sc/10 2016-- 
+ []
+
+
+Overfull \hbox (22.1109pt too wide) in paragraph at lines 85--86
+ \OT1/cmr/m/sc/10 2017 
+ []
+
+
+! LaTeX Error: \begin{document} ended by \end{titlepage}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.88 \end{titlepage}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+)
+! Emergency stop.
+<*> primapagina.tex
+                   
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 20 strings out of 494888
+ 316 string characters out of 6179710
+ 48007 words of memory out of 5000000
+ 3432 multiletter control sequences out of 15000+600000
+ 4595 words of font info for 17 fonts, out of 8000000 for 9000
+ 36 hyphenation exceptions out of 8191
+ 19i,9n,16p,119b,295s stack positions out of 5000i,500n,10000p,200000b,80000s
+!  ==> Fatal error occurred, no output PDF file produced!
