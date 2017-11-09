@@ -1,0 +1,276 @@
+\newpage \section{\textbf{Drowing-Up Of The Profile}}
+
+\subsection{Water Sample Profile}
+
+\begin{longtable}{|p{7cm}|p{7cm}|}
+
+\hline
+\textbf{Water Sample} & \\
+
+
+\hline
+Metamodel Class & Element\\
+
+\hline
+Description & It is a representation of the physical meaning of water sample\\
+
+\hline
+Tagged Values & 
+\begin{itemize}
+\item Amount: Integer;
+\item Pick Point: String.
+\end{itemize}\\
+
+\hline
+Constraints &\\
+
+\hline
+\end{longtable}
+
+\subsection{Water Quality Supervisor Profile}
+
+\begin{longtable}{|p{7cm}|p{7cm}|}
+
+\hline
+\textbf{Water Quality Supervisor} & \\
+
+
+\hline
+Metamodel Class & Actor\\
+
+\hline
+Description & He is an actor involved to retrieve information about the water state\\
+
+\hline
+Tagged Values & 
+\begin{itemize}
+\item Task: String = Water Reviewer.
+\end{itemize}\\
+
+\hline
+Constraints &\\
+
+\hline
+\end{longtable}
+
+\subsection{Sample Supervisor Profile}
+
+\begin{longtable}{|p{7cm}|p{7cm}|}
+
+\hline
+\textbf{Sample Supervisor} & \\
+
+
+\hline
+Metamodel Class & Actor\\
+
+\hline
+Description & He is an actor involved to start up the sampling water\\
+
+\hline
+Tagged Values & 
+\begin{itemize}
+\item Task: String = Sampling.
+\end{itemize}\\
+
+\hline
+Constraints &\\
+
+\hline
+\end{longtable}
+
+
+\subsection{Quality Control Supervisor Profile}
+
+\begin{longtable}{|p{7cm}|p{7cm}|}
+
+\hline
+\textbf{Quality Control Supervisor} & \\
+
+
+\hline
+Metamodel Class & Actor\\
+
+\hline
+Description & He is an actor involved to check the water quality and in case of some unmet parametres he can start up a solution protocol as Magikarp\\
+
+\hline
+Tagged Values & 
+\begin{itemize}
+\item Task: String = Quality Control.
+\end{itemize}\\
+
+\hline
+Constraints &\\
+
+\hline
+\end{longtable}
+
+\subsection{Water Parametres Profile}
+
+\begin{longtable}{|p{7cm}|p{7cm}|}
+
+\hline
+\textbf{Water Parametres} & \\
+
+
+\hline
+Metamodel Class & Property\\
+
+\hline
+Description & It is a collection of chemical property\\
+
+\hline
+Tagged Values & 
+\begin{itemize}
+\item Bicarbonate: Integer;
+\item Magnesium:Integer;
+\item Potassium:Integer;
+\item Calcium:Integer;
+\item Sodium:Integer;
+\item Sulphate:Integer.
+\end{itemize}\\
+
+\hline
+Constraints &\\
+
+\hline
+\end{longtable}
+
+\subsection{Outgoing Water Quality Warning Profile}
+
+\begin{longtable}{|p{7cm}|p{7cm}|}
+
+\hline
+\textbf{Outgoing Water Quality Warning} & \\
+
+
+\hline
+Metamodel Class & Element\\
+
+\hline
+Description & It represents the action that activates the stop flowing protocol\\
+
+\hline
+Tagged Values &\\
+
+\hline
+Constraints &\\
+
+\hline
+\end{longtable}
+
+\subsection{Inlet Water Quality Warning Profile}
+
+\begin{longtable}{|p{7cm}|p{7cm}|}
+
+\hline
+\textbf{Inlet Water Quality Warning} & \\
+
+
+\hline
+Metamodel Class & Element\\
+
+\hline
+Description & It represents the action that activates the Magikarp protocol\\
+
+\hline
+Tagged Values &\\
+
+\hline
+Constraints &\\
+
+\hline
+\end{longtable}
+
+\subsection{Magikarp Profile}
+
+\begin{longtable}{|p{7cm}|p{7cm}|}
+
+\hline
+\textbf{Magikarp} & \\
+
+
+\hline
+Metamodel Class & Component, Node\\
+
+\hline
+Description & It is a representation of the physical meaning of Magikarp\\
+
+\hline
+Tagged Values & Model Number: Integer\\
+
+\hline
+Constraints &\\
+
+\hline
+\end{longtable}
+
+\subsection{SeaweedPicking Profile}
+
+\begin{longtable}{|p{7cm}|p{7cm}|}
+
+\hline
+\textbf{SeaweedPicking} & \\
+
+
+\hline
+Metamodel Class & Component, Node\\
+
+\hline
+Description & It is a representation of the physical meaning of SeaweedPicking\\
+
+\hline
+Tagged Values & Model Number: Integer\\
+
+\hline
+Constraints &\\
+
+\hline
+\end{longtable}
+
+\subsection{Water Sampler Profile}
+
+\begin{longtable}{|p{7cm}|p{7cm}|}
+
+\hline
+\textbf{Water Sampler } & \\
+
+
+\hline
+Metamodel Class & Component\\
+
+\hline
+Description & It is a representation of the physical meaning of Water Sampler\\
+
+\hline
+Tagged Values & Model Number: Integer\\
+
+\hline
+Constraints &\\
+
+\hline
+\end{longtable}
+
+\subsection{Water Analyzer Profile}
+
+\begin{longtable}{|p{7cm}|p{7cm}|}
+
+\hline
+\textbf{Water Analyzer} & \\
+
+
+\hline
+Metamodel Class & Component\\
+
+\hline
+Description & It is a representation of the physical meaning of Water Analyzer\\
+
+\hline
+Tagged Values & Model Number: Integer\\
+
+\hline
+Constraints &\\
+
+\hline
+\end{longtable}

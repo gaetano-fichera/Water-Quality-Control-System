@@ -1,6 +1,7 @@
 \documentclass[12pt,a4paper]{report}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{tabularx}
 \usepackage{graphicx}
 \usepackage{enumitem}
 \usepackage{lmodern}
@@ -8,8 +9,7 @@
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{titlesec}
-\usepackage{hyperref}
-\setcounter{secnumdepth}{4}
+\setcounter{secnumdepth}{0}
 \usepackage{rotating}
 \usepackage{array}
 \usepackage{makecell}
@@ -17,12 +17,23 @@
 \usepackage[dvipsnames,table,xcdraw]{xcolor}
 \usepackage{hhline}
 \usepackage{caption}
-
+\usepackage{verbatim}
+\usepackage{longtable}
+\usepackage[Lenny]{fncychap}
 \graphicspath{{./Immagini/}}
+\renewcommand*\contentsname{\textbf{Index}}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black}
+\usepackage{titletoc}
+\titleformat*{\section}{\centering\normalfont\Large\bfseries}
+
+
+
 
 \begin{document}
 \sffamily
 \large
+\linespread{1.5}
 \input{primapagina.tex}
 \tableofcontents
 \input{whoWeAre.tex}
@@ -31,7 +42,12 @@
 \input{studyOfTheDomain.tex}
 \input{ourVisionOfTheDomain.tex}
 \input{stakeholders.tex}
-
+\input{useCasesDiagram.tex}
+\input{drowingUpOfTheProfile.tex}
+\input{ourPurificationSystem.tex}
+\input{componentDiagramAndSequenceDiagrams.tex}
+\input{deploymentDiagram.tex}
+\input{ourConclusion.tex}
 
 
 \end{document}

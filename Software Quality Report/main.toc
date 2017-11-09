@@ -1,6 +1,29 @@
-\contentsline {chapter}{\numberline {1}Who we are?}{2}{chapter.1}
-\contentsline {chapter}{\numberline {2}Our Homework}{3}{chapter.2}
-\contentsline {chapter}{\numberline {3}Work Plannig}{4}{chapter.3}
-\contentsline {chapter}{\numberline {4}Study Of The Domain}{5}{chapter.4}
-\contentsline {chapter}{\numberline {5}Our Vision Of The Domain}{6}{chapter.5}
-\contentsline {chapter}{\numberline {6}Stakeholders}{8}{chapter.6}
+\contentsline {section}{\textbf {Who we are}}{3}{section*.2}
+\contentsline {section}{\textbf {Our Homework}}{3}{section*.3}
+\contentsline {section}{\textbf {Work Plannig}}{3}{section*.4}
+\contentsline {section}{\textbf {Study Of The Domain}}{4}{section*.5}
+\contentsline {section}{\textbf {Our Vision Of The Domain}}{4}{section*.6}
+\contentsline {section}{\textbf {Stakeholders}}{5}{section*.7}
+\contentsline {section}{\textbf {Use Cases Diagram}}{5}{section*.8}
+\contentsline {subsection}{StartUp Sampling Water Use Case}{5}{subsection*.9}
+\contentsline {subsection}{Send Water Samples To Analysis Center Use Case}{6}{subsection*.10}
+\contentsline {subsection}{Check Water Quality Use Case}{7}{subsection*.11}
+\contentsline {subsection}{StartUp Solution Protocol Use Case}{9}{subsection*.12}
+\contentsline {subsection}{Retrieve Water Information Use Case}{10}{subsection*.13}
+\contentsline {section}{\textbf {Drowing-Up Of The Profile}}{12}{section*.14}
+\contentsline {subsection}{Water Sample Profile}{12}{subsection*.15}
+\contentsline {subsection}{Water Quality Supervisor Profile}{12}{subsection*.16}
+\contentsline {subsection}{Sample Supervisor Profile}{12}{subsection*.17}
+\contentsline {subsection}{Quality Control Supervisor Profile}{13}{subsection*.18}
+\contentsline {subsection}{Water Parametres Profile}{13}{subsection*.19}
+\contentsline {subsection}{Outgoing Water Quality Warning Profile}{14}{subsection*.20}
+\contentsline {subsection}{Inlet Water Quality Warning Profile}{14}{subsection*.21}
+\contentsline {subsection}{Magikarp Profile}{15}{subsection*.22}
+\contentsline {subsection}{SeaweedPicking Profile}{15}{subsection*.23}
+\contentsline {subsection}{Water Sampler Profile}{15}{subsection*.24}
+\contentsline {subsection}{Water Analyzer Profile}{15}{subsection*.25}
+\contentsline {section}{\textbf {Our Purification System}}{16}{section*.26}
+\contentsline {section}{\textbf {Component Diagram And Sequence Diagrams}}{16}{section*.27}
+\contentsline {section}{\textbf {Deployment Diagram}}{17}{section*.28}
+\contentsline {section}{\textbf {Our Conclusion}}{17}{section*.29}
+\contentsfinish 

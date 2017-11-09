@@ -1,0 +1,244 @@
+\section{\textbf{Use Cases Diagram}}
+
+\subsection{StartUp Sampling Water Use Case}
+
+\begin{longtable}{|p{7cm}|p{7cm}|}
+
+\hline
+\textbf{Primary Actor}  & Sample Supervisor\\
+
+
+\hline
+\textbf{Interested parties and interests} &
+\begin{itemize}
+\item Sample Supervisor:
+	\begin{itemize}
+ 	\item He starts water monitoring processes in the inlet and outlet channels related 	to the SeaweedPicking processes
+
+	\end{itemize}
+\end{itemize}
+\\
+
+
+\hline
+\multicolumn{2}{|c|}{\textbf{Principal Flow}} \\
+
+\hline
+\textbf{Actor's Action} & \textbf{System's Responsability}\\
+
+\hline
+
+\begin{enumerate}
+\item He expresses the will to start sampling the waters;
+\end{enumerate} &\\
+
+& 
+\begin{enumerate}
+\item[2]It asks which part of the system you want to sample if the inlet or outbound waters;
+\end{enumerate}\\
+
+\begin{enumerate}
+\item[3]He chooses which part of the system he wants to sample;			
+\end{enumerate} &\\
+
+
+& 
+\begin{enumerate}
+\item[4]It starts SeaweedPicking belonging to the required subsection;
+\item[5]It provides water sample data.
+\end{enumerate}\\
+
+\hline
+\end{longtable}
+
+\subsection{Send Water Samples To Analysis Center Use Case}
+
+\begin{longtable}{|p{7cm}|p{7cm}|}
+
+\hline
+\textbf{Primary Actor} & Sample Supervisor\\
+
+
+\hline
+\textbf{Interested parties and interests} &
+\begin{itemize}
+\item Sample Supervisor:
+	\begin{itemize}
+ 	\item He wants to send the data to the analysis center
+	\end{itemize}
+\end{itemize}
+\\
+
+
+\hline
+\multicolumn{2}{|c|}{\textbf{Principal Flow}} \\
+
+\hline
+\textbf{Actor's Action} & \textbf{System's Responsability}\\
+
+\hline
+
+\begin{enumerate}
+\item He expresses the will to want to send the data to the analysis center;
+\end{enumerate} &\\
+
+& 
+\begin{enumerate}
+\item[2]It provides a list of samples lacking analysis;
+\end{enumerate}\\
+
+\begin{enumerate}
+\item[3]He chooses the sample(s) to be sent;			
+\end{enumerate} &\\
+
+
+& 
+\begin{enumerate}
+\item[4]It starts the sample(s) sending process.
+\end{enumerate}\\
+
+\hline
+\end{longtable}
+
+\subsection{Check Water Quality Use Case}
+
+\begin{longtable}{|p{7cm}|p{7cm}|}
+
+\hline
+\textbf{Primary Actor} & Quality Control Supervisor
+\\
+
+
+\hline
+\textbf{Interested parties and interests} &
+\begin{itemize}
+\item Quality Control Supervisor:
+	\begin{itemize}
+ 	\item He wont analyze the results obtained from the analysis center by comparing them with the parameters required by the Inland Water Purification System and with the parameters for outgoing water
+	\end{itemize}
+\end{itemize}
+\\
+
+
+\hline
+\multicolumn{2}{|c|}{\textbf{Principal Flow}} \\
+
+\hline
+\textbf{Actor's Action} & \textbf{System's Responsability}\\
+
+\hline
+
+\begin{enumerate}
+\item The user expresses the will to control the quality of the water;
+\end{enumerate} &\\
+
+& 
+\begin{enumerate}
+\item[2]It asks which part of the system you want to control, whether inlet or outbound;
+\end{enumerate}\\
+
+\begin{enumerate}
+\item[3]He chooses which part of the system to control	;			
+\end{enumerate} &\\
+
+
+& 
+\begin{enumerate}
+\item[4]If input water analysis is selected, it checks the parameters of the water under examination and those required by the purification system;
+\item[5]If the outbound water analysis is selected, it checks the parameters of the water under examination and the legislative ones;
+\item[6]Provides the results of the control (if the water respects the parameters or not and returns the parameters as well).
+\end{enumerate}\\
+
+\hline
+\end{longtable}
+
+\subsection{StartUp Solution Protocol Use Case}
+
+\begin{longtable}{|p{7cm}|p{7cm}|}
+
+\hline
+\textbf{Primary Actor} & Quality Control Supervisor
+\\
+
+
+\hline
+\textbf{Interested parties and interests} &
+\begin{itemize}
+\item Quality Control Supervisor:
+	\begin{itemize}
+ 	\item Start up the Magikarp protocol (described in the other document) for inlet waters and an alarm resulting in blockage of the flow of water for the outgoing waters.
+	\end{itemize}
+\end{itemize}
+\\
+
+
+\hline
+\multicolumn{2}{|c|}{\textbf{Principal Flow}} \\
+
+\hline
+\textbf{Actor's Action} & \textbf{System's Responsability}\\
+
+\hline
+
+\begin{enumerate}
+\item He expresses the will to start the Solution Protocol;
+\end{enumerate} &\\
+
+& 
+\begin{enumerate}
+\item[2]It asks whether to activate the magikarp for entry or block the flow of outgoing water;
+\end{enumerate}\\
+
+\begin{enumerate}
+\item[3]He chooses between the two options;			
+\end{enumerate} &\\
+
+
+& 
+\begin{enumerate}
+\item[4]It executes the solution related to the option selected.
+\end{enumerate}\\
+
+\hline
+\end{longtable}
+
+\subsection{Retrieve Water Information Use Case}
+
+\begin{longtable}{|p{7cm}|p{7cm}|}
+
+\hline
+\textbf{Primary Actor} & Water Quality Supervisor
+
+\\
+
+
+\hline
+\textbf{Interested parties and interests} &
+\begin{itemize}
+\item Water Quality Supervisor:
+	\begin{itemize}
+ 	\item Wants to check water parameters.
+	\end{itemize}
+\end{itemize}
+\\
+
+
+\hline
+\multicolumn{2}{|c|}{\textbf{Principal Flow}} \\
+
+\hline
+\textbf{Actor's Action} & \textbf{System's Responsability}\\
+
+\hline
+
+\begin{enumerate}
+\item He expresses the will to control the data on water parameters;
+\end{enumerate} &\\
+
+& 
+\begin{enumerate}
+\item[2]It returns the parameters.
+\end{enumerate}\\
+
+\hline
+\end{longtable}
