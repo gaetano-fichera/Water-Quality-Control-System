@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.11.7)  7 NOV 2017 23:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.9)  9 NOV 2017 22:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **primapagina.tex
 (./primapagina.tex
-LaTeX2e <2017-04-15>
-Babel <3.12> and hyphenation patterns for 5 language(s) loaded.
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 5 language(s) loaded.
 
 ! LaTeX Error: Environment titlepage undefined.
 
@@ -102,17 +102,15 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no g in font nullfont!
 Missing character: There is no o in font nullfont!
-Missing character: There is no Ã in font cmbx10!
-Missing character: There is no   in font cmbx10!
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
-(Font)              using `OT1/cmr/bx/n' instead on input line 16.
+(Font)              using `OT1/cmr/bx/n' instead on input line 15.
 
 ! Undefined control sequence.
 <argument> ...1pt} \\ {\centering \scshape \small 
-                                                  Dipartimento di Ingegneria...
-l.16 }
-      
+                                                  Department of Engineering ...
+l.15 ...\\Information Science and Mathematics} \\}
+                                                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -122,7 +120,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...estore \raggedleft \includegraphics 
                                                   [width=0.15\textwidth ]{di...
-l.18 ...ludegraphics[width=0.15\textwidth]{disim}}
+l.17 ...ludegraphics[width=0.15\textwidth]{disim}}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -144,7 +142,7 @@ Missing character: There is no 5 in font nullfont!
 ! Missing number, treated as zero.
 <to be read again> 
                    ]
-l.18 ...ludegraphics[width=0.15\textwidth]{disim}}
+l.17 ...ludegraphics[width=0.15\textwidth]{disim}}
                                                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -153,7 +151,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    ]
-l.18 ...ludegraphics[width=0.15\textwidth]{disim}}
+l.17 ...ludegraphics[width=0.15\textwidth]{disim}}
                                                   
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -169,13 +167,13 @@ Missing character: There is no s in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no m in font nullfont!
 
-Overfull \hbox (8191.87498pt too wide) in paragraph at lines 7--20
+Overfull \hbox (8191.87498pt too wide) in paragraph at lines 7--19
  [] 
  []
 
 ! Undefined control sequence.
-l.32 {\bfseries \huge
-                     
+l.31 {\bfseries \Large
+                      
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -183,18 +181,93 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (54.14557pt too wide) in paragraph at lines 33--33
- []\OT1/cmr/bx/n/10 Homework 
+Overfull \hbox (35.56233pt too wide) in paragraph at lines 32--33
+ []\OT1/cmr/bx/n/10 Report 
  []
 
 
-Overfull \hbox (17.72908pt too wide) in paragraph at lines 33--33
- \OT1/cmr/bx/n/10 Re- 
+Overfull \hbox (33.43733pt too wide) in paragraph at lines 32--33
+ \OT1/cmr/bx/n/10 Home- 
  []
 
 
-Overfull \hbox (21.66656pt too wide) in paragraph at lines 33--33
- \OT1/cmr/bx/n/10 port 
+Overfull \hbox (24.54155pt too wide) in paragraph at lines 32--33
+ \OT1/cmr/bx/n/10 work 
+ []
+
+
+Overfull \hbox (15.33325pt too wide) in paragraph at lines 32--33
+ \OT1/cmr/bx/n/10 #1 
+ []
+
+
+Overfull \hbox (30.99983pt too wide) in paragraph at lines 33--35
+ []\OT1/cmr/bx/n/10 Water 
+ []
+
+
+Overfull \hbox (20.38321pt too wide) in paragraph at lines 33--35
+ \OT1/cmr/bx/n/10 Dis- 
+ []
+
+
+Overfull \hbox (16.23604pt too wide) in paragraph at lines 33--35
+ \OT1/cmr/bx/n/10 tri- 
+ []
+
+
+Overfull \hbox (16.61102pt too wide) in paragraph at lines 33--35
+ \OT1/cmr/bx/n/10 bu- 
+ []
+
+
+Overfull \hbox (22.99988pt too wide) in paragraph at lines 33--35
+ \OT1/cmr/bx/n/10 tion, 
+ []
+
+
+Overfull \hbox (27.68039pt too wide) in paragraph at lines 33--35
+ \OT1/cmr/bx/n/10 Leak- 
+ []
+
+
+Overfull \hbox (16.61101pt too wide) in paragraph at lines 33--35
+ \OT1/cmr/bx/n/10 age 
+ []
+
+
+Overfull \hbox (18.36794pt too wide) in paragraph at lines 33--35
+ \OT1/cmr/bx/n/10 and 
+ []
+
+
+Overfull \hbox (27.64566pt too wide) in paragraph at lines 33--35
+ \OT1/cmr/bx/n/10 Qual- 
+ []
+
+
+Overfull \hbox (13.4166pt too wide) in paragraph at lines 33--35
+ \OT1/cmr/bx/n/10 ity 
+ []
+
+
+Overfull \hbox (24.27765pt too wide) in paragraph at lines 33--35
+ \OT1/cmr/bx/n/10 Con- 
+ []
+
+
+Overfull \hbox (18.1527pt too wide) in paragraph at lines 33--35
+ \OT1/cmr/bx/n/10 trol 
+ []
+
+
+Overfull \hbox (20.82765pt too wide) in paragraph at lines 33--35
+ \OT1/cmr/bx/n/10 Sys- 
+ []
+
+
+Overfull \hbox (19.3263pt too wide) in paragraph at lines 33--35
+ \OT1/cmr/bx/n/10 tem 
  []
 
 ! Undefined control sequence.
@@ -221,8 +294,8 @@ Overfull \hbox (46.69003pt too wide) in paragraph at lines 41--41
  []
 
 
-Overfull \hbox (39.7178pt too wide) in paragraph at lines 43--43
- []\OT1/cmr/bx/n/10 Prof.ssa 
+Overfull \hbox (25.05544pt too wide) in paragraph at lines 43--43
+ []\OT1/cmr/bx/n/10 Prof. 
  []
 
 
@@ -251,8 +324,17 @@ Overfull \hbox (21.21146pt too wide) in paragraph at lines 43--43
  []
 
 ! Undefined control sequence.
-l.46 {\bfseries \large
-                      
+l.46 {\large
+            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.51 {\bfseries \large
+                       Students \\ }
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -260,48 +342,63 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (42.64561pt too wide) in paragraph at lines 51--51
- []\OT1/cmr/bx/n/10 Studenti 
+Overfull \hbox (43.98726pt too wide) in paragraph at lines 51--51
+ []\OT1/cmr/bx/n/10 Students 
  []
 
 
-Overfull \hbox (8191.99998pt too wide) in paragraph at lines 57--78
+Overfull \hbox (36.61366pt too wide) in paragraph at lines 53--53
+ []\OT1/cmr/m/it/10 Gaetano 
+ []
+
+
+Overfull \hbox (32.72197pt too wide) in paragraph at lines 53--53
+ \OT1/cmr/m/it/10 Fichera 
+ []
+
+
+Overfull \hbox (7.66663pt too wide) in paragraph at lines 53--53
+ \OT1/cmr/m/it/10 & 
+ []
+
+
+Overfull \hbox (19.49155pt too wide) in paragraph at lines 53--53
+ \OT1/cmr/m/it/10 Gio- 
+ []
+
+
+Overfull \hbox (24.02208pt too wide) in paragraph at lines 53--53
+ \OT1/cmr/m/it/10 vanni 
+ []
+
+
+Overfull \hbox (22.62434pt too wide) in paragraph at lines 53--53
+ \OT1/cmr/m/it/10 Lezzi 
+ []
+
+
+Overfull \hbox (8191.99998pt too wide) in paragraph at lines 64--64
  [][] 
  []
 
 
-Overfull \hbox (8191.99998pt too wide) in paragraph at lines 84--84
- [][] 
+Overfull \hbox (48.1136pt too wide) in paragraph at lines 65--66
+ []\OT1/cmr/m/sc/10 Academic 
  []
 
 
-Overfull \hbox (26.76097pt too wide) in paragraph at lines 85--86
- []\OT1/cmr/m/sc/10 Anno 
+Overfull \hbox (25.87207pt too wide) in paragraph at lines 65--66
+ \OT1/cmr/m/sc/10 Year 
  []
 
 
-Overfull \hbox (17.53595pt too wide) in paragraph at lines 85--86
- \OT1/cmr/m/sc/10 Ac- 
+Overfull \hbox (25.88864pt too wide) in paragraph at lines 65--66
+ \OT1/cmr/m/sc/10 2017- 
  []
 
 
-Overfull \hbox (15.82213pt too wide) in paragraph at lines 85--86
- \OT1/cmr/m/sc/10 ca- 
- []
-
-
-Overfull \hbox (34.5776pt too wide) in paragraph at lines 85--86
- \OT1/cmr/m/sc/10 demico 
- []
-
-
-Overfull \hbox (27.63863pt too wide) in paragraph at lines 85--86
- \OT1/cmr/m/sc/10 2016-- 
- []
-
-
-Overfull \hbox (22.1109pt too wide) in paragraph at lines 85--86
- \OT1/cmr/m/sc/10 2017 
+Overfull \hbox (22.1109pt too wide) in paragraph at lines 65--66
+ \OT1/cmr/m/sc/10 2018 
  []
 
 
@@ -311,7 +408,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.88 \end{titlepage}
+l.68 \end{titlepage}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -325,11 +422,11 @@ or  <return>  to continue without it.
 
  
 Here is how much of TeX's memory you used:
- 20 strings out of 494888
- 316 string characters out of 6179710
- 48007 words of memory out of 5000000
- 3432 multiletter control sequences out of 15000+600000
+ 20 strings out of 494910
+ 316 string characters out of 6179836
+ 47398 words of memory out of 5000000
+ 3409 multiletter control sequences out of 15000+600000
  4595 words of font info for 17 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 19i,9n,16p,119b,295s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 19i,9n,16p,135b,295s stack positions out of 5000i,500n,10000p,200000b,80000s
 !  ==> Fatal error occurred, no output PDF file produced!
