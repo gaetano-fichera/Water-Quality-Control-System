@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper]{report}
+\documentclass[10pt,a4paper]{report}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{tabularx}
@@ -25,15 +25,21 @@
 \usepackage{hyperref}
 \hypersetup{colorlinks=true,linkcolor=black}
 \usepackage{titletoc}
+\usepackage{etoolbox}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+\makeatletter
+\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+\makeatother
 \titleformat*{\section}{\centering\normalfont\Large\bfseries}
-
-
-
 
 \begin{document}
 \sffamily
-\large
-\linespread{1.5}
 \input{primapagina.tex}
 \tableofcontents
 \input{whoWeAre.tex}

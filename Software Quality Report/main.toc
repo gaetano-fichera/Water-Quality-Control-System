@@ -1,29 +1,29 @@
-\contentsline {section}{\textbf {Who we are}}{3}{section*.2}
-\contentsline {section}{\textbf {Our Homework}}{3}{section*.3}
-\contentsline {section}{\textbf {Work Plannig}}{3}{section*.4}
-\contentsline {section}{\textbf {Study Of The Domain}}{4}{section*.5}
-\contentsline {section}{\textbf {Our Vision Of The Domain}}{4}{section*.6}
-\contentsline {section}{\textbf {Stakeholders}}{5}{section*.7}
-\contentsline {section}{\textbf {Use Cases Diagram}}{5}{section*.8}
-\contentsline {subsection}{StartUp Sampling Water Use Case}{5}{subsection*.9}
-\contentsline {subsection}{Send Water Samples To Analysis Center Use Case}{6}{subsection*.10}
-\contentsline {subsection}{Check Water Quality Use Case}{7}{subsection*.11}
-\contentsline {subsection}{StartUp Solution Protocol Use Case}{9}{subsection*.12}
-\contentsline {subsection}{Retrieve Water Information Use Case}{10}{subsection*.13}
-\contentsline {section}{\textbf {Drowing-Up Of The Profile}}{12}{section*.14}
-\contentsline {subsection}{Water Sample Profile}{12}{subsection*.15}
-\contentsline {subsection}{Water Quality Supervisor Profile}{12}{subsection*.16}
-\contentsline {subsection}{Sample Supervisor Profile}{12}{subsection*.17}
-\contentsline {subsection}{Quality Control Supervisor Profile}{13}{subsection*.18}
-\contentsline {subsection}{Water Parametres Profile}{13}{subsection*.19}
-\contentsline {subsection}{Outgoing Water Quality Warning Profile}{14}{subsection*.20}
-\contentsline {subsection}{Inlet Water Quality Warning Profile}{14}{subsection*.21}
-\contentsline {subsection}{Magikarp Profile}{15}{subsection*.22}
-\contentsline {subsection}{SeaweedPicking Profile}{15}{subsection*.23}
-\contentsline {subsection}{Water Sampler Profile}{15}{subsection*.24}
-\contentsline {subsection}{Water Analyzer Profile}{15}{subsection*.25}
-\contentsline {section}{\textbf {Our Purification System}}{16}{section*.26}
-\contentsline {section}{\textbf {Component Diagram And Sequence Diagrams}}{16}{section*.27}
-\contentsline {section}{\textbf {Deployment Diagram}}{17}{section*.28}
-\contentsline {section}{\textbf {Our Conclusion}}{17}{section*.29}
+\contentsline {chapter}{\numberline {1}\textbf {Who we are}}{2}{chapter.1}
+\contentsline {chapter}{\numberline {2}\textbf {Our Homework}}{2}{chapter.2}
+\contentsline {chapter}{\numberline {3}\textbf {Work Plannig}}{2}{chapter.3}
+\contentsline {chapter}{\numberline {4}\textbf {Study Of The Domain}}{3}{chapter.4}
+\contentsline {chapter}{\numberline {5}\textbf {Our Vision Of The Domain}}{3}{chapter.5}
+\contentsline {chapter}{\numberline {6}\textbf {Stakeholders}}{4}{chapter.6}
+\contentsline {chapter}{\numberline {7}\textbf {Use Cases Diagram}}{4}{chapter.7}
+\contentsline {subsection}{Sampling Water Use Case}{4}{subsection*.2}
+\contentsline {subsection}{Send Water Samples To Analysis Center Use Case}{5}{subsection*.3}
+\contentsline {subsection}{Check Water Quality Use Case}{5}{subsection*.4}
+\contentsline {subsection}{StartUp Solution Protocol Use Case}{6}{subsection*.5}
+\contentsline {subsection}{Retrieve Water Information Use Case}{7}{subsection*.6}
+\contentsline {chapter}{\numberline {8}\textbf {Drowing-Up Of The Profile}}{7}{chapter.8}
+\contentsline {subsection}{Water Sample Profile}{7}{subsection*.7}
+\contentsline {subsection}{Water Quality Supervisor Profile}{7}{subsection*.8}
+\contentsline {subsection}{Sample Supervisor Profile}{8}{subsection*.9}
+\contentsline {subsection}{Quality Control Supervisor Profile}{8}{subsection*.10}
+\contentsline {subsection}{Water Parametres Profile}{8}{subsection*.11}
+\contentsline {subsection}{Outgoing Water Quality Warning Profile}{8}{subsection*.12}
+\contentsline {subsection}{Inlet Water Quality Warning Profile}{9}{subsection*.13}
+\contentsline {subsection}{Magikarp Profile}{9}{subsection*.14}
+\contentsline {subsection}{SeaweedPicking Profile}{9}{subsection*.15}
+\contentsline {subsection}{Water Sampler Profile}{9}{subsection*.16}
+\contentsline {subsection}{Water Analyzer Profile}{9}{subsection*.17}
+\contentsline {chapter}{\numberline {9}\textbf {Our Purification System}}{10}{chapter.9}
+\contentsline {chapter}{\numberline {10}\textbf {Component Diagram And Sequence Diagrams}}{10}{chapter.10}
+\contentsline {chapter}{\numberline {11}\textbf {Deployment Diagram}}{11}{chapter.11}
+\contentsline {chapter}{\numberline {12}\textbf {Our Conclusion}}{11}{chapter.12}
 \contentsfinish 
