@@ -5,23 +5,23 @@
 \contentsline {chapter}{\numberline {5}\textbf {Our Vision Of The Domain}}{4}{chapter.5}
 \contentsline {chapter}{\numberline {6}\textbf {Stakeholders \& their System Required Features}}{5}{chapter.6}
 \contentsline {chapter}{\numberline {7}\textbf {Use Cases Diagram}}{6}{chapter.7}
-\contentsline {section}{Sampling Water Use Case}{6}{section*.2}
-\contentsline {section}{Send Water Samples To Analysis Center Use Case}{7}{section*.3}
-\contentsline {section}{Check Water Quality Use Case}{7}{section*.4}
-\contentsline {section}{StartUp Solution Protocol Use Case}{8}{section*.5}
-\contentsline {section}{Retrieve Water Information Use Case}{9}{section*.6}
+\contentsline {section}{\numberline {7.1}Sampling Water Use Case}{6}{section.7.1}
+\contentsline {section}{\numberline {7.2}Send Water Samples To Analysis Center Use Case}{7}{section.7.2}
+\contentsline {section}{\numberline {7.3}Check Water Quality Use Case}{7}{section.7.3}
+\contentsline {section}{\numberline {7.4}StartUp Solution Protocol Use Case}{8}{section.7.4}
+\contentsline {section}{\numberline {7.5}Retrieve Water Information Use Case}{9}{section.7.5}
 \contentsline {chapter}{\numberline {8}\textbf {Drowing-Up Of The Profile}}{10}{chapter.8}
-\contentsline {section}{Water Sample Profile}{10}{section*.7}
-\contentsline {section}{Water Quality Supervisor Profile}{10}{section*.8}
-\contentsline {section}{Sample Supervisor Profile}{10}{section*.9}
-\contentsline {section}{Quality Control Supervisor Profile}{11}{section*.10}
-\contentsline {section}{Water Parametres Profile}{11}{section*.11}
-\contentsline {section}{Outgoing Water Quality Warning Profile}{11}{section*.12}
-\contentsline {section}{Inlet Water Quality Warning Profile}{12}{section*.13}
-\contentsline {section}{Magikarp Profile}{12}{section*.14}
-\contentsline {section}{SeaweedPicking Profile}{12}{section*.15}
-\contentsline {section}{Water Sampler Profile}{12}{section*.16}
-\contentsline {section}{Water Analyzer Profile}{12}{section*.17}
+\contentsline {section}{\numberline {8.1}Water Sample Profile}{10}{section.8.1}
+\contentsline {section}{\numberline {8.2}Water Quality Supervisor Profile}{10}{section.8.2}
+\contentsline {section}{\numberline {8.3}Sample Supervisor Profile}{10}{section.8.3}
+\contentsline {section}{\numberline {8.4}Quality Control Supervisor Profile}{11}{section.8.4}
+\contentsline {section}{\numberline {8.5}Water Parametres Profile}{11}{section.8.5}
+\contentsline {section}{\numberline {8.6}Outgoing Water Quality Warning Profile}{11}{section.8.6}
+\contentsline {section}{\numberline {8.7}Inlet Water Quality Warning Profile}{12}{section.8.7}
+\contentsline {section}{\numberline {8.8}Magikarp Profile}{12}{section.8.8}
+\contentsline {section}{\numberline {8.9}SeaweedPicking Profile}{12}{section.8.9}
+\contentsline {section}{\numberline {8.10}Water Sampler Profile}{12}{section.8.10}
+\contentsline {section}{\numberline {8.11}Water Analyzer Profile}{12}{section.8.11}
 \contentsline {chapter}{\numberline {9}\textbf {Our Purification System}}{13}{chapter.9}
 \contentsline {chapter}{\numberline {10}\textbf {Component Diagram And Sequence Diagrams}}{13}{chapter.10}
 \contentsline {chapter}{\numberline {11}\textbf {Deployment Diagram}}{15}{chapter.11}

@@ -5,23 +5,23 @@
 \BOOKMARK [0][-]{chapter.5}{Our Vision Of The Domain}{}% 5
 \BOOKMARK [0][-]{chapter.6}{Stakeholders \046 their System Required Features}{}% 6
 \BOOKMARK [0][-]{chapter.7}{Use Cases Diagram}{}% 7
-\BOOKMARK [1][-]{section*.2}{Sampling Water Use Case}{chapter.7}% 8
-\BOOKMARK [1][-]{section*.3}{Send Water Samples To Analysis Center Use Case}{chapter.7}% 9
-\BOOKMARK [1][-]{section*.4}{Check Water Quality Use Case}{chapter.7}% 10
-\BOOKMARK [1][-]{section*.5}{StartUp Solution Protocol Use Case}{chapter.7}% 11
-\BOOKMARK [1][-]{section*.6}{Retrieve Water Information Use Case}{chapter.7}% 12
+\BOOKMARK [1][-]{section.7.1}{Sampling Water Use Case}{chapter.7}% 8
+\BOOKMARK [1][-]{section.7.2}{Send Water Samples To Analysis Center Use Case}{chapter.7}% 9
+\BOOKMARK [1][-]{section.7.3}{Check Water Quality Use Case}{chapter.7}% 10
+\BOOKMARK [1][-]{section.7.4}{StartUp Solution Protocol Use Case}{chapter.7}% 11
+\BOOKMARK [1][-]{section.7.5}{Retrieve Water Information Use Case}{chapter.7}% 12
 \BOOKMARK [0][-]{chapter.8}{Drowing-Up Of The Profile}{}% 13
-\BOOKMARK [1][-]{section*.7}{Water Sample Profile}{chapter.8}% 14
-\BOOKMARK [1][-]{section*.8}{Water Quality Supervisor Profile}{chapter.8}% 15
-\BOOKMARK [1][-]{section*.9}{Sample Supervisor Profile}{chapter.8}% 16
-\BOOKMARK [1][-]{section*.10}{Quality Control Supervisor Profile}{chapter.8}% 17
-\BOOKMARK [1][-]{section*.11}{Water Parametres Profile}{chapter.8}% 18
-\BOOKMARK [1][-]{section*.12}{Outgoing Water Quality Warning Profile}{chapter.8}% 19
-\BOOKMARK [1][-]{section*.13}{Inlet Water Quality Warning Profile}{chapter.8}% 20
-\BOOKMARK [1][-]{section*.14}{Magikarp Profile}{chapter.8}% 21
-\BOOKMARK [1][-]{section*.15}{SeaweedPicking Profile}{chapter.8}% 22
-\BOOKMARK [1][-]{section*.16}{Water Sampler Profile}{chapter.8}% 23
-\BOOKMARK [1][-]{section*.17}{Water Analyzer Profile}{chapter.8}% 24
+\BOOKMARK [1][-]{section.8.1}{Water Sample Profile}{chapter.8}% 14
+\BOOKMARK [1][-]{section.8.2}{Water Quality Supervisor Profile}{chapter.8}% 15
+\BOOKMARK [1][-]{section.8.3}{Sample Supervisor Profile}{chapter.8}% 16
+\BOOKMARK [1][-]{section.8.4}{Quality Control Supervisor Profile}{chapter.8}% 17
+\BOOKMARK [1][-]{section.8.5}{Water Parametres Profile}{chapter.8}% 18
+\BOOKMARK [1][-]{section.8.6}{Outgoing Water Quality Warning Profile}{chapter.8}% 19
+\BOOKMARK [1][-]{section.8.7}{Inlet Water Quality Warning Profile}{chapter.8}% 20
+\BOOKMARK [1][-]{section.8.8}{Magikarp Profile}{chapter.8}% 21
+\BOOKMARK [1][-]{section.8.9}{SeaweedPicking Profile}{chapter.8}% 22
+\BOOKMARK [1][-]{section.8.10}{Water Sampler Profile}{chapter.8}% 23
+\BOOKMARK [1][-]{section.8.11}{Water Analyzer Profile}{chapter.8}% 24
 \BOOKMARK [0][-]{chapter.9}{Our Purification System}{}% 25
 \BOOKMARK [0][-]{chapter.10}{Component Diagram And Sequence Diagrams}{}% 26
 \BOOKMARK [0][-]{chapter.11}{Deployment Diagram}{}% 27
