@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.9)  9 NOV 2017 22:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.11.7)  10 NOV 2017 12:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **primapagina.tex
 (./primapagina.tex
-LaTeX2e <2016/02/01>
-Babel <3.9q> and hyphenation patterns for 5 language(s) loaded.
+LaTeX2e <2017-04-15>
+Babel <3.12> and hyphenation patterns for 5 language(s) loaded.
 
 ! LaTeX Error: Environment titlepage undefined.
 
@@ -172,7 +172,16 @@ Overfull \hbox (8191.87498pt too wide) in paragraph at lines 7--19
  []
 
 ! Undefined control sequence.
-l.31 {\bfseries \Large
+l.31 {\bfseries \large
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.33 {\bfseries \Large
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -181,97 +190,102 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (35.56233pt too wide) in paragraph at lines 32--33
+Overfull \hbox (35.56233pt too wide) in paragraph at lines 32--36
  []\OT1/cmr/bx/n/10 Report 
  []
 
 
-Overfull \hbox (33.43733pt too wide) in paragraph at lines 32--33
+Overfull \hbox (33.43733pt too wide) in paragraph at lines 32--36
  \OT1/cmr/bx/n/10 Home- 
  []
 
 
-Overfull \hbox (24.54155pt too wide) in paragraph at lines 32--33
+Overfull \hbox (24.54155pt too wide) in paragraph at lines 32--36
  \OT1/cmr/bx/n/10 work 
  []
 
 
-Overfull \hbox (15.33325pt too wide) in paragraph at lines 32--33
+Overfull \hbox (15.33325pt too wide) in paragraph at lines 32--36
  \OT1/cmr/bx/n/10 #1 
  []
 
 
-Overfull \hbox (30.99983pt too wide) in paragraph at lines 33--35
- []\OT1/cmr/bx/n/10 Water 
+Overfull \hbox (20.35403pt too wide) in paragraph at lines 32--36
+ \OT1/cmr/bx/n/10 Wa- 
  []
 
 
-Overfull \hbox (20.38321pt too wide) in paragraph at lines 33--35
+Overfull \hbox (14.47911pt too wide) in paragraph at lines 32--36
+ \OT1/cmr/bx/n/10 ter 
+ []
+
+
+Overfull \hbox (20.38321pt too wide) in paragraph at lines 32--36
  \OT1/cmr/bx/n/10 Dis- 
  []
 
 
-Overfull \hbox (16.23604pt too wide) in paragraph at lines 33--35
+Overfull \hbox (16.23604pt too wide) in paragraph at lines 32--36
  \OT1/cmr/bx/n/10 tri- 
  []
 
 
-Overfull \hbox (16.61102pt too wide) in paragraph at lines 33--35
+Overfull \hbox (16.61102pt too wide) in paragraph at lines 32--36
  \OT1/cmr/bx/n/10 bu- 
  []
 
 
-Overfull \hbox (22.99988pt too wide) in paragraph at lines 33--35
+Overfull \hbox (22.99988pt too wide) in paragraph at lines 32--36
  \OT1/cmr/bx/n/10 tion, 
  []
 
 
-Overfull \hbox (27.68039pt too wide) in paragraph at lines 33--35
+Overfull \hbox (27.68039pt too wide) in paragraph at lines 32--36
  \OT1/cmr/bx/n/10 Leak- 
  []
 
 
-Overfull \hbox (16.61101pt too wide) in paragraph at lines 33--35
+Overfull \hbox (16.61101pt too wide) in paragraph at lines 32--36
  \OT1/cmr/bx/n/10 age 
  []
 
 
-Overfull \hbox (18.36794pt too wide) in paragraph at lines 33--35
+Overfull \hbox (18.36794pt too wide) in paragraph at lines 32--36
  \OT1/cmr/bx/n/10 and 
  []
 
 
-Overfull \hbox (27.64566pt too wide) in paragraph at lines 33--35
+Overfull \hbox (27.64566pt too wide) in paragraph at lines 32--36
  \OT1/cmr/bx/n/10 Qual- 
  []
 
 
-Overfull \hbox (13.4166pt too wide) in paragraph at lines 33--35
+Overfull \hbox (13.4166pt too wide) in paragraph at lines 32--36
  \OT1/cmr/bx/n/10 ity 
  []
 
 
-Overfull \hbox (24.27765pt too wide) in paragraph at lines 33--35
+Overfull \hbox (24.27765pt too wide) in paragraph at lines 32--36
  \OT1/cmr/bx/n/10 Con- 
  []
 
 
-Overfull \hbox (18.1527pt too wide) in paragraph at lines 33--35
+Overfull \hbox (18.1527pt too wide) in paragraph at lines 32--36
  \OT1/cmr/bx/n/10 trol 
  []
 
 
-Overfull \hbox (20.82765pt too wide) in paragraph at lines 33--35
+Overfull \hbox (20.82765pt too wide) in paragraph at lines 32--36
  \OT1/cmr/bx/n/10 Sys- 
  []
 
 
-Overfull \hbox (19.3263pt too wide) in paragraph at lines 33--35
+Overfull \hbox (19.3263pt too wide) in paragraph at lines 32--36
  \OT1/cmr/bx/n/10 tem 
  []
 
 ! Undefined control sequence.
-l.36 {\large
+l.37 {\large
             
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -280,7 +294,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.41 {\bfseries \large
+l.42 {\bfseries \large
                        Professor \\ }
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -289,42 +303,42 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (46.69003pt too wide) in paragraph at lines 41--41
+Overfull \hbox (46.69003pt too wide) in paragraph at lines 42--42
  []\OT1/cmr/bx/n/10 Professor 
  []
 
 
-Overfull \hbox (25.05544pt too wide) in paragraph at lines 43--43
+Overfull \hbox (25.05544pt too wide) in paragraph at lines 44--44
  []\OT1/cmr/bx/n/10 Prof. 
  []
 
 
-Overfull \hbox (17.39987pt too wide) in paragraph at lines 43--43
+Overfull \hbox (17.39987pt too wide) in paragraph at lines 44--44
  \OT1/cmr/m/it/10 Vit- 
  []
 
 
-Overfull \hbox (12.01102pt too wide) in paragraph at lines 43--43
+Overfull \hbox (12.01102pt too wide) in paragraph at lines 44--44
  \OT1/cmr/m/it/10 to- 
  []
 
 
-Overfull \hbox (12.39436pt too wide) in paragraph at lines 43--43
+Overfull \hbox (12.39436pt too wide) in paragraph at lines 44--44
  \OT1/cmr/m/it/10 rio 
  []
 
 
-Overfull \hbox (30.53865pt too wide) in paragraph at lines 43--43
+Overfull \hbox (30.53865pt too wide) in paragraph at lines 44--44
  \OT1/cmr/m/it/10 Cortel- 
  []
 
 
-Overfull \hbox (21.21146pt too wide) in paragraph at lines 43--43
+Overfull \hbox (21.21146pt too wide) in paragraph at lines 44--44
  \OT1/cmr/m/it/10 lessa 
  []
 
 ! Undefined control sequence.
-l.46 {\large
+l.47 {\large
             
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -333,7 +347,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.51 {\bfseries \large
+l.52 {\bfseries \large
                        Students \\ }
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -342,62 +356,62 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (43.98726pt too wide) in paragraph at lines 51--51
+Overfull \hbox (43.98726pt too wide) in paragraph at lines 52--52
  []\OT1/cmr/bx/n/10 Students 
  []
 
 
-Overfull \hbox (36.61366pt too wide) in paragraph at lines 53--53
+Overfull \hbox (36.61366pt too wide) in paragraph at lines 54--54
  []\OT1/cmr/m/it/10 Gaetano 
  []
 
 
-Overfull \hbox (32.72197pt too wide) in paragraph at lines 53--53
+Overfull \hbox (32.72197pt too wide) in paragraph at lines 54--54
  \OT1/cmr/m/it/10 Fichera 
  []
 
 
-Overfull \hbox (7.66663pt too wide) in paragraph at lines 53--53
+Overfull \hbox (7.66663pt too wide) in paragraph at lines 54--54
  \OT1/cmr/m/it/10 & 
  []
 
 
-Overfull \hbox (19.49155pt too wide) in paragraph at lines 53--53
+Overfull \hbox (19.49155pt too wide) in paragraph at lines 54--54
  \OT1/cmr/m/it/10 Gio- 
  []
 
 
-Overfull \hbox (24.02208pt too wide) in paragraph at lines 53--53
+Overfull \hbox (24.02208pt too wide) in paragraph at lines 54--54
  \OT1/cmr/m/it/10 vanni 
  []
 
 
-Overfull \hbox (22.62434pt too wide) in paragraph at lines 53--53
+Overfull \hbox (22.62434pt too wide) in paragraph at lines 54--54
  \OT1/cmr/m/it/10 Lezzi 
  []
 
 
-Overfull \hbox (8191.99998pt too wide) in paragraph at lines 64--64
+Overfull \hbox (8191.99998pt too wide) in paragraph at lines 65--65
  [][] 
  []
 
 
-Overfull \hbox (48.1136pt too wide) in paragraph at lines 65--66
+Overfull \hbox (48.1136pt too wide) in paragraph at lines 66--67
  []\OT1/cmr/m/sc/10 Academic 
  []
 
 
-Overfull \hbox (25.87207pt too wide) in paragraph at lines 65--66
+Overfull \hbox (25.87207pt too wide) in paragraph at lines 66--67
  \OT1/cmr/m/sc/10 Year 
  []
 
 
-Overfull \hbox (25.88864pt too wide) in paragraph at lines 65--66
+Overfull \hbox (25.88864pt too wide) in paragraph at lines 66--67
  \OT1/cmr/m/sc/10 2017- 
  []
 
 
-Overfull \hbox (22.1109pt too wide) in paragraph at lines 65--66
+Overfull \hbox (22.1109pt too wide) in paragraph at lines 66--67
  \OT1/cmr/m/sc/10 2018 
  []
 
@@ -408,7 +422,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.68 \end{titlepage}
+l.69 \end{titlepage}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -422,10 +436,10 @@ or  <return>  to continue without it.
 
  
 Here is how much of TeX's memory you used:
- 20 strings out of 494910
- 316 string characters out of 6179836
- 47398 words of memory out of 5000000
- 3409 multiletter control sequences out of 15000+600000
+ 20 strings out of 494888
+ 316 string characters out of 6179710
+ 48007 words of memory out of 5000000
+ 3432 multiletter control sequences out of 15000+600000
  4595 words of font info for 17 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  19i,9n,16p,135b,295s stack positions out of 5000i,500n,10000p,200000b,80000s
