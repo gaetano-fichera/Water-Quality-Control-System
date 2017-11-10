@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.11.7)  10 NOV 2017 14:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.11.7)  10 NOV 2017 15:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1110,26 +1110,26 @@ Chapter 6.
 ) (./useCasesDiagram.tex [5]
 Chapter 7.
 
-Underfull \vbox (badness 10000) detected at line 52
+Underfull \vbox (badness 10000) detected at line 54
  []
 
 [6]
-Underfull \vbox (badness 10000) detected at line 101
+Underfull \vbox (badness 10000) detected at line 103
  []
 
 
-Underfull \vbox (badness 10000) detected at line 153
+Underfull \vbox (badness 10000) detected at line 155
  []
 
 [7]
-Underfull \vbox (badness 10000) detected at line 203
+Underfull \vbox (badness 10000) detected at line 205
  []
 
 [8]
-Underfull \vbox (badness 10000) detected at line 244
+Underfull \vbox (badness 10000) detected at line 246
  []
 
-) (./drowingUpOfTheProfile.tex [9]
+[9]) (./drowingUpOfTheProfile.tex
 Chapter 8.
 
 Underfull \vbox (badness 10000) detected at line 28
@@ -1199,14 +1199,14 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 6.
 See the caption package documentation for explanation.
 
-) (./componentDiagramAndSequenceDiagrams.tex
+) (./componentDiagramAndSequenceDiagrams.tex [13 <./Immagini/OurWQCSystemDiagra
+m.jpg>]
 Chapter 10.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--6
 
  []
 
-[13 <./Immagini/OurWQCSystemDiagram.jpg>]
 <./Immagini/image.png, id=242, 386.19281pt x 215.30438pt>
 File: ./Immagini/image.png Graphic file (type png)
 <use ./Immagini/image.png>
@@ -1214,7 +1214,6 @@ Package pdftex.def Info: ./Immagini/image.png  used on input line 8. on input l
 ine 8.
 Package pdftex.def Info: Requested size: 241.84842pt x 134.83101pt on input lin
 e 8.
-
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 10.
@@ -1240,10 +1239,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 60.
  ) 
 Here is how much of TeX's memory you used:
- 10181 strings out of 494888
- 147871 string characters out of 6179710
+ 10182 strings out of 494888
+ 147883 string characters out of 6179710
  250533 words of memory out of 5000000
- 13214 multiletter control sequences out of 15000+600000
+ 13215 multiletter control sequences out of 15000+600000
  59358 words of font info for 44 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  41i,13n,39p,908b,440s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1256,7 +1255,7 @@ c/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/shar
 e/texmf/fonts/type1/public/lm/lmsso12.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ti
 mes/utmr8a.pfb>
-Output written on report.pdf (16 pages, 485354 bytes).
+Output written on report.pdf (16 pages, 485768 bytes).
 PDF statistics:
  304 PDF objects out of 1000 (max. 8388607)
  269 compressed objects within 3 object streams

@@ -23,7 +23,7 @@
 \contentsline {section}{\numberline {8.10}Water Sampler Profile}{12}{section.8.10}
 \contentsline {section}{\numberline {8.11}Water Analyzer Profile}{12}{section.8.11}
 \contentsline {chapter}{\numberline {9}\textbf {Our Purification System}}{13}{chapter.9}
-\contentsline {chapter}{\numberline {10}\textbf {Component Diagram And Sequence Diagrams}}{13}{chapter.10}
+\contentsline {chapter}{\numberline {10}\textbf {Component Diagram And Sequence Diagrams}}{14}{chapter.10}
 \contentsline {chapter}{\numberline {11}\textbf {Deployment Diagram}}{15}{chapter.11}
 \contentsline {chapter}{\numberline {12}\textbf {Our Conclusion}}{15}{chapter.12}
 \contentsfinish 
