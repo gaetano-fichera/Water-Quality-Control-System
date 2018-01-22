@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
-<archive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="UC1 UC2 QN.jsimg" timestamp="Wed Jan 17 12:22:56 CET 2018" xsi:noNamespaceSchemaLocation="Archive.xsd">
-<sim disableStatisticStop="false" logDecimalSeparator="," logDelimiter=";" logPath="/home/gaetano/JMT/" logReplaceMode="0" maxSamples="1000000" name="UC1 UC2 QN.jsimg" polling="1.0" xsi:noNamespaceSchemaLocation="SIMmodeldefinition.xsd">
-<userClass customers="1000" name="StartUp Sampling Water Inland" priority="2" referenceSource="Control Center Server" type="closed"/>
-<userClass name="Check Water Quality" priority="1" referenceSource="Quality Control Supervisor - User" type="open"/>
-<userClass customers="1000" name="StartUp Sampling Water Outgoing" priority="2" referenceSource="Control Center Server" type="closed"/>
+<archive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="UC1 UC2 QN.jsimg" timestamp="Mon Jan 22 11:50:55 CET 2018" xsi:noNamespaceSchemaLocation="Archive.xsd">
+<sim disableStatisticStop="false" logDecimalSeparator="," logDelimiter=";" logPath="/home/gaetano/Workspace/Water-Quality-Control-System/JMT Project/Simulation Result" logReplaceMode="0" maxSamples="1000000" name="UC1 UC2 QN.jsimg" polling="1.0" xsi:noNamespaceSchemaLocation="SIMmodeldefinition.xsd">
+<userClass customers="1000" name="StartUp Sampling Water Inland" priority="1" referenceSource="Control Center Server" type="closed"/>
+<userClass name="Check Water Quality" priority="2" referenceSource="Quality Control Supervisor - User" type="open"/>
+<userClass customers="1000" name="StartUp Sampling Water Outgoing" priority="1" referenceSource="Control Center Server" type="closed"/>
 <node name="Lan Wired">
 <section className="Queue">
 <parameter classPath="java.lang.Integer" name="size">
@@ -36,32 +36,18 @@
 <section className="Delay">
 <parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
 <refClass>StartUp Sampling Water Inland</refClass>
-<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
-</subParameter>
-</subParameter>
-</subParameter>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ZeroServiceTimeStrategy" name="ZeroTimeServiceStrategy"/>
 <refClass>Check Water Quality</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
+<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
+<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="t">
+<value>0.0012</value>
 </subParameter>
 </subParameter>
 </subParameter>
 <refClass>StartUp Sampling Water Outgoing</refClass>
-<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
-</subParameter>
-</subParameter>
-</subParameter>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ZeroServiceTimeStrategy" name="ZeroTimeServiceStrategy"/>
 </parameter>
 </section>
 <section className="Router">
@@ -82,27 +68,38 @@
 <refClass>Check Water Quality</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
 <refClass>StartUp Sampling Water Outgoing</refClass>
-<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+<subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Control Center Server</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</subParameter>
 </parameter>
 </section>
 </node>
 <node name="Control Center Server">
 <section className="Queue">
 <parameter classPath="java.lang.Integer" name="size">
-<value>-1</value>
+<value>1</value>
 </parameter>
 <parameter array="true" classPath="java.lang.String" name="dropStrategies">
 <refClass>StartUp Sampling Water Inland</refClass>
 <subParameter classPath="java.lang.String" name="dropStrategy">
-<value>drop</value>
+<value>waiting queue</value>
 </subParameter>
 <refClass>Check Water Quality</refClass>
 <subParameter classPath="java.lang.String" name="dropStrategy">
-<value>drop</value>
+<value>waiting queue</value>
 </subParameter>
 <refClass>StartUp Sampling Water Outgoing</refClass>
 <subParameter classPath="java.lang.String" name="dropStrategy">
-<value>drop</value>
+<value>waiting queue</value>
 </subParameter>
 </parameter>
 <parameter classPath="jmt.engine.NetStrategies.QueueGetStrategies.FCFSstrategy" name="FCFSstrategy"/>
@@ -136,28 +133,28 @@
 <parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
 <refClass>StartUp Sampling Water Inland</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
+<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
+<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="t">
+<value>0.00188</value>
 </subParameter>
 </subParameter>
 </subParameter>
 <refClass>Check Water Quality</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
+<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
+<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="t">
+<value>0.0012</value>
 </subParameter>
 </subParameter>
 </subParameter>
 <refClass>StartUp Sampling Water Outgoing</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
+<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
+<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="t">
+<value>0.00188</value>
 </subParameter>
 </subParameter>
 </subParameter>
@@ -305,31 +302,17 @@
 <parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
 <refClass>StartUp Sampling Water Inland</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
+<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
+<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="t">
+<value>0.00376</value>
 </subParameter>
 </subParameter>
 </subParameter>
 <refClass>Check Water Quality</refClass>
-<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
-</subParameter>
-</subParameter>
-</subParameter>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ZeroServiceTimeStrategy" name="ZeroTimeServiceStrategy"/>
 <refClass>StartUp Sampling Water Outgoing</refClass>
-<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
-</subParameter>
-</subParameter>
-</subParameter>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ZeroServiceTimeStrategy" name="ZeroTimeServiceStrategy"/>
 </parameter>
 </section>
 <section className="Router">
@@ -392,29 +375,15 @@
 </parameter>
 <parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
 <refClass>StartUp Sampling Water Inland</refClass>
-<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
-</subParameter>
-</subParameter>
-</subParameter>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ZeroServiceTimeStrategy" name="ZeroTimeServiceStrategy"/>
 <refClass>Check Water Quality</refClass>
-<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
-</subParameter>
-</subParameter>
-</subParameter>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ZeroServiceTimeStrategy" name="ZeroTimeServiceStrategy"/>
 <refClass>StartUp Sampling Water Outgoing</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
+<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
+<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="t">
+<value>0.00376</value>
 </subParameter>
 </subParameter>
 </subParameter>
@@ -464,28 +433,21 @@
 <parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
 <refClass>StartUp Sampling Water Inland</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
+<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
+<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="t">
+<value>8.4E-4</value>
 </subParameter>
 </subParameter>
 </subParameter>
 <refClass>Check Water Quality</refClass>
-<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
-</subParameter>
-</subParameter>
-</subParameter>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ZeroServiceTimeStrategy" name="ZeroTimeServiceStrategy"/>
 <refClass>StartUp Sampling Water Outgoing</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
+<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
+<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="t">
+<value>8.4E-4</value>
 </subParameter>
 </subParameter>
 </subParameter>
@@ -535,31 +497,17 @@
 <parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
 <refClass>StartUp Sampling Water Inland</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
+<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
+<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="t">
+<value>0.0035</value>
 </subParameter>
 </subParameter>
 </subParameter>
 <refClass>Check Water Quality</refClass>
-<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
-</subParameter>
-</subParameter>
-</subParameter>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ZeroServiceTimeStrategy" name="ZeroTimeServiceStrategy"/>
 <refClass>StartUp Sampling Water Outgoing</refClass>
-<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
-</subParameter>
-</subParameter>
-</subParameter>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ZeroServiceTimeStrategy" name="ZeroTimeServiceStrategy"/>
 </parameter>
 </section>
 <section className="Router">
@@ -605,29 +553,15 @@
 <section className="Delay">
 <parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
 <refClass>StartUp Sampling Water Inland</refClass>
-<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
-</subParameter>
-</subParameter>
-</subParameter>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ZeroServiceTimeStrategy" name="ZeroTimeServiceStrategy"/>
 <refClass>Check Water Quality</refClass>
-<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
-</subParameter>
-</subParameter>
-</subParameter>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ZeroServiceTimeStrategy" name="ZeroTimeServiceStrategy"/>
 <refClass>StartUp Sampling Water Outgoing</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
+<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
+<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="t">
+<value>0.0035</value>
 </subParameter>
 </subParameter>
 </subParameter>
@@ -694,28 +628,28 @@
 <parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
 <refClass>StartUp Sampling Water Inland</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
+<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
+<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="t">
+<value>8.4E-4</value>
 </subParameter>
 </subParameter>
 </subParameter>
 <refClass>Check Water Quality</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
+<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
+<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="t">
+<value>6.25E-4</value>
 </subParameter>
 </subParameter>
 </subParameter>
 <refClass>StartUp Sampling Water Outgoing</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
+<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
+<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="t">
+<value>8.4E-4</value>
 </subParameter>
 </subParameter>
 </subParameter>
@@ -765,28 +699,28 @@
 <parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
 <refClass>StartUp Sampling Water Inland</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
+<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
+<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="t">
+<value>1.75E-4</value>
 </subParameter>
 </subParameter>
 </subParameter>
 <refClass>Check Water Quality</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
+<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
+<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="t">
+<value>3.5E-4</value>
 </subParameter>
 </subParameter>
 </subParameter>
 <refClass>StartUp Sampling Water Outgoing</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
+<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
+<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="t">
+<value>1.75E-4</value>
 </subParameter>
 </subParameter>
 </subParameter>
@@ -909,32 +843,18 @@
 </parameter>
 <parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
 <refClass>StartUp Sampling Water Inland</refClass>
-<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
-</subParameter>
-</subParameter>
-</subParameter>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ZeroServiceTimeStrategy" name="ZeroTimeServiceStrategy"/>
 <refClass>Check Water Quality</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
+<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
+<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="t">
+<value>0.0023</value>
 </subParameter>
 </subParameter>
 </subParameter>
 <refClass>StartUp Sampling Water Outgoing</refClass>
-<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
-</subParameter>
-</subParameter>
-</subParameter>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ZeroServiceTimeStrategy" name="ZeroTimeServiceStrategy"/>
 </parameter>
 </section>
 <section className="Router">
@@ -1077,28 +997,28 @@
 <parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
 <refClass>StartUp Sampling Water Inland</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
+<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
+<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="t">
+<value>0.025</value>
 </subParameter>
 </subParameter>
 </subParameter>
 <refClass>Check Water Quality</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
+<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
+<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="t">
+<value>0.0125</value>
 </subParameter>
 </subParameter>
 </subParameter>
 <refClass>StartUp Sampling Water Outgoing</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
-<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="lambda">
-<value>1.0</value>
+<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
+<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="t">
+<value>0.025</value>
 </subParameter>
 </subParameter>
 </subParameter>
@@ -1107,11 +1027,68 @@
 <section className="Router">
 <parameter array="true" classPath="jmt.engine.NetStrategies.RoutingStrategy" name="RoutingStrategy">
 <refClass>StartUp Sampling Water Inland</refClass>
-<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+<subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Sink QCS</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>0.0</value>
+</subParameter>
+</subParameter>
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Sampling Delay</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</subParameter>
 <refClass>Check Water Quality</refClass>
-<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+<subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Sink QCS</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Sampling Delay</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>0.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</subParameter>
 <refClass>StartUp Sampling Water Outgoing</refClass>
-<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+<subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Sink QCS</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>0.0</value>
+</subParameter>
+</subParameter>
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Sampling Delay</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</subParameter>
 </parameter>
 </section>
 </node>
@@ -1130,7 +1107,7 @@
 <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
 <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
 <subParameter classPath="java.lang.Double" name="lambda">
-<value>0.5</value>
+<value>10.0</value>
 </subParameter>
 </subParameter>
 </subParameter>
@@ -1146,20 +1123,114 @@
 <refClass>StartUp Sampling Water Inland</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
 <refClass>Check Water Quality</refClass>
-<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.ShortestResponseTimeRoutingStrategy" name="Shortest Response Time"/>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+<subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Lan Wired</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</subParameter>
 <refClass>StartUp Sampling Water Outgoing</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
 </parameter>
 </section>
 </node>
-<measure alpha="0.01" name="Control Center Server_Queue Time" nodeType="station" precision="0.03" referenceNode="Control Center Server" referenceUserClass="" type="Queue Time" verbose="true"/>
-<measure alpha="0.01" name="Control Center Server_Response Time" nodeType="station" precision="0.03" referenceNode="Control Center Server" referenceUserClass="" type="Response Time" verbose="false"/>
-<measure alpha="0.01" name="Control Center Server_Number of Customers" nodeType="station" precision="0.03" referenceNode="Control Center Server" referenceUserClass="" type="Number of Customers" verbose="false"/>
-<measure alpha="0.01" name="System Throughput" nodeType="" precision="0.03" referenceNode="" referenceUserClass="" type="System Throughput" verbose="false"/>
-<measure alpha="0.01" name="System Response Time" nodeType="" precision="0.03" referenceNode="" referenceUserClass="" type="System Response Time" verbose="false"/>
-<measure alpha="0.01" name="Control Center Server_Throughput" nodeType="station" precision="0.03" referenceNode="Control Center Server" referenceUserClass="" type="Throughput" verbose="false"/>
+<node name="Sampling Delay">
+<section className="Queue">
+<parameter classPath="java.lang.Integer" name="size">
+<value>-1</value>
+</parameter>
+<parameter array="true" classPath="java.lang.String" name="dropStrategies">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+</parameter>
+<parameter classPath="jmt.engine.NetStrategies.QueueGetStrategies.FCFSstrategy" name="FCFSstrategy"/>
+<parameter array="true" classPath="jmt.engine.NetStrategies.QueuePutStrategy" name="QueuePutStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+</parameter>
+</section>
+<section className="Delay">
+<parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
+<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="t">
+<value>60000.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ZeroServiceTimeStrategy" name="ZeroTimeServiceStrategy"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
+<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="t">
+<value>60000.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</parameter>
+</section>
+<section className="Router">
+<parameter array="true" classPath="jmt.engine.NetStrategies.RoutingStrategy" name="RoutingStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+</parameter>
+</section>
+</node>
 <measure alpha="0.01" name="Control Center Server_Utilization" nodeType="station" precision="0.03" referenceNode="Control Center Server" referenceUserClass="" type="Utilization" verbose="false"/>
-<measure alpha="0.01" name="Sink QCS_Response Time per Sink" nodeType="station" precision="0.03" referenceNode="Sink QCS" referenceUserClass="" type="Response Time per Sink" verbose="true"/>
+<measure alpha="0.01" name="Seaweed Picking Inland Control Unit_Utilization" nodeType="station" precision="0.03" referenceNode="Seaweed Picking Inland Control Unit" referenceUserClass="" type="Utilization" verbose="false"/>
+<measure alpha="0.01" name="Seaweed Picking Outgoing Control Unit_Utilization" nodeType="station" precision="0.03" referenceNode="Seaweed Picking Outgoing Control Unit" referenceUserClass="" type="Utilization" verbose="false"/>
+<measure alpha="0.01" name="Water Company Server_Utilization" nodeType="station" precision="0.03" referenceNode="Water Company Server" referenceUserClass="" type="Utilization" verbose="false"/>
+<measure alpha="0.01" name="Purification System_Utilization" nodeType="station" precision="0.03" referenceNode="Purification System" referenceUserClass="" type="Utilization" verbose="false"/>
+<measure alpha="0.01" name="Water Company Disk_Utilization" nodeType="station" precision="0.03" referenceNode="Water Company Disk" referenceUserClass="" type="Utilization" verbose="false"/>
+<measure alpha="0.01" name="Lan Wired_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceNode="Lan Wired" referenceUserClass="Check Water Quality" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Control Center Server_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceNode="Control Center Server" referenceUserClass="Check Water Quality" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Internet_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceNode="Internet" referenceUserClass="Check Water Quality" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Water Company Server_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceNode="Water Company Server" referenceUserClass="Check Water Quality" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Water Company Disk_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceNode="Water Company Disk" referenceUserClass="Check Water Quality" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Purification System_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceNode="Purification System" referenceUserClass="Check Water Quality" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Sink QCS_Check Water Quality_Throughput per Sink" nodeType="station" precision="0.03" referenceNode="Sink QCS" referenceUserClass="Check Water Quality" type="Throughput per Sink" verbose="false"/>
+<measure alpha="0.01" name="Control Center Server_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceNode="Control Center Server" referenceUserClass="StartUp Sampling Water Inland" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Seaweed Picking Inland Control Unit_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceNode="Seaweed Picking Inland Control Unit" referenceUserClass="StartUp Sampling Water Inland" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Lan Wireless_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceNode="Lan Wireless" referenceUserClass="StartUp Sampling Water Inland" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Seaweed Picking Inlands_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceNode="Seaweed Picking Inlands" referenceUserClass="StartUp Sampling Water Inland" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Internet_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceNode="Internet" referenceUserClass="StartUp Sampling Water Inland" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Water Company Server_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceNode="Water Company Server" referenceUserClass="StartUp Sampling Water Inland" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Water Company Disk_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceNode="Water Company Disk" referenceUserClass="StartUp Sampling Water Inland" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Control Center Server_StartUp Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceNode="Control Center Server" referenceUserClass="StartUp Sampling Water Outgoing" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Seaweed Picking Outgoing Control Unit_StartUp Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceNode="Seaweed Picking Outgoing Control Unit" referenceUserClass="StartUp Sampling Water Outgoing" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Lan Wireless_StartUp Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceNode="Lan Wireless" referenceUserClass="StartUp Sampling Water Outgoing" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Seaweed Picking Outgoings_StartUp Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceNode="Seaweed Picking Outgoings" referenceUserClass="StartUp Sampling Water Outgoing" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Internet_StartUp Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceNode="Internet" referenceUserClass="StartUp Sampling Water Outgoing" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Water Company Server_StartUp Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceNode="Water Company Server" referenceUserClass="StartUp Sampling Water Outgoing" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Water Company Disk_StartUp Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceNode="Water Company Disk" referenceUserClass="StartUp Sampling Water Outgoing" type="Response Time" verbose="false"/>
 <connection source="Lan Wired" target="Control Center Server"/>
 <connection source="Control Center Server" target="Seaweed Picking Inland Control Unit"/>
 <connection source="Control Center Server" target="Seaweed Picking Outgoing Control Unit"/>
@@ -1175,9 +1246,10 @@
 <connection source="Purification System" target="Sink QCS"/>
 <connection source="Inland Outgoing Router" target="Seaweed Picking Inlands"/>
 <connection source="Inland Outgoing Router" target="Seaweed Picking Outgoings"/>
-<connection source="Water Company Disk" target="Control Center Server"/>
 <connection source="Water Company Disk" target="Sink QCS"/>
+<connection source="Water Company Disk" target="Sampling Delay"/>
 <connection source="Quality Control Supervisor - User" target="Lan Wired"/>
+<connection source="Sampling Delay" target="Control Center Server"/>
 <blockingRegion name="Physical Control Center Server" type="default">
 <regionNode nodeName="Control Center Server"/>
 <globalConstraint maxJobs="-1"/>
@@ -1290,237 +1362,205 @@
 <userClass color="#FFFF0000" name="Check Water Quality"/>
 <userClass color="#FFFFC800" name="StartUp Sampling Water Outgoing"/>
 <station name="Lan Wired">
-<position rotate="false" x="321.0" y="148.0"/>
+<position rotate="false" x="268.0" y="272.0"/>
 </station>
 <station name="Control Center Server">
-<position rotate="false" x="487.0" y="101.0"/>
+<position rotate="false" x="378.0" y="292.0"/>
 </station>
 <station name="Seaweed Picking Inland Control Unit">
-<position rotate="false" x="439.0" y="392.0"/>
+<position rotate="false" x="588.0" y="410.0"/>
 </station>
 <station name="Seaweed Picking Outgoing Control Unit">
-<position rotate="false" x="430.0" y="559.0"/>
+<position rotate="false" x="589.0" y="561.0"/>
 </station>
 <station name="Lan Wireless">
-<position rotate="false" x="789.0" y="407.0"/>
+<position rotate="false" x="864.0" y="468.0"/>
 </station>
 <station name="Seaweed Picking Inlands">
-<position rotate="false" x="1241.0" y="397.0"/>
+<position rotate="false" x="1210.0" y="406.0"/>
 </station>
 <station name="Seaweed Picking Outgoings">
-<position rotate="false" x="1232.0" y="541.0"/>
+<position rotate="false" x="1203.0" y="552.0"/>
 </station>
 <station name="Water Company Server">
-<position rotate="false" x="1063.0" y="94.0"/>
+<position rotate="false" x="1544.0" y="337.0"/>
 </station>
 <station name="Internet">
-<position rotate="false" x="765.0" y="89.0"/>
+<position rotate="false" x="1407.0" y="268.0"/>
 </station>
 <station name="Purification System">
-<position rotate="false" x="1082.0" y="272.0"/>
+<position rotate="false" x="1613.0" y="489.0"/>
 </station>
 <station name="Inland Outgoing Router">
-<position rotate="false" x="947.0" y="454.0"/>
+<position rotate="false" x="994.0" y="491.0"/>
 </station>
 <station name="Water Company Disk">
-<position rotate="false" x="1358.0" y="135.0"/>
+<position rotate="false" x="1754.0" y="336.0"/>
 </station>
 <station name="Sink QCS">
-<position rotate="false" x="890.0" y="13.0"/>
+<position rotate="false" x="1913.0" y="491.0"/>
 </station>
 <station name="Quality Control Supervisor - User">
-<position rotate="false" x="72.0" y="174.0"/>
+<position rotate="false" x="20.0" y="295.0"/>
+</station>
+<station name="Sampling Delay">
+<position rotate="false" x="1759.0" y="66.0"/>
 </station>
 </jmodel>
-<results elapsedTime="40755" logDecimalSeparator="," logDelimiter=";" pollingInterval="1.0" xsi:noNamespaceSchemaLocation="Results.xsd">
-<measure alpha="0.99" analyzedSamples="19200" discardedSamples="96035" finalValue="6007.552390075713" logFile="/home/gaetano/JMT/Control Center Server_Queue Time.csv" name="Control Center Server_Queue Time" nodeType="station" precision="0.03" referenceClass="" referenceStation="Control Center Server" state="1" type="1">
-<sample lastIntervalAvgValue="968.6651193462027" meanValue="968.6651193462027" simulationTime="1906.6718465235988"/>
-<sample lastIntervalAvgValue="2673.2486767638507" meanValue="2175.7647322075336" simulationTime="6610.267687169012"/>
-<sample lastIntervalAvgValue="3689.4065447948856" meanValue="2804.7756804099563" simulationTime="11191.973247319267"/>
-<sample lastIntervalAvgValue="4212.986243634187" meanValue="3130.496046091051" simulationTime="14553.2937323863"/>
-<sample lastIntervalAvgValue="4547.632771564439" meanValue="3466.5814576501275" simulationTime="19101.826164772407"/>
-<sample lastIntervalAvgValue="4785.362323441974" meanValue="3642.001098499287" simulationTime="21969.535478117872"/>
-<sample lastIntervalAvgValue="4862.1950706860625" meanValue="4048.248615992572" simulationTime="26454.657734175173"/>
-<sample lastIntervalAvgValue="5120.3482025472495" meanValue="4435.006426971287" simulationTime="30065.25431823019"/>
-<sample lastIntervalAvgValue="5318.40611982869" meanValue="4802.016082384621" simulationTime="35137.37154614376"/>
-<sample lastIntervalAvgValue="5485.885750350551" meanValue="5044.266435745961" simulationTime="39685.37552625514"/>
-<sample lastIntervalAvgValue="5554.278749858715" meanValue="5208.786041170725" simulationTime="43801.170121228126"/>
-<sample lastIntervalAvgValue="5680.217828045391" meanValue="5320.112983358725" simulationTime="46930.72943762472"/>
-<sample lastIntervalAvgValue="5756.009072061336" meanValue="5506.24364012749" simulationTime="52263.67936589907"/>
-<sample lastIntervalAvgValue="5775.866284258591" meanValue="5587.065030867362" simulationTime="55558.54534011549"/>
-<sample lastIntervalAvgValue="5798.41324580449" meanValue="5678.983524653992" simulationTime="60356.8873467079"/>
-<sample lastIntervalAvgValue="5728.733450988495" meanValue="5715.8376274535585" simulationTime="63966.232163225046"/>
-<sample lastIntervalAvgValue="5736.910174323244" meanValue="5741.375530937992" simulationTime="67299.09129630038"/>
-<sample lastIntervalAvgValue="5756.766176777411" meanValue="5761.051650729196" simulationTime="72558.6113665767"/>
-<sample lastIntervalAvgValue="5829.379882709138" meanValue="5771.368774471204" simulationTime="76095.19277787814"/>
-<sample lastIntervalAvgValue="5796.903636436472" meanValue="5774.815330182227" simulationTime="79483.5409816295"/>
-<sample lastIntervalAvgValue="5799.611690273861" meanValue="5774.544417041409" simulationTime="84562.2227135427"/>
-<sample lastIntervalAvgValue="5796.7927792893615" meanValue="5782.207015090305" simulationTime="87750.86157481128"/>
-<sample lastIntervalAvgValue="5903.192267336984" meanValue="5804.819807450187" simulationTime="90771.7669513809"/>
-<sample lastIntervalAvgValue="5907.510929361202" meanValue="5832.7205299108855" simulationTime="94789.14873242767"/>
-<sample lastIntervalAvgValue="5972.371951787004" meanValue="5860.727904810865" simulationTime="99103.3820187899"/>
-<sample lastIntervalAvgValue="6090.872300263366" meanValue="5894.80732483308" simulationTime="102232.08088612667"/>
-<sample lastIntervalAvgValue="6086.114656302174" meanValue="5931.394389012237" simulationTime="105467.29037708095"/>
-<sample lastIntervalAvgValue="5970.511856973114" meanValue="5969.298554851966" simulationTime="110514.07033380627"/>
-<sample lastIntervalAvgValue="5938.5260901477" meanValue="6009.332578053336" simulationTime="114020.14971227218"/>
-<sample lastIntervalAvgValue="5978.784955800604" lowerBound="5926.97558286258" meanValue="6007.552390075713" simulationTime="115133.82002209505" upperBound="6088.129197288847"/>
+<results elapsedTime="16616" logDecimalSeparator="," logDelimiter=";" pollingInterval="1.0" xsi:noNamespaceSchemaLocation="Results.xsd">
+<measure alpha="0.99" analyzedSamples="1000000" discardedSamples="0" finalValue="0.012043626746766801" name="Control Center Server_Utilization" nodeType="station" precision="0.03" referenceClass="" referenceStation="Control Center Server" state="2" type="4">
+<sample lastIntervalAvgValue="0.018341179036722458" meanValue="0.01805043277108525" simulationTime="613.330254150316" upperBound="0.306707058573604"/>
+<sample lastIntervalAvgValue="0.011955134880296184" meanValue="0.01238924403754339" simulationTime="3190.5659198047906" upperBound="0.12959449858278024"/>
+<sample lastIntervalAvgValue="0.012086601282613586" meanValue="0.012145896707831005" simulationTime="9831.3409501166" upperBound="0.06213541480157152"/>
+<sample lastIntervalAvgValue="0.01202611562583551" meanValue="0.012094446739317831" simulationTime="15960.70161242464" upperBound="0.05266125022634824"/>
+<sample lastIntervalAvgValue="0.012000614341527518" meanValue="0.012094446739317831" simulationTime="22821.75035386506" upperBound="0.05266125022634824"/>
+<sample lastIntervalAvgValue="0.012037218689545113" meanValue="0.012043626746766801" simulationTime="29012.15046593905" upperBound="0.03183935946668512"/>
+<sample lastIntervalAvgValue="0.011986645985339257" meanValue="0.012043626746766801" simulationTime="35524.097178698925" upperBound="0.03183935946668512"/>
+<sample lastIntervalAvgValue="0.011874572996820694" meanValue="0.012043626746766801" simulationTime="42141.56459767537" upperBound="0.03183935946668512"/>
+<sample lastIntervalAvgValue="0.01204917480731443" meanValue="0.012043626746766801" simulationTime="48476.80341225752" upperBound="0.03183935946668512"/>
+<sample lastIntervalAvgValue="0.012009305174032201" meanValue="0.012043626746766801" simulationTime="50176.685269165064" upperBound="0.03183935946668512"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="25600" discardedSamples="133220" finalValue="5976.367421827145" name="Control Center Server_Response Time" nodeType="station" precision="0.03" referenceClass="" referenceStation="Control Center Server" state="1" type="2">
-<sample lastIntervalAvgValue="969.1726278685157" meanValue="969.1726278685157" simulationTime="1906.6718465235988"/>
-<sample lastIntervalAvgValue="2673.9503834480156" meanValue="2176.5936799235233" simulationTime="6610.267687169012"/>
-<sample lastIntervalAvgValue="3690.247780691181" meanValue="2805.665736759652" simulationTime="11191.973247319267"/>
-<sample lastIntervalAvgValue="4213.871237298832" meanValue="3131.407222649508" simulationTime="14553.2937323863"/>
-<sample lastIntervalAvgValue="4548.5582557152875" meanValue="3467.5135731176783" simulationTime="19101.826164772407"/>
-<sample lastIntervalAvgValue="4786.2966849318345" meanValue="3642.9414524343038" simulationTime="21969.535478117872"/>
-<sample lastIntervalAvgValue="4863.158533288414" meanValue="4049.205139711357" simulationTime="26454.657734175173"/>
-<sample lastIntervalAvgValue="5121.272217010467" meanValue="4435.967021907873" simulationTime="30065.25431823019"/>
-<sample lastIntervalAvgValue="5319.374771604108" meanValue="4802.986822310592" simulationTime="35137.37154614376"/>
-<sample lastIntervalAvgValue="5486.840833451264" meanValue="5045.238821058751" simulationTime="39685.37552625514"/>
-<sample lastIntervalAvgValue="5555.282136151959" meanValue="5209.662850361837" simulationTime="43801.170121228126"/>
-<sample lastIntervalAvgValue="5681.186083024976" meanValue="5321.096908667811" simulationTime="46930.72943762472"/>
-<sample lastIntervalAvgValue="5757.00621150228" meanValue="5507.235652370387" simulationTime="52263.67936589907"/>
-<sample lastIntervalAvgValue="5776.8539953796135" meanValue="5588.058472557561" simulationTime="55558.54534011549"/>
-<sample lastIntervalAvgValue="5799.406439650184" meanValue="5679.979250470738" simulationTime="60356.8873467079"/>
-<sample lastIntervalAvgValue="5729.735619006395" meanValue="5716.836133764392" simulationTime="63966.232163225046"/>
-<sample lastIntervalAvgValue="5737.9140763957585" meanValue="5742.375939661864" simulationTime="67299.09129630038"/>
-<sample lastIntervalAvgValue="5757.75139463825" meanValue="5762.043285900172" simulationTime="72558.6113665767"/>
-<sample lastIntervalAvgValue="5830.394129734062" meanValue="5772.36446762832" simulationTime="76095.19277787814"/>
-<sample lastIntervalAvgValue="5797.9132169819495" meanValue="5775.812563101773" simulationTime="79483.5409816295"/>
-<sample lastIntervalAvgValue="5800.620647706115" meanValue="5775.547550824126" simulationTime="84562.2227135427"/>
-<sample lastIntervalAvgValue="5797.752973206594" meanValue="5783.19781689884" simulationTime="87750.86157481128"/>
-<sample lastIntervalAvgValue="5904.17192178521" meanValue="5805.817760934722" simulationTime="90771.7669513809"/>
-<sample lastIntervalAvgValue="5908.506311526849" meanValue="5833.718755321756" simulationTime="94789.14873242767"/>
-<sample lastIntervalAvgValue="5973.336805664172" meanValue="5861.717938723823" simulationTime="99103.3820187899"/>
-<sample lastIntervalAvgValue="6091.873907745074" meanValue="5895.799020876424" simulationTime="102232.08088612667"/>
-<sample lastIntervalAvgValue="6087.133291536972" meanValue="5932.389308201009" simulationTime="105467.29037708095"/>
-<sample lastIntervalAvgValue="5971.525518353965" meanValue="5970.299241763427" simulationTime="110514.07033380627"/>
-<sample lastIntervalAvgValue="5939.528413044865" meanValue="5981.855191973963" simulationTime="114020.14971227218"/>
-<sample lastIntervalAvgValue="5981.703499220657" meanValue="5990.871523808987" simulationTime="117137.67914248374"/>
-<sample lastIntervalAvgValue="5978.313130977277" meanValue="6001.108182123746" simulationTime="120449.57744042361"/>
-<sample lastIntervalAvgValue="5957.341175904118" meanValue="5998.475224182955" simulationTime="123650.26807397573"/>
-<sample lastIntervalAvgValue="5864.981989039606" meanValue="5951.352587641279" simulationTime="128840.81379517494"/>
-<sample lastIntervalAvgValue="6015.200165559582" meanValue="5949.389159272117" simulationTime="131926.35728604812"/>
-<sample lastIntervalAvgValue="6008.41861965104" meanValue="5954.944987561048" simulationTime="135180.165736014"/>
-<sample lastIntervalAvgValue="6010.25288491196" meanValue="5963.376609280149" simulationTime="138323.06753677878"/>
-<sample lastIntervalAvgValue="5951.155797308253" meanValue="5961.207934691005" simulationTime="143351.47428134017"/>
-<sample lastIntervalAvgValue="5957.157300156193" meanValue="5957.398545190339" simulationTime="147172.2741255028"/>
-<sample lastIntervalAvgValue="5898.400615643247" meanValue="5957.021917913638" simulationTime="150582.0146977613"/>
-<sample lastIntervalAvgValue="5965.291218977338" meanValue="5970.0000977370755" simulationTime="154023.61760925665"/>
-<sample lastIntervalAvgValue="6056.338421702671" lowerBound="5901.89361530278" meanValue="5976.367421827145" simulationTime="158795.05266019676" upperBound="6050.841228351511"/>
+<measure alpha="0.99" analyzedSamples="1007" discardedSamples="0" finalValue="0.0" name="Seaweed Picking Inland Control Unit_Utilization" nodeType="station" precision="0.03" referenceClass="" referenceStation="Seaweed Picking Inland Control Unit" state="3" type="4">
+<sample lastIntervalAvgValue="0.9930486593843421" meanValue="0.9930486593843421" simulationTime="3.786319999999969"/>
+<sample lastIntervalAvgValue="0.0" meanValue="0.9930486593843421" simulationTime="3.786319999999969"/>
+<sample lastIntervalAvgValue="0.0" meanValue="0.0" simulationTime="3.786319999999969"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="12800" discardedSamples="111580" finalValue="5805.350314219326" name="Control Center Server_Number of Customers" nodeType="station" precision="0.03" referenceClass="" referenceStation="Control Center Server" state="1" type="0">
-<sample lastIntervalAvgValue="2401.09804104592" meanValue="2401.09804104592" simulationTime="1906.7393114705385"/>
-<sample lastIntervalAvgValue="3491.652061186004" meanValue="3177.1372032595737" simulationTime="6611.459424183049"/>
-<sample lastIntervalAvgValue="4270.076059759779" meanValue="3625.1767170110606" simulationTime="11192.8538857619"/>
-<sample lastIntervalAvgValue="4604.800142561678" meanValue="4154.8775082408765" simulationTime="14555.870487002076"/>
-<sample lastIntervalAvgValue="4885.246903608469" meanValue="4610.66375028886" simulationTime="19103.322986077415"/>
-<sample lastIntervalAvgValue="5021.744035540622" meanValue="4791.584793241541" simulationTime="21969.535478117872"/>
-<sample lastIntervalAvgValue="5157.085804328961" meanValue="5016.047106918108" simulationTime="26456.51748968626"/>
-<sample lastIntervalAvgValue="5340.289815897155" meanValue="5162.086705335474" simulationTime="30066.25420774388"/>
-<sample lastIntervalAvgValue="5525.001528918199" meanValue="5367.567787201196" simulationTime="35137.75927441955"/>
-<sample lastIntervalAvgValue="5586.7761162255765" meanValue="5510.290228095768" simulationTime="39686.08931999189"/>
-<sample lastIntervalAvgValue="5645.336636408907" meanValue="5597.658584112931" simulationTime="43803.13390648594"/>
-<sample lastIntervalAvgValue="5725.115929599835" meanValue="5639.571286469942" simulationTime="46931.15051782899"/>
-<sample lastIntervalAvgValue="5826.06906199526" meanValue="5743.245392452813" simulationTime="52263.8918891704"/>
-<sample lastIntervalAvgValue="5829.637485579528" meanValue="5791.710248579612" simulationTime="55559.77615557754"/>
-<sample lastIntervalAvgValue="5789.226486960594" lowerBound="5638.525657053693" meanValue="5805.350314219326" simulationTime="59157.950081258394" upperBound="5972.174971384959"/>
+<measure alpha="0.99" analyzedSamples="1020" discardedSamples="0" finalValue="0.0" name="Seaweed Picking Outgoing Control Unit_Utilization" nodeType="station" precision="0.03" referenceClass="" referenceStation="Seaweed Picking Outgoing Control Unit" state="3" type="4">
+<sample lastIntervalAvgValue="0.980872976949487" meanValue="0.980872976949487" simulationTime="3.833320000000089"/>
+<sample lastIntervalAvgValue="0.0" meanValue="0.980872976949487" simulationTime="3.833320000000089"/>
+<sample lastIntervalAvgValue="0.0" meanValue="0.0" simulationTime="3.833320000000089"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="97280" discardedSamples="12105" finalValue="1.200880034887083" name="System Throughput" nodeType="" precision="0.03" referenceClass="" referenceStation="" state="1" type="9">
-<sample lastIntervalAvgValue="3.99372895612409" meanValue="3.99372895612409" simulationTime="1906.7393114705385"/>
-<sample lastIntervalAvgValue="1.558103729813091" meanValue="2.2607707670640553" simulationTime="6609.250357303759"/>
-<sample lastIntervalAvgValue="1.39084778318866" meanValue="1.904563339753989" simulationTime="11192.066735230434"/>
-<sample lastIntervalAvgValue="1.3358439199584182" meanValue="1.7178878613157953" simulationTime="14554.735032691282"/>
-<sample lastIntervalAvgValue="1.2823759944353068" meanValue="1.4126741394204148" simulationTime="19103.322986077415"/>
-<sample lastIntervalAvgValue="1.2786051073126545" meanValue="1.3500745309749926" simulationTime="21969.72792927604"/>
-<sample lastIntervalAvgValue="1.257915024542399" lowerBound="1.2987978703807561" meanValue="1.3387305143368853" simulationTime="26456.51748968626" upperBound="1.3811965765173877"/>
-<sample lastIntervalAvgValue="1.2158946794870822" lowerBound="1.2987978703807561" meanValue="1.3387305143368853" simulationTime="30066.205132905056" upperBound="1.3811965765173877"/>
-<sample lastIntervalAvgValue="1.2160531832227213" lowerBound="1.2987978703807561" meanValue="1.3387305143368853" simulationTime="35136.70705261484" upperBound="1.3811965765173877"/>
-<sample lastIntervalAvgValue="1.1995474722532447" lowerBound="1.2987978703807561" meanValue="1.3387305143368853" simulationTime="39685.922591162474" upperBound="1.3811965765173877"/>
-<sample lastIntervalAvgValue="1.1849686823334873" lowerBound="1.2167647405894015" meanValue="1.2533335838975574" simulationTime="43802.48708162145" upperBound="1.292168627764412"/>
-<sample lastIntervalAvgValue="1.1797369948089116" lowerBound="1.2167647405894015" meanValue="1.2533335838975574" simulationTime="46931.15051782899" upperBound="1.292168627764412"/>
-<sample lastIntervalAvgValue="1.181652438868787" lowerBound="1.2167647405894015" meanValue="1.2533335838975574" simulationTime="52262.667462042366" upperBound="1.292168627764412"/>
-<sample lastIntervalAvgValue="1.1729259781639811" lowerBound="1.2167647405894015" meanValue="1.2533335838975574" simulationTime="55559.55070275048" upperBound="1.292168627764412"/>
-<sample lastIntervalAvgValue="1.200721717264751" lowerBound="1.2167647405894015" meanValue="1.2533335838975574" simulationTime="60357.49840134261" upperBound="1.292168627764412"/>
-<sample lastIntervalAvgValue="1.1949408065360039" lowerBound="1.2167647405894015" meanValue="1.2533335838975574" simulationTime="63966.882210489515" upperBound="1.292168627764412"/>
-<sample lastIntervalAvgValue="1.1824862624774286" lowerBound="1.2167647405894015" meanValue="1.2533335838975574" simulationTime="67293.77075442733" upperBound="1.292168627764412"/>
-<sample lastIntervalAvgValue="1.1781680204173313" lowerBound="1.2167647405894015" meanValue="1.2533335838975574" simulationTime="72557.87561258086" upperBound="1.292168627764412"/>
-<sample lastIntervalAvgValue="1.174376592085213" lowerBound="1.2167647405894015" meanValue="1.2533335838975574" simulationTime="76094.21994027728" upperBound="1.292168627764412"/>
-<sample lastIntervalAvgValue="1.1798481839347181" lowerBound="1.2167647405894015" meanValue="1.2533335838975574" simulationTime="79483.63906593427" upperBound="1.292168627764412"/>
-<sample lastIntervalAvgValue="1.1807738000509767" lowerBound="1.1669726995238137" meanValue="1.200880034887083" simulationTime="83996.78121032292" upperBound="1.2368167454793604"/>
+<measure alpha="0.99" analyzedSamples="1000000" discardedSamples="40" finalValue="0.0031579479460158173" name="Water Company Server_Utilization" nodeType="station" precision="0.03" referenceClass="" referenceStation="Water Company Server" state="2" type="4">
+<sample lastIntervalAvgValue="0.005860189553946759" meanValue="0.008034347495194676" simulationTime="613.1414294633807" upperBound="0.4204129476550089"/>
+<sample lastIntervalAvgValue="0.0031238107442736894" meanValue="0.0033639543734438966" simulationTime="3190.5222823260196" upperBound="0.12571721618673032"/>
+<sample lastIntervalAvgValue="0.003116607582847317" meanValue="0.003161818163537428" simulationTime="9831.15619226341" upperBound="0.05331490853384284"/>
+<sample lastIntervalAvgValue="0.003138894589835723" meanValue="0.003161818163537428" simulationTime="15960.702587424641" upperBound="0.05331490853384284"/>
+<sample lastIntervalAvgValue="0.003135909361790122" meanValue="0.0031431377869495444" simulationTime="22821.75070386506" upperBound="0.026513283581195334"/>
+<sample lastIntervalAvgValue="0.0031652396899780307" meanValue="0.0031431377869495444" simulationTime="29011.64528918884" upperBound="0.026513283581195334"/>
+<sample lastIntervalAvgValue="0.003130298004028391" meanValue="0.0031448041992896804" simulationTime="35524.00449356851" upperBound="0.024730251853792035"/>
+<sample lastIntervalAvgValue="0.003081202695911919" meanValue="0.0031448041992896804" simulationTime="42141.550312947" upperBound="0.024730251853792035"/>
+<sample lastIntervalAvgValue="0.0031378973513171175" meanValue="0.0031448041992896804" simulationTime="48476.80376225752" upperBound="0.024730251853792035"/>
+<sample lastIntervalAvgValue="0.0031104777821173188" meanValue="0.0031448041992896804" simulationTime="54729.25961644274" upperBound="0.024730251853792035"/>
+<sample lastIntervalAvgValue="0.0034148809899302362" meanValue="0.0031448041992896804" simulationTime="60534.18373431586" upperBound="0.024730251853792035"/>
+<sample lastIntervalAvgValue="0.0031129001009831503" meanValue="0.0031579479460158173" simulationTime="66823.73668593501" upperBound="0.013647996065721117"/>
+<sample lastIntervalAvgValue="0.003140560151465125" meanValue="0.0031579479460158173" simulationTime="73513.42706163607" upperBound="0.013647996065721117"/>
+<sample lastIntervalAvgValue="0.003144634874763928" meanValue="0.0031579479460158173" simulationTime="79737.32134433782" upperBound="0.013647996065721117"/>
+<sample lastIntervalAvgValue="0.003126698107654941" meanValue="0.0031579479460158173" simulationTime="86429.48486606037" upperBound="0.013647996065721117"/>
+<sample lastIntervalAvgValue="0.0031322531072513204" meanValue="0.0031579479460158173" simulationTime="93184.20720019225" upperBound="0.013647996065721117"/>
+<sample lastIntervalAvgValue="0.0031024052768622926" meanValue="0.0031579479460158173" simulationTime="99207.96082025618" upperBound="0.013647996065721117"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="25600" discardedSamples="60705" finalValue="4837.453241407781" name="System Response Time" nodeType="" precision="0.03" referenceClass="" referenceStation="" state="1" type="8">
-<sample lastIntervalAvgValue="231.29331758914878" meanValue="231.29331758914878" simulationTime="1906.7393114705385"/>
-<sample lastIntervalAvgValue="1585.966324504489" meanValue="895.574479526555" simulationTime="6609.250357303759"/>
-<sample lastIntervalAvgValue="2506.0026129657804" meanValue="1377.1314753297847" simulationTime="11192.066735230434"/>
-<sample lastIntervalAvgValue="3054.170470248968" meanValue="1722.762247770534" simulationTime="14554.735032691282"/>
-<sample lastIntervalAvgValue="3410.134932920103" meanValue="2480.5067907487173" simulationTime="19103.322986077415"/>
-<sample lastIntervalAvgValue="3702.0334966067912" meanValue="2856.646777005824" simulationTime="21969.72792927604"/>
-<sample lastIntervalAvgValue="3841.254848812908" meanValue="3305.139006369085" simulationTime="26456.51748968626"/>
-<sample lastIntervalAvgValue="4102.217224938857" meanValue="3585.4912131907154" simulationTime="30066.205132905056"/>
-<sample lastIntervalAvgValue="4256.398912092719" meanValue="3884.231055562059" simulationTime="35136.70705261484"/>
-<sample lastIntervalAvgValue="4510.862567401186" meanValue="4118.812355447315" simulationTime="39685.922591162474"/>
-<sample lastIntervalAvgValue="4598.694641966726" meanValue="4293.77622991339" simulationTime="43802.48708162145"/>
-<sample lastIntervalAvgValue="4659.982026643209" meanValue="4399.874848134439" simulationTime="46931.15051782899"/>
-<sample lastIntervalAvgValue="4809.591118165396" meanValue="4582.54124541808" simulationTime="52262.667462042366"/>
-<sample lastIntervalAvgValue="4950.84287648083" meanValue="4685.511525149953" simulationTime="55559.55070275048"/>
-<sample lastIntervalAvgValue="4888.614130718681" meanValue="4782.783111643786" simulationTime="60357.49840134261"/>
-<sample lastIntervalAvgValue="4917.0458348452175" meanValue="4834.892627007515" simulationTime="63966.882210489515"/>
-<sample lastIntervalAvgValue="4866.922503786202" lowerBound="4743.326698800192" meanValue="4837.453241407781" simulationTime="64405.550524188155" upperBound="4931.57978401537"/>
+<measure alpha="0.99" analyzedSamples="61440" discardedSamples="1775" finalValue="0.011593206089840317" name="Purification System_Utilization" nodeType="station" precision="0.03" referenceClass="" referenceStation="Purification System" state="1" type="4">
+<sample lastIntervalAvgValue="0.011925008344549513" meanValue="0.011925008344549513" simulationTime="613.332904150316"/>
+<sample lastIntervalAvgValue="0.011417737381666437" lowerBound="0.010535942818887058" meanValue="0.01118928987068145" simulationTime="3190.5685698047905" upperBound="0.011842636922475842"/>
+<sample lastIntervalAvgValue="0.011638320991690836" lowerBound="0.011370629954161524" meanValue="0.011593206089840317" simulationTime="6317.162176188134" upperBound="0.01181578222551911"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="46080" discardedSamples="450" finalValue="1.0024086921738107" name="Control Center Server_Throughput" nodeType="station" precision="0.03" referenceClass="" referenceStation="Control Center Server" state="1" type="5">
-<sample lastIntervalAvgValue="1.0043679007961364" meanValue="1.0043679007961364" simulationTime="1906.6718465235988"/>
-<sample lastIntervalAvgValue="0.9883927440845084" lowerBound="0.864222958150031" meanValue="0.9896468970502443" simulationTime="6610.267687169012" upperBound="1.157656611078362"/>
-<sample lastIntervalAvgValue="1.0188345668914864" lowerBound="0.864222958150031" meanValue="0.9896468970502443" simulationTime="11191.973247319267" upperBound="1.157656611078362"/>
-<sample lastIntervalAvgValue="1.0055571954581397" lowerBound="0.9598132829050038" meanValue="0.9986390434882649" simulationTime="14553.2937323863" upperBound="1.040738333078887"/>
-<sample lastIntervalAvgValue="0.9987836884823083" lowerBound="0.9598132829050038" meanValue="0.9986390434882649" simulationTime="19101.826164772407" upperBound="1.040738333078887"/>
-<sample lastIntervalAvgValue="1.0248598023247226" lowerBound="0.9598132829050038" meanValue="0.9986390434882649" simulationTime="21969.535478117872" upperBound="1.040738333078887"/>
-<sample lastIntervalAvgValue="1.0140191817196913" lowerBound="0.9715696077510598" meanValue="1.0113862749739397" simulationTime="26454.657734175173" upperBound="1.054605919359068"/>
-<sample lastIntervalAvgValue="0.987094491735578" lowerBound="0.9715696077510598" meanValue="1.0113862749739397" simulationTime="30065.25431823019" upperBound="1.054605919359068"/>
-<sample lastIntervalAvgValue="1.0003712004281105" lowerBound="0.9715696077510598" meanValue="1.0113862749739397" simulationTime="35137.37154614376" upperBound="1.054605919359068"/>
-<sample lastIntervalAvgValue="1.0070351785153526" lowerBound="0.9715696077510598" meanValue="1.0113862749739397" simulationTime="39685.37552625514" upperBound="1.054605919359068"/>
-<sample lastIntervalAvgValue="0.9947046446390684" lowerBound="0.9715696077510598" meanValue="1.0113862749739397" simulationTime="43801.170121228126" upperBound="1.054605919359068"/>
-<sample lastIntervalAvgValue="0.9744847337461615" lowerBound="0.9864763489789967" meanValue="1.0024086921738107" simulationTime="46445.64459143698" upperBound="1.0188641225406943"/>
+<measure alpha="0.99" analyzedSamples="46080" discardedSamples="8540" finalValue="0.06228449593603512" name="Water Company Disk_Utilization" nodeType="station" precision="0.03" referenceClass="" referenceStation="Water Company Disk" state="1" type="4">
+<sample lastIntervalAvgValue="0.1439483558023431" meanValue="0.1439483558023431" simulationTime="613.1539294633808"/>
+<sample lastIntervalAvgValue="0.062476214883190426" lowerBound="0.06040086969558785" meanValue="0.062388600506945883" simulationTime="3190.5347823260195" upperBound="0.06437633131830392"/>
+<sample lastIntervalAvgValue="0.06213367304717426" lowerBound="0.06046523470289228" meanValue="0.06228449593603512" simulationTime="5469.492279180122" upperBound="0.06410375716917796"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="12800" discardedSamples="85460" finalValue="1.0" name="Control Center Server_Utilization" nodeType="station" precision="0.03" referenceClass="" referenceStation="Control Center Server" state="1" type="4">
-<sample lastIntervalAvgValue="0.9999998064625907" meanValue="0.9999998064625907" simulationTime="1906.6718465235988"/>
-<sample lastIntervalAvgValue="1.0" meanValue="0.9999999441758871" simulationTime="6610.267687169012"/>
-<sample lastIntervalAvgValue="1.0" meanValue="0.999999967028841" simulationTime="11191.973247319267"/>
-<sample lastIntervalAvgValue="1.0" meanValue="0.9999999746440678" simulationTime="14553.2937323863"/>
-<sample lastIntervalAvgValue="1.0" meanValue="0.9999999806818297" simulationTime="19101.826164772407"/>
-<sample lastIntervalAvgValue="1.0" meanValue="0.9999999832034532" simulationTime="21969.535478117872"/>
-<sample lastIntervalAvgValue="1.0" meanValue="1.0" simulationTime="26454.657734175173"/>
-<sample lastIntervalAvgValue="1.0" meanValue="1.0" simulationTime="30065.25431823019"/>
-<sample lastIntervalAvgValue="1.0" meanValue="1.0" simulationTime="35137.37154614376"/>
-<sample lastIntervalAvgValue="1.0" meanValue="1.0" simulationTime="39685.37552625514"/>
-<sample lastIntervalAvgValue="1.0" meanValue="1.0" simulationTime="43801.170121228126"/>
-<sample lastIntervalAvgValue="1.0" meanValue="1.0" simulationTime="46930.72943762472"/>
-<sample lastIntervalAvgValue="1.0" meanValue="1.0" simulationTime="52263.67936589907"/>
-<sample lastIntervalAvgValue="1.0" meanValue="1.0" simulationTime="55558.54534011549"/>
-<sample lastIntervalAvgValue="1.0" meanValue="1.0" simulationTime="60356.8873467079"/>
-<sample lastIntervalAvgValue="1.0" meanValue="1.0" simulationTime="63966.232163225046"/>
-<sample lastIntervalAvgValue="1.0" meanValue="1.0" simulationTime="67299.09129630038"/>
-<sample lastIntervalAvgValue="1.0" meanValue="1.0" simulationTime="72558.6113665767"/>
-<sample lastIntervalAvgValue="1.0" meanValue="1.0" simulationTime="76095.19277787814"/>
-<sample lastIntervalAvgValue="1.0" meanValue="1.0" simulationTime="79483.5409816295"/>
-<sample lastIntervalAvgValue="1.0" meanValue="1.0" simulationTime="84562.2227135427"/>
-<sample lastIntervalAvgValue="1.0" meanValue="1.0" simulationTime="87750.86157481128"/>
-<sample lastIntervalAvgValue="1.0" meanValue="1.0" simulationTime="90771.7669513809"/>
-<sample lastIntervalAvgValue="1.0" meanValue="1.0" simulationTime="94789.14873242767"/>
-<sample lastIntervalAvgValue="1.0" lowerBound="0.9713515668682959" meanValue="1.0" simulationTime="98077.96687855924" upperBound="1.028648433131704"/>
+<measure alpha="0.99" analyzedSamples="10000" discardedSamples="0" finalValue="0.0012000000000031213" name="Lan Wired_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Lan Wired" state="1" type="2">
+<sample lastIntervalAvgValue="0.0012000000000015215" lowerBound="0.0010870851927064589" meanValue="0.0012000000000013285" simulationTime="613.329054150316" upperBound="0.001312914807296198"/>
+<sample lastIntervalAvgValue="0.0012000000000398359" meanValue="0.0012000000000031213" simulationTime="993.2573273118301"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="19547" discardedSamples="0" finalValue="6064.452061913778" logFile="/home/gaetano/JMT/Sink QCS_Response Time per Sink.csv" name="Sink QCS_Response Time per Sink" nodeType="station" precision="0.03" referenceClass="" referenceStation="Sink QCS" state="2" type="12">
-<sample lastIntervalAvgValue="1689.7966980834533" meanValue="1689.7966980834533" simulationTime="1691.3013775290683"/>
-<sample lastIntervalAvgValue="2875.8758997714667" meanValue="2874.9434475688813" simulationTime="6608.308708565822"/>
-<sample lastIntervalAvgValue="4236.760666318486" meanValue="3665.8208171920833" simulationTime="11192.066735230434"/>
-<sample lastIntervalAvgValue="5118.837484322176" meanValue="4126.389810285082" simulationTime="14553.696598841703"/>
-<sample lastIntervalAvgValue="5563.873186510892" meanValue="4573.90401485275" simulationTime="19103.188565340508"/>
-<sample lastIntervalAvgValue="6069.509955952354" meanValue="4825.100987932173" simulationTime="21969.72792927604"/>
-<sample lastIntervalAvgValue="6280.929930312124" meanValue="5130.8651222687795" simulationTime="26450.92866181627"/>
-<sample lastIntervalAvgValue="6569.338927958982" meanValue="5341.7762307472285" simulationTime="30066.205132905056"/>
-<sample lastIntervalAvgValue="6794.712506671047" meanValue="5590.581750862167" simulationTime="35136.70705261484"/>
-<sample lastIntervalAvgValue="7085.32294426631" meanValue="5796.512724375542" simulationTime="39685.922591162474"/>
-<sample lastIntervalAvgValue="7266.42416819751" meanValue="5957.269034592085" simulationTime="43802.48708162145"/>
-<sample lastIntervalAvgValue="7373.8387675583945" meanValue="6064.452061913778" simulationTime="46929.42036724129"/>
+<measure alpha="0.99" analyzedSamples="25600" discardedSamples="13180" finalValue="0.0012069576834192563" name="Control Center Server_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Control Center Server" state="1" type="2">
+<sample lastIntervalAvgValue="0.014369092554988645" meanValue="0.014369092554988645" simulationTime="613.330254150316"/>
+<sample lastIntervalAvgValue="0.0012073940581281285" meanValue="0.0012072525746826598" simulationTime="3190.5659198047906"/>
+<sample lastIntervalAvgValue="0.0012066654846088032" lowerBound="0.0011913609148455594" meanValue="0.0012069576834192563" simulationTime="3880.503518777034" upperBound="0.0012225544519929533"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="10000" discardedSamples="0" finalValue="3.5000000001784125E-4" name="Internet_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Internet" state="1" type="2">
+<sample lastIntervalAvgValue="3.5000000001390294E-4" lowerBound="3.1706651455871374E-4" meanValue="3.5000000001784125E-4" simulationTime="613.330604150316" upperBound="3.8293348547696875E-4"/>
+<sample lastIntervalAvgValue="3.5000000002582965E-4" meanValue="3.5000000001784125E-4" simulationTime="993.500176510287"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="25600" discardedSamples="125" finalValue="6.249999999659017E-4" name="Water Company Server_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Water Company Server" state="1" type="2">
+<sample lastIntervalAvgValue="6.258281607428303E-4" meanValue="6.258281607428303E-4" simulationTime="613.1414294633807"/>
+<sample lastIntervalAvgValue="6.250000000199966E-4" meanValue="6.251590039698551E-4" simulationTime="3190.5222823260196"/>
+<sample lastIntervalAvgValue="6.249999998810136E-4" lowerBound="6.17178483240956E-4" meanValue="6.249999999659017E-4" simulationTime="5163.1618235726955" upperBound="6.328215166908475E-4"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="20480" discardedSamples="10425" finalValue="0.012903142733958806" name="Water Company Disk_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Water Company Disk" state="1" type="2">
+<sample lastIntervalAvgValue="2.1070079335134406" meanValue="2.1070079335134406" simulationTime="613.1539294633808"/>
+<sample lastIntervalAvgValue="0.012920027661751035" meanValue="0.41497755007349946" simulationTime="3190.5347823260195"/>
+<sample lastIntervalAvgValue="0.012903086956658585" lowerBound="0.012737558467567554" meanValue="0.012903142733958806" simulationTime="6189.434287992447" upperBound="0.013068727000350059"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="25600" discardedSamples="17090" finalValue="0.0023097166843645133" name="Purification System_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Purification System" state="1" type="2">
+<sample lastIntervalAvgValue="0.002348667525534498" meanValue="0.002348667525534498" simulationTime="613.332904150316"/>
+<sample lastIntervalAvgValue="0.0023105799405631323" meanValue="0.0023181621691977226" simulationTime="3190.5685698047905"/>
+<sample lastIntervalAvgValue="0.0023097939971846197" lowerBound="0.0022805954802623094" meanValue="0.0023097166843645133" simulationTime="8437.92516204621" upperBound="0.002338837888466717"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="46080" discardedSamples="2655" finalValue="9.969459593030813" name="Sink QCS_Check Water Quality_Throughput per Sink" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Sink QCS" state="1" type="13">
+<sample lastIntervalAvgValue="10.175550598652459" meanValue="10.175550598652459" simulationTime="613.332904150316"/>
+<sample lastIntervalAvgValue="9.962612399855844" lowerBound="9.528670832588537" meanValue="9.934301353026092" simulationTime="3190.5685698047905" upperBound="10.376002331004274"/>
+<sample lastIntervalAvgValue="9.919669887194155" lowerBound="9.798319899847202" meanValue="9.969459593030813" simulationTime="4885.987892348102" upperBound="10.146683891250218"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="1000" discardedSamples="0" finalValue="0.0" name="Control Center Server_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Inland" referenceStation="Control Center Server" state="3" type="2">
+<sample lastIntervalAvgValue="1.851339400000008" meanValue="1.851339400000008" simulationTime="3.7599999999999416"/>
+<sample lastIntervalAvgValue="0.0" meanValue="1.851339400000008" simulationTime="3.7599999999999416"/>
+<sample lastIntervalAvgValue="0.0" meanValue="0.0" simulationTime="3.7599999999999416"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="1000" discardedSamples="0" finalValue="0.0" name="Seaweed Picking Inland Control Unit_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Inland" referenceStation="Seaweed Picking Inland Control Unit" state="3" type="2">
+<sample lastIntervalAvgValue="0.037778600000003604" meanValue="0.037778600000003604" simulationTime="3.786319999999969"/>
+<sample lastIntervalAvgValue="0.0" meanValue="0.037778600000003604" simulationTime="3.786319999999969"/>
+<sample lastIntervalAvgValue="0.0" meanValue="0.0" simulationTime="3.786319999999969"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="1000" discardedSamples="0" finalValue="0.0" name="Lan Wireless_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Inland" referenceStation="Lan Wireless" state="3" type="2">
+<sample lastIntervalAvgValue="8.400000000000631E-4" lowerBound="7.609596348989758E-4" meanValue="8.400000000000008E-4" simulationTime="3.787159999999969" upperBound="9.190403651010258E-4"/>
+<sample lastIntervalAvgValue="0.0" lowerBound="7.609596348989758E-4" meanValue="8.400000000000008E-4" simulationTime="3.787159999999969" upperBound="9.190403651010258E-4"/>
+<sample lastIntervalAvgValue="0.0" lowerBound="7.609596348989758E-4" meanValue="0.0" simulationTime="3.787159999999969" upperBound="9.190403651010258E-4"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="1000" discardedSamples="0" finalValue="0.0" name="Seaweed Picking Inlands_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Inland" referenceStation="Seaweed Picking Inlands" state="3" type="2">
+<sample lastIntervalAvgValue="0.0034999999999999324" lowerBound="0.0031706651454120383" meanValue="0.0034999999999999858" simulationTime="3.790659999999969" upperBound="0.003829334854587933"/>
+<sample lastIntervalAvgValue="0.0" lowerBound="0.0031706651454120383" meanValue="0.0034999999999999858" simulationTime="3.790659999999969" upperBound="0.003829334854587933"/>
+<sample lastIntervalAvgValue="0.0" lowerBound="0.0031706651454120383" meanValue="0.0" simulationTime="3.790659999999969" upperBound="0.003829334854587933"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="1000" discardedSamples="0" finalValue="0.0" name="Internet_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Inland" referenceStation="Internet" state="3" type="2">
+<sample lastIntervalAvgValue="1.7500000000003044E-4" meanValue="1.7500000000003044E-4" simulationTime="3.790834999999969"/>
+<sample lastIntervalAvgValue="0.0" meanValue="1.7500000000003044E-4" simulationTime="3.790834999999969"/>
+<sample lastIntervalAvgValue="0.0" meanValue="0.0" simulationTime="3.790834999999969"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="1000" discardedSamples="0" finalValue="0.0" name="Water Company Server_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Inland" referenceStation="Water Company Server" state="3" type="2">
+<sample lastIntervalAvgValue="0.0012499999999984373" meanValue="0.0012499999999984373" simulationTime="3.791674999999969"/>
+<sample lastIntervalAvgValue="0.0" meanValue="0.0012499999999984373" simulationTime="3.791674999999969"/>
+<sample lastIntervalAvgValue="0.0" meanValue="0.0" simulationTime="3.791674999999969"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="1000" discardedSamples="0" finalValue="0.0" name="Water Company Disk_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Inland" referenceStation="Water Company Disk" state="3" type="2">
+<sample lastIntervalAvgValue="22.769011999999478" meanValue="22.769011999999478" simulationTime="49.81099499999828"/>
+<sample lastIntervalAvgValue="0.0" meanValue="22.769011999999478" simulationTime="49.81099499999828"/>
+<sample lastIntervalAvgValue="0.0" meanValue="0.0" simulationTime="49.81099499999828"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="1000" discardedSamples="0" finalValue="0.0" name="Control Center Server_StartUp Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Outgoing" referenceStation="Control Center Server" state="3" type="2">
+<sample lastIntervalAvgValue="1.9105406000000078" meanValue="1.9105406000000078" simulationTime="3.756239999999942"/>
+<sample lastIntervalAvgValue="0.0" meanValue="1.9105406000000078" simulationTime="3.756239999999942"/>
+<sample lastIntervalAvgValue="0.0" meanValue="0.0" simulationTime="3.756239999999942"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="1000" discardedSamples="0" finalValue="0.0" name="Seaweed Picking Outgoing Control Unit_StartUp Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Outgoing" referenceStation="Seaweed Picking Outgoing Control Unit" state="3" type="2">
+<sample lastIntervalAvgValue="0.03419344000001797" meanValue="0.03419344000001797" simulationTime="3.833320000000089"/>
+<sample lastIntervalAvgValue="0.0" meanValue="0.03419344000001797" simulationTime="3.833320000000089"/>
+<sample lastIntervalAvgValue="0.0" meanValue="0.0" simulationTime="3.833320000000089"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="1000" discardedSamples="0" finalValue="0.0" name="Lan Wireless_StartUp Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Outgoing" referenceStation="Lan Wireless" state="3" type="2">
+<sample lastIntervalAvgValue="8.400000000000666E-4" lowerBound="7.609596348989797E-4" meanValue="8.400000000000062E-4" simulationTime="3.834160000000089" upperBound="9.190403651010327E-4"/>
+<sample lastIntervalAvgValue="0.0" lowerBound="7.609596348989797E-4" meanValue="8.400000000000062E-4" simulationTime="3.834160000000089" upperBound="9.190403651010327E-4"/>
+<sample lastIntervalAvgValue="0.0" lowerBound="7.609596348989797E-4" meanValue="0.0" simulationTime="3.834160000000089" upperBound="9.190403651010327E-4"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="1000" discardedSamples="0" finalValue="0.0" name="Seaweed Picking Outgoings_StartUp Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Outgoing" referenceStation="Seaweed Picking Outgoings" state="3" type="2">
+<sample lastIntervalAvgValue="0.00349999999999993" lowerBound="0.003170665145412058" meanValue="0.0034999999999999823" simulationTime="3.837660000000089" upperBound="0.0038293348545879067"/>
+<sample lastIntervalAvgValue="0.0" lowerBound="0.003170665145412058" meanValue="0.0034999999999999823" simulationTime="3.837660000000089" upperBound="0.0038293348545879067"/>
+<sample lastIntervalAvgValue="0.0" lowerBound="0.003170665145412058" meanValue="0.0" simulationTime="3.837660000000089" upperBound="0.0038293348545879067"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="1000" discardedSamples="0" finalValue="0.0" name="Internet_StartUp Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Outgoing" referenceStation="Internet" state="3" type="2">
+<sample lastIntervalAvgValue="1.7500000000003068E-4" meanValue="1.7500000000003068E-4" simulationTime="3.837835000000089"/>
+<sample lastIntervalAvgValue="0.0" meanValue="1.7500000000003068E-4" simulationTime="3.837835000000089"/>
+<sample lastIntervalAvgValue="0.0" meanValue="0.0" simulationTime="3.837835000000089"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="1000" discardedSamples="0" finalValue="0.0" name="Water Company Server_StartUp Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Outgoing" referenceStation="Water Company Server" state="3" type="2">
+<sample lastIntervalAvgValue="8.694999999978443E-4" meanValue="8.694999999978443E-4" simulationTime="3.838675000000089"/>
+<sample lastIntervalAvgValue="0.0" meanValue="8.694999999978443E-4" simulationTime="3.838675000000089"/>
+<sample lastIntervalAvgValue="0.0" meanValue="0.0" simulationTime="3.838675000000089"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="1000" discardedSamples="0" finalValue="0.0" name="Water Company Disk_StartUp Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Outgoing" referenceStation="Water Company Disk" state="3" type="2">
+<sample lastIntervalAvgValue="23.436563959999432" meanValue="23.436563959999432" simulationTime="50.26099499999829"/>
+<sample lastIntervalAvgValue="0.0" meanValue="23.436563959999432" simulationTime="50.26099499999829"/>
+<sample lastIntervalAvgValue="0.0" meanValue="0.0" simulationTime="50.26099499999829"/>
 </measure>
 </results>
 </archive>
