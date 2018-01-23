@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
-<archive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="UC1 UC2 QN.jsimg" timestamp="Mon Jan 22 11:50:55 CET 2018" xsi:noNamespaceSchemaLocation="Archive.xsd">
+<archive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="UC1 UC2 QN.jsimg" timestamp="Tue Jan 23 16:27:23 CET 2018" xsi:noNamespaceSchemaLocation="Archive.xsd">
 <sim disableStatisticStop="false" logDecimalSeparator="," logDelimiter=";" logPath="/home/gaetano/Workspace/Water-Quality-Control-System/JMT Project/Simulation Result" logReplaceMode="0" maxSamples="1000000" name="UC1 UC2 QN.jsimg" polling="1.0" xsi:noNamespaceSchemaLocation="SIMmodeldefinition.xsd">
 <userClass customers="1000" name="StartUp Sampling Water Inland" priority="1" referenceSource="Control Center Server" type="closed"/>
-<userClass name="Check Water Quality" priority="2" referenceSource="Quality Control Supervisor - User" type="open"/>
+<userClass name="Check Water Quality" priority="1" referenceSource="Quality Control Supervisor - User" type="open"/>
 <userClass customers="1000" name="StartUp Sampling Water Outgoing" priority="1" referenceSource="Control Center Server" type="closed"/>
 <node name="Lan Wired">
 <section className="Queue">
@@ -39,10 +39,10 @@
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ZeroServiceTimeStrategy" name="ZeroTimeServiceStrategy"/>
 <refClass>Check Water Quality</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
-<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="t">
-<value>0.0012</value>
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>0.8333333333333334</value>
 </subParameter>
 </subParameter>
 </subParameter>
@@ -86,20 +86,20 @@
 <node name="Control Center Server">
 <section className="Queue">
 <parameter classPath="java.lang.Integer" name="size">
-<value>1</value>
+<value>-1</value>
 </parameter>
 <parameter array="true" classPath="java.lang.String" name="dropStrategies">
 <refClass>StartUp Sampling Water Inland</refClass>
 <subParameter classPath="java.lang.String" name="dropStrategy">
-<value>waiting queue</value>
+<value>drop</value>
 </subParameter>
 <refClass>Check Water Quality</refClass>
 <subParameter classPath="java.lang.String" name="dropStrategy">
-<value>waiting queue</value>
+<value>drop</value>
 </subParameter>
 <refClass>StartUp Sampling Water Outgoing</refClass>
 <subParameter classPath="java.lang.String" name="dropStrategy">
-<value>waiting queue</value>
+<value>drop</value>
 </subParameter>
 </parameter>
 <parameter classPath="jmt.engine.NetStrategies.QueueGetStrategies.FCFSstrategy" name="FCFSstrategy"/>
@@ -133,28 +133,28 @@
 <parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
 <refClass>StartUp Sampling Water Inland</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
-<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="t">
-<value>0.00188</value>
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>0.5319148936170213</value>
 </subParameter>
 </subParameter>
 </subParameter>
 <refClass>Check Water Quality</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
-<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="t">
-<value>0.0012</value>
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>0.8333333333333334</value>
 </subParameter>
 </subParameter>
 </subParameter>
 <refClass>StartUp Sampling Water Outgoing</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
-<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="t">
-<value>0.00188</value>
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>0.5319148936170213</value>
 </subParameter>
 </subParameter>
 </subParameter>
@@ -302,10 +302,10 @@
 <parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
 <refClass>StartUp Sampling Water Inland</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
-<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="t">
-<value>0.00376</value>
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>0.26595744680851063</value>
 </subParameter>
 </subParameter>
 </subParameter>
@@ -380,10 +380,10 @@
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ZeroServiceTimeStrategy" name="ZeroTimeServiceStrategy"/>
 <refClass>StartUp Sampling Water Outgoing</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
-<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="t">
-<value>0.00376</value>
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>0.26595744680851063</value>
 </subParameter>
 </subParameter>
 </subParameter>
@@ -433,10 +433,10 @@
 <parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
 <refClass>StartUp Sampling Water Inland</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
-<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="t">
-<value>8.4E-4</value>
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>0.11904761904761904</value>
 </subParameter>
 </subParameter>
 </subParameter>
@@ -444,10 +444,10 @@
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ZeroServiceTimeStrategy" name="ZeroTimeServiceStrategy"/>
 <refClass>StartUp Sampling Water Outgoing</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
-<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="t">
-<value>8.4E-4</value>
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>0.11904761904761904</value>
 </subParameter>
 </subParameter>
 </subParameter>
@@ -497,10 +497,10 @@
 <parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
 <refClass>StartUp Sampling Water Inland</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
-<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="t">
-<value>0.0035</value>
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>0.2857142857142857</value>
 </subParameter>
 </subParameter>
 </subParameter>
@@ -558,10 +558,10 @@
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ZeroServiceTimeStrategy" name="ZeroTimeServiceStrategy"/>
 <refClass>StartUp Sampling Water Outgoing</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
-<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="t">
-<value>0.0035</value>
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>0.2857142857142857</value>
 </subParameter>
 </subParameter>
 </subParameter>
@@ -628,28 +628,28 @@
 <parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
 <refClass>StartUp Sampling Water Inland</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
-<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="t">
-<value>8.4E-4</value>
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>1.1904761904761905</value>
 </subParameter>
 </subParameter>
 </subParameter>
 <refClass>Check Water Quality</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
-<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="t">
-<value>6.25E-4</value>
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>1.6</value>
 </subParameter>
 </subParameter>
 </subParameter>
 <refClass>StartUp Sampling Water Outgoing</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
-<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="t">
-<value>8.4E-4</value>
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>1.1904761904761905</value>
 </subParameter>
 </subParameter>
 </subParameter>
@@ -699,28 +699,28 @@
 <parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
 <refClass>StartUp Sampling Water Inland</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
-<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="t">
-<value>1.75E-4</value>
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>5.714285714285714</value>
 </subParameter>
 </subParameter>
 </subParameter>
 <refClass>Check Water Quality</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
-<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="t">
-<value>3.5E-4</value>
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>2.857142857142857</value>
 </subParameter>
 </subParameter>
 </subParameter>
 <refClass>StartUp Sampling Water Outgoing</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
-<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="t">
-<value>1.75E-4</value>
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>5.714285714285714</value>
 </subParameter>
 </subParameter>
 </subParameter>
@@ -846,10 +846,10 @@
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ZeroServiceTimeStrategy" name="ZeroTimeServiceStrategy"/>
 <refClass>Check Water Quality</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
-<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="t">
-<value>0.0023</value>
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>0.4347826086956522</value>
 </subParameter>
 </subParameter>
 </subParameter>
@@ -997,28 +997,28 @@
 <parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
 <refClass>StartUp Sampling Water Inland</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
-<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="t">
-<value>0.025</value>
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>0.04</value>
 </subParameter>
 </subParameter>
 </subParameter>
 <refClass>Check Water Quality</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
-<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="t">
-<value>0.0125</value>
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>0.08</value>
 </subParameter>
 </subParameter>
 </subParameter>
 <refClass>StartUp Sampling Water Outgoing</refClass>
 <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
-<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
-<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
-<subParameter classPath="java.lang.Double" name="t">
-<value>0.025</value>
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>0.04</value>
 </subParameter>
 </subParameter>
 </subParameter>
@@ -1107,7 +1107,7 @@
 <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
 <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
 <subParameter classPath="java.lang.Double" name="lambda">
-<value>10.0</value>
+<value>0.002</value>
 </subParameter>
 </subParameter>
 </subParameter>
@@ -1176,7 +1176,7 @@
 <subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
 <subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
 <subParameter classPath="java.lang.Double" name="t">
-<value>60000.0</value>
+<value>100000.0</value>
 </subParameter>
 </subParameter>
 </subParameter>
@@ -1187,7 +1187,7 @@
 <subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
 <subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
 <subParameter classPath="java.lang.Double" name="t">
-<value>60000.0</value>
+<value>100000.0</value>
 </subParameter>
 </subParameter>
 </subParameter>
@@ -1231,6 +1231,7 @@
 <measure alpha="0.01" name="Internet_StartUp Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceNode="Internet" referenceUserClass="StartUp Sampling Water Outgoing" type="Response Time" verbose="false"/>
 <measure alpha="0.01" name="Water Company Server_StartUp Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceNode="Water Company Server" referenceUserClass="StartUp Sampling Water Outgoing" type="Response Time" verbose="false"/>
 <measure alpha="0.01" name="Water Company Disk_StartUp Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceNode="Water Company Disk" referenceUserClass="StartUp Sampling Water Outgoing" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Quality Control Supervisor - User_Check Water Quality_Throughput" nodeType="station" precision="0.03" referenceNode="Quality Control Supervisor - User" referenceUserClass="Check Water Quality" type="Throughput" verbose="false"/>
 <connection source="Lan Wired" target="Control Center Server"/>
 <connection source="Control Center Server" target="Seaweed Picking Inland Control Unit"/>
 <connection source="Control Center Server" target="Seaweed Picking Outgoing Control Unit"/>
@@ -1351,7 +1352,7 @@
 <classSize jobClass="StartUp Sampling Water Outgoing" size="1"/>
 </blockingRegion>
 <preload>
-<stationPopulations stationName="Lan Wired">
+<stationPopulations stationName="Sampling Delay">
 <classPopulation population="1000" refClass="StartUp Sampling Water Inland"/>
 <classPopulation population="1000" refClass="StartUp Sampling Water Outgoing"/>
 </stationPopulations>
@@ -1380,7 +1381,7 @@
 <position rotate="false" x="1210.0" y="406.0"/>
 </station>
 <station name="Seaweed Picking Outgoings">
-<position rotate="false" x="1203.0" y="552.0"/>
+<position rotate="false" x="1201.0" y="553.0"/>
 </station>
 <station name="Water Company Server">
 <position rotate="false" x="1544.0" y="337.0"/>
@@ -1407,160 +1408,459 @@
 <position rotate="false" x="1759.0" y="66.0"/>
 </station>
 </jmodel>
-<results elapsedTime="16616" logDecimalSeparator="," logDelimiter=";" pollingInterval="1.0" xsi:noNamespaceSchemaLocation="Results.xsd">
-<measure alpha="0.99" analyzedSamples="1000000" discardedSamples="0" finalValue="0.012043626746766801" name="Control Center Server_Utilization" nodeType="station" precision="0.03" referenceClass="" referenceStation="Control Center Server" state="2" type="4">
-<sample lastIntervalAvgValue="0.018341179036722458" meanValue="0.01805043277108525" simulationTime="613.330254150316" upperBound="0.306707058573604"/>
-<sample lastIntervalAvgValue="0.011955134880296184" meanValue="0.01238924403754339" simulationTime="3190.5659198047906" upperBound="0.12959449858278024"/>
-<sample lastIntervalAvgValue="0.012086601282613586" meanValue="0.012145896707831005" simulationTime="9831.3409501166" upperBound="0.06213541480157152"/>
-<sample lastIntervalAvgValue="0.01202611562583551" meanValue="0.012094446739317831" simulationTime="15960.70161242464" upperBound="0.05266125022634824"/>
-<sample lastIntervalAvgValue="0.012000614341527518" meanValue="0.012094446739317831" simulationTime="22821.75035386506" upperBound="0.05266125022634824"/>
-<sample lastIntervalAvgValue="0.012037218689545113" meanValue="0.012043626746766801" simulationTime="29012.15046593905" upperBound="0.03183935946668512"/>
-<sample lastIntervalAvgValue="0.011986645985339257" meanValue="0.012043626746766801" simulationTime="35524.097178698925" upperBound="0.03183935946668512"/>
-<sample lastIntervalAvgValue="0.011874572996820694" meanValue="0.012043626746766801" simulationTime="42141.56459767537" upperBound="0.03183935946668512"/>
-<sample lastIntervalAvgValue="0.01204917480731443" meanValue="0.012043626746766801" simulationTime="48476.80341225752" upperBound="0.03183935946668512"/>
-<sample lastIntervalAvgValue="0.012009305174032201" meanValue="0.012043626746766801" simulationTime="50176.685269165064" upperBound="0.03183935946668512"/>
+<results elapsedTime="40851" logDecimalSeparator="," logDelimiter=";" pollingInterval="1.0" xsi:noNamespaceSchemaLocation="Results.xsd">
+<measure alpha="0.99" analyzedSamples="471040" discardedSamples="2365" finalValue="0.03979362287947826" name="Control Center Server_Utilization" nodeType="station" precision="0.03" referenceClass="" referenceStation="Control Center Server" state="1" type="4">
+<sample lastIntervalAvgValue="0.034780179503778236" meanValue="0.034780179503778236" simulationTime="443156.5184687843"/>
+<sample lastIntervalAvgValue="0.03858877687263816" lowerBound="0.03196448319254934" meanValue="0.038644455252985044" simulationTime="1019350.887904443" upperBound="0.04532442731342075"/>
+<sample lastIntervalAvgValue="0.03926913085349778" lowerBound="0.03196448319254934" meanValue="0.038644455252985044" simulationTime="1310158.5322615742" upperBound="0.04532442731342075"/>
+<sample lastIntervalAvgValue="0.04013547258358174" lowerBound="0.035538117273291245" meanValue="0.03933697649484668" simulationTime="1923194.631173898" upperBound="0.043135835716402116"/>
+<sample lastIntervalAvgValue="0.03974483229468446" lowerBound="0.0368245264245694" meanValue="0.03952100310257867" simulationTime="3717302.6091519566" upperBound="0.04221747978058794"/>
+<sample lastIntervalAvgValue="0.04000259307745924" lowerBound="0.0368245264245694" meanValue="0.03952100310257867" simulationTime="5431936.210966212" upperBound="0.04221747978058794"/>
+<sample lastIntervalAvgValue="0.03997494719919899" lowerBound="0.03832056245516135" meanValue="0.039596575209055775" simulationTime="7041308.675730731" upperBound="0.0408725879629502"/>
+<sample lastIntervalAvgValue="0.039716113040758276" lowerBound="0.03832056245516135" meanValue="0.039596575209055775" simulationTime="8634265.067167563" upperBound="0.0408725879629502"/>
+<sample lastIntervalAvgValue="0.040097645030818266" lowerBound="0.03832056245516135" meanValue="0.039596575209055775" simulationTime="1.0255730332063785E7" upperBound="0.0408725879629502"/>
+<sample lastIntervalAvgValue="0.03937877743124615" lowerBound="0.03904686913741082" meanValue="0.03979362287947826" simulationTime="1.1224097830710951E7" upperBound="0.04054037662154571"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="1007" discardedSamples="0" finalValue="0.0" name="Seaweed Picking Inland Control Unit_Utilization" nodeType="station" precision="0.03" referenceClass="" referenceStation="Seaweed Picking Inland Control Unit" state="3" type="4">
-<sample lastIntervalAvgValue="0.9930486593843421" meanValue="0.9930486593843421" simulationTime="3.786319999999969"/>
-<sample lastIntervalAvgValue="0.0" meanValue="0.9930486593843421" simulationTime="3.786319999999969"/>
-<sample lastIntervalAvgValue="0.0" meanValue="0.0" simulationTime="3.786319999999969"/>
+<measure alpha="0.99" analyzedSamples="266240" discardedSamples="1040" finalValue="0.03750866933733256" name="Seaweed Picking Inland Control Unit_Utilization" nodeType="station" precision="0.03" referenceClass="" referenceStation="Seaweed Picking Inland Control Unit" state="1" type="4">
+<sample lastIntervalAvgValue="0.032616457789242645" meanValue="0.032616457789242645" simulationTime="443132.66424851527"/>
+<sample lastIntervalAvgValue="0.03651837293375393" lowerBound="0.027129546084779296" meanValue="0.032385540836945635" simulationTime="1019329.0916530713" upperBound="0.03764153558911197"/>
+<sample lastIntervalAvgValue="0.03607432957809624" lowerBound="0.03115872482202741" meanValue="0.03640441214081586" simulationTime="1310148.139470345" upperBound="0.041650099459604316"/>
+<sample lastIntervalAvgValue="0.037578960414395714" lowerBound="0.03368818289030736" meanValue="0.036454703042450506" simulationTime="1923138.7791868614" upperBound="0.03922122319459365"/>
+<sample lastIntervalAvgValue="0.03758073202027421" lowerBound="0.03541396667523087" meanValue="0.03739122710867736" simulationTime="3717295.3114223704" upperBound="0.039368487542123846"/>
+<sample lastIntervalAvgValue="0.037646539664323936" lowerBound="0.03541396667523087" meanValue="0.03739122710867736" simulationTime="5431903.2336005615" upperBound="0.039368487542123846"/>
+<sample lastIntervalAvgValue="0.03761871415959805" lowerBound="0.03541396667523087" meanValue="0.03739122710867736" simulationTime="7041212.061188146" upperBound="0.039368487542123846"/>
+<sample lastIntervalAvgValue="0.0373035006165378" lowerBound="0.03627730897217564" meanValue="0.037501623090422015" simulationTime="8634231.528682679" upperBound="0.03872593720866839"/>
+<sample lastIntervalAvgValue="0.03785798968981544" lowerBound="0.03627730897217564" meanValue="0.037501623090422015" simulationTime="1.0255737046852969E7" upperBound="0.03872593720866839"/>
+<sample lastIntervalAvgValue="0.03694981576300116" lowerBound="0.03627730897217564" meanValue="0.037501623090422015" simulationTime="1.1838473246805683E7" upperBound="0.03872593720866839"/>
+<sample lastIntervalAvgValue="0.03801857253861272" lowerBound="0.03627730897217564" meanValue="0.037501623090422015" simulationTime="1.3063092768472359E7" upperBound="0.03872593720866839"/>
+<sample lastIntervalAvgValue="0.03774419015291359" lowerBound="0.03659437452104424" meanValue="0.03750866933733256" simulationTime="1.3878325318080554E7" upperBound="0.03842296415362088"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="1020" discardedSamples="0" finalValue="0.0" name="Seaweed Picking Outgoing Control Unit_Utilization" nodeType="station" precision="0.03" referenceClass="" referenceStation="Seaweed Picking Outgoing Control Unit" state="3" type="4">
-<sample lastIntervalAvgValue="0.980872976949487" meanValue="0.980872976949487" simulationTime="3.833320000000089"/>
-<sample lastIntervalAvgValue="0.0" meanValue="0.980872976949487" simulationTime="3.833320000000089"/>
-<sample lastIntervalAvgValue="0.0" meanValue="0.0" simulationTime="3.833320000000089"/>
+<measure alpha="0.99" analyzedSamples="97280" discardedSamples="66760" finalValue="0.037017759543516805" name="Seaweed Picking Outgoing Control Unit_Utilization" nodeType="station" precision="0.03" referenceClass="" referenceStation="Seaweed Picking Outgoing Control Unit" state="1" type="4">
+<sample lastIntervalAvgValue="0.0323655683679673" meanValue="0.0323655683679673" simulationTime="443163.98298255773"/>
+<sample lastIntervalAvgValue="0.035133325983913735" meanValue="0.03393004014429997" simulationTime="1019350.887904443"/>
+<sample lastIntervalAvgValue="0.03574790258276203" meanValue="0.034333539629649974" simulationTime="1310158.5322615742"/>
+<sample lastIntervalAvgValue="0.037636303418306837" meanValue="0.036670990912127235" simulationTime="1923189.6090945348"/>
+<sample lastIntervalAvgValue="0.037256288270154314" meanValue="0.03720509810726196" simulationTime="3717303.40394739"/>
+<sample lastIntervalAvgValue="0.038006963904120776" lowerBound="0.0346426536480905" meanValue="0.03755286441916454" simulationTime="5431878.569880871" upperBound="0.04046307519023858"/>
+<sample lastIntervalAvgValue="0.036899433053351666" lowerBound="0.03571781069228685" meanValue="0.03713382185194772" simulationTime="7041311.059057434" upperBound="0.03854983301160859"/>
+<sample lastIntervalAvgValue="0.03709472997306927" lowerBound="0.03602356861949818" meanValue="0.037017759543516805" simulationTime="8606648.642713761" upperBound="0.03801195046753543"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="1000000" discardedSamples="40" finalValue="0.0031579479460158173" name="Water Company Server_Utilization" nodeType="station" precision="0.03" referenceClass="" referenceStation="Water Company Server" state="2" type="4">
-<sample lastIntervalAvgValue="0.005860189553946759" meanValue="0.008034347495194676" simulationTime="613.1414294633807" upperBound="0.4204129476550089"/>
-<sample lastIntervalAvgValue="0.0031238107442736894" meanValue="0.0033639543734438966" simulationTime="3190.5222823260196" upperBound="0.12571721618673032"/>
-<sample lastIntervalAvgValue="0.003116607582847317" meanValue="0.003161818163537428" simulationTime="9831.15619226341" upperBound="0.05331490853384284"/>
-<sample lastIntervalAvgValue="0.003138894589835723" meanValue="0.003161818163537428" simulationTime="15960.702587424641" upperBound="0.05331490853384284"/>
-<sample lastIntervalAvgValue="0.003135909361790122" meanValue="0.0031431377869495444" simulationTime="22821.75070386506" upperBound="0.026513283581195334"/>
-<sample lastIntervalAvgValue="0.0031652396899780307" meanValue="0.0031431377869495444" simulationTime="29011.64528918884" upperBound="0.026513283581195334"/>
-<sample lastIntervalAvgValue="0.003130298004028391" meanValue="0.0031448041992896804" simulationTime="35524.00449356851" upperBound="0.024730251853792035"/>
-<sample lastIntervalAvgValue="0.003081202695911919" meanValue="0.0031448041992896804" simulationTime="42141.550312947" upperBound="0.024730251853792035"/>
-<sample lastIntervalAvgValue="0.0031378973513171175" meanValue="0.0031448041992896804" simulationTime="48476.80376225752" upperBound="0.024730251853792035"/>
-<sample lastIntervalAvgValue="0.0031104777821173188" meanValue="0.0031448041992896804" simulationTime="54729.25961644274" upperBound="0.024730251853792035"/>
-<sample lastIntervalAvgValue="0.0034148809899302362" meanValue="0.0031448041992896804" simulationTime="60534.18373431586" upperBound="0.024730251853792035"/>
-<sample lastIntervalAvgValue="0.0031129001009831503" meanValue="0.0031579479460158173" simulationTime="66823.73668593501" upperBound="0.013647996065721117"/>
-<sample lastIntervalAvgValue="0.003140560151465125" meanValue="0.0031579479460158173" simulationTime="73513.42706163607" upperBound="0.013647996065721117"/>
-<sample lastIntervalAvgValue="0.003144634874763928" meanValue="0.0031579479460158173" simulationTime="79737.32134433782" upperBound="0.013647996065721117"/>
-<sample lastIntervalAvgValue="0.003126698107654941" meanValue="0.0031579479460158173" simulationTime="86429.48486606037" upperBound="0.013647996065721117"/>
-<sample lastIntervalAvgValue="0.0031322531072513204" meanValue="0.0031579479460158173" simulationTime="93184.20720019225" upperBound="0.013647996065721117"/>
-<sample lastIntervalAvgValue="0.0031024052768622926" meanValue="0.0031579479460158173" simulationTime="99207.96082025618" upperBound="0.013647996065721117"/>
+<measure alpha="0.99" analyzedSamples="286720" discardedSamples="3275" finalValue="0.017307112498240167" name="Water Company Server_Utilization" nodeType="station" precision="0.03" referenceClass="" referenceStation="Water Company Server" state="1" type="4">
+<sample lastIntervalAvgValue="0.015200149889300869" meanValue="0.015200149889300869" simulationTime="443174.6574744096"/>
+<sample lastIntervalAvgValue="0.01689076490274843" lowerBound="0.011772483402389749" meanValue="0.01467372746998214" simulationTime="1019346.3048545227" upperBound="0.017574971537574532"/>
+<sample lastIntervalAvgValue="0.017157520922079852" lowerBound="0.015165477812693942" meanValue="0.0168841966384944" simulationTime="1310145.5018616188" upperBound="0.01860291546429486"/>
+<sample lastIntervalAvgValue="0.017366815411822858" lowerBound="0.015370408177673487" meanValue="0.016956093084621947" simulationTime="1923171.1394049856" upperBound="0.018541777991570405"/>
+<sample lastIntervalAvgValue="0.01744988916305005" lowerBound="0.01662491947721353" meanValue="0.017365437759092568" simulationTime="3717261.6307782265" upperBound="0.018105956040971604"/>
+<sample lastIntervalAvgValue="0.017435809664332214" lowerBound="0.01662491947721353" meanValue="0.017365437759092568" simulationTime="5431917.845292747" upperBound="0.018105956040971604"/>
+<sample lastIntervalAvgValue="0.017421120569313393" lowerBound="0.01662491947721353" meanValue="0.017365437759092568" simulationTime="7041334.181215741" upperBound="0.018105956040971604"/>
+<sample lastIntervalAvgValue="0.014592735486611896" lowerBound="0.01680826977275835" meanValue="0.017307112498240167" simulationTime="7118032.382059672" upperBound="0.017805955223721984"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="61440" discardedSamples="1775" finalValue="0.011593206089840317" name="Purification System_Utilization" nodeType="station" precision="0.03" referenceClass="" referenceStation="Purification System" state="1" type="4">
-<sample lastIntervalAvgValue="0.011925008344549513" meanValue="0.011925008344549513" simulationTime="613.332904150316"/>
-<sample lastIntervalAvgValue="0.011417737381666437" lowerBound="0.010535942818887058" meanValue="0.01118928987068145" simulationTime="3190.5685698047905" upperBound="0.011842636922475842"/>
-<sample lastIntervalAvgValue="0.011638320991690836" lowerBound="0.011370629954161524" meanValue="0.011593206089840317" simulationTime="6317.162176188134" upperBound="0.01181578222551911"/>
+<measure alpha="0.99" analyzedSamples="46080" discardedSamples="675" finalValue="0.0023190833345583858" name="Purification System_Utilization" nodeType="station" precision="0.03" referenceClass="" referenceStation="Purification System" state="1" type="4">
+<sample lastIntervalAvgValue="0.002407529514813704" meanValue="0.002407529514813704" simulationTime="442552.62416169554"/>
+<sample lastIntervalAvgValue="0.0024021715102191523" meanValue="0.0024045002627037827" simulationTime="1018227.1448937726"/>
+<sample lastIntervalAvgValue="0.0024235587059953253" meanValue="0.0024087396973582692" simulationTime="1309522.4366319207"/>
+<sample lastIntervalAvgValue="0.0024561902755551143" lowerBound="0.0015483969622520875" meanValue="0.0023785612453291693" simulationTime="1922564.426608282" upperBound="0.003208725528406251"/>
+<sample lastIntervalAvgValue="0.002225220407914371" lowerBound="0.0014319446301878694" meanValue="0.002269389174623238" simulationTime="3717246.7049808633" upperBound="0.0031068337190586063"/>
+<sample lastIntervalAvgValue="0.002282984022963051" lowerBound="0.0014319446301878694" meanValue="0.002269389174623238" simulationTime="5431797.192870318" upperBound="0.0031068337190586063"/>
+<sample lastIntervalAvgValue="0.002257650477317849" lowerBound="0.0020449050387083946" meanValue="0.0022677058423856444" simulationTime="7040829.427440076" upperBound="0.002490506646062894"/>
+<sample lastIntervalAvgValue="0.0023693938288672526" lowerBound="0.0020449050387083946" meanValue="0.0022677058423856444" simulationTime="8633492.42754826" upperBound="0.002490506646062894"/>
+<sample lastIntervalAvgValue="0.0023113251201123826" lowerBound="0.0020449050387083946" meanValue="0.0022677058423856444" simulationTime="1.0255479264367832E7" upperBound="0.002490506646062894"/>
+<sample lastIntervalAvgValue="0.002347754365898678" lowerBound="0.0020449050387083946" meanValue="0.0022677058423856444" simulationTime="1.183756396841963E7" upperBound="0.002490506646062894"/>
+<sample lastIntervalAvgValue="0.002368889764839156" lowerBound="0.002235016733948858" meanValue="0.0023210188905625866" simulationTime="1.306292929202859E7" upperBound="0.002407021047176315"/>
+<sample lastIntervalAvgValue="0.002487411627013952" lowerBound="0.002235016733948858" meanValue="0.0023210188905625866" simulationTime="1.4271203349528205E7" upperBound="0.002407021047176315"/>
+<sample lastIntervalAvgValue="0.0023098406556263016" lowerBound="0.002235016733948858" meanValue="0.0023210188905625866" simulationTime="1.5527058026751045E7" upperBound="0.002407021047176315"/>
+<sample lastIntervalAvgValue="0.0023599517517153947" lowerBound="0.002235016733948858" meanValue="0.0023210188905625866" simulationTime="1.6761486464933813E7" upperBound="0.002407021047176315"/>
+<sample lastIntervalAvgValue="0.002200975579197435" lowerBound="0.002235016733948858" meanValue="0.0023210188905625866" simulationTime="1.815092418832571E7" upperBound="0.002407021047176315"/>
+<sample lastIntervalAvgValue="0.002392165632298669" lowerBound="0.002235016733948858" meanValue="0.0023210188905625866" simulationTime="1.9383302157588955E7" upperBound="0.002407021047176315"/>
+<sample lastIntervalAvgValue="0.0023067414050949525" lowerBound="0.002235016733948858" meanValue="0.0023210188905625866" simulationTime="2.0666882590898708E7" upperBound="0.002407021047176315"/>
+<sample lastIntervalAvgValue="0.002217827049024395" lowerBound="0.002235016733948858" meanValue="0.0023210188905625866" simulationTime="2.2055579195684448E7" upperBound="0.002407021047176315"/>
+<sample lastIntervalAvgValue="0.0022533401005440374" lowerBound="0.002255601236025936" meanValue="0.0023190833345583858" simulationTime="2.3184350721902013E7" upperBound="0.0023825654330908354"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="46080" discardedSamples="8540" finalValue="0.06228449593603512" name="Water Company Disk_Utilization" nodeType="station" precision="0.03" referenceClass="" referenceStation="Water Company Disk" state="1" type="4">
-<sample lastIntervalAvgValue="0.1439483558023431" meanValue="0.1439483558023431" simulationTime="613.1539294633808"/>
-<sample lastIntervalAvgValue="0.062476214883190426" lowerBound="0.06040086969558785" meanValue="0.062388600506945883" simulationTime="3190.5347823260195" upperBound="0.06437633131830392"/>
-<sample lastIntervalAvgValue="0.06213367304717426" lowerBound="0.06046523470289228" meanValue="0.06228449593603512" simulationTime="5469.492279180122" upperBound="0.06410375716917796"/>
+<measure alpha="0.99" analyzedSamples="107520" discardedSamples="61515" finalValue="0.5134849966985362" name="Water Company Disk_Utilization" nodeType="station" precision="0.03" referenceClass="" referenceStation="Water Company Disk" state="1" type="4">
+<sample lastIntervalAvgValue="0.443183441793073" meanValue="0.443183441793073" simulationTime="443226.560547276"/>
+<sample lastIntervalAvgValue="0.505624569250733" meanValue="0.47847367255717094" simulationTime="1019324.2039890004"/>
+<sample lastIntervalAvgValue="0.4934548352457214" meanValue="0.5143623589112277" simulationTime="1310142.1737125078"/>
+<sample lastIntervalAvgValue="0.5195371087129973" meanValue="0.5014710114115075" simulationTime="1923184.0357948502"/>
+<sample lastIntervalAvgValue="0.5109462510021753" lowerBound="0.459537948101434" meanValue="0.5211633854179398" simulationTime="3717304.722290896" upperBound="0.5827888227344457"/>
+<sample lastIntervalAvgValue="0.5125916393967885" lowerBound="0.48976911422018454" meanValue="0.5101876116920057" simulationTime="5431869.994633414" upperBound="0.5306061091638268"/>
+<sample lastIntervalAvgValue="0.5146777940254615" lowerBound="0.5034293687391869" meanValue="0.5134849966985362" simulationTime="6871017.356455497" upperBound="0.5235406246578855"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="10000" discardedSamples="0" finalValue="0.0012000000000031213" name="Lan Wired_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Lan Wired" state="1" type="2">
-<sample lastIntervalAvgValue="0.0012000000000015215" lowerBound="0.0010870851927064589" meanValue="0.0012000000000013285" simulationTime="613.329054150316" upperBound="0.001312914807296198"/>
-<sample lastIntervalAvgValue="0.0012000000000398359" meanValue="0.0012000000000031213" simulationTime="993.2573273118301"/>
+<measure alpha="0.99" analyzedSamples="25600" discardedSamples="805" finalValue="1.2037887554430824" name="Lan Wired_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Lan Wired" state="1" type="2">
+<sample lastIntervalAvgValue="1.1854755430769464" meanValue="1.1854755430769464" simulationTime="442565.18384142366"/>
+<sample lastIntervalAvgValue="1.1686801286405615" meanValue="1.175635559098977" simulationTime="1019157.3117583608"/>
+<sample lastIntervalAvgValue="1.1855220669540159" meanValue="1.1778280113303843" simulationTime="1309766.0522435964"/>
+<sample lastIntervalAvgValue="1.1255750161646496" meanValue="1.1613164416501485" simulationTime="1922557.4559331432"/>
+<sample lastIntervalAvgValue="1.2006572734026408" lowerBound="1.059835883351921" meanValue="1.1877945457607166" simulationTime="3717257.5667942227" upperBound="1.3157532081695122"/>
+<sample lastIntervalAvgValue="1.1879428561373993" lowerBound="1.059835883351921" meanValue="1.1877945457607166" simulationTime="5431936.138748791" upperBound="1.3157532081695122"/>
+<sample lastIntervalAvgValue="1.1905990039104495" lowerBound="1.14927784455334" meanValue="1.1892501769250912" simulationTime="7040824.590041622" upperBound="1.2292225092968423"/>
+<sample lastIntervalAvgValue="1.206071203581966" lowerBound="1.14927784455334" meanValue="1.1892501769250912" simulationTime="8633486.851575963" upperBound="1.2292225092968423"/>
+<sample lastIntervalAvgValue="1.2168243744269431" lowerBound="1.14927784455334" meanValue="1.1892501769250912" simulationTime="1.0255474293644568E7" upperBound="1.2292225092968423"/>
+<sample lastIntervalAvgValue="1.2033183995981187" lowerBound="1.14927784455334" meanValue="1.1892501769250912" simulationTime="1.1838221939903792E7" upperBound="1.2292225092968423"/>
+<sample lastIntervalAvgValue="1.2154382246913469" lowerBound="1.14927784455334" meanValue="1.1892501769250912" simulationTime="1.3062926730215803E7" upperBound="1.2292225092968423"/>
+<sample lastIntervalAvgValue="1.2826856216813765" lowerBound="1.1682743339176145" meanValue="1.2037887554430824" simulationTime="1.3174766515528955E7" upperBound="1.2393031769685503"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="25600" discardedSamples="13180" finalValue="0.0012069576834192563" name="Control Center Server_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Control Center Server" state="1" type="2">
-<sample lastIntervalAvgValue="0.014369092554988645" meanValue="0.014369092554988645" simulationTime="613.330254150316"/>
-<sample lastIntervalAvgValue="0.0012073940581281285" meanValue="0.0012072525746826598" simulationTime="3190.5659198047906"/>
-<sample lastIntervalAvgValue="0.0012066654846088032" lowerBound="0.0011913609148455594" meanValue="0.0012069576834192563" simulationTime="3880.503518777034" upperBound="0.0012225544519929533"/>
+<measure alpha="0.99" analyzedSamples="40960" discardedSamples="6200" finalValue="1.2884392073160749" name="Control Center Server_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Control Center Server" state="1" type="2">
+<sample lastIntervalAvgValue="19.571636419495793" meanValue="19.571636419495793" simulationTime="442565.7835582593"/>
+<sample lastIntervalAvgValue="1.3382990030648916" meanValue="8.889211837348807" simulationTime="1019158.2267353891"/>
+<sample lastIntervalAvgValue="1.2449752126884819" meanValue="7.194010266593938" simulationTime="1309767.3367747576"/>
+<sample lastIntervalAvgValue="1.1876078053721406" meanValue="5.296030400531835" simulationTime="1922558.048650949"/>
+<sample lastIntervalAvgValue="1.3058665179050346" meanValue="3.3858512616612257" simulationTime="3717258.257494367"/>
+<sample lastIntervalAvgValue="1.2579193801129305" meanValue="2.7223470025864382" simulationTime="5431936.210966212"/>
+<sample lastIntervalAvgValue="1.3092817642655485" meanValue="2.400224570227411" simulationTime="7040827.467818467"/>
+<sample lastIntervalAvgValue="1.2757186761363037" meanValue="2.188078203633834" simulationTime="8633489.856328929"/>
+<sample lastIntervalAvgValue="1.2488170497922075" meanValue="2.0380046768652074" simulationTime="1.0255474521168217E7"/>
+<sample lastIntervalAvgValue="1.311791908749075" meanValue="1.9419198215444666" simulationTime="1.1838223085656663E7"/>
+<sample lastIntervalAvgValue="1.3181574942318532" meanValue="1.284475582550778" simulationTime="1.3062927984195856E7"/>
+<sample lastIntervalAvgValue="1.2599579656917386" lowerBound="1.2385465873062174" meanValue="1.281911813232864" simulationTime="1.4271202626732402E7" upperBound="1.3252770391595106"/>
+<sample lastIntervalAvgValue="1.2892167859297556" lowerBound="1.2385465873062174" meanValue="1.281911813232864" simulationTime="1.5527428349583078E7" upperBound="1.3252770391595106"/>
+<sample lastIntervalAvgValue="1.294336823523163" lowerBound="1.2385465873062174" meanValue="1.281911813232864" simulationTime="1.6761485265598897E7" upperBound="1.3252770391595106"/>
+<sample lastIntervalAvgValue="1.26748078290824" lowerBound="1.2385465873062174" meanValue="1.281911813232864" simulationTime="1.8150923763953127E7" upperBound="1.3252770391595106"/>
+<sample lastIntervalAvgValue="1.306567086237109" lowerBound="1.2385465873062174" meanValue="1.281911813232864" simulationTime="1.938339655118987E7" upperBound="1.3252770391595106"/>
+<sample lastIntervalAvgValue="1.2951890893714908" lowerBound="1.2385465873062174" meanValue="1.281911813232864" simulationTime="2.0666879737589188E7" upperBound="1.3252770391595106"/>
+<sample lastIntervalAvgValue="1.3025150887778174" lowerBound="1.2385465873062174" meanValue="1.281911813232864" simulationTime="2.2055578369536813E7" upperBound="1.3252770391595106"/>
+<sample lastIntervalAvgValue="1.3069648393021882" lowerBound="1.2385465873062174" meanValue="1.281911813232864" simulationTime="2.3255859417974435E7" upperBound="1.3252770391595106"/>
+<sample lastIntervalAvgValue="1.2692227631984723" lowerBound="1.2682064921294784" meanValue="1.2884392073160749" simulationTime="2.3356893199419655E7" upperBound="1.3086719225026713"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="10000" discardedSamples="0" finalValue="3.5000000001784125E-4" name="Internet_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Internet" state="1" type="2">
-<sample lastIntervalAvgValue="3.5000000001390294E-4" lowerBound="3.1706651455871374E-4" meanValue="3.5000000001784125E-4" simulationTime="613.330604150316" upperBound="3.8293348547696875E-4"/>
-<sample lastIntervalAvgValue="3.5000000002582965E-4" meanValue="3.5000000001784125E-4" simulationTime="993.500176510287"/>
+<measure alpha="0.99" analyzedSamples="30720" discardedSamples="135" finalValue="0.3522322805341378" name="Internet_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Internet" state="1" type="2">
+<sample lastIntervalAvgValue="0.37211343327820917" meanValue="0.37211343327820917" simulationTime="442565.9645018917"/>
+<sample lastIntervalAvgValue="0.34787814471319634" lowerBound="0.3092506098286554" meanValue="0.3534517051225622" simulationTime="1019158.8910999435" upperBound="0.397652800416469"/>
+<sample lastIntervalAvgValue="0.3468121434227881" lowerBound="0.3092506098286554" meanValue="0.3534517051225622" simulationTime="1309767.8830623266" upperBound="0.397652800416469"/>
+<sample lastIntervalAvgValue="0.36561026776527505" lowerBound="0.3092506098286554" meanValue="0.3534517051225622" simulationTime="1922559.5649512978" upperBound="0.397652800416469"/>
+<sample lastIntervalAvgValue="0.35072341056853223" lowerBound="0.30977579332942706" meanValue="0.358305942401906" simulationTime="3717258.5390859703" upperBound="0.40683609147438493"/>
+<sample lastIntervalAvgValue="0.35751385336935576" lowerBound="0.31286943118115007" meanValue="0.3522808701390056" simulationTime="5431795.042454027" upperBound="0.39169230909686115"/>
+<sample lastIntervalAvgValue="0.3446332001528438" lowerBound="0.31286943118115007" meanValue="0.3522808701390056" simulationTime="7040827.762036535" upperBound="0.39169230909686115"/>
+<sample lastIntervalAvgValue="0.34460852941915254" lowerBound="0.3385386604535414" meanValue="0.35099102340658606" simulationTime="8633489.967349712" upperBound="0.3634433863596307"/>
+<sample lastIntervalAvgValue="0.35316096143700676" lowerBound="0.3385386604535414" meanValue="0.35099102340658606" simulationTime="1.025547481282791E7" upperBound="0.3634433863596307"/>
+<sample lastIntervalAvgValue="0.3573632961060681" lowerBound="0.3385386604535414" meanValue="0.35099102340658606" simulationTime="1.1838223708908638E7" upperBound="0.3634433863596307"/>
+<sample lastIntervalAvgValue="0.3438600448272148" lowerBound="0.3385386604535414" meanValue="0.35099102340658606" simulationTime="1.3062928355117911E7" upperBound="0.3634433863596307"/>
+<sample lastIntervalAvgValue="0.35471656345882097" lowerBound="0.3385386604535414" meanValue="0.35099102340658606" simulationTime="1.4271203004550198E7" upperBound="0.3634433863596307"/>
+<sample lastIntervalAvgValue="0.3602513827700312" lowerBound="0.3427440081456699" meanValue="0.3522322805341378" simulationTime="1.5337388344988808E7" upperBound="0.3617205529226057"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="25600" discardedSamples="125" finalValue="6.249999999659017E-4" name="Water Company Server_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Water Company Server" state="1" type="2">
-<sample lastIntervalAvgValue="6.258281607428303E-4" meanValue="6.258281607428303E-4" simulationTime="613.1414294633807"/>
-<sample lastIntervalAvgValue="6.250000000199966E-4" meanValue="6.251590039698551E-4" simulationTime="3190.5222823260196"/>
-<sample lastIntervalAvgValue="6.249999998810136E-4" lowerBound="6.17178483240956E-4" meanValue="6.249999999659017E-4" simulationTime="5163.1618235726955" upperBound="6.328215166908475E-4"/>
+<measure alpha="0.99" analyzedSamples="40960" discardedSamples="275" finalValue="0.6367727736347574" name="Water Company Server_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Water Company Server" state="1" type="2">
+<sample lastIntervalAvgValue="0.6878470821144131" meanValue="0.6878470821144131" simulationTime="442567.652488328"/>
+<sample lastIntervalAvgValue="0.6351149057342891" meanValue="0.656961093091769" simulationTime="1019160.9501508514"/>
+<sample lastIntervalAvgValue="0.6413761141519047" meanValue="0.6535973448366377" simulationTime="1309768.4832997383"/>
+<sample lastIntervalAvgValue="0.6207331995306824" lowerBound="0.4797862034089082" meanValue="0.6298429045510602" simulationTime="1922207.807640601" upperBound="0.7798996056932122"/>
+<sample lastIntervalAvgValue="0.6592661085405146" lowerBound="0.5565919094003154" meanValue="0.6450254883714479" simulationTime="3717261.418321577" upperBound="0.7334590673425804"/>
+<sample lastIntervalAvgValue="0.6417762065050854" lowerBound="0.5758093159640223" meanValue="0.647626500607831" simulationTime="5431557.375850447" upperBound="0.7194436852516397"/>
+<sample lastIntervalAvgValue="0.6394122229935658" lowerBound="0.5758093159640223" meanValue="0.647626500607831" simulationTime="7040244.190594553" upperBound="0.7194436852516397"/>
+<sample lastIntervalAvgValue="0.6362242485827163" lowerBound="0.5758093159640223" meanValue="0.647626500607831" simulationTime="8629806.908846397" upperBound="0.7194436852516397"/>
+<sample lastIntervalAvgValue="0.6413241412422253" lowerBound="0.5758093159640223" meanValue="0.647626500607831" simulationTime="1.0253910967775485E7" upperBound="0.7194436852516397"/>
+<sample lastIntervalAvgValue="0.630347998926225" lowerBound="0.6077620700382727" meanValue="0.6419903413223943" simulationTime="1.1838224122851143E7" upperBound="0.676218612606516"/>
+<sample lastIntervalAvgValue="0.6264901998879921" lowerBound="0.6077620700382727" meanValue="0.6419903413223943" simulationTime="1.306270024920103E7" upperBound="0.676218612606516"/>
+<sample lastIntervalAvgValue="0.652792927783806" lowerBound="0.6077620700382727" meanValue="0.6419903413223943" simulationTime="1.4270791778800756E7" upperBound="0.676218612606516"/>
+<sample lastIntervalAvgValue="0.659837570811968" lowerBound="0.6077620700382727" meanValue="0.6419903413223943" simulationTime="1.5527430163349874E7" upperBound="0.676218612606516"/>
+<sample lastIntervalAvgValue="0.6590505251126768" lowerBound="0.6077620700382727" meanValue="0.6419903413223943" simulationTime="1.6761260821701683E7" upperBound="0.676218612606516"/>
+<sample lastIntervalAvgValue="0.6534506207084086" lowerBound="0.6077620700382727" meanValue="0.6419903413223943" simulationTime="1.815089437506852E7" upperBound="0.676218612606516"/>
+<sample lastIntervalAvgValue="0.6271686765904338" lowerBound="0.6077620700382727" meanValue="0.6419903413223943" simulationTime="1.9383397315379255E7" upperBound="0.676218612606516"/>
+<sample lastIntervalAvgValue="0.6489307702878958" lowerBound="0.6117773828755939" meanValue="0.6434053809104265" simulationTime="2.0664785715952676E7" upperBound="0.6750333789452592"/>
+<sample lastIntervalAvgValue="0.651910474440023" lowerBound="0.6117773828755939" meanValue="0.6434053809104265" simulationTime="2.205543172274719E7" upperBound="0.6750333789452592"/>
+<sample lastIntervalAvgValue="0.6174471605700826" lowerBound="0.6117773828755939" meanValue="0.6434053809104265" simulationTime="2.3255860834913906E7" upperBound="0.6750333789452592"/>
+<sample lastIntervalAvgValue="0.6326723179681515" lowerBound="0.6117773828755939" meanValue="0.6434053809104265" simulationTime="2.447756008426545E7" upperBound="0.6750333789452592"/>
+<sample lastIntervalAvgValue="0.6212926352617865" lowerBound="0.6117773828755939" meanValue="0.6434053809104265" simulationTime="2.566602231753957E7" upperBound="0.6750333789452592"/>
+<sample lastIntervalAvgValue="0.6360357178093918" lowerBound="0.6117773828755939" meanValue="0.6434053809104265" simulationTime="2.6937247278518934E7" upperBound="0.6750333789452592"/>
+<sample lastIntervalAvgValue="0.6356100339492797" lowerBound="0.6117773828755939" meanValue="0.6434053809104265" simulationTime="2.8355178958649337E7" upperBound="0.6750333789452592"/>
+<sample lastIntervalAvgValue="0.6526870801358052" lowerBound="0.6117773828755939" meanValue="0.6434053809104265" simulationTime="2.9757596228599984E7" upperBound="0.6750333789452592"/>
+<sample lastIntervalAvgValue="0.6413277186687801" lowerBound="0.6117773828755939" meanValue="0.6434053809104265" simulationTime="3.1199056609617922E7" upperBound="0.6750333789452592"/>
+<sample lastIntervalAvgValue="0.6232008287878357" lowerBound="0.6117773828755939" meanValue="0.6434053809104265" simulationTime="3.2666939487355668E7" upperBound="0.6750333789452592"/>
+<sample lastIntervalAvgValue="0.6291614859186683" lowerBound="0.6117773828755939" meanValue="0.6434053809104265" simulationTime="3.430374146599182E7" upperBound="0.6750333789452592"/>
+<sample lastIntervalAvgValue="0.6317681161426176" lowerBound="0.6117773828755939" meanValue="0.6434053809104265" simulationTime="3.579979313743603E7" upperBound="0.6750333789452592"/>
+<sample lastIntervalAvgValue="0.6268645463587375" lowerBound="0.6117773828755939" meanValue="0.6434053809104265" simulationTime="3.7404283668714866E7" upperBound="0.6750333789452592"/>
+<sample lastIntervalAvgValue="0.6200839542611826" lowerBound="0.6117773828755939" meanValue="0.6434053809104265" simulationTime="3.904410249240966E7" upperBound="0.6750333789452592"/>
+<sample lastIntervalAvgValue="0.6350582621851869" lowerBound="0.6117773828755939" meanValue="0.6434053809104265" simulationTime="4.045339637448044E7" upperBound="0.6750333789452592"/>
+<sample lastIntervalAvgValue="0.6009883101919532" lowerBound="0.6230081093325174" meanValue="0.6367727736347574" simulationTime="4.093450770804047E7" upperBound="0.6505374379369974"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="20480" discardedSamples="10425" finalValue="0.012903142733958806" name="Water Company Disk_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Water Company Disk" state="1" type="2">
-<sample lastIntervalAvgValue="2.1070079335134406" meanValue="2.1070079335134406" simulationTime="613.1539294633808"/>
-<sample lastIntervalAvgValue="0.012920027661751035" meanValue="0.41497755007349946" simulationTime="3190.5347823260195"/>
-<sample lastIntervalAvgValue="0.012903086956658585" lowerBound="0.012737558467567554" meanValue="0.012903142733958806" simulationTime="6189.434287992447" upperBound="0.013068727000350059"/>
+<measure alpha="0.99" analyzedSamples="55785" discardedSamples="30785" finalValue="43.99632487518942" name="Water Company Disk_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Water Company Disk" state="0" type="2">
+<sample lastIntervalAvgValue="3710.72514740073" meanValue="3710.72514740073" simulationTime="442863.6243393184"/>
+<sample lastIntervalAvgValue="229.94067387582186" meanValue="1671.9799557647154" simulationTime="1019165.8030805123"/>
+<sample lastIntervalAvgValue="93.04618464967044" meanValue="1331.1943994896985" simulationTime="1309921.4524742127"/>
+<sample lastIntervalAvgValue="114.7670743250875" meanValue="945.3617649907756" simulationTime="1922452.5116397596"/>
+<sample lastIntervalAvgValue="108.94155849243107" meanValue="547.5030624879535" simulationTime="3716225.626416934"/>
+<sample lastIntervalAvgValue="72.75985679424645" meanValue="399.80711951195946" simulationTime="5431753.509767705"/>
+<sample lastIntervalAvgValue="66.00856488120091" meanValue="322.4387832327487" simulationTime="7040311.912492591"/>
+<sample lastIntervalAvgValue="66.52326286272346" meanValue="275.0262583036928" simulationTime="8629854.145944534"/>
+<sample lastIntervalAvgValue="64.3263637006055" meanValue="241.60940626411113" simulationTime="1.025398498596302E7"/>
+<sample lastIntervalAvgValue="55.721322473957656" meanValue="217.17723752937027" simulationTime="1.1838351303517899E7"/>
+<sample lastIntervalAvgValue="54.11893256180832" meanValue="201.99019032922828" simulationTime="1.3062739377398618E7"/>
+<sample lastIntervalAvgValue="55.916972374154795" meanValue="189.56298961260302" simulationTime="1.427133428080459E7"/>
+<sample lastIntervalAvgValue="60.30275670443495" meanValue="178.90115525175997" simulationTime="1.5527447993237032E7"/>
+<sample lastIntervalAvgValue="53.367546775309386" meanValue="169.90884067529396" simulationTime="1.6761280876878351E7"/>
+<sample lastIntervalAvgValue="57.39857099568757" meanValue="160.88164613667612" simulationTime="1.8150932772468403E7"/>
+<sample lastIntervalAvgValue="52.004199500671376" meanValue="153.6450450514056" simulationTime="1.9382749072162982E7"/>
+<sample lastIntervalAvgValue="51.865638832813595" meanValue="147.27895393200075" simulationTime="2.066495381945679E7"/>
+<sample lastIntervalAvgValue="53.6877298421753" meanValue="141.39771050112145" simulationTime="2.2055499732308585E7"/>
+<sample lastIntervalAvgValue="53.43601471614343" meanValue="136.94167474176987" simulationTime="2.3255919604570314E7"/>
+<sample lastIntervalAvgValue="49.388115083575975" meanValue="132.58173451405835" simulationTime="2.447531099364609E7"/>
+<sample lastIntervalAvgValue="49.73150585976248" meanValue="64.30403117699183" simulationTime="2.5663575685685728E7"/>
+<sample lastIntervalAvgValue="50.86371206488847" meanValue="60.26689343228618" simulationTime="2.6937263701908097E7"/>
+<sample lastIntervalAvgValue="50.05912504810906" meanValue="57.186733929442276" simulationTime="2.8355203312555086E7"/>
+<sample lastIntervalAvgValue="48.34842559612551" meanValue="56.06203430225287" simulationTime="2.975769260771654E7"/>
+<sample lastIntervalAvgValue="47.78025675406875" meanValue="54.752642270128085" simulationTime="3.119907829766193E7"/>
+<sample lastIntervalAvgValue="45.14896758853034" meanValue="53.385681198623956" simulationTime="3.2667041546260823E7"/>
+<sample lastIntervalAvgValue="49.24695892929006" meanValue="52.359746012735656" simulationTime="3.430376607339646E7"/>
+<sample lastIntervalAvgValue="48.14935217459094" meanValue="51.64501117344335" simulationTime="3.579989317368935E7"/>
+<sample lastIntervalAvgValue="46.66216562398791" meanValue="51.094952727445985" simulationTime="3.740116072281144E7"/>
+<sample lastIntervalAvgValue="44.58985289138027" meanValue="50.47845725646181" simulationTime="3.90441091354237E7"/>
+<sample lastIntervalAvgValue="44.589822006190104" meanValue="49.636619504698935" simulationTime="4.045341191578823E7"/>
+<sample lastIntervalAvgValue="47.47803150349987" meanValue="49.218301587596706" simulationTime="4.187675132848994E7"/>
+<sample lastIntervalAvgValue="40.11882650408432" meanValue="48.38068562314563" simulationTime="4.323653284400407E7"/>
+<sample lastIntervalAvgValue="41.473499732766065" meanValue="47.66265707413457" simulationTime="4.475958459819795E7"/>
+<sample lastIntervalAvgValue="42.30540547194897" meanValue="47.03114321815243" simulationTime="4.6447422147163086E7"/>
+<sample lastIntervalAvgValue="43.69949408683552" meanValue="46.35779401111519" simulationTime="4.809708718626942E7"/>
+<sample lastIntervalAvgValue="43.35300395747845" meanValue="45.963790154272736" simulationTime="4.979486097750045E7"/>
+<sample lastIntervalAvgValue="40.78384680190236" meanValue="45.37998405903949" simulationTime="5.143587926007709E7"/>
+<sample lastIntervalAvgValue="42.59227418244651" meanValue="44.84603644340238" simulationTime="5.291482292355478E7"/>
+<sample lastIntervalAvgValue="40.21542487290197" meanValue="44.271731507560304" simulationTime="5.435136664253881E7"/>
+<sample lastIntervalAvgValue="42.10479616275167" meanValue="43.99632487518942" simulationTime="5.564568917883268E7"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="25600" discardedSamples="17090" finalValue="0.0023097166843645133" name="Purification System_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Purification System" state="1" type="2">
-<sample lastIntervalAvgValue="0.002348667525534498" meanValue="0.002348667525534498" simulationTime="613.332904150316"/>
-<sample lastIntervalAvgValue="0.0023105799405631323" meanValue="0.0023181621691977226" simulationTime="3190.5685698047905"/>
-<sample lastIntervalAvgValue="0.0023097939971846197" lowerBound="0.0022805954802623094" meanValue="0.0023097166843645133" simulationTime="8437.92516204621" upperBound="0.002338837888466717"/>
+<measure alpha="0.99" analyzedSamples="40960" discardedSamples="275" finalValue="2.301075139005708" name="Purification System_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Purification System" state="1" type="2">
+<sample lastIntervalAvgValue="2.5901905058831396" meanValue="2.5901905058831396" simulationTime="442552.62416169554"/>
+<sample lastIntervalAvgValue="2.3239177687957158" meanValue="2.4341447327227614" simulationTime="1018227.1448937726"/>
+<sample lastIntervalAvgValue="2.3532374676914576" meanValue="2.415714831804469" simulationTime="1309522.4366319207"/>
+<sample lastIntervalAvgValue="2.4888392963419737" lowerBound="1.9059939296280415" meanValue="2.341110956636976" simulationTime="1922564.426608282" upperBound="2.77622798364591"/>
+<sample lastIntervalAvgValue="2.242074814612048" lowerBound="1.9652473829950299" meanValue="2.3170984782252315" simulationTime="3717246.7049808633" upperBound="2.668949573455433"/>
+<sample lastIntervalAvgValue="2.324002857046856" lowerBound="1.9652473829950299" meanValue="2.3170984782252315" simulationTime="5431797.192870318" upperBound="2.668949573455433"/>
+<sample lastIntervalAvgValue="2.3344077984644116" lowerBound="2.0412774253537647" meanValue="2.3147485691163183" simulationTime="7040829.427440076" upperBound="2.588219712878872"/>
+<sample lastIntervalAvgValue="2.287159434387306" lowerBound="2.0412774253537647" meanValue="2.3147485691163183" simulationTime="8633492.42754826" upperBound="2.588219712878872"/>
+<sample lastIntervalAvgValue="2.29019174254474" lowerBound="2.0412774253537647" meanValue="2.3147485691163183" simulationTime="1.0255479264367832E7" upperBound="2.588219712878872"/>
+<sample lastIntervalAvgValue="2.3602744467216095" lowerBound="2.2160157613641838" meanValue="2.3110989619424043" simulationTime="1.183756396841963E7" upperBound="2.406182162520625"/>
+<sample lastIntervalAvgValue="2.3222042986288667" lowerBound="2.2160157613641838" meanValue="2.3110989619424043" simulationTime="1.306292929202859E7" upperBound="2.406182162520625"/>
+<sample lastIntervalAvgValue="2.3649286400031424" lowerBound="2.2160157613641838" meanValue="2.3110989619424043" simulationTime="1.4271203349528205E7" upperBound="2.406182162520625"/>
+<sample lastIntervalAvgValue="2.261135505805926" lowerBound="2.2160157613641838" meanValue="2.3110989619424043" simulationTime="1.5527058026751045E7" upperBound="2.406182162520625"/>
+<sample lastIntervalAvgValue="2.2262369094352756" lowerBound="2.2160157613641838" meanValue="2.3110989619424043" simulationTime="1.6761486464933813E7" upperBound="2.406182162520625"/>
+<sample lastIntervalAvgValue="2.225701949960223" lowerBound="2.2160157613641838" meanValue="2.3110989619424043" simulationTime="1.815092418832571E7" upperBound="2.406182162520625"/>
+<sample lastIntervalAvgValue="2.3524750567634" lowerBound="2.2160157613641838" meanValue="2.3110989619424043" simulationTime="1.9383302157588955E7" upperBound="2.406182162520625"/>
+<sample lastIntervalAvgValue="2.2844142465554147" lowerBound="2.2142085708652046" meanValue="2.3036481354209806" simulationTime="2.0666882590898708E7" upperBound="2.3930876999767565"/>
+<sample lastIntervalAvgValue="2.2400165575116158" lowerBound="2.2142085708652046" meanValue="2.3036481354209806" simulationTime="2.2055579195684448E7" upperBound="2.3930876999767565"/>
+<sample lastIntervalAvgValue="2.220638132769034" lowerBound="2.2142085708652046" meanValue="2.3036481354209806" simulationTime="2.3255601977570184E7" upperBound="2.3930876999767565"/>
+<sample lastIntervalAvgValue="2.2693124955233825" lowerBound="2.2142085708652046" meanValue="2.3036481354209806" simulationTime="2.4477542875784066E7" upperBound="2.3930876999767565"/>
+<sample lastIntervalAvgValue="2.3009237160611455" lowerBound="2.2142085708652046" meanValue="2.3036481354209806" simulationTime="2.5665857995106578E7" upperBound="2.3930876999767565"/>
+<sample lastIntervalAvgValue="2.238974566594419" lowerBound="2.2142085708652046" meanValue="2.3036481354209806" simulationTime="2.6937942011511184E7" upperBound="2.3930876999767565"/>
+<sample lastIntervalAvgValue="2.3397036661122197" lowerBound="2.2142085708652046" meanValue="2.3036481354209806" simulationTime="2.8356747734599084E7" upperBound="2.3930876999767565"/>
+<sample lastIntervalAvgValue="2.273685773415652" lowerBound="2.2142085708652046" meanValue="2.3036481354209806" simulationTime="2.975804542737346E7" upperBound="2.3930876999767565"/>
+<sample lastIntervalAvgValue="2.381810044050321" lowerBound="2.2142085708652046" meanValue="2.3036481354209806" simulationTime="3.1197868305776134E7" upperBound="2.3930876999767565"/>
+<sample lastIntervalAvgValue="2.2552109090697687" lowerBound="2.2142085708652046" meanValue="2.3036481354209806" simulationTime="3.266772305380486E7" upperBound="2.3930876999767565"/>
+<sample lastIntervalAvgValue="2.2596458812642517" lowerBound="2.2142085708652046" meanValue="2.3036481354209806" simulationTime="3.430296384771306E7" upperBound="2.3930876999767565"/>
+<sample lastIntervalAvgValue="2.3757656135355507" lowerBound="2.2142085708652046" meanValue="2.3036481354209806" simulationTime="3.579980881752866E7" upperBound="2.3930876999767565"/>
+<sample lastIntervalAvgValue="2.406789422030713" lowerBound="2.2142085708652046" meanValue="2.3036481354209806" simulationTime="3.74007347100296E7" upperBound="2.3930876999767565"/>
+<sample lastIntervalAvgValue="2.238348248142044" lowerBound="2.2142085708652046" meanValue="2.3036481354209806" simulationTime="3.9043806723982714E7" upperBound="2.3930876999767565"/>
+<sample lastIntervalAvgValue="2.378990153313143" lowerBound="2.2142085708652046" meanValue="2.3036481354209806" simulationTime="4.0453428272366926E7" upperBound="2.3930876999767565"/>
+<sample lastIntervalAvgValue="2.2945063322496644" lowerBound="2.257183175728433" meanValue="2.301075139005708" simulationTime="4.086086977632837E7" upperBound="2.3449671022829826"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="46080" discardedSamples="2655" finalValue="9.969459593030813" name="Sink QCS_Check Water Quality_Throughput per Sink" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Sink QCS" state="1" type="13">
-<sample lastIntervalAvgValue="10.175550598652459" meanValue="10.175550598652459" simulationTime="613.332904150316"/>
-<sample lastIntervalAvgValue="9.962612399855844" lowerBound="9.528670832588537" meanValue="9.934301353026092" simulationTime="3190.5685698047905" upperBound="10.376002331004274"/>
-<sample lastIntervalAvgValue="9.919669887194155" lowerBound="9.798319899847202" meanValue="9.969459593030813" simulationTime="4885.987892348102" upperBound="10.146683891250218"/>
+<measure alpha="0.99" analyzedSamples="56320" discardedSamples="825" finalValue="0.002022053209156518" name="Sink QCS_Check Water Quality_Throughput per Sink" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Sink QCS" state="1" type="13">
+<sample lastIntervalAvgValue="0.0019328749370125283" meanValue="0.0019328749370125283" simulationTime="442863.6243393184"/>
+<sample lastIntervalAvgValue="0.0021013281654516116" meanValue="0.0020281292737180964" simulationTime="1019165.8030805123"/>
+<sample lastIntervalAvgValue="0.0020257559955523304" meanValue="0.002027602490961027" simulationTime="1309921.4524742127"/>
+<sample lastIntervalAvgValue="0.002002797798724917" meanValue="0.00201969824587374" simulationTime="1922564.426608282"/>
+<sample lastIntervalAvgValue="0.0019864240277854325" lowerBound="0.001815351122737922" meanValue="0.0020514179802781957" simulationTime="3717246.7049808633" upperBound="0.0023580580239851347"/>
+<sample lastIntervalAvgValue="0.0019684459710221157" lowerBound="0.001766823210155547" meanValue="0.001998829753043639" simulationTime="5431797.192870318" upperBound="0.0023009776191149304"/>
+<sample lastIntervalAvgValue="0.001986908609605855" lowerBound="0.001766823210155547" meanValue="0.001998829753043639" simulationTime="7040829.427440076" upperBound="0.0023009776191149304"/>
+<sample lastIntervalAvgValue="0.002046886252633835" lowerBound="0.0019005718502259291" meanValue="0.0019899766767501425" simulationTime="8633492.42754826" upperBound="0.002088208102810701"/>
+<sample lastIntervalAvgValue="0.002025910399151735" lowerBound="0.0019005718502259291" meanValue="0.0019899766767501425" simulationTime="1.0255479264367832E7" upperBound="0.002088208102810701"/>
+<sample lastIntervalAvgValue="0.001981208791636686" lowerBound="0.0019005718502259291" meanValue="0.0019899766767501425" simulationTime="1.1838351303517899E7" upperBound="0.002088208102810701"/>
+<sample lastIntervalAvgValue="0.0020162047849665767" lowerBound="0.0019005718502259291" meanValue="0.0019899766767501425" simulationTime="1.306292929202859E7" upperBound="0.002088208102810701"/>
+<sample lastIntervalAvgValue="0.002058912387079855" lowerBound="0.0019005718502259291" meanValue="0.0019899766767501425" simulationTime="1.427133428080459E7" upperBound="0.002088208102810701"/>
+<sample lastIntervalAvgValue="0.0020491775342659814" lowerBound="0.0019531500116445706" meanValue="0.002012362483098356" simulationTime="1.5527447993237032E7" upperBound="0.0020752774174911384"/>
+<sample lastIntervalAvgValue="0.002040455024500002" lowerBound="0.0019531500116445706" meanValue="0.002012362483098356" simulationTime="1.6761486464933813E7" upperBound="0.0020752774174911384"/>
+<sample lastIntervalAvgValue="0.002045419088588458" lowerBound="0.0019531500116445706" meanValue="0.002012362483098356" simulationTime="1.8150932772468403E7" upperBound="0.0020752774174911384"/>
+<sample lastIntervalAvgValue="0.002072430580341108" lowerBound="0.0019531500116445706" meanValue="0.002012362483098356" simulationTime="1.9383302157588955E7" upperBound="0.0020752774174911384"/>
+<sample lastIntervalAvgValue="0.0020318165751991015" lowerBound="0.0019531500116445706" meanValue="0.002012362483098356" simulationTime="2.0666882590898708E7" upperBound="0.0020752774174911384"/>
+<sample lastIntervalAvgValue="0.0019989967502140643" lowerBound="0.0019531500116445706" meanValue="0.002012362483098356" simulationTime="2.2055579195684448E7" upperBound="0.0020752774174911384"/>
+<sample lastIntervalAvgValue="0.0020160947528594817" lowerBound="0.0019531500116445706" meanValue="0.002012362483098356" simulationTime="2.3255919604570314E7" upperBound="0.0020752774174911384"/>
+<sample lastIntervalAvgValue="0.0020022539334649068" lowerBound="0.0019531500116445706" meanValue="0.002012362483098356" simulationTime="2.4477542875784066E7" upperBound="0.0020752774174911384"/>
+<sample lastIntervalAvgValue="0.0020306061588913475" lowerBound="0.0019531500116445706" meanValue="0.002012362483098356" simulationTime="2.5665857995106578E7" upperBound="0.0020752774174911384"/>
+<sample lastIntervalAvgValue="0.0020391734874019023" lowerBound="0.0019531500116445706" meanValue="0.002012362483098356" simulationTime="2.6937942011511184E7" upperBound="0.0020752774174911384"/>
+<sample lastIntervalAvgValue="0.0019905600534158405" lowerBound="0.001991331906288822" meanValue="0.002022053209156518" simulationTime="2.831494141190425E7" upperBound="0.002053737271736154"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="1000" discardedSamples="0" finalValue="0.0" name="Control Center Server_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Inland" referenceStation="Control Center Server" state="3" type="2">
-<sample lastIntervalAvgValue="1.851339400000008" meanValue="1.851339400000008" simulationTime="3.7599999999999416"/>
-<sample lastIntervalAvgValue="0.0" meanValue="1.851339400000008" simulationTime="3.7599999999999416"/>
-<sample lastIntervalAvgValue="0.0" meanValue="0.0" simulationTime="3.7599999999999416"/>
+<measure alpha="0.99" analyzedSamples="19200" discardedSamples="22195" finalValue="1.9929960629394676" name="Control Center Server_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Inland" referenceStation="Control Center Server" state="1" type="2">
+<sample lastIntervalAvgValue="496.1784920629365" meanValue="496.1784920629365" simulationTime="443132.6582958155"/>
+<sample lastIntervalAvgValue="2.026848936082801" meanValue="202.98291008973982" simulationTime="1019325.9595309229"/>
+<sample lastIntervalAvgValue="2.03519434646355" meanValue="156.21743725017666" simulationTime="1310139.2132949235"/>
+<sample lastIntervalAvgValue="2.0084298900820508" meanValue="104.20910012611466" simulationTime="1923136.963070049"/>
+<sample lastIntervalAvgValue="1.9911633787035907" meanValue="1.9959276832245663" simulationTime="3717293.3938552146"/>
+<sample lastIntervalAvgValue="2.02083451600321" lowerBound="1.944205697803692" meanValue="1.9929960629394676" simulationTime="4229667.356506881" upperBound="2.0417864280752434"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="1000" discardedSamples="0" finalValue="0.0" name="Seaweed Picking Inland Control Unit_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Inland" referenceStation="Seaweed Picking Inland Control Unit" state="3" type="2">
-<sample lastIntervalAvgValue="0.037778600000003604" meanValue="0.037778600000003604" simulationTime="3.786319999999969"/>
-<sample lastIntervalAvgValue="0.0" meanValue="0.037778600000003604" simulationTime="3.786319999999969"/>
-<sample lastIntervalAvgValue="0.0" meanValue="0.0" simulationTime="3.786319999999969"/>
+<measure alpha="0.99" analyzedSamples="40960" discardedSamples="8525" finalValue="3.9965258931639824" name="Seaweed Picking Inland Control Unit_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Inland" referenceStation="Seaweed Picking Inland Control Unit" state="1" type="2">
+<sample lastIntervalAvgValue="20.063065471546626" meanValue="20.063065471546626" simulationTime="443132.66424851527"/>
+<sample lastIntervalAvgValue="4.097797950027428" meanValue="10.590374309963348" simulationTime="1019329.0916530713"/>
+<sample lastIntervalAvgValue="3.924411939544422" meanValue="9.039041013984807" simulationTime="1310148.139470345"/>
+<sample lastIntervalAvgValue="3.966443881281446" meanValue="7.328263243681514" simulationTime="1923138.7791868614"/>
+<sample lastIntervalAvgValue="4.02369531266726" lowerBound="3.880065107796645" meanValue="4.006506298770853" simulationTime="3717295.3114223704" upperBound="4.132947489745061"/>
+<sample lastIntervalAvgValue="3.999132758449346" lowerBound="3.9317469473154802" meanValue="3.9965258931639824" simulationTime="5037090.273615594" upperBound="4.061304839012485"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="1000" discardedSamples="0" finalValue="0.0" name="Lan Wireless_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Inland" referenceStation="Lan Wireless" state="3" type="2">
-<sample lastIntervalAvgValue="8.400000000000631E-4" lowerBound="7.609596348989758E-4" meanValue="8.400000000000008E-4" simulationTime="3.787159999999969" upperBound="9.190403651010258E-4"/>
-<sample lastIntervalAvgValue="0.0" lowerBound="7.609596348989758E-4" meanValue="8.400000000000008E-4" simulationTime="3.787159999999969" upperBound="9.190403651010258E-4"/>
-<sample lastIntervalAvgValue="0.0" lowerBound="7.609596348989758E-4" meanValue="0.0" simulationTime="3.787159999999969" upperBound="9.190403651010258E-4"/>
+<measure alpha="0.99" analyzedSamples="61440" discardedSamples="380" finalValue="8.394410167854693" name="Lan Wireless_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Inland" referenceStation="Lan Wireless" state="1" type="2">
+<sample lastIntervalAvgValue="8.237036447142653" lowerBound="6.661247555352839" meanValue="8.033844994852666" simulationTime="443137.35486395465" upperBound="9.406442434352494"/>
+<sample lastIntervalAvgValue="8.546537403709696" lowerBound="7.237080549369989" meanValue="8.536035575573882" simulationTime="1019340.3874186653" upperBound="9.834990601777776"/>
+<sample lastIntervalAvgValue="8.259578370655035" lowerBound="7.237080549369989" meanValue="8.536035575573882" simulationTime="1310144.3036381456" upperBound="9.834990601777776"/>
+<sample lastIntervalAvgValue="8.39109129322234" lowerBound="7.966052983098008" meanValue="8.394915943230163" simulationTime="1923170.361477092" upperBound="8.823778903362319"/>
+<sample lastIntervalAvgValue="8.382954237923048" lowerBound="8.048393951113052" meanValue="8.342244705032993" simulationTime="3717309.8599174833" upperBound="8.636095458952934"/>
+<sample lastIntervalAvgValue="8.355693842789336" lowerBound="8.048393951113052" meanValue="8.342244705032993" simulationTime="5431912.356868688" upperBound="8.636095458952934"/>
+<sample lastIntervalAvgValue="8.46904845760799" lowerBound="8.23937108143205" meanValue="8.394410167854693" simulationTime="6259896.1245033005" upperBound="8.549449254277334"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="1000" discardedSamples="0" finalValue="0.0" name="Seaweed Picking Inlands_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Inland" referenceStation="Seaweed Picking Inlands" state="3" type="2">
-<sample lastIntervalAvgValue="0.0034999999999999324" lowerBound="0.0031706651454120383" meanValue="0.0034999999999999858" simulationTime="3.790659999999969" upperBound="0.003829334854587933"/>
-<sample lastIntervalAvgValue="0.0" lowerBound="0.0031706651454120383" meanValue="0.0034999999999999858" simulationTime="3.790659999999969" upperBound="0.003829334854587933"/>
-<sample lastIntervalAvgValue="0.0" lowerBound="0.0031706651454120383" meanValue="0.0" simulationTime="3.790659999999969" upperBound="0.003829334854587933"/>
+<measure alpha="0.99" analyzedSamples="8960" discardedSamples="65" finalValue="3.5076616786556065" name="Seaweed Picking Inlands_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Inland" referenceStation="Seaweed Picking Inlands" state="1" type="2">
+<sample lastIntervalAvgValue="3.537118848584871" lowerBound="3.3538139364159614" meanValue="3.5766809542736673" simulationTime="443138.65654451895" upperBound="3.799547972131373"/>
+<sample lastIntervalAvgValue="3.4936258007644283" lowerBound="3.417986386731876" meanValue="3.5076616786556065" simulationTime="1002229.3075141392" upperBound="3.597336970579337"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="1000" discardedSamples="0" finalValue="0.0" name="Internet_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Inland" referenceStation="Internet" state="3" type="2">
-<sample lastIntervalAvgValue="1.7500000000003044E-4" meanValue="1.7500000000003044E-4" simulationTime="3.790834999999969"/>
-<sample lastIntervalAvgValue="0.0" meanValue="1.7500000000003044E-4" simulationTime="3.790834999999969"/>
-<sample lastIntervalAvgValue="0.0" meanValue="0.0" simulationTime="3.790834999999969"/>
+<measure alpha="0.99" analyzedSamples="33280" discardedSamples="170" finalValue="0.17609059597903595" name="Internet_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Inland" referenceStation="Internet" state="1" type="2">
+<sample lastIntervalAvgValue="0.17612256466425188" meanValue="0.17612256466425188" simulationTime="443139.30147346196"/>
+<sample lastIntervalAvgValue="0.1790593341048043" lowerBound="0.17259539017171344" meanValue="0.1785271833109671" simulationTime="1019343.7692497142" upperBound="0.18445897645022075"/>
+<sample lastIntervalAvgValue="0.17463131504097282" lowerBound="0.17259539017171344" meanValue="0.1785271833109671" simulationTime="1310144.76966287" upperBound="0.18445897645022075"/>
+<sample lastIntervalAvgValue="0.1763917022994797" lowerBound="0.16881610063413927" meanValue="0.17686387597834943" simulationTime="1923171.0430904704" upperBound="0.1849116513225596"/>
+<sample lastIntervalAvgValue="0.1756593231160772" lowerBound="0.17259892095036156" meanValue="0.17609059597903595" simulationTime="3432311.2145238235" upperBound="0.17958227100771035"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="1000" discardedSamples="0" finalValue="0.0" name="Water Company Server_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Inland" referenceStation="Water Company Server" state="3" type="2">
-<sample lastIntervalAvgValue="0.0012499999999984373" meanValue="0.0012499999999984373" simulationTime="3.791674999999969"/>
-<sample lastIntervalAvgValue="0.0" meanValue="0.0012499999999984373" simulationTime="3.791674999999969"/>
-<sample lastIntervalAvgValue="0.0" meanValue="0.0" simulationTime="3.791674999999969"/>
+<measure alpha="0.99" analyzedSamples="48640" discardedSamples="2930" finalValue="0.872371381114062" name="Water Company Server_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Inland" referenceStation="Water Company Server" state="1" type="2">
+<sample lastIntervalAvgValue="1.041409279184088" meanValue="1.041409279184088" simulationTime="443140.78562408575"/>
+<sample lastIntervalAvgValue="0.8597537592069359" meanValue="0.9336273935237943" simulationTime="1019346.3048545227"/>
+<sample lastIntervalAvgValue="0.8785604562729273" meanValue="0.9208154397150364" simulationTime="1310145.5018616188"/>
+<sample lastIntervalAvgValue="0.8418318657121718" lowerBound="0.8195878412588641" meanValue="0.8580175474765191" simulationTime="1923171.1394049856" upperBound="0.8964472536941742"/>
+<sample lastIntervalAvgValue="0.8773674054521076" lowerBound="0.8218854639909265" meanValue="0.862738419642912" simulationTime="3717121.0351438927" upperBound="0.9035913752948974"/>
+<sample lastIntervalAvgValue="0.8779809903368009" lowerBound="0.8507431029704619" meanValue="0.872371381114062" simulationTime="5243573.195140424" upperBound="0.8939996592576621"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="1000" discardedSamples="0" finalValue="0.0" name="Water Company Disk_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Inland" referenceStation="Water Company Disk" state="3" type="2">
-<sample lastIntervalAvgValue="22.769011999999478" meanValue="22.769011999999478" simulationTime="49.81099499999828"/>
-<sample lastIntervalAvgValue="0.0" meanValue="22.769011999999478" simulationTime="49.81099499999828"/>
-<sample lastIntervalAvgValue="0.0" meanValue="0.0" simulationTime="49.81099499999828"/>
+<measure alpha="0.99" analyzedSamples="515815" discardedSamples="39290" finalValue="72.6673442647767" name="Water Company Disk_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Inland" referenceStation="Water Company Disk" state="0" type="2">
+<sample lastIntervalAvgValue="6627.306851560623" meanValue="6627.306851560623" simulationTime="443147.4724997523"/>
+<sample lastIntervalAvgValue="419.9261297782213" meanValue="2943.2137467927046" simulationTime="1019218.7221459058"/>
+<sample lastIntervalAvgValue="172.40600352059926" meanValue="2299.2004902494596" simulationTime="1310141.6512396566"/>
+<sample lastIntervalAvgValue="210.1303150652996" meanValue="1593.9599208055436" simulationTime="1923184.0357948502"/>
+<sample lastIntervalAvgValue="194.09832958863262" meanValue="197.05287572747326" simulationTime="3717304.722290896"/>
+<sample lastIntervalAvgValue="125.02617819495616" meanValue="139.99758766692312" simulationTime="5431869.994633414"/>
+<sample lastIntervalAvgValue="116.63665877614446" lowerBound="111.18211966331833" meanValue="124.51755283666184" simulationTime="7041227.642683063" upperBound="137.85298601000534"/>
+<sample lastIntervalAvgValue="105.37218990037144" lowerBound="111.18211966331833" meanValue="124.51755283666184" simulationTime="8634089.707332434" upperBound="137.85298601000534"/>
+<sample lastIntervalAvgValue="103.8475995707181" lowerBound="103.10358220026929" meanValue="111.67392017795403" simulationTime="1.0255698582409421E7" upperBound="120.24425815563878"/>
+<sample lastIntervalAvgValue="94.71270927732878" lowerBound="103.10358220026929" meanValue="111.67392017795403" simulationTime="1.183842984776212E7" upperBound="120.24425815563878"/>
+<sample lastIntervalAvgValue="88.70353976567407" lowerBound="103.10358220026929" meanValue="111.67392017795403" simulationTime="1.306312798950229E7" upperBound="120.24425815563878"/>
+<sample lastIntervalAvgValue="91.06955985120909" lowerBound="93.05011137468135" meanValue="98.84495515887906" simulationTime="1.427165192031512E7" upperBound="104.63979894307677"/>
+<sample lastIntervalAvgValue="91.38801866160958" lowerBound="93.05011137468135" meanValue="98.84495515887906" simulationTime="1.5527778574406423E7" upperBound="104.63979894307677"/>
+<sample lastIntervalAvgValue="83.44561996444921" lowerBound="93.05011137468135" meanValue="98.84495515887906" simulationTime="1.6762699115664782E7" upperBound="104.63979894307677"/>
+<sample lastIntervalAvgValue="85.89043620818906" lowerBound="93.05011137468135" meanValue="98.84495515887906" simulationTime="1.815102009616254E7" upperBound="104.63979894307677"/>
+<sample lastIntervalAvgValue="80.67755444592969" lowerBound="93.05011137468135" meanValue="98.84495515887906" simulationTime="1.9383240204480723E7" upperBound="104.63979894307677"/>
+<sample lastIntervalAvgValue="81.3419868458654" lowerBound="93.05011137468135" meanValue="98.84495515887906" simulationTime="2.066714869741244E7" upperBound="104.63979894307677"/>
+<sample lastIntervalAvgValue="80.34533517776529" lowerBound="93.05011137468135" meanValue="98.84495515887906" simulationTime="2.205617519883001E7" upperBound="104.63979894307677"/>
+<sample lastIntervalAvgValue="80.42301890148151" lowerBound="93.05011137468135" meanValue="98.84495515887906" simulationTime="2.3256141446736224E7" upperBound="104.63979894307677"/>
+<sample lastIntervalAvgValue="70.74753502917339" lowerBound="93.05011137468135" meanValue="98.84495515887906" simulationTime="2.447768304248501E7" upperBound="104.63979894307677"/>
+<sample lastIntervalAvgValue="69.18881289241969" lowerBound="85.06530489657975" meanValue="88.78369103581011" simulationTime="2.566580621618845E7" upperBound="92.50207717504047"/>
+<sample lastIntervalAvgValue="73.98820865487163" lowerBound="85.06530489657975" meanValue="88.78369103581011" simulationTime="2.693792377738514E7" upperBound="92.50207717504047"/>
+<sample lastIntervalAvgValue="73.12812349085253" lowerBound="85.06530489657975" meanValue="88.78369103581011" simulationTime="2.8356767931523774E7" upperBound="92.50207717504047"/>
+<sample lastIntervalAvgValue="69.38586846206212" lowerBound="85.06530489657975" meanValue="88.78369103581011" simulationTime="2.9758056890518993E7" upperBound="92.50207717504047"/>
+<sample lastIntervalAvgValue="68.15845484178436" lowerBound="85.06530489657975" meanValue="88.78369103581011" simulationTime="3.1199763874707736E7" upperBound="92.50207717504047"/>
+<sample lastIntervalAvgValue="65.62635668203237" lowerBound="85.06530489657975" meanValue="88.78369103581011" simulationTime="3.2667943739629358E7" upperBound="92.50207717504047"/>
+<sample lastIntervalAvgValue="69.16494663198074" lowerBound="85.06530489657975" meanValue="88.78369103581011" simulationTime="3.4304059598430015E7" upperBound="92.50207717504047"/>
+<sample lastIntervalAvgValue="64.63141725835887" lowerBound="85.06530489657975" meanValue="88.78369103581011" simulationTime="3.580034252823589E7" upperBound="92.50207717504047"/>
+<sample lastIntervalAvgValue="64.61351251724125" lowerBound="85.06530489657975" meanValue="88.78369103581011" simulationTime="3.740424179108519E7" upperBound="92.50207717504047"/>
+<sample lastIntervalAvgValue="64.19650416104604" lowerBound="85.06530489657975" meanValue="88.78369103581011" simulationTime="3.904407064821093E7" upperBound="92.50207717504047"/>
+<sample lastIntervalAvgValue="60.82945637899948" lowerBound="85.06530489657975" meanValue="88.78369103581011" simulationTime="4.0453743857799955E7" upperBound="92.50207717504047"/>
+<sample lastIntervalAvgValue="62.712498858668205" lowerBound="85.06530489657975" meanValue="88.78369103581011" simulationTime="4.187936546644658E7" upperBound="92.50207717504047"/>
+<sample lastIntervalAvgValue="59.3147090347311" lowerBound="85.06530489657975" meanValue="88.78369103581011" simulationTime="4.324027377575984E7" upperBound="92.50207717504047"/>
+<sample lastIntervalAvgValue="59.48952311684879" lowerBound="85.06530489657975" meanValue="88.78369103581011" simulationTime="4.475961484546338E7" upperBound="92.50207717504047"/>
+<sample lastIntervalAvgValue="58.83248992750886" lowerBound="69.50202503012945" meanValue="72.6673442647767" simulationTime="4.644812731965354E7" upperBound="75.83266349942396"/>
+<sample lastIntervalAvgValue="56.84206216490407" lowerBound="69.50202503012945" meanValue="72.6673442647767" simulationTime="4.809950939605179E7" upperBound="75.83266349942396"/>
+<sample lastIntervalAvgValue="59.013255024244785" lowerBound="69.50202503012945" meanValue="72.6673442647767" simulationTime="4.979560874352689E7" upperBound="75.83266349942396"/>
+<sample lastIntervalAvgValue="56.72512137107619" lowerBound="69.50202503012945" meanValue="72.6673442647767" simulationTime="5.143566219095293E7" upperBound="75.83266349942396"/>
+<sample lastIntervalAvgValue="59.476987607752" lowerBound="69.50202503012945" meanValue="72.6673442647767" simulationTime="5.291554889646216E7" upperBound="75.83266349942396"/>
+<sample lastIntervalAvgValue="54.37521682758983" lowerBound="69.50202503012945" meanValue="72.6673442647767" simulationTime="5.435145436354851E7" upperBound="75.83266349942396"/>
+<sample lastIntervalAvgValue="56.649632323073895" lowerBound="69.50202503012945" meanValue="72.6673442647767" simulationTime="5.564568114397484E7" upperBound="75.83266349942396"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="1000" discardedSamples="0" finalValue="0.0" name="Control Center Server_StartUp Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Outgoing" referenceStation="Control Center Server" state="3" type="2">
-<sample lastIntervalAvgValue="1.9105406000000078" meanValue="1.9105406000000078" simulationTime="3.756239999999942"/>
-<sample lastIntervalAvgValue="0.0" meanValue="1.9105406000000078" simulationTime="3.756239999999942"/>
-<sample lastIntervalAvgValue="0.0" meanValue="0.0" simulationTime="3.756239999999942"/>
+<measure alpha="0.99" analyzedSamples="24320" discardedSamples="3710" finalValue="2.0194427155081507" name="Control Center Server_StartUp Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Outgoing" referenceStation="Control Center Server" state="1" type="2">
+<sample lastIntervalAvgValue="489.4999650859125" meanValue="489.4999650859125" simulationTime="443156.5184687843"/>
+<sample lastIntervalAvgValue="2.000069895483767" meanValue="201.4699110561789" simulationTime="1019350.887904443"/>
+<sample lastIntervalAvgValue="2.024183328050109" meanValue="155.10514814550322" simulationTime="1310158.5322615742"/>
+<sample lastIntervalAvgValue="2.014048303803572" meanValue="103.34828146689883" simulationTime="1923189.6090945348"/>
+<sample lastIntervalAvgValue="2.0354672557122364" lowerBound="1.9703400047056756" meanValue="2.0194427155081507" simulationTime="2904878.073310713" upperBound="2.0685454263106258"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="1000" discardedSamples="0" finalValue="0.0" name="Seaweed Picking Outgoing Control Unit_StartUp Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Outgoing" referenceStation="Seaweed Picking Outgoing Control Unit" state="3" type="2">
-<sample lastIntervalAvgValue="0.03419344000001797" meanValue="0.03419344000001797" simulationTime="3.833320000000089"/>
-<sample lastIntervalAvgValue="0.0" meanValue="0.03419344000001797" simulationTime="3.833320000000089"/>
-<sample lastIntervalAvgValue="0.0" meanValue="0.0" simulationTime="3.833320000000089"/>
+<measure alpha="0.99" analyzedSamples="24320" discardedSamples="5045" finalValue="3.972351130895449" name="Seaweed Picking Outgoing Control Unit_StartUp Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Outgoing" referenceStation="Seaweed Picking Outgoing Control Unit" state="1" type="2">
+<sample lastIntervalAvgValue="23.439047543827407" meanValue="23.439047543827407" simulationTime="443163.98298255773"/>
+<sample lastIntervalAvgValue="3.9573620629090795" meanValue="11.929519624143884" simulationTime="1019328.7035673615"/>
+<sample lastIntervalAvgValue="3.9145486333652757" meanValue="10.066141252214887" simulationTime="1310104.6354781196"/>
+<sample lastIntervalAvgValue="3.9685278672918574" meanValue="8.004554531739602" simulationTime="1922952.9115885617"/>
+<sample lastIntervalAvgValue="4.01365665816602" lowerBound="3.884947859069243" meanValue="3.972351130895449" simulationTime="3026523.65306253" upperBound="4.059754402721655"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="1000" discardedSamples="0" finalValue="0.0" name="Lan Wireless_StartUp Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Outgoing" referenceStation="Lan Wireless" state="3" type="2">
-<sample lastIntervalAvgValue="8.400000000000666E-4" lowerBound="7.609596348989797E-4" meanValue="8.400000000000062E-4" simulationTime="3.834160000000089" upperBound="9.190403651010327E-4"/>
-<sample lastIntervalAvgValue="0.0" lowerBound="7.609596348989797E-4" meanValue="8.400000000000062E-4" simulationTime="3.834160000000089" upperBound="9.190403651010327E-4"/>
-<sample lastIntervalAvgValue="0.0" lowerBound="7.609596348989797E-4" meanValue="0.0" simulationTime="3.834160000000089" upperBound="9.190403651010327E-4"/>
+<measure alpha="0.99" analyzedSamples="46080" discardedSamples="610" finalValue="8.343282793311005" name="Lan Wireless_StartUp Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Outgoing" referenceStation="Lan Wireless" state="1" type="2">
+<sample lastIntervalAvgValue="8.160570864859329" meanValue="8.160570864859329" simulationTime="443166.6592272551"/>
+<sample lastIntervalAvgValue="8.63425795039442" lowerBound="7.825898069846149" meanValue="8.459237843622219" simulationTime="1019341.0016411018" upperBound="9.09257761739829"/>
+<sample lastIntervalAvgValue="8.280202888983766" lowerBound="8.047490955941347" meanValue="8.431352323787355" simulationTime="1310138.3803023929" upperBound="8.815213691633362"/>
+<sample lastIntervalAvgValue="8.418222795894483" lowerBound="8.047490955941347" meanValue="8.431352323787355" simulationTime="1922969.133216555" upperBound="8.815213691633362"/>
+<sample lastIntervalAvgValue="8.335591548315952" lowerBound="8.087076097240692" meanValue="8.376740183615981" simulationTime="3717314.890136572" upperBound="8.66640426999127"/>
+<sample lastIntervalAvgValue="8.274810573139415" lowerBound="8.185141619770409" meanValue="8.343282793311005" simulationTime="4748639.862494133" upperBound="8.5014239668516"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="1000" discardedSamples="0" finalValue="0.0" name="Seaweed Picking Outgoings_StartUp Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Outgoing" referenceStation="Seaweed Picking Outgoings" state="3" type="2">
-<sample lastIntervalAvgValue="0.00349999999999993" lowerBound="0.003170665145412058" meanValue="0.0034999999999999823" simulationTime="3.837660000000089" upperBound="0.0038293348545879067"/>
-<sample lastIntervalAvgValue="0.0" lowerBound="0.003170665145412058" meanValue="0.0034999999999999823" simulationTime="3.837660000000089" upperBound="0.0038293348545879067"/>
-<sample lastIntervalAvgValue="0.0" lowerBound="0.003170665145412058" meanValue="0.0" simulationTime="3.837660000000089" upperBound="0.0038293348545879067"/>
+<measure alpha="0.99" analyzedSamples="30720" discardedSamples="0" finalValue="3.4900318716084455" name="Seaweed Picking Outgoings_StartUp Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Outgoing" referenceStation="Seaweed Picking Outgoings" state="1" type="2">
+<sample lastIntervalAvgValue="3.4595938139912654" lowerBound="3.0524583382489086" meanValue="3.3876695091377695" simulationTime="443174.0327624927" upperBound="3.7228806800266305"/>
+<sample lastIntervalAvgValue="3.461717561016225" lowerBound="3.0500304207390205" meanValue="3.4539157819354807" simulationTime="1019341.6885027497" upperBound="3.857801143131941"/>
+<sample lastIntervalAvgValue="3.444050152146803" lowerBound="3.0500304207390205" meanValue="3.4539157819354807" simulationTime="1310141.0892279143" upperBound="3.857801143131941"/>
+<sample lastIntervalAvgValue="3.5128285960813384" lowerBound="3.329009333324532" meanValue="3.4668515799593624" simulationTime="1922973.9020975963" upperBound="3.604693826594193"/>
+<sample lastIntervalAvgValue="3.4909551554928377" lowerBound="3.404736218365688" meanValue="3.4900318716084455" simulationTime="3147262.9682290233" upperBound="3.575327524851203"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="1000" discardedSamples="0" finalValue="0.0" name="Internet_StartUp Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Outgoing" referenceStation="Internet" state="3" type="2">
-<sample lastIntervalAvgValue="1.7500000000003068E-4" meanValue="1.7500000000003068E-4" simulationTime="3.837835000000089"/>
-<sample lastIntervalAvgValue="0.0" meanValue="1.7500000000003068E-4" simulationTime="3.837835000000089"/>
-<sample lastIntervalAvgValue="0.0" meanValue="0.0" simulationTime="3.837835000000089"/>
+<measure alpha="0.99" analyzedSamples="20480" discardedSamples="580" finalValue="0.17588808962145208" name="Internet_StartUp Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Outgoing" referenceStation="Internet" state="1" type="2">
+<sample lastIntervalAvgValue="0.17434880421609875" lowerBound="0.14885599623696907" meanValue="0.17493797814350387" simulationTime="443174.09249414044" upperBound="0.20101996005003867"/>
+<sample lastIntervalAvgValue="0.17398373869614034" lowerBound="0.15072875898342844" meanValue="0.1713019359194296" simulationTime="1019342.0801342109" upperBound="0.19187511285543077"/>
+<sample lastIntervalAvgValue="0.17466541326059062" lowerBound="0.16476781692980472" meanValue="0.17293326949503174" simulationTime="1310141.4404416615" upperBound="0.18109872206025876"/>
+<sample lastIntervalAvgValue="0.17722319732492273" lowerBound="0.16476781692980472" meanValue="0.17293326949503174" simulationTime="1922974.0414478113" upperBound="0.18109872206025876"/>
+<sample lastIntervalAvgValue="0.17583201609738308" lowerBound="0.1706493361312768" meanValue="0.17588808962145208" simulationTime="2206634.7658297773" upperBound="0.18112684311162736"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="1000" discardedSamples="0" finalValue="0.0" name="Water Company Server_StartUp Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Outgoing" referenceStation="Water Company Server" state="3" type="2">
-<sample lastIntervalAvgValue="8.694999999978443E-4" meanValue="8.694999999978443E-4" simulationTime="3.838675000000089"/>
-<sample lastIntervalAvgValue="0.0" meanValue="8.694999999978443E-4" simulationTime="3.838675000000089"/>
-<sample lastIntervalAvgValue="0.0" meanValue="0.0" simulationTime="3.838675000000089"/>
+<measure alpha="0.99" analyzedSamples="56320" discardedSamples="1020" finalValue="0.8588367397028599" name="Water Company Server_StartUp Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Outgoing" referenceStation="Water Company Server" state="1" type="2">
+<sample lastIntervalAvgValue="1.0662038376061562" meanValue="1.0662038376061562" simulationTime="443174.6574744096"/>
+<sample lastIntervalAvgValue="0.8860988917703042" lowerBound="0.840774488369496" meanValue="0.8781967445175558" simulationTime="1019344.8811961095" upperBound="0.9156190006656156"/>
+<sample lastIntervalAvgValue="0.884506252074942" lowerBound="0.840774488369496" meanValue="0.8781967445175558" simulationTime="1310142.372168031" upperBound="0.9156190006656156"/>
+<sample lastIntervalAvgValue="0.8654536768721859" lowerBound="0.8132932306836141" meanValue="0.8726135172040841" simulationTime="1922974.8047332882" upperBound="0.931933803724554"/>
+<sample lastIntervalAvgValue="0.8628539750430203" lowerBound="0.8329714243746047" meanValue="0.8717629897430714" simulationTime="3717261.6307782265" upperBound="0.9105545551115382"/>
+<sample lastIntervalAvgValue="0.8484570418375126" lowerBound="0.8329714243746047" meanValue="0.8717629897430714" simulationTime="5431883.356346733" upperBound="0.9105545551115382"/>
+<sample lastIntervalAvgValue="0.8482069875427577" lowerBound="0.8401091341891793" meanValue="0.8588367397028599" simulationTime="5828672.790650821" upperBound="0.8775643452165405"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="1000" discardedSamples="0" finalValue="0.0" name="Water Company Disk_StartUp Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Outgoing" referenceStation="Water Company Disk" state="3" type="2">
-<sample lastIntervalAvgValue="23.436563959999432" meanValue="23.436563959999432" simulationTime="50.26099499999829"/>
-<sample lastIntervalAvgValue="0.0" meanValue="23.436563959999432" simulationTime="50.26099499999829"/>
-<sample lastIntervalAvgValue="0.0" meanValue="0.0" simulationTime="50.26099499999829"/>
+<measure alpha="0.99" analyzedSamples="519900" discardedSamples="35190" finalValue="73.22169628389442" name="Water Company Disk_StartUp Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Outgoing" referenceStation="Water Company Disk" state="0" type="2">
+<sample lastIntervalAvgValue="6587.820678827934" meanValue="6587.820678827934" simulationTime="443226.560547276"/>
+<sample lastIntervalAvgValue="420.47580799689973" meanValue="2942.7880481563584" simulationTime="1019324.2039890004"/>
+<sample lastIntervalAvgValue="168.61163501029566" meanValue="2297.896655437547" simulationTime="1310142.1737125078"/>
+<sample lastIntervalAvgValue="217.05504741150258" meanValue="1594.0291662727236" simulationTime="1923066.4987763087"/>
+<sample lastIntervalAvgValue="193.67910791684358" meanValue="198.17050531618196" simulationTime="3717254.8279934656"/>
+<sample lastIntervalAvgValue="124.12618577085587" meanValue="139.43772926292502" simulationTime="5431833.86015529"/>
+<sample lastIntervalAvgValue="116.7023635931644" lowerBound="111.99161410207189" meanValue="120.7708653454779" simulationTime="7041225.069552432" upperBound="129.5501165888839"/>
+<sample lastIntervalAvgValue="107.44749938088496" lowerBound="111.99161410207189" meanValue="120.7708653454779" simulationTime="8634244.16935429" upperBound="129.5501165888839"/>
+<sample lastIntervalAvgValue="102.69311748067351" lowerBound="105.86441490384843" meanValue="114.07285916506565" simulationTime="1.025569551419722E7" upperBound="122.28130342628288"/>
+<sample lastIntervalAvgValue="96.6411910298913" lowerBound="105.86441490384843" meanValue="114.07285916506565" simulationTime="1.1838442468547208E7" upperBound="122.28130342628288"/>
+<sample lastIntervalAvgValue="87.5200581599187" lowerBound="105.86441490384843" meanValue="114.07285916506565" simulationTime="1.3063150185185254E7" upperBound="122.28130342628288"/>
+<sample lastIntervalAvgValue="92.94121968143384" lowerBound="95.66936978592425" meanValue="101.09605044274261" simulationTime="1.4271644608792411E7" upperBound="106.52273109956097"/>
+<sample lastIntervalAvgValue="90.86139570448614" lowerBound="95.66936978592425" meanValue="101.09605044274261" simulationTime="1.552787885631286E7" upperBound="106.52273109956097"/>
+<sample lastIntervalAvgValue="82.88176128004756" lowerBound="95.66936978592425" meanValue="101.09605044274261" simulationTime="1.6762647779934254E7" upperBound="106.52273109956097"/>
+<sample lastIntervalAvgValue="86.19771154159902" lowerBound="95.66936978592425" meanValue="101.09605044274261" simulationTime="1.815093838699274E7" upperBound="106.52273109956097"/>
+<sample lastIntervalAvgValue="83.03692239820455" lowerBound="95.66936978592425" meanValue="101.09605044274261" simulationTime="1.938341995347048E7" upperBound="106.52273109956097"/>
+<sample lastIntervalAvgValue="82.16762148896534" lowerBound="95.66936978592425" meanValue="101.09605044274261" simulationTime="2.066699595719976E7" upperBound="106.52273109956097"/>
+<sample lastIntervalAvgValue="79.72439112302439" lowerBound="95.66936978592425" meanValue="101.09605044274261" simulationTime="2.205611217741773E7" upperBound="106.52273109956097"/>
+<sample lastIntervalAvgValue="80.04038654485876" lowerBound="95.66936978592425" meanValue="101.09605044274261" simulationTime="2.3255588148731865E7" upperBound="106.52273109956097"/>
+<sample lastIntervalAvgValue="70.55261176762441" lowerBound="86.39834035617753" meanValue="90.23052201877613" simulationTime="2.447766169292948E7" upperBound="94.06270368137473"/>
+<sample lastIntervalAvgValue="69.2361618515262" lowerBound="86.39834035617753" meanValue="90.23052201877613" simulationTime="2.5665831302005827E7" upperBound="94.06270368137473"/>
+<sample lastIntervalAvgValue="73.45604644769283" lowerBound="86.39834035617753" meanValue="90.23052201877613" simulationTime="2.693798883650713E7" upperBound="94.06270368137473"/>
+<sample lastIntervalAvgValue="73.55969044101207" lowerBound="86.39834035617753" meanValue="90.23052201877613" simulationTime="2.835677834380452E7" upperBound="94.06270368137473"/>
+<sample lastIntervalAvgValue="69.3349749611824" lowerBound="86.39834035617753" meanValue="90.23052201877613" simulationTime="2.9758058638240658E7" upperBound="94.06270368137473"/>
+<sample lastIntervalAvgValue="67.74377669250799" lowerBound="86.39834035617753" meanValue="90.23052201877613" simulationTime="3.119974382812177E7" upperBound="94.06270368137473"/>
+<sample lastIntervalAvgValue="66.79160989897245" lowerBound="86.39834035617753" meanValue="90.23052201877613" simulationTime="3.2667922052299537E7" upperBound="94.06270368137473"/>
+<sample lastIntervalAvgValue="68.78242750667452" lowerBound="86.39834035617753" meanValue="90.23052201877613" simulationTime="3.430398031958269E7" upperBound="94.06270368137473"/>
+<sample lastIntervalAvgValue="64.91935168042339" lowerBound="86.39834035617753" meanValue="90.23052201877613" simulationTime="3.580019653289708E7" upperBound="94.06270368137473"/>
+<sample lastIntervalAvgValue="65.454247534546" lowerBound="86.39834035617753" meanValue="90.23052201877613" simulationTime="3.740415512505318E7" upperBound="94.06270368137473"/>
+<sample lastIntervalAvgValue="62.845854380592726" lowerBound="86.39834035617753" meanValue="90.23052201877613" simulationTime="3.904406062239737E7" upperBound="94.06270368137473"/>
+<sample lastIntervalAvgValue="62.06683256542595" lowerBound="86.39834035617753" meanValue="90.23052201877613" simulationTime="4.045379853356019E7" upperBound="94.06270368137473"/>
+<sample lastIntervalAvgValue="62.35502482034771" lowerBound="86.39834035617753" meanValue="90.23052201877613" simulationTime="4.187940680842789E7" upperBound="94.06270368137473"/>
+<sample lastIntervalAvgValue="58.80505969708562" lowerBound="86.39834035617753" meanValue="90.23052201877613" simulationTime="4.324028803903529E7" upperBound="94.06270368137473"/>
+<sample lastIntervalAvgValue="59.11515904681749" lowerBound="70.11439161610934" meanValue="73.22169628389442" simulationTime="4.4759602425954215E7" upperBound="76.32900095167949"/>
+<sample lastIntervalAvgValue="60.037367972314236" lowerBound="70.11439161610934" meanValue="73.22169628389442" simulationTime="4.644829660830153E7" upperBound="76.32900095167949"/>
+<sample lastIntervalAvgValue="56.96161166442261" lowerBound="70.11439161610934" meanValue="73.22169628389442" simulationTime="4.809960353269695E7" upperBound="76.32900095167949"/>
+<sample lastIntervalAvgValue="57.97135068389685" lowerBound="70.11439161610934" meanValue="73.22169628389442" simulationTime="4.9795591943710074E7" upperBound="76.32900095167949"/>
+<sample lastIntervalAvgValue="56.77470210260794" lowerBound="70.11439161610934" meanValue="73.22169628389442" simulationTime="5.143586308304155E7" upperBound="76.32900095167949"/>
+<sample lastIntervalAvgValue="59.32029654767611" lowerBound="70.11439161610934" meanValue="73.22169628389442" simulationTime="5.291562879103742E7" upperBound="76.32900095167949"/>
+<sample lastIntervalAvgValue="54.49793692177289" lowerBound="70.11439161610934" meanValue="73.22169628389442" simulationTime="5.4351239071718834E7" upperBound="76.32900095167949"/>
+<sample lastIntervalAvgValue="57.479655266329196" lowerBound="70.11439161610934" meanValue="73.22169628389442" simulationTime="5.564580216293854E7" upperBound="76.32900095167949"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="30720" discardedSamples="390" finalValue="0.002016505007831212" name="Quality Control Supervisor - User_Check Water Quality_Throughput" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Quality Control Supervisor - User" state="1" type="5">
+<sample lastIntervalAvgValue="0.001934197270474441" meanValue="0.001934197270474441" simulationTime="442560.8561581886"/>
+<sample lastIntervalAvgValue="0.002100258460659827" meanValue="0.002028147672610148" simulationTime="1019156.5574413281"/>
+<sample lastIntervalAvgValue="0.0020267758755261765" meanValue="0.0020278432998621465" simulationTime="1309765.8976808295"/>
+<sample lastIntervalAvgValue="0.002002314092736" meanValue="0.002019706184178638" simulationTime="1922556.870111835"/>
+<sample lastIntervalAvgValue="0.001986961376611221" lowerBound="0.0018271204385858896" meanValue="0.0020336278134176827" simulationTime="3717257.080179251" upperBound="0.002292763785184431"/>
+<sample lastIntervalAvgValue="0.0019683000099935018" lowerBound="0.0017960619576172076" meanValue="0.0020036718429508106" simulationTime="5431934.712077013" upperBound="0.0022655507430571"/>
+<sample lastIntervalAvgValue="0.0019864648641084743" lowerBound="0.0017960619576172076" meanValue="0.0020036718429508106" simulationTime="7040822.972697905" upperBound="0.0022655507430571"/>
+<sample lastIntervalAvgValue="0.0020468872887471714" lowerBound="0.0019154066912442536" meanValue="0.001996288165620022" simulationTime="8633485.166616425" upperBound="0.0020843015265864426"/>
+<sample lastIntervalAvgValue="0.002025911208652238" lowerBound="0.0019154066912442536" meanValue="0.001996288165620022" simulationTime="1.0255471355332984E7" upperBound="0.0020843015265864426"/>
+<sample lastIntervalAvgValue="0.001981362060148444" lowerBound="0.0019154066912442536" meanValue="0.001996288165620022" simulationTime="1.1838220951217065E7" upperBound="0.0020843015265864426"/>
+<sample lastIntervalAvgValue="0.0020159949580564876" lowerBound="0.0019154066912442536" meanValue="0.001996288165620022" simulationTime="1.3062926395113725E7" upperBound="0.0020843015265864426"/>
+<sample lastIntervalAvgValue="0.00205913984700637" lowerBound="0.0019154066912442536" meanValue="0.001996288165620022" simulationTime="1.4271197899167769E7" upperBound="0.0020843015265864426"/>
+<sample lastIntervalAvgValue="0.0020559691351971798" lowerBound="0.001958792466043576" meanValue="0.002016505007831212" simulationTime="1.5463336418195164E7" upperBound="0.002077721597436188"/>
 </measure>
 </results>
 </archive>
