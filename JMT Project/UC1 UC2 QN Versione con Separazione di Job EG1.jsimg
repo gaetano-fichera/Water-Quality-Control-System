@@ -1,0 +1,2489 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<archive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="UC1 UC2 QN Versione con Separazione di Job EG1.jsimg" timestamp="Wed Jan 24 12:15:51 CET 2018" xsi:noNamespaceSchemaLocation="Archive.xsd">
+<sim disableStatisticStop="false" logDecimalSeparator="," logDelimiter=";" logPath="/home/gaetano/Workspace/Water-Quality-Control-System/JMT Project/Simulation Result" logReplaceMode="0" maxSamples="1000000" name="UC1 UC2 QN Versione con Separazione di Job EG1.jsimg" polling="1.0" xsi:noNamespaceSchemaLocation="SIMmodeldefinition.xsd">
+<userClass customers="1000" name="StartUp Sampling Water Inland" priority="0" referenceSource="Sampling Delay" type="closed"/>
+<userClass name="Check Water Quality" priority="0" referenceSource="Quality Control Supervisor - User" type="open"/>
+<userClass customers="1000" name="StartUp Sampling Water Outgoing" priority="0" referenceSource="Sampling Delay" type="closed"/>
+<userClass customers="0" name="Sampling Water Inland" priority="0" referenceSource="Sampling Delay" type="closed"/>
+<userClass customers="0" name="Sampling Water Outgoing" priority="0" referenceSource="Sampling Delay" type="closed"/>
+<node name="Lan Wired">
+<section className="Queue">
+<parameter classPath="java.lang.Integer" name="size">
+<value>-1</value>
+</parameter>
+<parameter array="true" classPath="java.lang.String" name="dropStrategies">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+</parameter>
+<parameter classPath="jmt.engine.NetStrategies.QueueGetStrategies.FCFSstrategy" name="FCFSstrategy"/>
+<parameter array="true" classPath="jmt.engine.NetStrategies.QueuePutStrategy" name="QueuePutStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+</parameter>
+</section>
+<section className="Delay">
+<parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>0.8333333333333334</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>5.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>5.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</parameter>
+</section>
+<section className="Router">
+<parameter array="true" classPath="jmt.engine.NetStrategies.RoutingStrategy" name="RoutingStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+</parameter>
+</section>
+</node>
+<node name="Control Center Server">
+<section className="Queue">
+<parameter classPath="java.lang.Integer" name="size">
+<value>-1</value>
+</parameter>
+<parameter array="true" classPath="java.lang.String" name="dropStrategies">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+</parameter>
+<parameter classPath="jmt.engine.NetStrategies.QueueGetStrategies.FCFSstrategy" name="FCFSstrategy"/>
+<parameter array="true" classPath="jmt.engine.NetStrategies.QueuePutStrategy" name="QueuePutStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+</parameter>
+</section>
+<section className="Server">
+<parameter classPath="java.lang.Integer" name="maxJobs">
+<value>1</value>
+</parameter>
+<parameter array="true" classPath="java.lang.Integer" name="numberOfVisits">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.Integer" name="numberOfVisits">
+<value>1</value>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="java.lang.Integer" name="numberOfVisits">
+<value>1</value>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.Integer" name="numberOfVisits">
+<value>1</value>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.Integer" name="numberOfVisits">
+<value>1</value>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.Integer" name="numberOfVisits">
+<value>1</value>
+</subParameter>
+</parameter>
+<parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>956.9377990430622</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>0.8333333333333334</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>956.9377990430622</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>1315.7894736842104</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>1315.7894736842104</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</parameter>
+</section>
+<section className="Router">
+<parameter array="true" classPath="jmt.engine.NetStrategies.RoutingStrategy" name="RoutingStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+<subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Seaweed Picking Inland Control Unit</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Seaweed Picking Outgoing Control Unit</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>0.0</value>
+</subParameter>
+</subParameter>
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Internet</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>0.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+<subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Seaweed Picking Inland Control Unit</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>0.0</value>
+</subParameter>
+</subParameter>
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Seaweed Picking Outgoing Control Unit</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>0.0</value>
+</subParameter>
+</subParameter>
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Internet</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+<subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Seaweed Picking Inland Control Unit</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>0.0</value>
+</subParameter>
+</subParameter>
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Seaweed Picking Outgoing Control Unit</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Internet</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>0.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+<subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Seaweed Picking Inland Control Unit</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Seaweed Picking Outgoing Control Unit</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>0.0</value>
+</subParameter>
+</subParameter>
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Internet</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>0.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+<subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Seaweed Picking Inland Control Unit</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>0.0</value>
+</subParameter>
+</subParameter>
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Seaweed Picking Outgoing Control Unit</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Internet</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>0.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</subParameter>
+</parameter>
+</section>
+</node>
+<node name="Seaweed Picking Inland Control Unit">
+<section className="Queue">
+<parameter classPath="java.lang.Integer" name="size">
+<value>-1</value>
+</parameter>
+<parameter array="true" classPath="java.lang.String" name="dropStrategies">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+</parameter>
+<parameter classPath="jmt.engine.NetStrategies.QueueGetStrategies.FCFSstrategy" name="FCFSstrategy"/>
+<parameter array="true" classPath="jmt.engine.NetStrategies.QueuePutStrategy" name="QueuePutStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+</parameter>
+</section>
+<section className="Server">
+<parameter classPath="java.lang.Integer" name="maxJobs">
+<value>1</value>
+</parameter>
+<parameter array="true" classPath="java.lang.Integer" name="numberOfVisits">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.Integer" name="numberOfVisits">
+<value>1</value>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="java.lang.Integer" name="numberOfVisits">
+<value>1</value>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.Integer" name="numberOfVisits">
+<value>1</value>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.Integer" name="numberOfVisits">
+<value>1</value>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.Integer" name="numberOfVisits">
+<value>1</value>
+</subParameter>
+</parameter>
+<parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>478.4688995215311</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ZeroServiceTimeStrategy" name="ZeroTimeServiceStrategy"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>478.4688995215311</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>657.8947368421052</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>657.8947368421052</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</parameter>
+</section>
+<section className="Router">
+<parameter array="true" classPath="jmt.engine.NetStrategies.RoutingStrategy" name="RoutingStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+</parameter>
+</section>
+</node>
+<node name="Seaweed Picking Outgoing Control Unit">
+<section className="Queue">
+<parameter classPath="java.lang.Integer" name="size">
+<value>-1</value>
+</parameter>
+<parameter array="true" classPath="java.lang.String" name="dropStrategies">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+</parameter>
+<parameter classPath="jmt.engine.NetStrategies.QueueGetStrategies.FCFSstrategy" name="FCFSstrategy"/>
+<parameter array="true" classPath="jmt.engine.NetStrategies.QueuePutStrategy" name="QueuePutStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+</parameter>
+</section>
+<section className="Server">
+<parameter classPath="java.lang.Integer" name="maxJobs">
+<value>1</value>
+</parameter>
+<parameter array="true" classPath="java.lang.Integer" name="numberOfVisits">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.Integer" name="numberOfVisits">
+<value>1</value>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="java.lang.Integer" name="numberOfVisits">
+<value>1</value>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.Integer" name="numberOfVisits">
+<value>1</value>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.Integer" name="numberOfVisits">
+<value>1</value>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.Integer" name="numberOfVisits">
+<value>1</value>
+</subParameter>
+</parameter>
+<parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>478.4688995215311</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ZeroServiceTimeStrategy" name="ZeroTimeServiceStrategy"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>478.4688995215311</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</parameter>
+</section>
+<section className="Router">
+<parameter array="true" classPath="jmt.engine.NetStrategies.RoutingStrategy" name="RoutingStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+</parameter>
+</section>
+</node>
+<node name="Lan Wireless">
+<section className="Queue">
+<parameter classPath="java.lang.Integer" name="size">
+<value>-1</value>
+</parameter>
+<parameter array="true" classPath="java.lang.String" name="dropStrategies">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+</parameter>
+<parameter classPath="jmt.engine.NetStrategies.QueueGetStrategies.FCFSstrategy" name="FCFSstrategy"/>
+<parameter array="true" classPath="jmt.engine.NetStrategies.QueuePutStrategy" name="QueuePutStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+</parameter>
+</section>
+<section className="Delay">
+<parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>1.7857142857142856</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ZeroServiceTimeStrategy" name="ZeroTimeServiceStrategy"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>1.7857142857142856</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>3.571428571428571</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</parameter>
+</section>
+<section className="Router">
+<parameter array="true" classPath="jmt.engine.NetStrategies.RoutingStrategy" name="RoutingStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+</parameter>
+</section>
+</node>
+<node name="Seaweed Picking Inlands">
+<section className="Queue">
+<parameter classPath="java.lang.Integer" name="size">
+<value>-1</value>
+</parameter>
+<parameter array="true" classPath="java.lang.String" name="dropStrategies">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+</parameter>
+<parameter classPath="jmt.engine.NetStrategies.QueueGetStrategies.FCFSstrategy" name="FCFSstrategy"/>
+<parameter array="true" classPath="jmt.engine.NetStrategies.QueuePutStrategy" name="QueuePutStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+</parameter>
+</section>
+<section className="Delay">
+<parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>80.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ZeroServiceTimeStrategy" name="ZeroTimeServiceStrategy"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>80.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>62.5</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>62.5</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</parameter>
+</section>
+<section className="Router">
+<parameter array="true" classPath="jmt.engine.NetStrategies.RoutingStrategy" name="RoutingStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+<subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Internet</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>0.0</value>
+</subParameter>
+</subParameter>
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>ClassSwitch 1</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+<subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Internet</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>0.0</value>
+</subParameter>
+</subParameter>
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>ClassSwitch 1</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+<subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Internet</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>ClassSwitch 1</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>0.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+<subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Internet</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>ClassSwitch 1</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>0.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</subParameter>
+</parameter>
+</section>
+</node>
+<node name="Seaweed Picking Outgoings">
+<section className="Queue">
+<parameter classPath="java.lang.Integer" name="size">
+<value>-1</value>
+</parameter>
+<parameter array="true" classPath="java.lang.String" name="dropStrategies">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+</parameter>
+<parameter classPath="jmt.engine.NetStrategies.QueueGetStrategies.FCFSstrategy" name="FCFSstrategy"/>
+<parameter array="true" classPath="jmt.engine.NetStrategies.QueuePutStrategy" name="QueuePutStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+</parameter>
+</section>
+<section className="Delay">
+<parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ZeroServiceTimeStrategy" name="ZeroTimeServiceStrategy"/>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ZeroServiceTimeStrategy" name="ZeroTimeServiceStrategy"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>0.2857142857142857</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</parameter>
+</section>
+<section className="Router">
+<parameter array="true" classPath="jmt.engine.NetStrategies.RoutingStrategy" name="RoutingStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+</parameter>
+</section>
+</node>
+<node name="Water Company Server">
+<section className="Queue">
+<parameter classPath="java.lang.Integer" name="size">
+<value>-1</value>
+</parameter>
+<parameter array="true" classPath="java.lang.String" name="dropStrategies">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+</parameter>
+<parameter classPath="jmt.engine.NetStrategies.QueueGetStrategies.FCFSstrategy" name="FCFSstrategy"/>
+<parameter array="true" classPath="jmt.engine.NetStrategies.QueuePutStrategy" name="QueuePutStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+</parameter>
+</section>
+<section className="Server">
+<parameter classPath="java.lang.Integer" name="maxJobs">
+<value>1</value>
+</parameter>
+<parameter array="true" classPath="java.lang.Integer" name="numberOfVisits">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.Integer" name="numberOfVisits">
+<value>1</value>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="java.lang.Integer" name="numberOfVisits">
+<value>1</value>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.Integer" name="numberOfVisits">
+<value>1</value>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.Integer" name="numberOfVisits">
+<value>1</value>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.Integer" name="numberOfVisits">
+<value>1</value>
+</subParameter>
+</parameter>
+<parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>1.1904761904761905</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>1.6</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>1.1904761904761905</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>2816.9014084507044</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>2816.9014084507044</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</parameter>
+</section>
+<section className="Router">
+<parameter array="true" classPath="jmt.engine.NetStrategies.RoutingStrategy" name="RoutingStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+</parameter>
+</section>
+</node>
+<node name="Internet">
+<section className="Queue">
+<parameter classPath="java.lang.Integer" name="size">
+<value>-1</value>
+</parameter>
+<parameter array="true" classPath="java.lang.String" name="dropStrategies">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+</parameter>
+<parameter classPath="jmt.engine.NetStrategies.QueueGetStrategies.FCFSstrategy" name="FCFSstrategy"/>
+<parameter array="true" classPath="jmt.engine.NetStrategies.QueuePutStrategy" name="QueuePutStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+</parameter>
+</section>
+<section className="Delay">
+<parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>5.714285714285714</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>2.857142857142857</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>5.714285714285714</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>5.714285714285714</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>5.714285714285714</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</parameter>
+</section>
+<section className="Router">
+<parameter array="true" classPath="jmt.engine.NetStrategies.RoutingStrategy" name="RoutingStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+<subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Water Company Server</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Purification System</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>0.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+<subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Water Company Server</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>0.5</value>
+</subParameter>
+</subParameter>
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Purification System</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>0.5</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+<subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Water Company Server</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Purification System</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>0.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+<subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Water Company Server</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Purification System</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>0.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+<subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Water Company Server</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Purification System</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>0.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</subParameter>
+</parameter>
+</section>
+</node>
+<node name="Purification System">
+<section className="Queue">
+<parameter classPath="java.lang.Integer" name="size">
+<value>-1</value>
+</parameter>
+<parameter array="true" classPath="java.lang.String" name="dropStrategies">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+</parameter>
+<parameter classPath="jmt.engine.NetStrategies.QueueGetStrategies.FCFSstrategy" name="FCFSstrategy"/>
+<parameter array="true" classPath="jmt.engine.NetStrategies.QueuePutStrategy" name="QueuePutStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+</parameter>
+</section>
+<section className="Server">
+<parameter classPath="java.lang.Integer" name="maxJobs">
+<value>1</value>
+</parameter>
+<parameter array="true" classPath="java.lang.Integer" name="numberOfVisits">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.Integer" name="numberOfVisits">
+<value>1</value>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="java.lang.Integer" name="numberOfVisits">
+<value>1</value>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.Integer" name="numberOfVisits">
+<value>1</value>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.Integer" name="numberOfVisits">
+<value>1</value>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.Integer" name="numberOfVisits">
+<value>1</value>
+</subParameter>
+</parameter>
+<parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ZeroServiceTimeStrategy" name="ZeroTimeServiceStrategy"/>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>0.4347826086956522</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ZeroServiceTimeStrategy" name="ZeroTimeServiceStrategy"/>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</parameter>
+</section>
+<section className="Router">
+<parameter array="true" classPath="jmt.engine.NetStrategies.RoutingStrategy" name="RoutingStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+</parameter>
+</section>
+</node>
+<node name="Inland Outgoing Router">
+<section className="Queue">
+<parameter classPath="java.lang.Integer" name="size">
+<value>-1</value>
+</parameter>
+<parameter array="true" classPath="java.lang.String" name="dropStrategies">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+</parameter>
+<parameter classPath="jmt.engine.NetStrategies.QueueGetStrategies.FCFSstrategy" name="FCFSstrategy"/>
+<parameter array="true" classPath="jmt.engine.NetStrategies.QueuePutStrategy" name="QueuePutStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+</parameter>
+</section>
+<section className="ServiceTunnel"/>
+<section className="Router">
+<parameter array="true" classPath="jmt.engine.NetStrategies.RoutingStrategy" name="RoutingStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+<subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Seaweed Picking Inlands</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Seaweed Picking Outgoings</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>0.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+<subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Seaweed Picking Inlands</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>0.0</value>
+</subParameter>
+</subParameter>
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Seaweed Picking Outgoings</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+<subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Seaweed Picking Inlands</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Seaweed Picking Outgoings</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>0.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+<subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Seaweed Picking Inlands</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>0.0</value>
+</subParameter>
+</subParameter>
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Seaweed Picking Outgoings</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</subParameter>
+</parameter>
+</section>
+</node>
+<node name="Water Company Disk">
+<section className="Queue">
+<parameter classPath="java.lang.Integer" name="size">
+<value>-1</value>
+</parameter>
+<parameter array="true" classPath="java.lang.String" name="dropStrategies">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+</parameter>
+<parameter classPath="jmt.engine.NetStrategies.QueueGetStrategies.FCFSstrategy" name="FCFSstrategy"/>
+<parameter array="true" classPath="jmt.engine.NetStrategies.QueuePutStrategy" name="QueuePutStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+</parameter>
+</section>
+<section className="Server">
+<parameter classPath="java.lang.Integer" name="maxJobs">
+<value>1</value>
+</parameter>
+<parameter array="true" classPath="java.lang.Integer" name="numberOfVisits">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.Integer" name="numberOfVisits">
+<value>1</value>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="java.lang.Integer" name="numberOfVisits">
+<value>1</value>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.Integer" name="numberOfVisits">
+<value>1</value>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.Integer" name="numberOfVisits">
+<value>1</value>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.Integer" name="numberOfVisits">
+<value>1</value>
+</subParameter>
+</parameter>
+<parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>0.04</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>0.08</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>0.04</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>40.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</parameter>
+</section>
+<section className="Router">
+<parameter array="true" classPath="jmt.engine.NetStrategies.RoutingStrategy" name="RoutingStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+<subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Sink QCS</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>0.0</value>
+</subParameter>
+</subParameter>
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Sampling Delay</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+<subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Sink QCS</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Sampling Delay</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>0.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+<subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Sink QCS</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>0.0</value>
+</subParameter>
+</subParameter>
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Sampling Delay</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+</parameter>
+</section>
+</node>
+<node name="Sink QCS">
+<section className="JobSink"/>
+</node>
+<node name="Quality Control Supervisor - User">
+<section className="RandomSource">
+<parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<value>null</value>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+<subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="lambda">
+<value>0.01</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<value>null</value>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<value>null</value>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<value>null</value>
+</subParameter>
+</parameter>
+</section>
+<section className="ServiceTunnel"/>
+<section className="Router">
+<parameter array="true" classPath="jmt.engine.NetStrategies.RoutingStrategy" name="RoutingStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+<subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+<subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+<subParameter classPath="java.lang.String" name="stationName">
+<value>Lan Wired</value>
+</subParameter>
+<subParameter classPath="java.lang.Double" name="probability">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+</parameter>
+</section>
+</node>
+<node name="Sampling Delay">
+<section className="Queue">
+<parameter classPath="java.lang.Integer" name="size">
+<value>-1</value>
+</parameter>
+<parameter array="true" classPath="java.lang.String" name="dropStrategies">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+</parameter>
+<parameter classPath="jmt.engine.NetStrategies.QueueGetStrategies.FCFSstrategy" name="FCFSstrategy"/>
+<parameter array="true" classPath="jmt.engine.NetStrategies.QueuePutStrategy" name="QueuePutStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+</parameter>
+</section>
+<section className="Delay">
+<parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ZeroServiceTimeStrategy" name="ZeroTimeServiceStrategy"/>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ZeroServiceTimeStrategy" name="ZeroTimeServiceStrategy"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ZeroServiceTimeStrategy" name="ZeroTimeServiceStrategy"/>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
+<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="t">
+<value>60000.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+<subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
+<subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
+<subParameter classPath="java.lang.Double" name="t">
+<value>60000.0</value>
+</subParameter>
+</subParameter>
+</subParameter>
+</parameter>
+</section>
+<section className="Router">
+<parameter array="true" classPath="jmt.engine.NetStrategies.RoutingStrategy" name="RoutingStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+</parameter>
+</section>
+</node>
+<node name="ClassSwitch 1">
+<section className="Queue">
+<parameter classPath="java.lang.Integer" name="size">
+<value>-1</value>
+</parameter>
+<parameter array="true" classPath="java.lang.String" name="dropStrategies">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.String" name="dropStrategy">
+<value>drop</value>
+</subParameter>
+</parameter>
+<parameter classPath="jmt.engine.NetStrategies.QueueGetStrategies.FCFSstrategy" name="FCFSstrategy"/>
+<parameter array="true" classPath="jmt.engine.NetStrategies.QueuePutStrategy" name="QueuePutStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+</parameter>
+</section>
+<section className="ClassSwitch">
+<parameter array="true" classPath="java.lang.Object" name="matrix">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter array="true" classPath="java.lang.Float" name="row">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.Float" name="cell">
+<value>0.0</value>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="java.lang.Float" name="cell">
+<value>0.0</value>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.Float" name="cell">
+<value>0.0</value>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.Float" name="cell">
+<value>1.0</value>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.Float" name="cell">
+<value>0.0</value>
+</subParameter>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter array="true" classPath="java.lang.Float" name="row">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.Float" name="cell">
+<value>0.0</value>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="java.lang.Float" name="cell">
+<value>1.0</value>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.Float" name="cell">
+<value>0.0</value>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.Float" name="cell">
+<value>0.0</value>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.Float" name="cell">
+<value>0.0</value>
+</subParameter>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter array="true" classPath="java.lang.Float" name="row">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.Float" name="cell">
+<value>0.0</value>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="java.lang.Float" name="cell">
+<value>0.0</value>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.Float" name="cell">
+<value>0.0</value>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.Float" name="cell">
+<value>0.0</value>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.Float" name="cell">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter array="true" classPath="java.lang.Float" name="row">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.Float" name="cell">
+<value>0.0</value>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="java.lang.Float" name="cell">
+<value>0.0</value>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.Float" name="cell">
+<value>0.0</value>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.Float" name="cell">
+<value>1.0</value>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.Float" name="cell">
+<value>0.0</value>
+</subParameter>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter array="true" classPath="java.lang.Float" name="row">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.Float" name="cell">
+<value>0.0</value>
+</subParameter>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="java.lang.Float" name="cell">
+<value>0.0</value>
+</subParameter>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.Float" name="cell">
+<value>0.0</value>
+</subParameter>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="java.lang.Float" name="cell">
+<value>0.0</value>
+</subParameter>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="java.lang.Float" name="cell">
+<value>1.0</value>
+</subParameter>
+</subParameter>
+</parameter>
+</section>
+<section className="Router">
+<parameter array="true" classPath="jmt.engine.NetStrategies.RoutingStrategy" name="RoutingStrategy">
+<refClass>StartUp Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Check Water Quality</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>StartUp Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Sampling Water Inland</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+<refClass>Sampling Water Outgoing</refClass>
+<subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+</parameter>
+</section>
+</node>
+<measure alpha="0.01" name="Control Center Server_Utilization" nodeType="station" precision="0.03" referenceNode="Control Center Server" referenceUserClass="" type="Utilization" verbose="false"/>
+<measure alpha="0.01" name="Seaweed Picking Inland Control Unit_Utilization" nodeType="station" precision="0.03" referenceNode="Seaweed Picking Inland Control Unit" referenceUserClass="" type="Utilization" verbose="false"/>
+<measure alpha="0.01" name="Seaweed Picking Outgoing Control Unit_Utilization" nodeType="station" precision="0.03" referenceNode="Seaweed Picking Outgoing Control Unit" referenceUserClass="" type="Utilization" verbose="false"/>
+<measure alpha="0.01" name="Water Company Server_Utilization" nodeType="station" precision="0.03" referenceNode="Water Company Server" referenceUserClass="" type="Utilization" verbose="false"/>
+<measure alpha="0.01" name="Purification System_Utilization" nodeType="station" precision="0.03" referenceNode="Purification System" referenceUserClass="" type="Utilization" verbose="false"/>
+<measure alpha="0.01" name="Water Company Disk_Utilization" nodeType="station" precision="0.03" referenceNode="Water Company Disk" referenceUserClass="" type="Utilization" verbose="false"/>
+<measure alpha="0.01" name="Lan Wired_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceNode="Lan Wired" referenceUserClass="Check Water Quality" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Control Center Server_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceNode="Control Center Server" referenceUserClass="Check Water Quality" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Internet_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceNode="Internet" referenceUserClass="Check Water Quality" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Water Company Server_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceNode="Water Company Server" referenceUserClass="Check Water Quality" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Water Company Disk_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceNode="Water Company Disk" referenceUserClass="Check Water Quality" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Purification System_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceNode="Purification System" referenceUserClass="Check Water Quality" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Sink QCS_Check Water Quality_Throughput per Sink" nodeType="station" precision="0.03" referenceNode="Sink QCS" referenceUserClass="Check Water Quality" type="Throughput per Sink" verbose="false"/>
+<measure alpha="0.01" name="Control Center Server_Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceNode="Control Center Server" referenceUserClass="Sampling Water Inland" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Seaweed Picking Inland Control Unit_Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceNode="Seaweed Picking Inland Control Unit" referenceUserClass="Sampling Water Inland" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Lan Wireless_Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceNode="Lan Wireless" referenceUserClass="Sampling Water Inland" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Seaweed Picking Inlands_Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceNode="Seaweed Picking Inlands" referenceUserClass="Sampling Water Inland" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Internet_Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceNode="Internet" referenceUserClass="Sampling Water Inland" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Water Company Server_Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceNode="Water Company Server" referenceUserClass="Sampling Water Inland" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Water Company Disk_Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceNode="Water Company Disk" referenceUserClass="Sampling Water Inland" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Control Center Server_Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceNode="Control Center Server" referenceUserClass="Sampling Water Outgoing" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Seaweed Picking Outgoing Control Unit_Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceNode="Seaweed Picking Outgoing Control Unit" referenceUserClass="Sampling Water Outgoing" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Lan Wireless_Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceNode="Lan Wireless" referenceUserClass="Sampling Water Outgoing" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Seaweed Picking Outgoings_Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceNode="Seaweed Picking Outgoings" referenceUserClass="Sampling Water Outgoing" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Internet_Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceNode="Internet" referenceUserClass="Sampling Water Outgoing" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Water Company Server_Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceNode="Water Company Server" referenceUserClass="Sampling Water Outgoing" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Water Company Disk_Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceNode="Water Company Disk" referenceUserClass="Sampling Water Outgoing" type="Response Time" verbose="false"/>
+<measure alpha="0.01" name="Quality Control Supervisor - User_Check Water Quality_Throughput" nodeType="station" precision="0.03" referenceNode="Quality Control Supervisor - User" referenceUserClass="Check Water Quality" type="Throughput" verbose="false"/>
+<measure alpha="0.01" name="Lan Wired_Utilization" nodeType="station" precision="0.03" referenceNode="Lan Wired" referenceUserClass="" type="Utilization" verbose="false"/>
+<connection source="Lan Wired" target="Control Center Server"/>
+<connection source="Control Center Server" target="Seaweed Picking Inland Control Unit"/>
+<connection source="Control Center Server" target="Seaweed Picking Outgoing Control Unit"/>
+<connection source="Control Center Server" target="Internet"/>
+<connection source="Seaweed Picking Inland Control Unit" target="Lan Wireless"/>
+<connection source="Seaweed Picking Outgoing Control Unit" target="Lan Wireless"/>
+<connection source="Lan Wireless" target="Inland Outgoing Router"/>
+<connection source="Seaweed Picking Inlands" target="Internet"/>
+<connection source="Seaweed Picking Inlands" target="ClassSwitch 1"/>
+<connection source="Seaweed Picking Outgoings" target="Internet"/>
+<connection source="Seaweed Picking Outgoings" target="ClassSwitch 1"/>
+<connection source="Water Company Server" target="Water Company Disk"/>
+<connection source="Internet" target="Water Company Server"/>
+<connection source="Internet" target="Purification System"/>
+<connection source="Purification System" target="Sink QCS"/>
+<connection source="Inland Outgoing Router" target="Seaweed Picking Inlands"/>
+<connection source="Inland Outgoing Router" target="Seaweed Picking Outgoings"/>
+<connection source="Water Company Disk" target="Sink QCS"/>
+<connection source="Water Company Disk" target="Sampling Delay"/>
+<connection source="Quality Control Supervisor - User" target="Lan Wired"/>
+<connection source="Sampling Delay" target="Lan Wired"/>
+<connection source="ClassSwitch 1" target="Lan Wired"/>
+<blockingRegion name="Physical Control Center Server" type="default">
+<regionNode nodeName="Control Center Server"/>
+<globalConstraint maxJobs="-1"/>
+<globalMemoryConstraint maxMemory="-1"/>
+<classConstraint jobClass="StartUp Sampling Water Inland" maxJobsPerClass="-1"/>
+<classConstraint jobClass="Check Water Quality" maxJobsPerClass="-1"/>
+<classConstraint jobClass="StartUp Sampling Water Outgoing" maxJobsPerClass="-1"/>
+<classConstraint jobClass="Sampling Water Inland" maxJobsPerClass="-1"/>
+<classConstraint jobClass="Sampling Water Outgoing" maxJobsPerClass="-1"/>
+<classMemoryConstraint jobClass="StartUp Sampling Water Inland" maxMemoryPerClass="-1"/>
+<classMemoryConstraint jobClass="Check Water Quality" maxMemoryPerClass="-1"/>
+<classMemoryConstraint jobClass="StartUp Sampling Water Outgoing" maxMemoryPerClass="-1"/>
+<classMemoryConstraint jobClass="Sampling Water Inland" maxMemoryPerClass="-1"/>
+<classMemoryConstraint jobClass="Sampling Water Outgoing" maxMemoryPerClass="-1"/>
+<dropRules dropThisClass="true" jobClass="StartUp Sampling Water Inland"/>
+<dropRules dropThisClass="true" jobClass="Check Water Quality"/>
+<dropRules dropThisClass="true" jobClass="StartUp Sampling Water Outgoing"/>
+<dropRules dropThisClass="true" jobClass="Sampling Water Inland"/>
+<dropRules dropThisClass="true" jobClass="Sampling Water Outgoing"/>
+<classWeight jobClass="StartUp Sampling Water Inland" weight="1"/>
+<classWeight jobClass="Check Water Quality" weight="1"/>
+<classWeight jobClass="StartUp Sampling Water Outgoing" weight="1"/>
+<classWeight jobClass="Sampling Water Inland" weight="1"/>
+<classWeight jobClass="Sampling Water Outgoing" weight="1"/>
+<classSize jobClass="StartUp Sampling Water Inland" size="1"/>
+<classSize jobClass="Check Water Quality" size="1"/>
+<classSize jobClass="StartUp Sampling Water Outgoing" size="1"/>
+<classSize jobClass="Sampling Water Inland" size="1"/>
+<classSize jobClass="Sampling Water Outgoing" size="1"/>
+</blockingRegion>
+<blockingRegion name="Physical Seaweed Picking Inland Control Unit" type="default">
+<regionNode nodeName="Seaweed Picking Inland Control Unit"/>
+<globalConstraint maxJobs="-1"/>
+<globalMemoryConstraint maxMemory="-1"/>
+<classConstraint jobClass="StartUp Sampling Water Inland" maxJobsPerClass="-1"/>
+<classConstraint jobClass="Check Water Quality" maxJobsPerClass="-1"/>
+<classConstraint jobClass="StartUp Sampling Water Outgoing" maxJobsPerClass="-1"/>
+<classConstraint jobClass="Sampling Water Inland" maxJobsPerClass="-1"/>
+<classConstraint jobClass="Sampling Water Outgoing" maxJobsPerClass="-1"/>
+<classMemoryConstraint jobClass="StartUp Sampling Water Inland" maxMemoryPerClass="-1"/>
+<classMemoryConstraint jobClass="Check Water Quality" maxMemoryPerClass="-1"/>
+<classMemoryConstraint jobClass="StartUp Sampling Water Outgoing" maxMemoryPerClass="-1"/>
+<classMemoryConstraint jobClass="Sampling Water Inland" maxMemoryPerClass="-1"/>
+<classMemoryConstraint jobClass="Sampling Water Outgoing" maxMemoryPerClass="-1"/>
+<dropRules dropThisClass="true" jobClass="StartUp Sampling Water Inland"/>
+<dropRules dropThisClass="true" jobClass="Check Water Quality"/>
+<dropRules dropThisClass="true" jobClass="StartUp Sampling Water Outgoing"/>
+<dropRules dropThisClass="true" jobClass="Sampling Water Inland"/>
+<dropRules dropThisClass="true" jobClass="Sampling Water Outgoing"/>
+<classWeight jobClass="StartUp Sampling Water Inland" weight="1"/>
+<classWeight jobClass="Check Water Quality" weight="1"/>
+<classWeight jobClass="StartUp Sampling Water Outgoing" weight="1"/>
+<classWeight jobClass="Sampling Water Inland" weight="1"/>
+<classWeight jobClass="Sampling Water Outgoing" weight="1"/>
+<classSize jobClass="StartUp Sampling Water Inland" size="1"/>
+<classSize jobClass="Check Water Quality" size="1"/>
+<classSize jobClass="StartUp Sampling Water Outgoing" size="1"/>
+<classSize jobClass="Sampling Water Inland" size="1"/>
+<classSize jobClass="Sampling Water Outgoing" size="1"/>
+</blockingRegion>
+<blockingRegion name="Physical Seaweed Picking Outgoing Control Unit" type="default">
+<regionNode nodeName="Seaweed Picking Outgoing Control Unit"/>
+<globalConstraint maxJobs="-1"/>
+<globalMemoryConstraint maxMemory="-1"/>
+<classConstraint jobClass="StartUp Sampling Water Inland" maxJobsPerClass="-1"/>
+<classConstraint jobClass="Check Water Quality" maxJobsPerClass="-1"/>
+<classConstraint jobClass="StartUp Sampling Water Outgoing" maxJobsPerClass="-1"/>
+<classConstraint jobClass="Sampling Water Inland" maxJobsPerClass="-1"/>
+<classConstraint jobClass="Sampling Water Outgoing" maxJobsPerClass="-1"/>
+<classMemoryConstraint jobClass="StartUp Sampling Water Inland" maxMemoryPerClass="-1"/>
+<classMemoryConstraint jobClass="Check Water Quality" maxMemoryPerClass="-1"/>
+<classMemoryConstraint jobClass="StartUp Sampling Water Outgoing" maxMemoryPerClass="-1"/>
+<classMemoryConstraint jobClass="Sampling Water Inland" maxMemoryPerClass="-1"/>
+<classMemoryConstraint jobClass="Sampling Water Outgoing" maxMemoryPerClass="-1"/>
+<dropRules dropThisClass="true" jobClass="StartUp Sampling Water Inland"/>
+<dropRules dropThisClass="true" jobClass="Check Water Quality"/>
+<dropRules dropThisClass="true" jobClass="StartUp Sampling Water Outgoing"/>
+<dropRules dropThisClass="true" jobClass="Sampling Water Inland"/>
+<dropRules dropThisClass="true" jobClass="Sampling Water Outgoing"/>
+<classWeight jobClass="StartUp Sampling Water Inland" weight="1"/>
+<classWeight jobClass="Check Water Quality" weight="1"/>
+<classWeight jobClass="StartUp Sampling Water Outgoing" weight="1"/>
+<classWeight jobClass="Sampling Water Inland" weight="1"/>
+<classWeight jobClass="Sampling Water Outgoing" weight="1"/>
+<classSize jobClass="StartUp Sampling Water Inland" size="1"/>
+<classSize jobClass="Check Water Quality" size="1"/>
+<classSize jobClass="StartUp Sampling Water Outgoing" size="1"/>
+<classSize jobClass="Sampling Water Inland" size="1"/>
+<classSize jobClass="Sampling Water Outgoing" size="1"/>
+</blockingRegion>
+<blockingRegion name="Physical Water Company Server" type="default">
+<regionNode nodeName="Water Company Server"/>
+<globalConstraint maxJobs="-1"/>
+<globalMemoryConstraint maxMemory="-1"/>
+<classConstraint jobClass="StartUp Sampling Water Inland" maxJobsPerClass="-1"/>
+<classConstraint jobClass="Check Water Quality" maxJobsPerClass="-1"/>
+<classConstraint jobClass="StartUp Sampling Water Outgoing" maxJobsPerClass="-1"/>
+<classConstraint jobClass="Sampling Water Inland" maxJobsPerClass="-1"/>
+<classConstraint jobClass="Sampling Water Outgoing" maxJobsPerClass="-1"/>
+<classMemoryConstraint jobClass="StartUp Sampling Water Inland" maxMemoryPerClass="-1"/>
+<classMemoryConstraint jobClass="Check Water Quality" maxMemoryPerClass="-1"/>
+<classMemoryConstraint jobClass="StartUp Sampling Water Outgoing" maxMemoryPerClass="-1"/>
+<classMemoryConstraint jobClass="Sampling Water Inland" maxMemoryPerClass="-1"/>
+<classMemoryConstraint jobClass="Sampling Water Outgoing" maxMemoryPerClass="-1"/>
+<dropRules dropThisClass="true" jobClass="StartUp Sampling Water Inland"/>
+<dropRules dropThisClass="true" jobClass="Check Water Quality"/>
+<dropRules dropThisClass="true" jobClass="StartUp Sampling Water Outgoing"/>
+<dropRules dropThisClass="true" jobClass="Sampling Water Inland"/>
+<dropRules dropThisClass="true" jobClass="Sampling Water Outgoing"/>
+<classWeight jobClass="StartUp Sampling Water Inland" weight="1"/>
+<classWeight jobClass="Check Water Quality" weight="1"/>
+<classWeight jobClass="StartUp Sampling Water Outgoing" weight="1"/>
+<classWeight jobClass="Sampling Water Inland" weight="1"/>
+<classWeight jobClass="Sampling Water Outgoing" weight="1"/>
+<classSize jobClass="StartUp Sampling Water Inland" size="1"/>
+<classSize jobClass="Check Water Quality" size="1"/>
+<classSize jobClass="StartUp Sampling Water Outgoing" size="1"/>
+<classSize jobClass="Sampling Water Inland" size="1"/>
+<classSize jobClass="Sampling Water Outgoing" size="1"/>
+</blockingRegion>
+<blockingRegion name="Physical Purification System" type="default">
+<regionNode nodeName="Purification System"/>
+<globalConstraint maxJobs="-1"/>
+<globalMemoryConstraint maxMemory="-1"/>
+<classConstraint jobClass="StartUp Sampling Water Inland" maxJobsPerClass="-1"/>
+<classConstraint jobClass="Check Water Quality" maxJobsPerClass="-1"/>
+<classConstraint jobClass="StartUp Sampling Water Outgoing" maxJobsPerClass="-1"/>
+<classConstraint jobClass="Sampling Water Inland" maxJobsPerClass="-1"/>
+<classConstraint jobClass="Sampling Water Outgoing" maxJobsPerClass="-1"/>
+<classMemoryConstraint jobClass="StartUp Sampling Water Inland" maxMemoryPerClass="-1"/>
+<classMemoryConstraint jobClass="Check Water Quality" maxMemoryPerClass="-1"/>
+<classMemoryConstraint jobClass="StartUp Sampling Water Outgoing" maxMemoryPerClass="-1"/>
+<classMemoryConstraint jobClass="Sampling Water Inland" maxMemoryPerClass="-1"/>
+<classMemoryConstraint jobClass="Sampling Water Outgoing" maxMemoryPerClass="-1"/>
+<dropRules dropThisClass="true" jobClass="StartUp Sampling Water Inland"/>
+<dropRules dropThisClass="true" jobClass="Check Water Quality"/>
+<dropRules dropThisClass="true" jobClass="StartUp Sampling Water Outgoing"/>
+<dropRules dropThisClass="true" jobClass="Sampling Water Inland"/>
+<dropRules dropThisClass="true" jobClass="Sampling Water Outgoing"/>
+<classWeight jobClass="StartUp Sampling Water Inland" weight="1"/>
+<classWeight jobClass="Check Water Quality" weight="1"/>
+<classWeight jobClass="StartUp Sampling Water Outgoing" weight="1"/>
+<classWeight jobClass="Sampling Water Inland" weight="1"/>
+<classWeight jobClass="Sampling Water Outgoing" weight="1"/>
+<classSize jobClass="StartUp Sampling Water Inland" size="1"/>
+<classSize jobClass="Check Water Quality" size="1"/>
+<classSize jobClass="StartUp Sampling Water Outgoing" size="1"/>
+<classSize jobClass="Sampling Water Inland" size="1"/>
+<classSize jobClass="Sampling Water Outgoing" size="1"/>
+</blockingRegion>
+<preload>
+<stationPopulations stationName="Sampling Delay">
+<classPopulation population="1000" refClass="StartUp Sampling Water Inland"/>
+<classPopulation population="1000" refClass="StartUp Sampling Water Outgoing"/>
+</stationPopulations>
+</preload>
+</sim>
+<jmodel xsi:noNamespaceSchemaLocation="JModelGUI.xsd">
+<userClass color="#FF0000FF" name="StartUp Sampling Water Inland"/>
+<userClass color="#FFFF0000" name="Check Water Quality"/>
+<userClass color="#FFFFC800" name="StartUp Sampling Water Outgoing"/>
+<userClass color="#FFFF00FF" name="Sampling Water Inland"/>
+<userClass color="#FF009900" name="Sampling Water Outgoing"/>
+<station name="Lan Wired">
+<position rotate="false" x="253.0" y="272.0"/>
+</station>
+<station name="Control Center Server">
+<position rotate="false" x="375.0" y="292.0"/>
+</station>
+<station name="Seaweed Picking Inland Control Unit">
+<position rotate="false" x="604.0" y="387.0"/>
+</station>
+<station name="Seaweed Picking Outgoing Control Unit">
+<position rotate="false" x="602.0" y="524.0"/>
+</station>
+<station name="Lan Wireless">
+<position rotate="false" x="1159.0" y="417.0"/>
+</station>
+<station name="Seaweed Picking Inlands">
+<position rotate="false" x="1496.0" y="407.0"/>
+</station>
+<station name="Seaweed Picking Outgoings">
+<position rotate="false" x="1485.0" y="531.0"/>
+</station>
+<station name="Water Company Server">
+<position rotate="false" x="1854.0" y="323.0"/>
+</station>
+<station name="Internet">
+<position rotate="false" x="1691.0" y="257.0"/>
+</station>
+<station name="Purification System">
+<position rotate="false" x="1986.0" y="466.0"/>
+</station>
+<station name="Inland Outgoing Router">
+<position rotate="false" x="1270.0" y="461.0"/>
+</station>
+<station name="Water Company Disk">
+<position rotate="false" x="2050.0" y="323.0"/>
+</station>
+<station name="Sink QCS">
+<position rotate="false" x="2220.0" y="480.0"/>
+</station>
+<station name="Quality Control Supervisor - User">
+<position rotate="false" x="20.0" y="295.0"/>
+</station>
+<station name="Sampling Delay">
+<position rotate="false" x="2054.0" y="79.0"/>
+</station>
+<station name="ClassSwitch 1">
+<position rotate="false" x="1029.0" y="681.0"/>
+</station>
+<parametric classPath="jmt.gui.common.definitions.parametric.NumberOfCustomerParametricAnalysis" enabled="true">
+<field name="Is single class" value="false"/>
+<field name="Steps" value="1000"/>
+<field name="To" value="10000.0"/>
+<field name="Type" value="Number of customers"/>
+</parametric>
+</jmodel>
+<results elapsedTime="0" logDecimalSeparator="," logDelimiter=";" pollingInterval="0.0" xsi:noNamespaceSchemaLocation="Results.xsd">
+<measure alpha="0.99" analyzedSamples="3" name="Control Center Server_All classes_Utilization" nodeType="station" precision="0.03" referenceClass="All classes" referenceStation="Control Center Server" type="4">
+<sample lowerBound="0.01164250058180172" meanValue="0.012034857798617647" upperBound="0.012427215015433575" validity="false"/>
+<sample lowerBound="0.01162738003111382" meanValue="0.012037942105493506" upperBound="0.012448504179873192" validity="false"/>
+<sample lowerBound="0.011790790779937006" meanValue="0.01212434055349855" upperBound="0.012457890327060094" validity="true"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="3" name="Seaweed Picking Inland Control Unit_All classes_Utilization" nodeType="station" precision="0.03" referenceClass="All classes" referenceStation="Seaweed Picking Inland Control Unit" type="4">
+<sample lowerBound="0.0" meanValue="4.00501632561411E-5" upperBound="1.630414349340523E-4" validity="true"/>
+<sample lowerBound="0.0" meanValue="4.055194254852248E-5" upperBound="1.6407379470683675E-4" validity="true"/>
+<sample lowerBound="0.0" meanValue="3.978128529445782E-5" upperBound="1.624959565179995E-4" validity="true"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="3" name="Seaweed Picking Outgoing Control Unit_All classes_Utilization" nodeType="station" precision="0.03" referenceClass="All classes" referenceStation="Seaweed Picking Outgoing Control Unit" type="4">
+<sample lowerBound="0.029946532203912146" meanValue="0.033315508712883336" upperBound="0.03668448522185453" validity="false"/>
+<sample lowerBound="0.03025728816335998" meanValue="0.033384580670703067" upperBound="0.036511873178046154" validity="false"/>
+<sample lowerBound="0.03016010904756034" meanValue="0.033633131107831477" upperBound="0.03710615316810262" validity="false"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="3" name="Water Company Server_All classes_Utilization" nodeType="station" precision="0.03" referenceClass="All classes" referenceStation="Water Company Server" type="4">
+<sample lowerBound="0.0030217132734038058" meanValue="0.003121533110993518" upperBound="0.00322135294858323" validity="false"/>
+<sample lowerBound="0.0030157604143054703" meanValue="0.003131828874887196" upperBound="0.0032478973354689213" validity="false"/>
+<sample lowerBound="0.00303662528106638" meanValue="0.0031320641117087693" upperBound="0.0032275029423511586" validity="false"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="3" name="Purification System_All classes_Utilization" nodeType="station" precision="0.03" referenceClass="All classes" referenceStation="Purification System" type="4">
+<sample lowerBound="0.01121963213224238" meanValue="0.011517862678156536" upperBound="0.011816093224070692" validity="true"/>
+<sample lowerBound="0.011163011314280838" meanValue="0.011459245604779754" upperBound="0.01175547989527867" validity="true"/>
+<sample lowerBound="0.01123080232463125" meanValue="0.01155849612789046" upperBound="0.01188618993114967" validity="true"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="3" name="Water Company Disk_All classes_Utilization" nodeType="station" precision="0.03" referenceClass="All classes" referenceStation="Water Company Disk" type="4">
+<sample lowerBound="0.07736700775784873" meanValue="0.07991359782995086" upperBound="0.08246018790205299" validity="false"/>
+<sample lowerBound="0.07783148145119437" meanValue="0.07942630414580026" upperBound="0.08102112684040616" validity="true"/>
+<sample lowerBound="0.07635542640852207" meanValue="0.07879775299450315" upperBound="0.08124007958048422" validity="false"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="3" name="Lan Wired_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Lan Wired" type="2">
+<sample lowerBound="1.176226508886712" meanValue="1.1947498048461258" upperBound="1.2132731008055395" validity="true"/>
+<sample lowerBound="1.1837456133855295" meanValue="1.2073472283961486" upperBound="1.2309488434067677" validity="true"/>
+<sample lowerBound="1.1762137875691605" meanValue="1.1965436796709432" upperBound="1.216873571772726" validity="true"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="3" name="Control Center Server_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Control Center Server" type="2">
+<sample lowerBound="1.1655688960453798" meanValue="1.1991353819788177" upperBound="1.2327018679122557" validity="true"/>
+<sample lowerBound="1.1919842455924112" meanValue="1.214429420568613" upperBound="1.2368745955448148" validity="true"/>
+<sample lowerBound="1.1927873721501492" meanValue="1.2191811964329025" upperBound="1.2455750207156557" validity="true"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="3" name="Internet_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Internet" type="2">
+<sample lowerBound="0.3394238501389865" meanValue="0.3482078131815174" upperBound="0.35699177622404826" validity="true"/>
+<sample lowerBound="0.3428741892210194" meanValue="0.3487296006443649" upperBound="0.3545850120677104" validity="true"/>
+<sample lowerBound="0.3428361577774528" meanValue="0.3495291287607848" upperBound="0.3562220997441168" validity="true"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="3" name="Water Company Server_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Water Company Server" type="2">
+<sample lowerBound="0.609889107207715" meanValue="0.6214608588611777" upperBound="0.6330326105146404" validity="true"/>
+<sample lowerBound="0.6065340471735101" meanValue="0.6221255552851046" upperBound="0.6377170633966991" validity="true"/>
+<sample lowerBound="0.6148842958897511" meanValue="0.6325751568004623" upperBound="0.6502660177111734" validity="true"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="3" name="Water Company Disk_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Water Company Disk" type="2">
+<sample lowerBound="13.065162798808743" meanValue="13.418806693613401" upperBound="13.77245058841806" validity="true"/>
+<sample lowerBound="13.086690762589038" meanValue="13.449963780975013" upperBound="13.813236799360988" validity="true"/>
+<sample lowerBound="12.922197793491215" meanValue="13.243511092278574" upperBound="13.564824391065933" validity="true"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="3" name="Purification System_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Purification System" type="2">
+<sample lowerBound="2.2717776632910778" meanValue="2.305023144846397" upperBound="2.338268626401716" validity="true"/>
+<sample lowerBound="2.2345735257984223" meanValue="2.3033166939378447" upperBound="2.372059862077267" validity="true"/>
+<sample lowerBound="2.2749432033982444" meanValue="2.3203504185997677" upperBound="2.365757633801291" validity="true"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="3" name="Sink QCS_Check Water Quality_Throughput per Sink" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Sink QCS" type="13">
+<sample lowerBound="0.009798520693966662" meanValue="0.010026526276349229" upperBound="0.010265395755813925" validity="true"/>
+<sample lowerBound="0.009835927652075017" meanValue="0.01003270538298171" upperBound="0.010237517323481047" validity="true"/>
+<sample lowerBound="0.009883061435069911" meanValue="0.010047983448492339" upperBound="0.010218503091117477" validity="true"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="3" name="Control Center Server_Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Inland" referenceStation="Control Center Server" type="2">
+<sample lowerBound="0.014303368454600873" meanValue="0.017863894610218756" upperBound="0.02142442076583664" validity="false"/>
+<sample lowerBound="0.01216379421811125" meanValue="0.014668837200803874" upperBound="0.017173880183496498" validity="false"/>
+<sample lowerBound="0.009464184565931098" meanValue="0.013463856059944249" upperBound="0.0174635275539574" validity="false"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="3" name="Seaweed Picking Inland Control Unit_Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Inland" referenceStation="Seaweed Picking Inland Control Unit" type="2">
+<sample lowerBound="0.0015114772246988194" meanValue="0.0015545839206288293" upperBound="0.001597690616558839" validity="true"/>
+<sample lowerBound="0.0015833958458081653" meanValue="0.0016174582385595129" upperBound="0.0016515206313108604" validity="true"/>
+<sample lowerBound="0.001547984341562567" meanValue="0.001594332078549831" upperBound="0.0016406798155370952" validity="true"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="3" name="Lan Wireless_Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Inland" referenceStation="Lan Wireless" type="2">
+<sample lowerBound="0.27389706074268616" meanValue="0.2796999987345619" upperBound="0.2855029367264377" validity="true"/>
+<sample lowerBound="0.27618379971560186" meanValue="0.28100445733966173" upperBound="0.2858251149637216" validity="true"/>
+<sample lowerBound="0.27272256389703975" meanValue="0.2792334268984809" upperBound="0.28574428989992207" validity="true"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="3" name="Seaweed Picking Inlands_Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Inland" referenceStation="Seaweed Picking Inlands" type="2">
+<sample lowerBound="0.01566011818887232" meanValue="0.01591777472259275" upperBound="0.016175431256313176" validity="true"/>
+<sample lowerBound="0.015847997307462537" meanValue="0.016097205345120495" upperBound="0.016346413382778452" validity="true"/>
+<sample lowerBound="0.015741754173084287" meanValue="0.01603410691287728" upperBound="0.016326459652670273" validity="true"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="3" name="Internet_Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Inland" referenceStation="Internet" type="2">
+<sample lowerBound="0.17012714372985194" meanValue="0.1743670663072453" upperBound="0.17860698888463866" validity="true"/>
+<sample lowerBound="0.17074216129674355" meanValue="0.17464539273222282" upperBound="0.1785486241677021" validity="true"/>
+<sample lowerBound="0.17100348747522337" meanValue="0.1746627811984654" upperBound="0.17832207492170743" validity="true"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="3" name="Water Company Server_Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Inland" referenceStation="Water Company Server" type="2">
+<sample lowerBound="0.0031665016138543636" meanValue="0.003823665393523143" upperBound="0.004480829173191922" validity="false"/>
+<sample lowerBound="0.0023933133348788323" meanValue="0.0038048158025499085" upperBound="0.005216318270220985" validity="false"/>
+<sample lowerBound="0.0022010721269295967" meanValue="0.003189302062871017" upperBound="0.004177531998812437" validity="false"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="3" name="Water Company Disk_Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Inland" referenceStation="Water Company Disk" type="2">
+<sample lowerBound="0.8983585323302223" meanValue="0.9998289270946359" upperBound="1.1012993218590494" validity="false"/>
+<sample lowerBound="0.8870829003325804" meanValue="1.0148669180885497" upperBound="1.142650935844519" validity="false"/>
+<sample lowerBound="0.7594041125254367" meanValue="0.9007414662995803" upperBound="1.0420788200737239" validity="false"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="3" name="Control Center Server_Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Outgoing" referenceStation="Control Center Server" type="2">
+<sample lowerBound="0.012872085080337761" meanValue="0.013694623653104303" upperBound="0.014517162225870845" validity="false"/>
+<sample lowerBound="0.01391399507895387" meanValue="0.014686737026366893" upperBound="0.015459478973779917" validity="false"/>
+<sample lowerBound="0.013525972983637932" meanValue="0.01430719585405389" upperBound="0.015088418724469848" validity="false"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="3" name="Seaweed Picking Outgoing Control Unit_Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Outgoing" referenceStation="Seaweed Picking Outgoing Control Unit" type="2">
+<sample lowerBound="1.7628883498289702" meanValue="1.7978945000455848" upperBound="1.8329006502621994" validity="true"/>
+<sample lowerBound="1.6567771684884074" meanValue="1.6973704846139783" upperBound="1.7379638007395493" validity="true"/>
+<sample lowerBound="1.7284257037354493" meanValue="1.8107530424890261" upperBound="1.893080381242603" validity="false"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="3" name="Lan Wireless_Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Outgoing" referenceStation="Lan Wireless" type="2">
+<sample lowerBound="0.9866219999054331" meanValue="0.9999942313633639" upperBound="1.0133664628212946" validity="true"/>
+<sample lowerBound="0.9870876771019167" meanValue="1.0117151862820692" upperBound="1.0363426954622217" validity="true"/>
+<sample lowerBound="0.9702168608172482" meanValue="0.999475120367557" upperBound="1.028733379917866" validity="true"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="3" name="Seaweed Picking Outgoings_Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Outgoing" referenceStation="Seaweed Picking Outgoings" type="2">
+<sample lowerBound="0.9901058218879253" meanValue="1.004727837988427" upperBound="1.0193498540889288" validity="true"/>
+<sample lowerBound="0.9795625873498562" meanValue="0.996212520047115" upperBound="1.012862452744374" validity="true"/>
+<sample lowerBound="0.9694393090808191" meanValue="0.997462223626755" upperBound="1.0254851381726908" validity="true"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="3" name="Internet_Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Outgoing" referenceStation="Internet" type="2">
+<sample lowerBound="0.17305262728909016" meanValue="0.17643867292478557" upperBound="0.179824718560481" validity="true"/>
+<sample lowerBound="0.1706826778002167" meanValue="0.17438051442376637" upperBound="0.17807835104731604" validity="true"/>
+<sample lowerBound="0.17142502568319423" meanValue="0.17533844902592222" upperBound="0.1792518723686502" validity="true"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="3" name="Water Company Server_Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Outgoing" referenceStation="Water Company Server" type="2">
+<sample lowerBound="0.002043830762527727" meanValue="0.002213221565583274" upperBound="0.0023826123686388205" validity="false"/>
+<sample lowerBound="0.0020083948884019984" meanValue="0.0021612453333755516" upperBound="0.0023140957783491047" validity="false"/>
+<sample lowerBound="0.0019019593496893649" meanValue="0.002140603373588067" upperBound="0.0023792473974867693" validity="false"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="3" name="Water Company Disk_Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Outgoing" referenceStation="Water Company Disk" type="2">
+<sample lowerBound="2.146528935719213" meanValue="2.1992230888365394" upperBound="2.2519172419538656" validity="true"/>
+<sample lowerBound="2.144363065224106" meanValue="2.2061694130221032" upperBound="2.2679757608201006" validity="true"/>
+<sample lowerBound="2.217259599401045" meanValue="2.3121443353268134" upperBound="2.4070290712525817" validity="false"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="3" name="Quality Control Supervisor - User_Check Water Quality_Throughput" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Quality Control Supervisor - User" type="5">
+<sample lowerBound="0.009688861856952549" meanValue="0.009958749796162363" upperBound="0.010244104282018773" validity="true"/>
+<sample lowerBound="0.009849182196041847" meanValue="0.010025542725356799" upperBound="0.010208334270847153" validity="true"/>
+<sample lowerBound="0.009883149648861278" meanValue="0.010047955085940554" upperBound="0.010218350123778766" validity="true"/>
+</measure>
+<measure alpha="0.99" analyzedSamples="3" name="Lan Wired_All classes_Utilization" nodeType="station" precision="0.03" referenceClass="All classes" referenceStation="Lan Wired" type="4">
+<sample lowerBound="0.0" meanValue="0.1566217123105077" upperBound="0.24442124092186288" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.1567871821330666" upperBound="0.2478931409053727" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.1635982699491099" upperBound="0.25444299151204497" validity="true"/>
+</measure>
+</results>
+</archive>
