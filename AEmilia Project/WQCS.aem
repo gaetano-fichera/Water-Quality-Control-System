@@ -1,0 +1,157 @@
+
+% StartUp 
+% Sample
+% Check 
+
+ARCHI TYPE wcs(
+	
+	const rate SampleWaterCompanyServer_rate := 0.000355,
+	const rate StartUpWaterCompannyServer_rate := 0.84,
+	const rate CheckWaterCompannyServer_rate := 0.625,
+	const rate SampleWaterCompanyDisk_rate := 0.025,
+	const rate StartUpWaterCompanyDisk_rate := 25,
+	const rate CheckWaterCompanyDisk_rate := 12.5,
+	const rate WiredConnectionUp_rate := 0.02,
+	const rate WiredConnectionDown_rate := 0.02
+)
+
+ARCHI ELEM_TYPES
+
+	% Water Company Server
+
+	ELEM_TYPE WaterCompanyServer_Type(const rate SampleWaterCompanyServer_rate, const rate CheckWaterCompannyServer_rate)
+
+		BEHAVIOR
+
+			ServerCalled (void;void) =
+				choice{
+					<save_sample_request, inf> . <save_sample_Db, SampleWaterCompanyServer_rate> . ServerCalled(),
+					<getExpectedParametersOutGoing_request, inf> . <getExpectedParametersOutGoing_db_request, CheckWaterCompannyServer_rate> . WaitingParamsRequest()
+				};
+
+			WaitingParamsRequest (void;void) = 
+				<getExpectedParametersOutGoing_db_response, inf> . <getExpectedParametersOutGoing_response, inf> . ServerCalled()
+				
+
+		INPUT_INTERACTIONS
+
+			UNI save_sample_request;
+				getExpectedParametersOutGoing_request;
+				getExpectedParametersOutGoing_db_response
+
+		OUTPUT_INTERACTIONS
+
+			UNI getExpectedParametersOutGoing_response;
+				save_sample_Db;
+				getExpectedParametersOutGoing_db_request
+
+
+
+	% Wired Connection Up
+
+	ELEM_TYPE WiredConnectionUp_Type(const rate WiredConnectionUp_rate)
+
+		BEHAVIOR
+
+			WiredCalled(void;void) =
+				choice{
+					<receive_qss_response, inf> . <forward_qss, WiredConnectionUp_rate> . WiredCalled(),
+					<receive_params_response, inf> . <forward_params_response, WiredConnectionUp_rate> . WiredCalled(),
+					<receive_qsqc_response, inf> . <forward_qsqc, WiredConnectionUp_rate> . WiredCalled()
+				};
+
+
+		INPUT_INTERACTIONS
+
+			UNI receive_qss_response;
+				receive_params_response;
+				receive_qsqc_response
+
+		OUTPUT_INTERACTIONS
+
+			UNI getExpectedParametersOutGoing_response;
+				save_sample_Db;
+				getExpectedParametersOutGoing_db_request
+
+
+		% Wired Connection Down
+
+		ELEM_TYPE WiredConnectionDown_Type(const rate WiredConnectionDown_rate)
+
+		BEHAVIOR
+
+			WiredCalled(void;void) =
+				choice{
+					<receive_qss_request, inf> . <forward_qss, WiredConnectionDown_rate> . WiredCalled(),
+					<receive_params_request, inf> . <forward_params_request, WiredConnectionDown_rate> . WiredCalled(),
+					<receive_qsqc_request, inf> . <forward_qsqc, WiredConnectionDown_rate> . WiredCalled(),
+					<receive_save_sample_request, inf> . <forward_save_sample_request, WiredConnectionDown_rate> . WiredCalled()
+				};
+
+
+		INPUT_INTERACTIONS
+
+			UNI receive_qss_request;
+				receive_params_request;
+				receive_qsqc_request;
+				receive_save_sample_request
+
+		OUTPUT_INTERACTIONS
+
+			UNI forward_qss;
+				forward_params_request;
+				forward_qsqc;
+				forward_save_sample_request
+
+
+		% Water Company Disk
+
+		ELEM_TYPE WaterCompanyDisk_Type(const rate SampleWaterCompanyDisk_rate, const rate CheckWaterCompanyDisk_rate)
+
+		BEHAVIOR
+
+			DiskCalled(void;void)
+				choice{
+					<save_sample_Db, SampleWaterCompanyDisk_rate> . DiskCalled,
+					<getExpectedParametersOutGoing_db_request, inf> . <getExpectedParametersOutGoing_db_response, CheckWaterCompanyDisk_rate> . DiskCalled
+				};
+
+
+		INPUT_INTERACTIONS 
+
+			UNI save_sample_Db;
+				getExpectedParametersOutGoing_db_request
+
+		OUTPUT_INTERACTIONS
+
+			UNI getExpectedParametersOutGoing_db_response
+
+
+
+
+ARCHI_TOPOLOGY
+
+	ARCHI_ELEM_INSTANCES
+		WCS : WaterCompanyServer_Type(const rate SampleWaterCompanyServer_rate, const rate CheckWaterCompannyServer_rate);
+		WCWCU : WiredConnectionUp_Type(const rate WiredConnectionUp_rate);
+		WCWCD : WiredConnectionDown_Type(const rate WiredConnectionDown_rate);
+		WCD : WaterCompanyDisk_Type(const rate SampleWaterCompanyDisk_rate, const rate CheckWaterCompanyDisk_rate)
+
+
+
+	ARCHI_INTERACTIONS
+
+		WCS.save_sample_request;
+		WCS: getExpectedParametersOutGoing_request
+
+
+	ARCHI_ATTACHMENTS
+
+	FROM WCS.save_sample_Db 							TO WCWCD.receive_save_sample_request;
+	FROM WCS.getExpectedParametersOutGoing_db_request 	TO WCWCD.receive_params_request;
+	FROM WCWCU.forward_params_response					TO WCS.getExpectedParametersOutGoing_db_response;
+	FROM WCWCD.forward_save_sample_request				TO WCD.save_sample_Db;
+	FROM WCWCD.forward_params_request					TO WCD.getExpectedParametersOutGoing_db_request;
+	FROM WCD.getExpectedParametersOutGoing_db_response  TO WCWCU.receive_params_response
+
+END

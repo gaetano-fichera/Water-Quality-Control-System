@@ -1,0 +1,6 @@
+
+
+MEASURE WaterCompanyServerUtilization IS
+	ENABLED(WCS.getExpectedParametersOutGoing_response) -> STATE_REWARD (1.0)
+	ENABLED(WCS.save_sample_Db) -> STATE_REWARD (1.0)
+	ENABLED(WCS.getExpectedParametersOutGoing_db_request) -> STATE_REWARD (1.0)
