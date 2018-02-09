@@ -3,7 +3,7 @@
 % Sample
 % Check 
 
-ARCHI TYPE wcs(
+ARCHI_TYPE wcs(
 	
 	const rate SampleWaterCompanyServer_rate := 0.000355,
 	const rate StartUpWaterCompannyServer_rate := 0.84,
@@ -15,7 +15,7 @@ ARCHI TYPE wcs(
 	const rate WiredConnectionDown_rate := 0.02
 )
 
-ARCHI ELEM_TYPES
+ARCHI_ELEM_TYPES
 
 	% Water Company Server
 
@@ -25,12 +25,12 @@ ARCHI ELEM_TYPES
 
 			ServerCalled (void;void) =
 				choice{
-					<save_sample_request, inf> . <save_sample_Db, SampleWaterCompanyServer_rate> . ServerCalled(),
-					<getExpectedParametersOutGoing_request, inf> . <getExpectedParametersOutGoing_db_request, CheckWaterCompannyServer_rate> . WaitingParamsRequest()
+					<save_sample_request, _> . <save_sample_Db, exp(SampleWaterCompanyServer_rate)> . ServerCalled(),
+					<getExpectedParametersOutGoing_request, _> . <getExpectedParametersOutGoing_db_request, exp(CheckWaterCompannyServer_rate)> . WaitingParamsRequest()
 				};
 
 			WaitingParamsRequest (void;void) = 
-				<getExpectedParametersOutGoing_db_response, inf> . <getExpectedParametersOutGoing_response, inf> . ServerCalled()
+				<getExpectedParametersOutGoing_db_response, _> . <getExpectedParametersOutGoing_response, inf> . ServerCalled()
 				
 
 		INPUT_INTERACTIONS
@@ -55,10 +55,10 @@ ARCHI ELEM_TYPES
 
 			WiredCalled(void;void) =
 				choice{
-					<receive_qss_response, inf> . <forward_qss, WiredConnectionUp_rate> . WiredCalled(),
-					<receive_params_response, inf> . <forward_params_response, WiredConnectionUp_rate> . WiredCalled(),
-					<receive_qsqc_response, inf> . <forward_qsqc, WiredConnectionUp_rate> . WiredCalled()
-				};
+					<receive_qss_response, _> . <forward_qss, exp(WiredConnectionUp_rate)> . WiredCalled(),
+					<receive_params_response, _> . <forward_params_response, exp(WiredConnectionUp_rate)> . WiredCalled(),
+					<receive_qsqc_response, _> . <forward_qsqc, exp(WiredConnectionUp_rate)> . WiredCalled()
+				}
 
 
 		INPUT_INTERACTIONS
@@ -69,9 +69,9 @@ ARCHI ELEM_TYPES
 
 		OUTPUT_INTERACTIONS
 
-			UNI getExpectedParametersOutGoing_response;
-				save_sample_Db;
-				getExpectedParametersOutGoing_db_request
+			UNI forward_qss;
+				forward_params_response;
+				forward_qsqc
 
 
 		% Wired Connection Down
@@ -82,11 +82,11 @@ ARCHI ELEM_TYPES
 
 			WiredCalled(void;void) =
 				choice{
-					<receive_qss_request, inf> . <forward_qss, WiredConnectionDown_rate> . WiredCalled(),
-					<receive_params_request, inf> . <forward_params_request, WiredConnectionDown_rate> . WiredCalled(),
-					<receive_qsqc_request, inf> . <forward_qsqc, WiredConnectionDown_rate> . WiredCalled(),
-					<receive_save_sample_request, inf> . <forward_save_sample_request, WiredConnectionDown_rate> . WiredCalled()
-				};
+					<receive_qss_request, _> . <forward_qss, exp(WiredConnectionDown_rate)> . WiredCalled(),
+					<receive_params_request, _> . <forward_params_request, exp(WiredConnectionDown_rate)> . WiredCalled(),
+					<receive_qsqc_request, _> . <forward_qsqc, exp(WiredConnectionDown_rate)> . WiredCalled(),
+					<receive_save_sample_request, _> . <forward_save_sample_request, exp(WiredConnectionDown_rate)> . WiredCalled()
+				}
 
 
 		INPUT_INTERACTIONS
@@ -110,11 +110,11 @@ ARCHI ELEM_TYPES
 
 		BEHAVIOR
 
-			DiskCalled(void;void)
+			DiskCalled(void;void) =
 				choice{
-					<save_sample_Db, SampleWaterCompanyDisk_rate> . DiskCalled,
-					<getExpectedParametersOutGoing_db_request, inf> . <getExpectedParametersOutGoing_db_response, CheckWaterCompanyDisk_rate> . DiskCalled
-				};
+					<save_sample_Db, _> . DiskCalled(), %invece dei underscore ci va il tempo del disco
+					<getExpectedParametersOutGoing_db_request, _> . <getExpectedParametersOutGoing_db_response, exp(CheckWaterCompanyDisk_rate)> . DiskCalled()
+				}
 
 
 		INPUT_INTERACTIONS 
@@ -132,17 +132,17 @@ ARCHI ELEM_TYPES
 ARCHI_TOPOLOGY
 
 	ARCHI_ELEM_INSTANCES
-		WCS : WaterCompanyServer_Type(const rate SampleWaterCompanyServer_rate, const rate CheckWaterCompannyServer_rate);
-		WCWCU : WiredConnectionUp_Type(const rate WiredConnectionUp_rate);
-		WCWCD : WiredConnectionDown_Type(const rate WiredConnectionDown_rate);
-		WCD : WaterCompanyDisk_Type(const rate SampleWaterCompanyDisk_rate, const rate CheckWaterCompanyDisk_rate)
+		WCS : WaterCompanyServer_Type(SampleWaterCompanyServer_rate, CheckWaterCompannyServer_rate);
+		WCWCU : WiredConnectionUp_Type(WiredConnectionUp_rate);
+		WCWCD : WiredConnectionDown_Type(WiredConnectionDown_rate);
+		WCD : WaterCompanyDisk_Type(SampleWaterCompanyDisk_rate, CheckWaterCompanyDisk_rate)
 
 
 
 	ARCHI_INTERACTIONS
 
 		WCS.save_sample_request;
-		WCS: getExpectedParametersOutGoing_request
+		WCS.getExpectedParametersOutGoing_request
 
 
 	ARCHI_ATTACHMENTS
