@@ -1,0 +1,5 @@
+
+
+MEASURE WaterCompanyServerUtilization IS
+	ENABLED(WCS.getExpectedParametersOutGoing_request) -> TRANS_REWARD(1)
+	ENABLED(WCS.getExpectedParametersOutGoing_db_request) -> TRANS_REWARD(1)

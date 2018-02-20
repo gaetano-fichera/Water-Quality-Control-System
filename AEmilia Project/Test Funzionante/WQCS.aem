@@ -1,0 +1,122 @@
+
+% StartUp 
+% Sample
+% Check 
+
+ARCHI_TYPE wcs(
+	
+	const rate CheckWaterCompanyServer_rate := 0.625,
+	const rate CheckWaterCompanyDisk_rate := 12.5,
+	const rate WiredConnectionUp_rate := 0.02,
+	const rate WiredConnectionDown_rate := 0.02
+)
+
+ARCHI_ELEM_TYPES
+
+	% Water Company Server
+
+	ELEM_TYPE WaterCompanyServer_Type(const rate CheckWaterCompanyServer_rate)
+
+		BEHAVIOR
+
+			ServerCalled (void;void) =
+				<getExpectedParametersOutGoing_request, exp(0.02)> . <getExpectedParametersOutGoing_db_request, exp(CheckWaterCompanyServer_rate)> . WaitingParamsRequest();
+
+
+			WaitingParamsRequest (void;void) = 
+				<getExpectedParametersOutGoing_db_response, _> . ServerCalled()
+				
+
+		INPUT_INTERACTIONS
+
+			UNI getExpectedParametersOutGoing_request;
+				getExpectedParametersOutGoing_db_response
+
+		OUTPUT_INTERACTIONS
+
+			UNI getExpectedParametersOutGoing_db_request
+
+
+
+	% Wired Connection Up
+
+	ELEM_TYPE WiredConnectionUp_Type(const rate WiredConnectionUp_rate)
+
+		BEHAVIOR
+
+			WiredCalled(void;void) =
+				<receive_params_response, _> . <forward_params_response, exp(WiredConnectionUp_rate)> . WiredCalled()
+
+
+		INPUT_INTERACTIONS
+
+			UNI receive_params_response
+				
+		OUTPUT_INTERACTIONS
+
+			UNI forward_params_response
+				
+
+		% Wired Connection Down
+
+		ELEM_TYPE WiredConnectionDown_Type(const rate WiredConnectionDown_rate)
+
+		BEHAVIOR
+
+			WiredCalled(void;void) =
+				<receive_params_request, _> . <forward_params_request, exp(WiredConnectionDown_rate)> . WiredCalled()
+
+
+		INPUT_INTERACTIONS
+
+			UNI receive_params_request
+				
+		OUTPUT_INTERACTIONS
+
+			UNI forward_params_request
+
+		% Water Company Disk
+
+		ELEM_TYPE WaterCompanyDisk_Type(const rate CheckWaterCompanyDisk_rate)
+
+		BEHAVIOR
+
+			DiskCalled(void;void) =
+				<getExpectedParametersOutGoing_db_request, _> . <getExpectedParametersOutGoing_db_response, exp(CheckWaterCompanyDisk_rate)> . DiskCalled()
+
+
+
+		INPUT_INTERACTIONS 
+
+			UNI getExpectedParametersOutGoing_db_request
+
+		OUTPUT_INTERACTIONS
+
+			UNI getExpectedParametersOutGoing_db_response
+
+
+
+
+ARCHI_TOPOLOGY
+
+	ARCHI_ELEM_INSTANCES
+		WCS : WaterCompanyServer_Type(CheckWaterCompanyServer_rate);
+		WCWCU : WiredConnectionUp_Type(WiredConnectionUp_rate);
+		WCWCD : WiredConnectionDown_Type(WiredConnectionDown_rate);
+		WCD : WaterCompanyDisk_Type(CheckWaterCompanyDisk_rate)
+
+
+
+	ARCHI_INTERACTIONS
+
+		WCS.getExpectedParametersOutGoing_request
+
+
+	ARCHI_ATTACHMENTS
+
+	FROM WCS.getExpectedParametersOutGoing_db_request 	TO WCWCD.receive_params_request;
+	FROM WCWCU.forward_params_response					TO WCS.getExpectedParametersOutGoing_db_response;
+	FROM WCWCD.forward_params_request					TO WCD.getExpectedParametersOutGoing_db_request;
+	FROM WCD.getExpectedParametersOutGoing_db_response  TO WCWCU.receive_params_response
+
+END

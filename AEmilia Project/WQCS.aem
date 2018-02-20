@@ -1,4 +1,3 @@
-
 % StartUp 
 % Sample
 % Check 
@@ -6,8 +5,8 @@
 ARCHI_TYPE wcs(
 	
 	const rate SampleWaterCompanyServer_rate := 0.000355,
-	const rate StartUpWaterCompannyServer_rate := 0.84,
-	const rate CheckWaterCompannyServer_rate := 0.625,
+	const rate StartUpWaterCompanyServer_rate := 0.84,
+	const rate CheckWaterCompanyServer_rate := 0.625,
 	const rate SampleWaterCompanyDisk_rate := 0.025,
 	const rate StartUpWaterCompanyDisk_rate := 25,
 	const rate CheckWaterCompanyDisk_rate := 12.5,
@@ -19,15 +18,16 @@ ARCHI_ELEM_TYPES
 
 	% Water Company Server
 
-	ELEM_TYPE WaterCompanyServer_Type(const rate SampleWaterCompanyServer_rate, const rate CheckWaterCompannyServer_rate)
+	ELEM_TYPE WaterCompanyServer_Type(const rate SampleWaterCompanyServer_rate, const rate CheckWaterCompanyServer_rate)
 
 		BEHAVIOR
 
 			ServerCalled (void;void) =
 				choice{
 					<save_sample_request, _> . <save_sample_Db, exp(SampleWaterCompanyServer_rate)> . ServerCalled(),
-					<getExpectedParametersOutGoing_request, _> . <getExpectedParametersOutGoing_db_request, exp(CheckWaterCompannyServer_rate)> . WaitingParamsRequest()
+					<getExpectedParametersOutGoing_request, _> . <getExpectedParametersOutGoing_db_request, exp(CheckWaterCompanyServer_rate)> . WaitingParamsRequest()
 				};
+
 
 			WaitingParamsRequest (void;void) = 
 				<getExpectedParametersOutGoing_db_response, _> . <getExpectedParametersOutGoing_response, inf> . ServerCalled()
@@ -132,7 +132,7 @@ ARCHI_ELEM_TYPES
 ARCHI_TOPOLOGY
 
 	ARCHI_ELEM_INSTANCES
-		WCS : WaterCompanyServer_Type(SampleWaterCompanyServer_rate, CheckWaterCompannyServer_rate);
+		WCS : WaterCompanyServer_Type(SampleWaterCompanyServer_rate, CheckWaterCompanyServer_rate);
 		WCWCU : WiredConnectionUp_Type(WiredConnectionUp_rate);
 		WCWCD : WiredConnectionDown_Type(WiredConnectionDown_rate);
 		WCD : WaterCompanyDisk_Type(SampleWaterCompanyDisk_rate, CheckWaterCompanyDisk_rate)
