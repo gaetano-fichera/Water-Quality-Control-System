@@ -11,7 +11,18 @@ ARCHI_TYPE wcs(
 	const rate StartUpWaterCompanyDisk_rate := 25,
 	const rate CheckWaterCompanyDisk_rate := 12.5,
 	const rate WiredConnectionUp_rate := 0.02,
-	const rate WiredConnectionDown_rate := 0.02
+	const rate WiredConnectionDown_rate := 0.02,
+	const rate QSSamplingApp_request_rate := 0,
+	const rate QSQualityControlApp_request_rate := 0,
+	const rate CCS_send_StartUpSampling_request_rate,  
+	const rate CCS_CheckWaterInland_prob_request, 
+	const rate CCS_send_wired_getExpectedParametersInland_request_rate,
+	const rate CCS_send_wired_getExpectedParametersOutGoing_request_rate,
+	const rate CCS_send_wired_StartUpSampling_response_rate, 
+	const rate CCS_send_sample_rate, 
+	const rate CCS_send_wired_CheckWaterInland_response_rate,
+	const rate CCS_send_wired_CheckWaterOutGoing_response_rate
+
 )
 
 ARCHI_ELEM_TYPES
@@ -126,6 +137,110 @@ ARCHI_ELEM_TYPES
 
 			UNI getExpectedParametersOutGoing_db_response
 
+
+
+		% QSSamplingApp
+
+		ELEM_TYPE QSSamplingApp_Type(const rate QSSamplingApp_request_rate)
+
+		BEHAVIOR
+
+			AppCalled(void;void) =
+				<generate_sampling_request, exp(QSSamplingApp_request_rate)> . <send_request, inf> . WaitForResponse();
+
+			WaitForResponse(void;void) =
+				<receive_response, _> .AppCalled()
+
+
+		INPUT_INTERACTIONS
+
+			UNI generate_sampling_request;
+				receive_response
+
+		OUTPUT_INTERACTIONS
+
+			UNI send_request
+
+
+
+		%QSQualityControlApp
+
+		ELEM_TYPE QSQualityControlApp_Type(const rate QSQualityControlApp_request_rate)
+
+		BEHAVIOR
+
+			AppCalled(void;void) =
+				<generate_checkWaterQuality_request, exp(QSQualityControlApp_request_rate)> . <send_request, inf> . WaitForResponse();
+
+			WaitForResponse(void;void) =
+				<receive_response, _> .AppCalled()
+
+		INPUT_INTERACTIONS
+
+			UNI generate_checkWaterQuality_request;
+				receive_response
+
+		OUTPUT_INTERACTIONS
+
+			UNI send_request
+
+
+
+		%ControlCenterServer
+
+		ELEM_TYPE ControlCenterServer_Type(const rate CCS_send_StartUpSampling_request_rate,  const rate CCS_CheckWaterInland_prob_request, 
+			const rate CCS_send_wired_getExpectedParametersInland_request_rate, const rate CCS_send_wired_getExpectedParametersOutGoing_request_rate,
+			const rate CCS_send_wired_StartUpSampling_response_rate, const rate CCS_send_sample_rate, const rate CCS_send_wired_CheckWaterInland_response_rate,
+			const rate CCS_send_wired_CheckWaterOutGoing_response_rate)
+
+		BEHAVIOR
+
+			ServerCalled(void;void) = 
+				choice{
+					<receive_wired_StartUpSampling_request, _> . <send_StartUpSampling_request, exp(CCS_send_StartUpSampling_request_rate)> .WaitingStartUpSampling(),
+					<receive_wired_CheckWater_request, _> . 
+						choice{
+							<inland, inf(1, CCS_CheckWaterInland_prob_request)> . <send_wired_getExpectedParametersInland_request, exp(CCS_send_wired_getExpectedParametersInland_request_rate)> . WaitingForInParameters(),
+							<outGoing, inf(1, 1- CCS_CheckWaterInland_prob_request)> . <send_wired_getExpectedParametersOutgoing_request, exp(CCS_send_wired_getExpectedParametersOutGoing_request_rate)> . WaitingForOUTParameters()
+
+						}
+			}
+
+			WaitingStartUpSampling(void;void) =
+				<receive_StartUpSampling_response, _> . <send_wired_StartUpSampling_response, exp(CCS_send_wired_StartUpSampling_response_rate)> .WaitingForSample();
+
+			WaitingForSample(void;void) =
+				<receive_sample, _> . <send_sample, exp(CCS_send_sample_rate)> . ServerCalled();
+
+			WaitingForInParameters(void;void) = 
+				<receive_wired_getExpectedParametersInland_response, _> . <send_wired_CheckWater_response, exp(CCS_send_wired_CheckWater_responseInland_rate)> .ServerCalled();
+
+
+			WaitingForOutParameters(void;void) = 
+				<receive_wired_getExpectedParametersOutGoing_response, _> . <send_wired_CheckWater_response, exp(CCS_send_wired_CheckWater_responseOutGoing_rate)> .ServerCalled()
+
+
+
+
+		INPUT_INTERACTIONS
+
+			UNI receive_wired_StartUpSampling_request,
+				receive_wired_CheckWater_request,
+				receive_wired_getExpectedParametersInland_response,
+				receive_wired_getExpectedParametersOutGoing_response,
+
+			OR  receive_StartUpSampling_response,
+				receive_sample
+
+		OUTPUT_INTERACTIONS
+
+			UNI send_wired_StartUpSampling_response,
+				send_wired_CheckWater_response,
+				send_wired_getExpectedParametersInland_request,
+				send_wired_getExpectedParametersOutGoing_request,
+				send_sample,
+
+			OR 	send_StartUpSampling_request
 
 
 
