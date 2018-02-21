@@ -1,2 +1,7 @@
-MEASURE CCSUtilization IS
+MEASURE ControlCenterServerUtilization IS
+	ENABLED(CCS.send_wired_StartUpSampling_response) -> TRANS_REWARD(1)
+	ENABLED(CCS.send_wired_CheckWater_response) -> TRANS_REWARD(1)
+	ENABLED(CCS.send_wired_getExpectedParametersInland_request) -> TRANS_REWARD(1)
+	ENABLED(CCS.send_wired_getExpectedParametersOutGoing_request) -> TRANS_REWARD(1)
 	ENABLED(CCS.send_sample) -> TRANS_REWARD(1)
+	ENABLED(CCS.send_StartUpSampling_request) -> TRANS_REWARD(1)

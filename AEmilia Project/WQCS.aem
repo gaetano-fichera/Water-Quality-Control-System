@@ -4,39 +4,46 @@
 
 ARCHI_TYPE wcs(
 	
-	const rate SampleWaterCompanyServer_rate := 0.000355,
-	const rate CheckWaterCompanyServer_rate := 0.625,
-	const rate SampleWaterCompanyDisk_rate := 0.025,
-	const rate CheckWaterCompanyDisk_rate := 12.5,
-	const rate WiredConnectionUp_rate := 0.02,
-	const rate WiredConnectionDown_rate := 0.02,
-	const rate QSSamplingApp_request_rate := 0.1,
-	const rate QSQualityControlApp_request_rate := 0.1,
-	const rate CCS_send_StartUpSampling_request_rate := 0.1,  
-	const weight CCS_CheckWaterInland_prob_request := 0.5, 
-	const rate CCS_send_wired_getExpectedParametersInland_request_rate := 0.1,
-	const rate CCS_send_wired_getExpectedParametersOutGoing_request_rate := 0.1,
-	const rate CCS_send_wired_StartUpSampling_response_rate := 0.1, 
-	const rate CCS_send_sample_rate := 0.1, 
-	const rate CCS_send_wired_CheckWaterInland_response_rate := 0.1,
-	const rate CCS_send_wired_CheckWaterOutGoing_response_rate := 0.1,
-	const rate SPCU_send_StartUpSampling_response_rate := 0.1, 
-	const rate SPCU_send_sample_request_rate := 0.1, 
-	const rate SPCU_send_sample_rate := 0.1, 
-	const rate SPCU_delay_rate := 60, % 1/60 
-	const rate WCU_forward_outcu_rate := 0.1, 
-	const rate WCU_forward_incu_request_rate := 0.1,
-	const rate WCD_forward_outcu_rate := 0.1, 
-	const rate WCD_forward_incu_request_rate := 0.1,
-	const rate SP_send_sample_response_rate := 0.1,
-	const rate ICD_forward_save_sample_rate := 0.1,
-	const rate ICD_forward_pss_params_rate := 0.1, 
-	const rate ICD_forward_WCS_params_rate := 0.1,
-	const rate ICU_forward_pss_params_rate := 0.1, 
-	const rate ICU_forward_WCS_params_rate := 0.1,
-	const rate PSS_getExpectedParametersInland_response_rate := 0.1,
+	%rate in us(microsecondi)
 
-	const rate sensors_num := 1000 %Ugual numero di SeaweedPicking IN e OUT
+	const rate QSQualityControlApp_request_rate := 0.01, % 1/100
+
+	const rate SampleWaterCompanyServer_rate := 2816.9, % 1/0.355,
+	const rate CheckWaterCompanyServer_rate := 1.6, % 1/0.625,
+
+	const rate SampleWaterCompanyDisk_rate := 40, % 1/0.025,
+	const rate CheckWaterCompanyDisk_rate := 0.08, % 1/12.5,
+
+	const rate WiredConnectionUp_rate := 50, % 1/0.02,
+	const rate WiredConnectionDown_rate := 50, % 1/0.02,
+
+	const rate CCS_send_StartUpSampling_request_rate := 2000, % 1/0.0005,  
+	const rate CCS_send_wired_StartUpSampling_response_rate := 2000, % 1/0.0005, 
+
+	const rate CCS_send_wired_getExpectedParametersInland_request_rate := 4000, % 1/0.00025,
+	const rate CCS_send_wired_getExpectedParametersOutGoing_request_rate := 4000, % 1/0.00025,
+	const rate CCS_send_wired_CheckWaterInland_response_rate := 4000, % 1/0.00025,
+	const rate CCS_send_wired_CheckWaterOutGoing_response_rate := 4000, % 1/0.00025,
+	const weight CCS_CheckWaterInland_prob_request := 0.5, %probabilità di scelta Inland
+
+	const rate CCS_send_sample_rate := 1315.79, % 1/0.00076, 
+
+	const rate SPCU_send_StartUpSampling_response_rate := 500, % 1/0.002, 
+	const rate SPCU_send_sample_request_rate := 1000, % 1/0.001, 
+	const rate SPCU_send_sample_rate := 1000, % 1/0.001, 
+	const rate SPCU_delay_rate := 0.000017, % 1/60000, %delay di campionamento
+
+	const rate WirelessConnectionUp_rate := 35.7, % 1/0.028,
+	const rate WirelessConnectionDown_rate := 35.7, % 1/0.028,
+
+	const rate SP_send_sample_response_rate := 62.5, % 1/0.016,
+
+	const rate InternetConnectionUp_rate := 28.57, % 1/0.035,
+	const rate InternetConnectionDown_rate := 28.57, % 1/0.035,
+
+	const rate PSS_getExpectedParametersInland_response_rate := 0.4348, % 1/2.3,
+
+	const rate sensors_num := 10000 %Ugual numero di SeaweedPicking IN e OUT
 )
 
 ARCHI_ELEM_TYPES
@@ -158,16 +165,15 @@ ARCHI_ELEM_TYPES
 
 		% QSSamplingApp
 
-		ELEM_TYPE QSSamplingApp_Type(const rate QSSamplingApp_request_rate)
+		ELEM_TYPE QSSamplingApp_Type(void)
 
 		BEHAVIOR
 
 			AppCalled(void;void) =
-				<generate_sampling_request, exp(QSSamplingApp_request_rate)> . <send_request, inf> . WaitForResponse();
+				<generate_sampling_request, exp(1)> . <send_request, inf> . WaitForResponse();
 
 			WaitForResponse(void;void) =
-				<receive_response, _> .AppCalled()
-
+				<receive_response, _> . AppCalled() %non deve fare più niente
 
 		INPUT_INTERACTIONS
 
@@ -298,14 +304,14 @@ ARCHI_ELEM_TYPES
 
 		% WirelessConnectionUp
 
-		ELEM_TYPE WirelessConnectionUp_Type(const rate WCU_forward_outcu_rate, const rate WCU_forward_incu_request_rate, const rate sensors_num)
+		ELEM_TYPE WirelessConnectionUp_Type(const rate WirelessConnectionUp_rate, const rate sensors_num)
 
 		BEHAVIOR 
 
 			TransferData(void;void) =
 				choice{
-					<receive_outcu_request, _> . <forward_outcu, exp(WCU_forward_outcu_rate * sensors_num)> . TransferData(),
-					<receive_incu_request, _> . <forward_incu, exp(WCU_forward_incu_request_rate * sensors_num)> . TransferData()
+					<receive_outcu_request, _> . <forward_outcu, exp(WirelessConnectionUp_rate * sensors_num)> . TransferData(),
+					<receive_incu_request, _> . <forward_incu, exp(WirelessConnectionUp_rate * sensors_num)> . TransferData()
 				}
 
 
@@ -324,14 +330,14 @@ ARCHI_ELEM_TYPES
 
 		% WirelessConnectionDown
 
-		ELEM_TYPE WirelessConnectionDown_Type(const rate WCD_forward_outcu_rate, const rate WCD_forward_incu_request_rate, const rate sensors_num)
+		ELEM_TYPE WirelessConnectionDown_Type(const rate WirelessConnectionDown_rate, const rate sensors_num)
 
 		BEHAVIOR 
 
 			TransferData(void;void) =
 				choice{
-					<receive_outcu_request, _> . <forward_outcu, exp(WCD_forward_outcu_rate * sensors_num)> . TransferData(),
-					<receive_incu_request, _> . <forward_incu, exp(WCD_forward_incu_request_rate * sensors_num)> . TransferData()
+					<receive_outcu_request, _> . <forward_outcu, exp(WirelessConnectionDown_rate * sensors_num)> . TransferData(),
+					<receive_incu_request, _> . <forward_incu, exp(WirelessConnectionDown_rate * sensors_num)> . TransferData()
 				}
 
 
@@ -373,15 +379,15 @@ ARCHI_ELEM_TYPES
 
 		% InternetConnectionDown
 
-		ELEM_TYPE InternetConnectionDown_Type(const rate ICD_forward_save_sample_rate, const rate ICD_forward_pss_params_rate, const rate ICD_forward_WCS_params_rate, const rate sensors_num)
+		ELEM_TYPE InternetConnectionDown_Type(const rate InternetConnectionDown_rate, const rate sensors_num)
 
 		BEHAVIOR
 
 			TransferData(void;void) = 
 				choice{
-					<receive_save_sample_request, _> . <forward_save_sample, exp(ICD_forward_save_sample_rate * sensors_num)> . TransferData(),
-					<receive_pss_params_request, _> . <forward_pss_params, exp(ICD_forward_pss_params_rate)> . TransferData(),
-					<receive_WCS_params_request, _> . <forward_WCS_params, exp(ICD_forward_WCS_params_rate)> . TransferData()
+					<receive_save_sample_request, _> . <forward_save_sample, exp(InternetConnectionDown_rate * sensors_num)> . TransferData(),
+					<receive_pss_params_request, _> . <forward_pss_params, exp(InternetConnectionDown_rate)> . TransferData(),
+					<receive_WCS_params_request, _> . <forward_WCS_params, exp(InternetConnectionDown_rate)> . TransferData()
 				}
 
 
@@ -404,14 +410,14 @@ ARCHI_ELEM_TYPES
 
 		% InternetConnectionUP
 
-		ELEM_TYPE InternetConnectionUP_Type(const rate ICU_forward_pss_params_rate, const rate ICU_forward_WCS_params_rate)
+		ELEM_TYPE InternetConnectionUP_Type(const rate InternetConnectionUp_rate)
 
 		BEHAVIOR
 
 			TransferData(void;void) = 
 				choice{
-					<receive_pss_params, _> . <forward_pss_params, exp(ICU_forward_pss_params_rate)> . TransferData(),
-					<receive_WCS_params, _> . <forward_WCS_params, exp(ICU_forward_WCS_params_rate)> . TransferData()
+					<receive_pss_params, _> . <forward_pss_params, exp(InternetConnectionUp_rate)> . TransferData(),
+					<receive_WCS_params, _> . <forward_WCS_params, exp(InternetConnectionUp_rate)> . TransferData()
 				}
 
 
@@ -462,17 +468,17 @@ ARCHI_TOPOLOGY
 		WCU: WiredConnectionUp_Type(WiredConnectionUp_rate);
 		WCD : WiredConnectionDown_Type(WiredConnectionDown_rate, sensors_num);
 		WCDISK : WaterCompanyDisk_Type(SampleWaterCompanyDisk_rate, CheckWaterCompanyDisk_rate, sensors_num);
-		QSS : QSSamplingApp_Type(QSSamplingApp_request_rate);
+		QSS : QSSamplingApp_Type();
 		QSQC : QSQualityControlApp_Type(QSQualityControlApp_request_rate);
 		CCS : ControlCenterServer_Type(CCS_send_StartUpSampling_request_rate, CCS_CheckWaterInland_prob_request, CCS_send_wired_getExpectedParametersInland_request_rate, 
 			CCS_send_wired_getExpectedParametersOutGoing_request_rate, CCS_send_wired_StartUpSampling_response_rate, CCS_send_sample_rate, CCS_send_wired_CheckWaterInland_response_rate, 
 			CCS_send_wired_CheckWaterOutGoing_response_rate, sensors_num);
 		INCU : SeaweedPickingControlUnit_Type(SPCU_send_StartUpSampling_response_rate, SPCU_send_sample_request_rate, SPCU_send_sample_rate, SPCU_delay_rate, sensors_num);
 		OUTCU : SeaweedPickingControlUnit_Type(SPCU_send_StartUpSampling_response_rate, SPCU_send_sample_request_rate, SPCU_send_sample_rate, SPCU_delay_rate, sensors_num);
-		WLCU : WirelessConnectionUp_Type(WCU_forward_outcu_rate, WCU_forward_incu_request_rate, sensors_num);
-		WLCD : WirelessConnectionDown_Type(WCD_forward_outcu_rate, WCD_forward_incu_request_rate, sensors_num);
-		ICD : InternetConnectionDown_Type(ICD_forward_save_sample_rate, ICD_forward_pss_params_rate, ICD_forward_WCS_params_rate, sensors_num);
-		ICU : InternetConnectionUP_Type(ICU_forward_pss_params_rate, ICU_forward_WCS_params_rate);
+		WLCU : WirelessConnectionUp_Type(WirelessConnectionUp_rate, sensors_num);
+		WLCD : WirelessConnectionDown_Type(WirelessConnectionDown_rate, sensors_num);
+		ICD : InternetConnectionDown_Type(InternetConnectionDown_rate, sensors_num);
+		ICU : InternetConnectionUP_Type(InternetConnectionUp_rate);
 		PSS : PurificationSystemServer_Type(PSS_getExpectedParametersInland_response_rate);
 
 		SPIN : SeaweedPicking_Type(SP_send_sample_response_rate);
@@ -484,7 +490,6 @@ ARCHI_TOPOLOGY
 
 		QSS.generate_sampling_request;
 		QSQC.generate_checkWaterQuality_request
-
 
 	ARCHI_ATTACHMENTS
 
