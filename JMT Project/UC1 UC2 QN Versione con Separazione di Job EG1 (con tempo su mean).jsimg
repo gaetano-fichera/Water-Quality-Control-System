@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
-<archive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="UC1 UC2 QN Versione con Separazione di Job EG1 (con tempo su mean).jsimg" timestamp="Wed Feb 21 17:54:20 CET 2018" xsi:noNamespaceSchemaLocation="Archive.xsd">
-<sim disableStatisticStop="false" logDecimalSeparator="," logDelimiter=";" logPath="/home/gaetano/JMT/" logReplaceMode="0" maxSamples="1000000000" name="UC1 UC2 QN Versione con Separazione di Job EG1 (con tempo su mean).jsimg" polling="1.0" xsi:noNamespaceSchemaLocation="SIMmodeldefinition.xsd">
+<archive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="UC1 UC2 QN Versione con Separazione di Job EG1 (con tempo su mean).jsimg" timestamp="Wed Feb 21 18:51:03 CET 2018" xsi:noNamespaceSchemaLocation="Archive.xsd">
+<sim disableStatisticStop="false" logDecimalSeparator="," logDelimiter=";" logPath="/home/gaetano/JMT/" logReplaceMode="0" maxSamples="1000000" name="UC1 UC2 QN Versione con Separazione di Job EG1 (con tempo su mean).jsimg" polling="1.0" xsi:noNamespaceSchemaLocation="SIMmodeldefinition.xsd">
 <userClass customers="1000" name="StartUp Sampling Water Inland" priority="0" referenceSource="Sampling Delay" type="closed"/>
 <userClass name="Check Water Quality" priority="0" referenceSource="Quality Control Supervisor - User" type="open"/>
 <userClass customers="1000" name="StartUp Sampling Water Outgoing" priority="0" referenceSource="Sampling Delay" type="closed"/>
@@ -2128,13 +2128,7 @@
 <measure alpha="0.01" name="Internet_Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceNode="Internet" referenceUserClass="Sampling Water Outgoing" type="Response Time" verbose="false"/>
 <measure alpha="0.01" name="Water Company Server_Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceNode="Water Company Server" referenceUserClass="Sampling Water Outgoing" type="Response Time" verbose="false"/>
 <measure alpha="0.01" name="Water Company Disk_Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceNode="Water Company Disk" referenceUserClass="Sampling Water Outgoing" type="Response Time" verbose="false"/>
-<measure alpha="0.01" name="Quality Control Supervisor - User_Check Water Quality_Throughput" nodeType="station" precision="0.03" referenceNode="Quality Control Supervisor - User" referenceUserClass="Check Water Quality" type="Throughput" verbose="false"/>
 <measure alpha="0.01" name="Lan Wired_Utilization" nodeType="station" precision="0.03" referenceNode="Lan Wired" referenceUserClass="" type="Utilization" verbose="false"/>
-<measure alpha="0.01" name="Lan Wired_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceNode="Lan Wired" referenceUserClass="StartUp Sampling Water Inland" type="Response Time" verbose="false"/>
-<measure alpha="0.01" name="Control Center Server_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceNode="Control Center Server" referenceUserClass="StartUp Sampling Water Inland" type="Response Time" verbose="false"/>
-<measure alpha="0.01" name="Seaweed Picking Inland Control Unit_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceNode="Seaweed Picking Inland Control Unit" referenceUserClass="StartUp Sampling Water Inland" type="Response Time" verbose="false"/>
-<measure alpha="0.01" name="Lan Wireless_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceNode="Lan Wireless" referenceUserClass="StartUp Sampling Water Inland" type="Response Time" verbose="false"/>
-<measure alpha="0.01" name="Seaweed Picking Inlands_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceNode="Seaweed Picking Inlands" referenceUserClass="StartUp Sampling Water Inland" type="Response Time" verbose="false"/>
 <connection source="Lan Wired" target="Control Center Server"/>
 <connection source="Control Center Server" target="Seaweed Picking Inland Control Unit"/>
 <connection source="Control Center Server" target="Seaweed Picking Outgoing Control Unit"/>
@@ -2371,180 +2365,262 @@
 <parametric classPath="jmt.gui.common.definitions.parametric.NumberOfCustomerParametricAnalysis" enabled="true">
 <field name="Is single class" value="false"/>
 <field name="Steps" value="10"/>
-<field name="To" value="10000.0"/>
+<field name="To" value="45000.0"/>
 <field name="Type" value="Number of customers"/>
 </parametric>
 </jmodel>
 <results elapsedTime="0" logDecimalSeparator="," logDelimiter=";" pollingInterval="0.0" xsi:noNamespaceSchemaLocation="Results.xsd">
-<measure alpha="0.99" analyzedSamples="3" name="Control Center Server_All classes_Utilization" nodeType="station" precision="0.03" referenceClass="All classes" referenceStation="Control Center Server" type="4">
-<sample lowerBound="0.011775035490190953" meanValue="0.012074275189195715" upperBound="0.012373514888200477" validity="true"/>
-<sample lowerBound="0.011634108549199228" meanValue="0.011907574543042648" upperBound="0.012181040536886067" validity="true"/>
-<sample lowerBound="0.011690756083166264" meanValue="0.01200461667787413" upperBound="0.012318477272581995" validity="true"/>
+<measure alpha="0.99" analyzedSamples="7" name="Control Center Server_All classes_Utilization" nodeType="station" precision="0.03" referenceClass="All classes" referenceStation="Control Center Server" type="4">
+<sample lowerBound="0.011768470520343098" meanValue="0.01205338709087359" upperBound="0.012338303661404083" validity="true"/>
+<sample lowerBound="0.011973940950348311" meanValue="0.012257542489663202" upperBound="0.012541144028978093" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.012064170896778598" upperBound="0.03795331707589822" validity="false"/>
+<sample lowerBound="0.01162325741129248" meanValue="0.011971833689499488" upperBound="0.012320409967706496" validity="true"/>
+<sample lowerBound="0.010794439731113608" meanValue="0.012005277945204942" upperBound="0.013216116159296276" validity="false"/>
+<sample lowerBound="0.00589291792614881" meanValue="0.01200568565772963" upperBound="0.01811845338931045" validity="false"/>
+<sample lowerBound="0.0" meanValue="0.9999812701631782" upperBound="0.0" validity="false"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="3" name="Seaweed Picking Inland Control Unit_All classes_Utilization" nodeType="station" precision="0.03" referenceClass="All classes" referenceStation="Seaweed Picking Inland Control Unit" type="4">
+<measure alpha="0.99" analyzedSamples="7" name="Seaweed Picking Inland Control Unit_All classes_Utilization" nodeType="station" precision="0.03" referenceClass="All classes" referenceStation="Seaweed Picking Inland Control Unit" type="4">
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.9858159309226722" upperBound="0.0" validity="false"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="3" name="Seaweed Picking Outgoing Control Unit_All classes_Utilization" nodeType="station" precision="0.03" referenceClass="All classes" referenceStation="Seaweed Picking Outgoing Control Unit" type="4">
+<measure alpha="0.99" analyzedSamples="7" name="Seaweed Picking Outgoing Control Unit_All classes_Utilization" nodeType="station" precision="0.03" referenceClass="All classes" referenceStation="Seaweed Picking Outgoing Control Unit" type="4">
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.9911560907878912" upperBound="0.0" validity="false"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="3" name="Water Company Server_All classes_Utilization" nodeType="station" precision="0.03" referenceClass="All classes" referenceStation="Water Company Server" type="4">
-<sample lowerBound="0.0030652578204099167" meanValue="0.0031428098949350556" upperBound="0.0032203619694601946" validity="true"/>
-<sample lowerBound="0.0030660343605513137" meanValue="0.0031189665510097963" upperBound="0.003171898741468279" validity="true"/>
-<sample lowerBound="0.001291239535645824" meanValue="0.0031397255467557087" upperBound="0.004988211557865593" validity="false"/>
+<measure alpha="0.99" analyzedSamples="7" name="Water Company Server_All classes_Utilization" nodeType="station" precision="0.03" referenceClass="All classes" referenceStation="Water Company Server" type="4">
+<sample lowerBound="7.177819515971412E-4" meanValue="0.0031337900151272246" upperBound="0.005549798078657308" validity="false"/>
+<sample lowerBound="0.0" meanValue="0.003180426714063919" upperBound="0.009824674738982478" validity="false"/>
+<sample lowerBound="0.0" meanValue="0.0031300128994409394" upperBound="0.00810477586483634" validity="false"/>
+<sample lowerBound="0.0" meanValue="0.0032355842997951446" upperBound="0.010914088357795207" validity="false"/>
+<sample lowerBound="0.003028587498098907" meanValue="0.0031110399822920744" upperBound="0.003193492466485242" validity="true"/>
+<sample lowerBound="0.0030468530446347833" meanValue="0.0031355136687852246" upperBound="0.003224174292935666" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.00118344956743208" upperBound="0.0" validity="false"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="3" name="Purification System_All classes_Utilization" nodeType="station" precision="0.03" referenceClass="All classes" referenceStation="Purification System" type="4">
-<sample lowerBound="0.011160857660110894" meanValue="0.011443872245479906" upperBound="0.011726886830848918" validity="true"/>
-<sample lowerBound="0.011321723641658583" meanValue="0.011553757931021353" upperBound="0.011785792220384124" validity="true"/>
-<sample lowerBound="0.011318313138048385" meanValue="0.011665168061012008" upperBound="0.01201202298397563" validity="true"/>
+<measure alpha="0.99" analyzedSamples="7" name="Purification System_All classes_Utilization" nodeType="station" precision="0.03" referenceClass="All classes" referenceStation="Purification System" type="4">
+<sample lowerBound="0.01128889896088422" meanValue="0.011589683024125644" upperBound="0.011890467087367068" validity="true"/>
+<sample lowerBound="0.011291904624615434" meanValue="0.011562139331990254" upperBound="0.011832374039365073" validity="true"/>
+<sample lowerBound="0.011147908530126623" meanValue="0.011392695279228126" upperBound="0.01163748202832963" validity="true"/>
+<sample lowerBound="0.011007089861955395" meanValue="0.011327115385855992" upperBound="0.011647140909756588" validity="true"/>
+<sample lowerBound="0.011253053952331464" meanValue="0.011592606319208967" upperBound="0.011932158686086469" validity="true"/>
+<sample lowerBound="0.01114664768830765" meanValue="0.011432436324094917" upperBound="0.011718224959882183" validity="true"/>
+<sample lowerBound="0.0" meanValue="4.740920441761004E-4" upperBound="0.0" validity="false"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="3" name="Water Company Disk_All classes_Utilization" nodeType="station" precision="0.03" referenceClass="All classes" referenceStation="Water Company Disk" type="4">
-<sample lowerBound="0.060440334014642286" meanValue="0.06227329633567275" upperBound="0.06410625865670322" validity="true"/>
-<sample lowerBound="0.0606763503666177" meanValue="0.06246496535947318" upperBound="0.06425358035232866" validity="true"/>
-<sample lowerBound="0.06045599370329209" meanValue="0.06226401876951941" upperBound="0.06407204383574673" validity="true"/>
+<measure alpha="0.99" analyzedSamples="7" name="Water Company Disk_All classes_Utilization" nodeType="station" precision="0.03" referenceClass="All classes" referenceStation="Water Company Disk" type="4">
+<sample lowerBound="0.060863939774737585" meanValue="0.06251388821895769" upperBound="0.06416383666317779" validity="true"/>
+<sample lowerBound="0.061576251180273066" meanValue="0.06342857810615558" upperBound="0.0652809050320381" validity="true"/>
+<sample lowerBound="0.06095532309030672" meanValue="0.062307021476671096" upperBound="0.06365871986303548" validity="true"/>
+<sample lowerBound="0.061041222443390365" meanValue="0.06260367253273208" upperBound="0.06416612262207379" validity="true"/>
+<sample lowerBound="0.061282144871119215" meanValue="0.06307731096357362" upperBound="0.06487247705602803" validity="true"/>
+<sample lowerBound="0.032260860306035755" meanValue="0.07263552873676174" upperBound="0.11301019716748772" validity="false"/>
+<sample lowerBound="0.0" meanValue="0.07233538745354422" upperBound="0.0" validity="false"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="3" name="Lan Wired_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Lan Wired" type="2">
-<sample lowerBound="783.1389010369636" meanValue="797.9791177862289" upperBound="812.8193345354942" validity="true"/>
-<sample lowerBound="795.6228043510052" meanValue="808.7868932931718" upperBound="821.9509822353384" validity="true"/>
-<sample lowerBound="790.8665576148221" meanValue="805.0169386776676" upperBound="819.167319740513" validity="true"/>
+<measure alpha="0.99" analyzedSamples="7" name="Lan Wired_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Lan Wired" type="2">
+<sample lowerBound="785.1349666293721" meanValue="802.0327034857717" upperBound="818.9304403421712" validity="true"/>
+<sample lowerBound="776.1702074657076" meanValue="798.8200218303007" upperBound="821.4698361948938" validity="true"/>
+<sample lowerBound="783.8599142057052" meanValue="806.5770469313716" upperBound="829.294179657038" validity="true"/>
+<sample lowerBound="777.7196181151916" meanValue="793.3394645108365" upperBound="808.9593109064814" validity="true"/>
+<sample lowerBound="781.4562781990628" meanValue="795.1456418469566" upperBound="808.8350054948503" validity="true"/>
+<sample lowerBound="788.3010285291329" meanValue="809.900397341931" upperBound="831.4997661547292" validity="true"/>
+<sample lowerBound="0.0" meanValue="768.5589681137307" upperBound="0.0" validity="false"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="3" name="Control Center Server_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Control Center Server" type="2">
-<sample lowerBound="1.1861190375896067" meanValue="1.2157902715372022" upperBound="1.2454615054847977" validity="true"/>
-<sample lowerBound="1.173990632909859" meanValue="1.1985005347647621" upperBound="1.2230104366196652" validity="true"/>
-<sample lowerBound="1.1898275195590893" meanValue="1.2155218994609869" upperBound="1.2412162793628845" validity="true"/>
+<measure alpha="0.99" analyzedSamples="7" name="Control Center Server_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Control Center Server" type="2">
+<sample lowerBound="1.1872634019123811" meanValue="1.217144043371322" upperBound="1.247024684830263" validity="true"/>
+<sample lowerBound="1.1951800260890215" meanValue="1.2179458482167511" upperBound="1.2407116703444807" validity="true"/>
+<sample lowerBound="1.1676839721549213" meanValue="1.1983200318042417" upperBound="1.2289560914535622" validity="true"/>
+<sample lowerBound="1.1856826686243078" meanValue="1.2149691913398157" upperBound="1.2442557140553236" validity="true"/>
+<sample lowerBound="1.1854331478928333" meanValue="1.211403279815413" upperBound="1.2373734117379929" validity="true"/>
+<sample lowerBound="1.1775232328081229" meanValue="1.2042778729910424" upperBound="1.231032513173962" validity="true"/>
+<sample lowerBound="0.0" meanValue="5828.300092313186" upperBound="0.0" validity="false"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="3" name="Internet_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Internet" type="2">
-<sample lowerBound="345.6824612092561" meanValue="351.6080052556276" upperBound="357.5335493019991" validity="true"/>
-<sample lowerBound="342.56103847305553" meanValue="348.80536536479315" upperBound="355.04969225653076" validity="true"/>
-<sample lowerBound="340.6756534503312" meanValue="347.396676554527" upperBound="354.1176996587228" validity="true"/>
+<measure alpha="0.99" analyzedSamples="7" name="Internet_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Internet" type="2">
+<sample lowerBound="337.95789725868195" meanValue="348.3376628445004" upperBound="358.7174284303189" validity="true"/>
+<sample lowerBound="343.3263982188059" meanValue="350.25674613422643" upperBound="357.187094049647" validity="true"/>
+<sample lowerBound="344.5131778190207" meanValue="349.7608605641235" upperBound="355.0085433092263" validity="true"/>
+<sample lowerBound="340.9199492484253" meanValue="346.36263076257967" upperBound="351.805312276734" validity="true"/>
+<sample lowerBound="342.82136794337737" meanValue="349.4135330798815" upperBound="356.00569821638567" validity="true"/>
+<sample lowerBound="344.80275924575835" meanValue="350.8223402706718" upperBound="356.8419212955853" validity="true"/>
+<sample lowerBound="0.0" meanValue="845.2277723622631" upperBound="0.0" validity="false"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="3" name="Water Company Server_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Water Company Server" type="2">
-<sample lowerBound="0.6162070941577655" meanValue="0.6249097913542564" upperBound="0.6336124885507473" validity="true"/>
-<sample lowerBound="0.6148148710054141" meanValue="0.6338107744890898" upperBound="0.6528066779727656" validity="true"/>
-<sample lowerBound="0.6152794821450939" meanValue="0.6296862836072565" upperBound="0.6440930850694192" validity="true"/>
+<measure alpha="0.99" analyzedSamples="7" name="Water Company Server_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Water Company Server" type="2">
+<sample lowerBound="0.613972087568019" meanValue="0.62779232400632" upperBound="0.641612560444621" validity="true"/>
+<sample lowerBound="0.6174624555431472" meanValue="0.631077874180333" upperBound="0.6446932928175189" validity="true"/>
+<sample lowerBound="0.6155465075485986" meanValue="0.6273271906044304" upperBound="0.6391078736602622" validity="true"/>
+<sample lowerBound="0.616318309050047" meanValue="0.6305106944770341" upperBound="0.6447030799040212" validity="true"/>
+<sample lowerBound="0.6176414849591104" meanValue="0.6342342760164127" upperBound="0.650827067073715" validity="true"/>
+<sample lowerBound="0.6144719203871841" meanValue="0.625579847823838" upperBound="0.6366877752604919" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.3093509022237413" upperBound="0.0" validity="false"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="3" name="Water Company Disk_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Water Company Disk" type="2">
-<sample lowerBound="12.895144068515794" meanValue="13.210311536838107" upperBound="13.52547900516042" validity="true"/>
-<sample lowerBound="12.928990675122213" meanValue="13.307392479250485" upperBound="13.685794283378756" validity="true"/>
-<sample lowerBound="12.92978255820192" meanValue="13.316246525029515" upperBound="13.70271049185711" validity="true"/>
+<measure alpha="0.99" analyzedSamples="7" name="Water Company Disk_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Water Company Disk" type="2">
+<sample lowerBound="12.922102935647777" meanValue="13.189433587926507" upperBound="13.456764240205237" validity="true"/>
+<sample lowerBound="13.121122698579972" meanValue="13.426017790844847" upperBound="13.730912883109722" validity="true"/>
+<sample lowerBound="12.844571937770317" meanValue="13.212114870217556" upperBound="13.579657802664796" validity="true"/>
+<sample lowerBound="12.959879735709475" meanValue="13.255786579222654" upperBound="13.551693422735834" validity="true"/>
+<sample lowerBound="12.909874153497489" meanValue="13.293513582831448" upperBound="13.677153012165407" validity="true"/>
+<sample lowerBound="13.096025407755324" meanValue="13.44613623984593" upperBound="13.796247071936538" validity="true"/>
+<sample lowerBound="0.0" meanValue="9.98979455987137" upperBound="0.0" validity="false"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="3" name="Purification System_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Purification System" type="2">
-<sample lowerBound="2.278583079355533" meanValue="2.3244435768884344" upperBound="2.3703040744213357" validity="true"/>
-<sample lowerBound="2.2708869880625167" meanValue="2.334522292338498" upperBound="2.3981575966144795" validity="true"/>
-<sample lowerBound="2.2648806942792117" meanValue="2.3149477320832608" upperBound="2.36501476988731" validity="true"/>
+<measure alpha="0.99" analyzedSamples="7" name="Purification System_Check Water Quality_Response Time" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Purification System" type="2">
+<sample lowerBound="2.2650151975249706" meanValue="2.329246917343057" upperBound="2.3934786371611434" validity="true"/>
+<sample lowerBound="2.276340025721002" meanValue="2.326851757590934" upperBound="2.377363489460866" validity="true"/>
+<sample lowerBound="2.2783117590192647" meanValue="2.3304743024752153" upperBound="2.3826368459311658" validity="true"/>
+<sample lowerBound="2.2826859585293646" meanValue="2.3318369382438497" upperBound="2.380987917958335" validity="true"/>
+<sample lowerBound="2.2923666217754595" meanValue="2.3405646168276193" upperBound="2.388762611879779" validity="true"/>
+<sample lowerBound="2.292920013345049" meanValue="2.324282924390311" upperBound="2.355645835435573" validity="true"/>
+<sample lowerBound="0.0" meanValue="1.981944400865359" upperBound="0.0" validity="false"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="3" name="Sink QCS_Check Water Quality_Throughput per Sink" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Sink QCS" type="13">
-<sample lowerBound="0.009875154748167777" meanValue="0.010039163155813218" upperBound="0.010208711333293279" validity="true"/>
-<sample lowerBound="0.009840602777253158" meanValue="0.010008780048184413" upperBound="0.010182805613204756" validity="true"/>
-<sample lowerBound="0.009862570517844867" meanValue="0.010055802914677538" upperBound="0.010256758437688735" validity="true"/>
+<measure alpha="0.99" analyzedSamples="7" name="Sink QCS_Check Water Quality_Throughput per Sink" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Sink QCS" type="13">
+<sample lowerBound="0.009878074418285471" meanValue="0.010048559378262366" upperBound="0.010225032461594322" validity="true"/>
+<sample lowerBound="0.009962638525777192" meanValue="0.010097614303902196" upperBound="0.010236297669710712" validity="true"/>
+<sample lowerBound="0.009806497726910621" meanValue="0.009991807702749402" upperBound="0.01018425604612322" validity="true"/>
+<sample lowerBound="0.009869164656421354" meanValue="0.009999960298129464" upperBound="0.010134269361821066" validity="true"/>
+<sample lowerBound="0.009866772463370994" meanValue="0.010002969268390534" upperBound="0.010142978709033872" validity="true"/>
+<sample lowerBound="0.009816634537277802" meanValue="0.010044821195877462" upperBound="0.010283868663613638" validity="true"/>
+<sample lowerBound="Infinity" meanValue="2.0831550032940184E-4" upperBound="Infinity" validity="false"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="3" name="Control Center Server_Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Inland" referenceStation="Control Center Server" type="2">
+<measure alpha="0.99" analyzedSamples="7" name="Control Center Server_Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Inland" referenceStation="Control Center Server" type="2">
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="7099.625548079661" upperBound="0.0" validity="false"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="3" name="Seaweed Picking Inland Control Unit_Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Inland" referenceStation="Seaweed Picking Inland Control Unit" type="2">
+<measure alpha="0.99" analyzedSamples="7" name="Seaweed Picking Inland Control Unit_Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Inland" referenceStation="Seaweed Picking Inland Control Unit" type="2">
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="98.30782900015659" upperBound="0.0" validity="false"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="3" name="Lan Wireless_Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Inland" referenceStation="Lan Wireless" type="2">
+<measure alpha="0.99" analyzedSamples="7" name="Lan Wireless_Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Inland" referenceStation="Lan Wireless" type="2">
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
-<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
-<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="248.64264922628007" meanValue="0.0" upperBound="280.6017598752025" validity="true"/>
+<sample lowerBound="246.11999954863575" meanValue="0.0" upperBound="302.5067454995599" validity="true"/>
+<sample lowerBound="236.8028015773761" meanValue="0.0" upperBound="325.74016846487194" validity="true"/>
+<sample lowerBound="236.59816658997983" meanValue="0.0" upperBound="318.6523186611176" validity="true"/>
+<sample lowerBound="240.4616788246538" meanValue="0.0" upperBound="315.3920345503047" validity="true"/>
+<sample lowerBound="0.0" meanValue="149.67156715155542" upperBound="0.0" validity="false"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="3" name="Seaweed Picking Inlands_Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Inland" referenceStation="Seaweed Picking Inlands" type="2">
+<measure alpha="0.99" analyzedSamples="7" name="Seaweed Picking Inlands_Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Inland" referenceStation="Seaweed Picking Inlands" type="2">
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
-<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.014264852434049624" meanValue="0.0" upperBound="0.017760345091196464" validity="true"/>
+<sample lowerBound="0.014116837181064795" meanValue="0.0" upperBound="0.01728262673559129" validity="true"/>
+<sample lowerBound="0.014966641373138164" meanValue="0.0" upperBound="0.016523607874532487" validity="true"/>
+<sample lowerBound="0.01534834250240436" meanValue="0.0" upperBound="0.016827987261104814" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.015042365285787375" upperBound="0.0" validity="false"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="3" name="Internet_Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Inland" referenceStation="Internet" type="2">
+<measure alpha="0.99" analyzedSamples="7" name="Internet_Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Inland" referenceStation="Internet" type="2">
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
-<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
-<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="132.30009123899018" meanValue="0.0" upperBound="197.6321686486729" validity="true"/>
+<sample lowerBound="150.40709211938474" meanValue="0.0" upperBound="187.3898300555993" validity="true"/>
+<sample lowerBound="153.32435043694167" meanValue="0.0" upperBound="194.3199747147111" validity="true"/>
+<sample lowerBound="150.0409505341148" meanValue="0.0" upperBound="193.2934086174535" validity="true"/>
+<sample lowerBound="164.891264712786" meanValue="0.0" upperBound="180.48319589777398" validity="true"/>
+<sample lowerBound="0.0" meanValue="184.8117506183047" upperBound="0.0" validity="false"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="3" name="Water Company Server_Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Inland" referenceStation="Water Company Server" type="2">
+<measure alpha="0.99" analyzedSamples="7" name="Water Company Server_Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Inland" referenceStation="Water Company Server" type="2">
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.38010491713697797" meanValue="0.0" upperBound="0.6857458865069788" validity="true"/>
+<sample lowerBound="0.39350315599919145" meanValue="0.0" upperBound="0.6446008260553089" validity="true"/>
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.41690906608535516" meanValue="0.0" upperBound="0.6897147470324219" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.45446674087341826" upperBound="0.0" validity="false"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="3" name="Water Company Disk_Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Inland" referenceStation="Water Company Disk" type="2">
+<measure alpha="0.99" analyzedSamples="7" name="Water Company Disk_Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Inland" referenceStation="Water Company Disk" type="2">
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="23.841889627556277" upperBound="0.0" validity="false"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="3" name="Control Center Server_Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Outgoing" referenceStation="Control Center Server" type="2">
+<measure alpha="0.99" analyzedSamples="7" name="Control Center Server_Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Outgoing" referenceStation="Control Center Server" type="2">
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="7963.837178797092" upperBound="0.0" validity="false"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="3" name="Seaweed Picking Outgoing Control Unit_Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Outgoing" referenceStation="Seaweed Picking Outgoing Control Unit" type="2">
+<measure alpha="0.99" analyzedSamples="7" name="Seaweed Picking Outgoing Control Unit_Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Outgoing" referenceStation="Seaweed Picking Outgoing Control Unit" type="2">
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="206.25732083596435" upperBound="0.0" validity="false"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="3" name="Lan Wireless_Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Outgoing" referenceStation="Lan Wireless" type="2">
+<measure alpha="0.99" analyzedSamples="7" name="Lan Wireless_Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Outgoing" referenceStation="Lan Wireless" type="2">
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="234.13187396005148" meanValue="0.0" upperBound="286.79269902412403" validity="true"/>
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
-<sample lowerBound="233.14244579667712" meanValue="0.0" upperBound="300.36598521768354" validity="true"/>
+<sample lowerBound="270.4647747737353" meanValue="0.0" upperBound="292.2533696477929" validity="true"/>
+<sample lowerBound="267.61364387890035" meanValue="0.0" upperBound="290.80565124198097" validity="true"/>
+<sample lowerBound="267.52650390989874" meanValue="0.0" upperBound="289.5886412684768" validity="true"/>
+<sample lowerBound="0.0" meanValue="247.14994671219299" upperBound="0.0" validity="false"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="3" name="Seaweed Picking Outgoings_Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Outgoing" referenceStation="Seaweed Picking Outgoings" type="2">
-<sample lowerBound="0.01182267020080063" meanValue="0.0" upperBound="0.020112563570371746" validity="true"/>
-<sample lowerBound="0.0138305582068482" meanValue="0.0" upperBound="0.01831386492483906" validity="true"/>
-<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<measure alpha="0.99" analyzedSamples="7" name="Seaweed Picking Outgoings_Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Outgoing" referenceStation="Seaweed Picking Outgoings" type="2">
+<sample lowerBound="0.01237595376644123" meanValue="0.0" upperBound="0.016684079943101438" validity="true"/>
+<sample lowerBound="0.01375466969488618" meanValue="0.0" upperBound="0.017717626446066455" validity="true"/>
+<sample lowerBound="0.015460104347606236" meanValue="0.0" upperBound="0.016555643530994528" validity="true"/>
+<sample lowerBound="0.015263048272918954" meanValue="0.0" upperBound="0.016588249239532917" validity="true"/>
+<sample lowerBound="0.015642907821293423" meanValue="0.0" upperBound="0.01662593795217548" validity="true"/>
+<sample lowerBound="0.015200239686580222" meanValue="0.0" upperBound="0.016260927262414144" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.01777670053355905" upperBound="0.0" validity="false"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="3" name="Internet_Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Outgoing" referenceStation="Internet" type="2">
+<measure alpha="0.99" analyzedSamples="7" name="Internet_Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Outgoing" referenceStation="Internet" type="2">
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
-<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="160.58393975920396" meanValue="0.0" upperBound="197.24914059172036" validity="true"/>
+<sample lowerBound="150.96350814141502" meanValue="0.0" upperBound="197.12182142323374" validity="true"/>
+<sample lowerBound="167.75082638537944" meanValue="0.0" upperBound="180.93002874445435" validity="true"/>
+<sample lowerBound="163.80264341016442" meanValue="0.0" upperBound="182.79548988669177" validity="true"/>
+<sample lowerBound="0.0" meanValue="150.71981290954574" upperBound="0.0" validity="false"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="3" name="Water Company Server_Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Outgoing" referenceStation="Water Company Server" type="2">
+<measure alpha="0.99" analyzedSamples="7" name="Water Company Server_Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Outgoing" referenceStation="Water Company Server" type="2">
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.36723761060171034" meanValue="0.0" upperBound="0.5886082282637374" validity="true"/>
+<sample lowerBound="0.34252246311170575" meanValue="0.0" upperBound="0.6223390258066102" validity="true"/>
+<sample lowerBound="0.3923145993060379" meanValue="0.0" upperBound="0.4952633637252121" validity="true"/>
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.2410900934392802" upperBound="0.0" validity="false"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="3" name="Water Company Disk_Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Outgoing" referenceStation="Water Company Disk" type="2">
+<measure alpha="0.99" analyzedSamples="7" name="Water Company Disk_Sampling Water Outgoing_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Water Outgoing" referenceStation="Water Company Disk" type="2">
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
 <sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
+<sample lowerBound="0.0" meanValue="26.79577466114196" upperBound="0.0" validity="false"/>
 </measure>
-<measure alpha="0.99" analyzedSamples="3" name="Quality Control Supervisor - User_Check Water Quality_Throughput" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Quality Control Supervisor - User" type="5">
-<sample lowerBound="0.009848395700984515" meanValue="0.01005085255541807" upperBound="0.010261808069973608" validity="true"/>
-<sample lowerBound="0.009846928129118387" meanValue="0.010043305292550484" upperBound="0.010247674536529021" validity="true"/>
-<sample lowerBound="0.009880847591032445" meanValue="0.01013984206539994" upperBound="0.010412779412712922" validity="true"/>
-</measure>
-<measure alpha="0.99" analyzedSamples="3" name="Lan Wired_All classes_Utilization" nodeType="station" precision="0.03" referenceClass="All classes" referenceStation="Lan Wired" type="4">
-<sample lowerBound="7.7523037620974184" meanValue="7.961000461865539" upperBound="8.16969716163366" validity="true"/>
-<sample lowerBound="7.85023681647607" meanValue="8.06654530443822" upperBound="8.28285379240037" validity="true"/>
-<sample lowerBound="7.85422830091128" meanValue="8.026958345836869" upperBound="8.199688390762459" validity="true"/>
-</measure>
-<measure alpha="0.99" analyzedSamples="3" name="Lan Wired_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Inland" referenceStation="Lan Wired" type="2">
-<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
-<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
-<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
-</measure>
-<measure alpha="0.99" analyzedSamples="3" name="Control Center Server_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Inland" referenceStation="Control Center Server" type="2">
-<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
-<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
-<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
-</measure>
-<measure alpha="0.99" analyzedSamples="3" name="Seaweed Picking Inland Control Unit_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Inland" referenceStation="Seaweed Picking Inland Control Unit" type="2">
-<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
-<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
-<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
-</measure>
-<measure alpha="0.99" analyzedSamples="3" name="Lan Wireless_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Inland" referenceStation="Lan Wireless" type="2">
-<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
-<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
-<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
-</measure>
-<measure alpha="0.99" analyzedSamples="3" name="Seaweed Picking Inlands_StartUp Sampling Water Inland_Response Time" nodeType="station" precision="0.03" referenceClass="StartUp Sampling Water Inland" referenceStation="Seaweed Picking Inlands" type="2">
-<sample lowerBound="0.0" meanValue="0.0" upperBound="0.0" validity="true"/>
-<sample lowerBound="0.009887545692960286" meanValue="0.0" upperBound="0.01566768049191885" validity="true"/>
-<sample lowerBound="0.010308583391244793" meanValue="0.0" upperBound="0.014915898018865805" validity="true"/>
+<measure alpha="0.99" analyzedSamples="7" name="Lan Wired_All classes_Utilization" nodeType="station" precision="0.03" referenceClass="All classes" referenceStation="Lan Wired" type="4">
+<sample lowerBound="7.835674083920087" meanValue="8.058475955412922" upperBound="8.281277826905756" validity="true"/>
+<sample lowerBound="7.928125467366508" meanValue="8.15310580674499" upperBound="8.378086146123474" validity="true"/>
+<sample lowerBound="7.872589650961499" meanValue="8.047338702254171" upperBound="8.222087753546843" validity="true"/>
+<sample lowerBound="7.69392376462415" meanValue="7.916484728897923" upperBound="8.139045693171697" validity="true"/>
+<sample lowerBound="7.818766459330996" meanValue="8.011489460394774" upperBound="8.204212461458551" validity="true"/>
+<sample lowerBound="7.878801617143031" meanValue="8.107674933681862" upperBound="8.336548250220693" validity="true"/>
+<sample lowerBound="0.0" meanValue="940.9789886050942" upperBound="0.0" validity="false"/>
 </measure>
 </results>
 </archive>
