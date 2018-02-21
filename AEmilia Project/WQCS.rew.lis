@@ -1,6 +1,0 @@
-(1)	MEASURE WaterCompanyServerUtilization IS
-(2)		ENABLED(QSQC.generate_checkWaterQuality_request) -> TRANS_REWARD(1)
-(3)		ENABLED(WCS.getExpectedParametersOutGoing_db_request) -> TRANS_REWARD(1)
-
->>>> 0 errors
->>>> 0 warnings

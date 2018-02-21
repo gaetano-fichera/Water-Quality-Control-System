@@ -1,3 +1,2 @@
-MEASURE WaterCompanyServerUtilization IS
-	ENABLED(QSQC.generate_checkWaterQuality_request) -> TRANS_REWARD(1)
-	ENABLED(WCS.getExpectedParametersOutGoing_db_request) -> TRANS_REWARD(1)
+MEASURE CCSUtilization IS
+	ENABLED(CCS.send_sample) -> TRANS_REWARD(1)

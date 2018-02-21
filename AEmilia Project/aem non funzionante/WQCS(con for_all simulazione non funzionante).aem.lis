@@ -476,7 +476,7 @@
 (476)			PSS : PurificationSystemServer_Type(PSS_getExpectedParametersInland_response_rate);
 (477)
 (478)			FOR_ALL i IN 0..sensorsIN - 1
-(479)				SPIN[i] : SeaweedPicking_Type(SP_send_sample_response_rate);
+(479)				SPIN[i]: SeaweedPicking_Type(SP_send_sample_response_rate);
 (480)
 (481)			FOR_ALL i IN 0..sensorsOUT - 1
 (482)				SPOUT[i] : SeaweedPicking_Type(SP_send_sample_response_rate)
@@ -537,8 +537,9 @@
 (537)		FOR_ALL i IN 0..sensorsOUT - 2
 (538)			FROM SPOUT[i].send_sample_response 										TO WLCU.receive_outcu_request;
 (539)
-(540)		FROM SPOUT[999].send_sample_response 										TO WLCU.receive_outcu_request %controllare se corretto
-(541)	END
+(540)		FROM SPOUT[999].send_sample_response 											TO WLCU.receive_outcu_request
+(541)
+(542)	END
 
 >>>> 0 errors
 >>>> 0 warnings
