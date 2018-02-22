@@ -2,4 +2,9 @@ Risoluzione QN:
 
 21/02
 
-a a 45554 sensori abbiamo ControlCenterServer Utilization a 1.0
+a a 28444 sensori abbiamo ControlCenterServer Utilization a 1.0
+
+2000    5000    8000    11000	14000	17000	20000	23000	26000	29000
+9.99E-3	9.95E-3	9.96E-3	9.98E-3	9.99E-3	1.00E-2	0.0100	0.0101	0.0100	0.0100
+0.0103	0.0102	0.0101	0.0102	0.0101	0.0102	0.0102	0.0103	0.0102	0.0102
+9.70E-3	9.75E-3	9.80E-3	9.77E-3	9.90E-3	9.84E-3	9.89E-3	9.91E-3	9.86E-3	9.85E-3
