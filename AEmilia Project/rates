@@ -43,6 +43,8 @@
 
 %in microsecondi
 
+	%valori in (10 * us) (10 * microsecondi)
+
 	const rate QSQualityControlApp_request_rate := 100,
 
 	const rate SampleWaterCompanyServer_rate := 0.355,
