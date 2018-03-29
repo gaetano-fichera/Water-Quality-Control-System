@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2018.3.29)  29 MAR 2018 20:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2018.3.29)  29 MAR 2018 20:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1118,7 +1118,7 @@ Underfull \vbox (badness 10000) detected at line 141
 Chapter 2.
 ) (./modelWCSWithExecutionGraphs.tex [5]
 Chapter 3.
-<./Immagini/DeploymentDiagramEComponentDiagram.jpg, id=99, 1134.2375pt x 1356.0
+<./Immagini/DeploymentDiagramEComponentDiagram.jpg, id=89, 1134.2375pt x 1356.0
 6625pt>
 File: ./Immagini/DeploymentDiagramEComponentDiagram.jpg Graphic file (type jpg)
 
@@ -1157,7 +1157,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 59--60
  []
 
 [8]
-<./Immagini/EGUC1StartUpSamplingWater.jpg, id=115, 791.95876pt x 832.10875pt>
+<./Immagini/EGUC1StartUpSamplingWater.jpg, id=105, 791.95876pt x 832.10875pt>
 File: ./Immagini/EGUC1StartUpSamplingWater.jpg Graphic file (type jpg)
 <use ./Immagini/EGUC1StartUpSamplingWater.jpg>
 Package pdftex.def Info: ./Immagini/EGUC1StartUpSamplingWater.jpg  used on inpu
@@ -1174,7 +1174,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 See the caption package documentation for explanation.
 
 [9 <./Immagini/EGUC1StartUpSamplingWater.jpg>]
-<./Immagini/EGUC3CheckWaterQuality.jpg, id=121, 1008.76875pt x 827.09pt>
+<./Immagini/EGUC3CheckWaterQuality.jpg, id=111, 1008.76875pt x 827.09pt>
 File: ./Immagini/EGUC3CheckWaterQuality.jpg Graphic file (type jpg)
 <use ./Immagini/EGUC3CheckWaterQuality.jpg>
 Package pdftex.def Info: ./Immagini/EGUC3CheckWaterQuality.jpg  used on input l
@@ -1188,7 +1188,7 @@ See the caption package documentation for explanation.
 
 ) (./queueingNetworkModel.tex [10 <./Immagini/EGUC3CheckWaterQuality.jpg>]
 Chapter 4.
-<./Immagini/PhysicalNodes.png, id=127, 773.89125pt x 532.99126pt>
+<./Immagini/PhysicalNodes.png, id=117, 773.89125pt x 532.99126pt>
 File: ./Immagini/PhysicalNodes.png Graphic file (type png)
 <use ./Immagini/PhysicalNodes.png>
 Package pdftex.def Info: ./Immagini/PhysicalNodes.png  used on input line 9.
@@ -1199,38 +1199,58 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 See the caption package documentation for explanation.
 
 [11 <./Immagini/PhysicalNodes.png>]
-<./Immagini/QueueingNetwork.jpg, id=134, 2021.5525pt x 638.385pt>
+<./Immagini/QueueingNetwork.jpg, id=124, 2021.5525pt x 638.385pt>
 File: ./Immagini/QueueingNetwork.jpg Graphic file (type jpg)
 <use ./Immagini/QueueingNetwork.jpg>
-Package pdftex.def Info: ./Immagini/QueueingNetwork.jpg  used on input line 19.
+Package pdftex.def Info: ./Immagini/QueueingNetwork.jpg  used on input line 18.
 
 (pdftex.def)             Requested size: 483.69684pt x 152.73822pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 22.
+(caption)                particular \caption on input line 21.
 See the caption package documentation for explanation.
 
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 51.
- [12 <./Immagini/QueueingNetwork.jpg>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 51.
- (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 51.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 51.
-Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 0799BCFE13EB85477D659258B429BC67;679.
+<./Immagini/QueuingNetworkFinal.jpg, id=125, 2742.245pt x 895.345pt>
+File: ./Immagini/QueuingNetworkFinal.jpg Graphic file (type jpg)
+<use ./Immagini/QueuingNetworkFinal.jpg>
+Package pdftex.def Info: ./Immagini/QueuingNetworkFinal.jpg  used on input line
+ 31.
+(pdftex.def)             Requested size: 483.69684pt x 157.91728pt.
 
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 34.
+See the caption package documentation for explanation.
+
+) (./aemiliaModel.tex [12 <./Immagini/QueueingNetwork.jpg> <./Immagini/QueuingN
+etworkFinal.jpg>]
+Chapter 5.
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 52.
+ [13]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 52.
+ (./report.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 52.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 52.
+
+
+Package rerunfilecheck Warning: File `report.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `report.out':
+(rerunfilecheck)             Before: 0799BCFE13EB85477D659258B429BC67;679
+(rerunfilecheck)             After:  A229946A5105E0ED033C85A29EF7AA40;728.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 51.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 52.
  ) 
 Here is how much of TeX's memory you used:
- 10115 strings out of 492982
- 147393 string characters out of 6136225
+ 10126 strings out of 492982
+ 147643 string characters out of 6136225
  253645 words of memory out of 5000000
- 13453 multiletter control sequences out of 15000+600000
+ 13457 multiletter control sequences out of 15000+600000
  59358 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,13n,39p,910b,504s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1244,10 +1264,10 @@ pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/
 2017/texmf-dist/fonts/type1/public/lm/lmsso12.pfb><c:/texlive/2017/texmf-dist/f
 onts/type1/urw/helvetic/uhvr8a.pfb><c:/texlive/2017/texmf-dist/fonts/type1/urw/
 times/utmr8a.pfb>
-Output written on report.pdf (13 pages, 695097 bytes).
+Output written on report.pdf (14 pages, 914834 bytes).
 PDF statistics:
  185 PDF objects out of 1000 (max. 8388607)
- 150 compressed objects within 2 object streams
- 35 named destinations out of 1000 (max. 500000)
- 116 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 148 compressed objects within 2 object streams
+ 38 named destinations out of 1000 (max. 500000)
+ 121 words of extra memory for PDF output out of 10000 (max. 10000000)
 

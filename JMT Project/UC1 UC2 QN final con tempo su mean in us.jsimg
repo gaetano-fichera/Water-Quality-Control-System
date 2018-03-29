@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
-<archive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="UC1 UC2 QN final con tempo su mean in us.jsimg" timestamp="Wed Mar 28 20:25:10 CEST 2018" xsi:noNamespaceSchemaLocation="Archive.xsd">
-<sim disableStatisticStop="false" logDecimalSeparator="," logDelimiter=";" logPath="C:\Users\Hp/JMT/" logReplaceMode="0" maxSamples="100000000" name="UC1 UC2 QN final con tempo su mean in us.jsimg" polling="1.0" xsi:noNamespaceSchemaLocation="SIMmodeldefinition.xsd">
+<archive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="UC1 UC2 QN final con tempo su mean in us.jsimg" timestamp="Thu Mar 29 20:11:01 CEST 2018" xsi:noNamespaceSchemaLocation="Archive.xsd">
+<sim disableStatisticStop="false" logDecimalSeparator="," logDelimiter=";" logPath="C:\Users\ASUS/JMT/" logReplaceMode="0" maxSamples="100000000" name="UC1 UC2 QN final con tempo su mean in us.jsimg" polling="1.0" xsi:noNamespaceSchemaLocation="SIMmodeldefinition.xsd">
 <userClass customers="500" name="StartUp Sampling Water In" priority="0" referenceSource="Delay Samples" type="closed"/>
 <userClass customers="500" name="StartUp Sampling Water Outgoing" priority="0" referenceSource="Delay Samples" type="closed"/>
 <userClass customers="0" name="Sampling In" priority="0" referenceSource="Delay Samples" type="closed"/>
