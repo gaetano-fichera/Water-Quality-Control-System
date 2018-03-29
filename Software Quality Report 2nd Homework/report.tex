@@ -1,0 +1,51 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{titlesec}
+\setcounter{secnumdepth}{4}
+\usepackage{rotating}
+\usepackage{array}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage[dvipsnames,table,xcdraw]{xcolor}
+\usepackage{hhline}
+\usepackage{caption}
+\usepackage{verbatim}
+\usepackage{longtable}
+\usepackage[Lenny]{fncychap}
+\graphicspath{{./Immagini/}}
+\renewcommand*\contentsname{\textbf{Index}}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black}
+\usepackage{titletoc}
+\usepackage{etoolbox}
+\usepackage{lettrine}
+\usepackage{geometry}
+\geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+\makeatletter
+\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+\makeatother
+\titleformat*{\section}{\centering\normalfont\Large\bfseries}
+
+\begin{document}
+\linespread{1,28}
+\sffamily
+\input{primapagina.tex}
+\tableofcontents{}
+\input{lightReworkOnOurUmlModel.tex}
+\input{identificationOfPerformanceRequirements.tex}
+\input{modelWCSWithExecutionGraphs.tex}
+\input{queueingNetworkModel.tex}
+\end{document}

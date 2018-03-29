@@ -1,0 +1,87 @@
+\newpage \chapter{\textbf{Model WCS With Execution Graphs}}
+
+The Use Cases we have considered are:
+\begin{itemize}
+\item UC1 StartUp Sampling Water activated by Sample Supervisor;
+\item UC3 Check Water Quality activated by Quality Control Supervisor.
+\end{itemize}
+In reference to the Use Cases taken into consideration, to better understand our architecture, we have combined the Deployment Diagram with Component Diagram. In the figure below this is represented.
+
+\begin{center}
+  \makebox[\textwidth]{\includegraphics[width=\textwidth]{DeploymentDiagramEComponentDiagram.jpg}}
+\end{center}
+\bigskip
+\captionof{figure}{Deployment Diagram + Component Diagram}
+
+\newpage \section{Demand Vector}
+
+Il Demand Vector scelto in base alle risorse virtuali che risaltano dal deployment diagram sono: 
+
+\begin{longtable}{|p{4cm}|p{9cm}|}
+
+\hline
+\textbf{
+Wired Connection Request} & \\
+
+\hline
+\textbf{Wireless Connection Request} & \\
+
+\hline
+\textbf{Internet Connection Request} & \\
+
+\hline
+\textbf{Database Request} & \\
+
+\hline
+\textbf{Control Center Server CPU} & \\
+
+\hline
+\textbf{Water Company Server CPU} & \\
+
+\hline
+\textbf{Purification System Pomezia CPU} & \\
+
+\hline
+\textbf{Seaweed Picking Inland Control Unit CPU} & \\
+
+\hline
+\textbf{Seaweed Picking Outgoing Control Unit CPU} & \\
+
+\hline
+\textbf{Seaweed Picking Outgoings Sample Request} & \\
+
+\hline
+\textbf{Seaweed Picking Inlands Sample Request} & \\
+
+\hline
+\end{longtable}
+
+\textbf{Spiegare cosa sono queste risorse virtuali}\\
+\newpage
+
+The Execution Graphs obtained are:
+
+\begin{itemize}
+\item UC1 Sampling Water activated by Sample Supervisor:
+	\bigskip
+	\bigskip
+	\begin{center}
+ 	 \makebox[\textwidth]{\includegraphics[width=\textwidth]				{EGUC1StartUpSamplingWater.jpg}}
+	\end{center}
+	\bigskip
+	\captionof{figure}{EG UC1 StartUp Sampling Water}
+\newpage
+\item UC3 Check Water Quality activated by Quality Control Supervisor:
+	\bigskip
+	\bigskip
+	\bigskip
+	\bigskip
+	\begin{center}
+ 	 \makebox[\textwidth]{\includegraphics[width=\textwidth]				{EGUC3CheckWaterQuality.jpg}}
+	\end{center}
+	\bigskip
+	\captionof{figure}{EG UC3 Check Water Quality}
+\end{itemize}
+
+
+

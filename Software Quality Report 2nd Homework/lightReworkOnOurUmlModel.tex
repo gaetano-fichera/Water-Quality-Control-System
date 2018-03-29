@@ -1,0 +1,141 @@
+\newpage \chapter{\textbf{Light Rework On Our UML Model}}
+
+\begin{itemize}
+\item We have applied the stereotypes to the Communication Paths 			within the Deployment Diagram;
+\item For the connections between the Control Center Server and the 		two Inland and Outgoing Seaweed Picking Control Units we 				have inserted a new communication path stereotype that does 			not consume resources because when we started the modeling 				work for the Queueing Network we considered the two Control 			Units located in the same physical space as the Control 				Center Server, because when we considered the vectors of 				virtual resources for each step of the Execution Graph 					"Sampling Water" the communication between Control Center 				Server and Control Unit did not consume resources, then we 				use a "Internal Connection" stereotype with zero consumption of 		resources;
+\item We have added the operations to the components subsequently 			reused in the Sequence Diagram;
+\item we realized the lack of an internal server to the Control Center 	Pomezia that managed the requests coming from the App inside it;
+\item we realized that in the sequence diagram "check quality" the 			call from the component "check quality parameters inland /				outgoing" was missing to the component parameters archieve to ask 		the desired water parameters;
+\item we have established the types of connections between one node 		and the other of the deployment diagram, obtaining:
+	\begin{itemize}
+	\item between the control center server and the two apps a wired 			connection (internal to the control center node therefore 				without delays);
+	\item between control center server and seaweed picking a wireless 		connection;
+	\item between the control center server and the water company 				server and the purification system center an internet 					connection.
+	\end{itemize}
+\item we have agreed that there is a single database that is connected 	to the water company server or water archives, and the qn we will 		develop with this consideration, in case we see that the 				performance is very bad we could consider the choice to dislocate 		the db between purifcation system, control center and water 			company nodes;
+\item we realized that in the water sampling phase, the sensors will 		send the data of the water samples to the control center which, in 	turn, using the sample archieve component will send the data to 		the water company server, the problem is that in the SD after the 		component sample archive is not invoked any component that refers 		to the water company server;
+\item =====> We have decided to add a component called "Sample 				Archive" to the water company server which is responsible for 			saving data on the DB. In going to add this correction we realized 	that in fact we have failed to use sample sender;
+\item =====> then we have made a small change: 
+	\begin{itemize}
+	\item sample sender is inside 	the control center server;
+	\item sample archive is located inside the water company server 			and	manages the data on the db.
+	\end{itemize}	 
+\item in order to improve system performance and to better stratify 		the deployment, we decided to add 3 new nodes: 							"SeaweedPickingInlandControlUnit", "Seaweed Picking Outgoing 			Control Unit" and "MagikarpControlUnit", for this purpose we have 		also inserted a new profile called "Control Unit" from the 	server 	stereotype, these 3 new nodes are connected to the 	server with a 		wired connection and to sensors with a wireless connection;
+\item We modified the sequence diagram of "UC SturUpSamplingWater" as 		we realized that the component sample data on the 						SeadweedPIckingInland / Outgoing node communicated with the 			"SampleSender" component on the ControlCenterServer node but from 		our component + deployment diagram it was not.
+\end{itemize}
+Below you can find the description of the new profiles popping out.
+
+\section{Wired Connection Profile}
+
+\begin{longtable}{|p{4cm}|p{9cm}|}
+
+\hline
+\textbf{Wired Connection} & \\
+
+
+\hline
+Metamodel Class & Communication Path\\
+
+\hline
+Description & It is a representation of the physical meaning of Wired Connection\\
+
+\hline
+Tagged Values & \\
+
+\hline
+Constraints &\\
+
+\hline
+\end{longtable}
+  
+\section{Internet Connection Profile}
+
+\begin{longtable}{|p{4cm}|p{9cm}|}
+
+\hline
+\textbf{Internet Connection} & \\
+
+
+\hline
+Metamodel Class & Communication Path\\
+
+\hline
+Description & It is a representation of the physical meaning of Internet Connection\\
+
+\hline
+Tagged Values & \\
+
+\hline
+Constraints &\\
+
+\hline
+\end{longtable}
+
+\section{Wireless Connection Profile}
+
+\begin{longtable}{|p{4cm}|p{9cm}|}
+
+\hline
+\textbf{Wireless Connection} & \\
+
+
+\hline
+Metamodel Class & Communication Path\\
+
+\hline
+Description & It is a representation of the physical meaning of Wireless Connection\\
+
+\hline
+Tagged Values & \\
+
+\hline
+Constraints &\\
+
+\hline
+\end{longtable}
+
+\section{Internal Connection Profile}
+
+\begin{longtable}{|p{4cm}|p{9cm}|}
+
+\hline
+\textbf{Internal Connection} & \\
+
+
+\hline
+Metamodel Class & Communication Path\\
+
+\hline
+Description & It is a representation of the physical meaning of Internal Connection\\
+
+\hline
+Tagged Values & \\
+
+\hline
+Constraints &\\
+
+\hline
+\end{longtable}
+
+\section{Control Unit Profile}
+
+\begin{longtable}{|p{4cm}|p{9cm}|}
+
+\hline
+\textbf{Internal Connection} & \\
+
+
+\hline
+Metamodel Class & Node\\
+
+\hline
+Description & It is a representation of the physical meaning of Control Unit\\
+
+\hline
+Tagged Values & \\
+
+\hline
+Constraints &\\
+
+\hline
+\end{longtable}
