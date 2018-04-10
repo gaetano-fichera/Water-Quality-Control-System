@@ -1,0 +1,3922 @@
+Stationary probability distribution of the homogeneous continuous-time Markov chain
+underlying wcs:
+
+- Global state 1:	7.09547e-023
+
+- Global state 2:	1.90431e-024
+
+- Global state 3:	1.2192e-022
+
+- Global state 4:	3.27215e-024
+
+- Global state 5:	7.31264e-024
+
+- Global state 6:	7.31264e-024
+
+- Global state 7:	1.09954e-024
+
+- Global state 8:	1.59956e-024
+
+- Global state 9:	7.61978e-025
+
+- Global state 10:	4.62574e-023
+
+- Global state 11:	4.26195e-028
+
+- Global state 12:	2.66398e-026
+
+- Global state 13:	1.4027e-026
+
+- Global state 14:	2.59072e-023
+
+- Global state 15:	2.71052e-028
+
+- Global state 16:	6.93948e-025
+
+- Global state 17:	7.34121e-027
+
+- Global state 18:	7.34121e-027
+
+- Global state 19:	5.04509e-005
+
+- Global state 20:	6.8416e-025
+
+- Global state 21:	5.12376e-005
+
+- Global state 22:	2.68961e-024
+
+- Global state 23:	1.04817e-026
+
+- Global state 24:	7.96629e-007
+
+- Global state 25:	7.54793e-026
+
+- Global state 26:	1.03644e-026
+
+- Global state 27:	8.10039e-007
+
+- Global state 28:	4.72871e-025
+
+- Global state 29:	5.84873e-030
+
+- Global state 30:	4.57375e-010
+
+- Global state 31:	2.71616e-028
+
+- Global state 32:	2.75013e-028
+
+- Global state 33:	2.215e-008
+
+- Global state 34:	1.48607e-025
+
+- Global state 35:	8.08265e-030
+
+- Global state 36:	7.40911e-010
+
+- Global state 37:	3.86326e-027
+
+- Global state 38:	2.11441e-025
+
+- Global state 39:	2.11441e-025
+
+- Global state 40:	8.14154e-007
+
+- Global state 41:	1.20525e-025
+
+- Global state 42:	7.71336e-026
+
+- Global state 43:	1.04044e-026
+
+- Global state 44:	1.04044e-026
+
+- Global state 45:	9.78535e-006
+
+- Global state 46:	1.00769e-025
+
+- Global state 47:	1.56073e-005
+
+- Global state 48:	1.46951e-024
+
+- Global state 49:	1.93674e-027
+
+- Global state 50:	3.33009e-007
+
+- Global state 51:	4.48888e-026
+
+- Global state 52:	2.46812e-026
+
+- Global state 53:	5.82199e-006
+
+- Global state 54:	1.06147e-024
+
+- Global state 55:	1.42014e-029
+
+- Global state 56:	3.3514e-009
+
+- Global state 57:	6.11216e-028
+
+- Global state 58:	1.64351e-026
+
+- Global state 59:	3.99859e-006
+
+- Global state 60:	6.93466e-025
+
+- Global state 61:	2.49263e-026
+
+- Global state 62:	6.17791e-006
+
+- Global state 63:	4.22974e-026
+
+- Global state 64:	4.54496e-028
+
+- Global state 65:	4.54496e-028
+
+- Global state 66:	9.74173e-006
+
+- Global state 67:	1.37804e-024
+
+- Global state 68:	0.000320721
+
+- Global state 69:	4.18729e-026
+
+- Global state 70:	9.74852e-006
+
+- Global state 71:	1.51145e-024
+
+- Global state 72:	0.000356517
+
+- Global state 73:	8.70592e-028
+
+- Global state 74:	2.05354e-007
+
+- Global state 75:	1.49002e-024
+
+- Global state 76:	0.000356638
+
+- Global state 77:	2.41227e-023
+
+- Global state 78:	0.00858521
+
+- Global state 79:	1.02822e-007
+
+- Global state 80:	1.02822e-007
+
+- Global state 81:	6.23846e-005
+
+- Global state 82:	0.00028776
+
+- Global state 83:	4.40889e-005
+
+- Global state 84:	2.13816e-006
+
+- Global state 85:	1.80996e-006
+
+- Global state 86:	2.33074e-006
+
+- Global state 87:	4.29503e-005
+
+- Global state 88:	2.11206e-007
+
+- Global state 89:	2.9598e-005
+
+- Global state 90:	3.00492e-008
+
+- Global state 91:	4.31789e-005
+
+- Global state 92:	1.42942e-009
+
+- Global state 93:	3.74988e-006
+
+- Global state 94:	2.88672e-008
+
+- Global state 95:	1.67373e-005
+
+- Global state 96:	3.65207e-006
+
+- Global state 97:	1.37024e-007
+
+- Global state 98:	1.53933e-005
+
+- Global state 99:	5.11939e-005
+
+- Global state 100:	6.20312e-008
+
+- Global state 101:	3.71467e-009
+
+- Global state 102:	2.29211e-007
+
+- Global state 103:	1.52047e-006
+
+- Global state 104:	1.76184e-009
+
+- Global state 105:	3.65679e-008
+
+- Global state 106:	2.78691e-007
+
+- Global state 107:	3.25015e-005
+
+- Global state 108:	1.73759e-008
+
+- Global state 109:	2.10303e-011
+
+- Global state 110:	1.57897e-010
+
+- Global state 111:	1.87132e-008
+
+- Global state 112:	9.99295e-012
+
+- Global state 113:	1.09084e-008
+
+- Global state 114:	2.79602e-008
+
+- Global state 115:	1.8049e-005
+
+- Global state 116:	5.16022e-009
+
+- Global state 117:	4.8063e-009
+
+- Global state 118:	1.02727e-008
+
+- Global state 119:	1.96991e-005
+
+- Global state 120:	1.55651e-009
+
+- Global state 121:	3.25114e-007
+
+- Global state 122:	6.34514e-006
+
+- Global state 123:	7.0464e-010
+
+- Global state 124:	3.07077e-006
+
+- Global state 125:	2.92173e-006
+
+- Global state 126:	6.73816e-012
+
+- Global state 127:	8.67598e-008
+
+- Global state 128:	2.82704e-008
+
+- Global state 129:	3.0546e-012
+
+- Global state 130:	8.39738e-007
+
+- Global state 131:	1.30358e-008
+
+- Global state 132:	1.68228e-015
+
+- Global state 133:	4.82917e-010
+
+- Global state 134:	7.1847e-012
+
+- Global state 135:	3.62188e-014
+
+- Global state 136:	2.21968e-007
+
+- Global state 137:	1.5734e-010
+
+- Global state 138:	4.54792e-016
+
+- Global state 139:	7.99269e-008
+
+- Global state 140:	2.01004e-012
+
+- Global state 141:	0.000266606
+
+- Global state 142:	0.00179645
+
+- Global state 143:	2.12501e-005
+
+- Global state 144:	0.000176111
+
+- Global state 145:	2.74702e-005
+
+- Global state 146:	0.000278572
+
+- Global state 147:	4.38975e-007
+
+- Global state 148:	6.79722e-008
+
+- Global state 149:	0.000377448
+
+- Global state 150:	0.00167412
+
+- Global state 151:	2.20974e-005
+
+- Global state 152:	0.000116173
+
+- Global state 153:	1.78569e-005
+
+- Global state 154:	0.000255495
+
+- Global state 155:	9.86141e-007
+
+- Global state 156:	1.54165e-007
+
+- Global state 157:	5.25107e-007
+
+- Global state 158:	1.75921e-006
+
+- Global state 159:	2.43597e-008
+
+- Global state 160:	9.67632e-008
+
+- Global state 161:	1.46968e-008
+
+- Global state 162:	2.65106e-007
+
+- Global state 163:	1.81011e-009
+
+- Global state 164:	2.96267e-010
+
+- Global state 165:	0.000912386
+
+- Global state 166:	0.00305545
+
+- Global state 167:	4.23103e-005
+
+- Global state 168:	0.000168016
+
+- Global state 169:	2.55188e-005
+
+- Global state 170:	0.000460441
+
+- Global state 171:	3.14641e-006
+
+- Global state 172:	5.15139e-007
+
+- Global state 173:	6.02436e-005
+
+- Global state 174:	0.000143941
+
+- Global state 175:	2.07097e-006
+
+- Global state 176:	5.77094e-006
+
+- Global state 177:	8.64346e-007
+
+- Global state 178:	2.15123e-005
+
+- Global state 179:	2.6929e-007
+
+- Global state 180:	5.15377e-008
+
+- Global state 181:	0.0020567
+
+- Global state 182:	0.00480748
+
+- Global state 183:	6.92164e-005
+
+- Global state 184:	0.000189444
+
+- Global state 185:	2.83943e-005
+
+- Global state 186:	0.000720239
+
+- Global state 187:	9.35691e-006
+
+- Global state 188:	1.86434e-006
+
+- Global state 189:	0.000135815
+
+- Global state 190:	0.00021732
+
+- Global state 191:	3.16963e-006
+
+- Global state 192:	5.23012e-006
+
+- Global state 193:	0.00028776
+
+- Global state 194:	4.40889e-005
+
+- Global state 195:	2.13816e-006
+
+- Global state 196:	1.80996e-006
+
+- Global state 197:	2.57515e-006
+
+- Global state 198:	0.000570274
+
+- Global state 199:	0.00142982
+
+- Global state 200:	0.000235112
+
+- Global state 201:	4.36529e-005
+
+- Global state 202:	0.00223434
+
+- Global state 203:	0.00167053
+
+- Global state 204:	0.00319046
+
+- Global state 205:	0.000564555
+
+- Global state 206:	4.92746e-005
+
+- Global state 207:	0.0001759
+
+- Global state 208:	0.00253886
+
+- Global state 209:	0.00016512
+
+- Global state 210:	0.00248864
+
+- Global state 211:	0.000595624
+
+- Global state 212:	2.46639e-006
+
+- Global state 213:	3.80139e-005
+
+- Global state 214:	1.65117e-005
+
+- Global state 215:	2.32193e-006
+
+- Global state 216:	3.74335e-005
+
+- Global state 217:	7.56547e-005
+
+- Global state 218:	1.30891e-009
+
+- Global state 219:	2.11222e-008
+
+- Global state 220:	4.34023e-008
+
+- Global state 221:	5.85449e-008
+
+- Global state 222:	1.02784e-006
+
+- Global state 223:	1.07248e-005
+
+- Global state 224:	1.55873e-009
+
+- Global state 225:	7.60725e-008
+
+- Global state 226:	2.53895e-007
+
+- Global state 227:	3.49468e-005
+
+- Global state 228:	0.00131536
+
+- Global state 229:	1.1767e-006
+
+- Global state 230:	0.000309202
+
+- Global state 231:	0.00013782
+
+- Global state 232:	0.0167218
+
+- Global state 233:	0.000364633
+
+- Global state 234:	3.13374e-006
+
+- Global state 235:	3.13374e-006
+
+- Global state 236:	2.62293e-006
+
+- Global state 237:	3.37428e-006
+
+- Global state 238:	5.58127e-005
+
+- Global state 239:	3.02254e-007
+
+- Global state 240:	3.60523e-005
+
+- Global state 241:	4.24928e-008
+
+- Global state 242:	4.79428e-005
+
+- Global state 243:	2.00934e-009
+
+- Global state 244:	4.12777e-006
+
+- Global state 245:	4.64247e-006
+
+- Global state 246:	1.38155e-005
+
+- Global state 247:	0.000415546
+
+- Global state 248:	2.77311e-006
+
+- Global state 249:	5.98021e-006
+
+- Global state 250:	1.78033e-005
+
+- Global state 251:	0.000712636
+
+- Global state 252:	1.67353e-005
+
+- Global state 253:	0.000690632
+
+- Global state 254:	0.000225598
+
+- Global state 255:	2.50139e-007
+
+- Global state 256:	1.05154e-005
+
+- Global state 257:	6.80675e-006
+
+- Global state 258:	2.3795e-007
+
+- Global state 259:	1.26018e-005
+
+- Global state 260:	9.14774e-005
+
+- Global state 261:	1.34167e-010
+
+- Global state 262:	7.13786e-009
+
+- Global state 263:	5.26388e-008
+
+- Global state 264:	6.78476e-009
+
+- Global state 265:	1.68944e-006
+
+- Global state 266:	3.10645e-005
+
+- Global state 267:	5.39047e-010
+
+- Global state 268:	1.57764e-006
+
+- Global state 269:	8.07472e-007
+
+- Global state 270:	2.5387e-009
+
+- Global state 271:	0.00794418
+
+- Global state 272:	0.00019373
+
+- Global state 273:	0.000229276
+
+- Global state 274:	0.000229276
+
+- Global state 275:	3.06415e-005
+
+- Global state 276:	3.48347e-005
+
+- Global state 277:	3.48347e-005
+
+- Global state 278:	8.31091e-009
+
+- Global state 279:	7.21214e-006
+
+- Global state 280:	1.76696e-006
+
+- Global state 281:	1.70921e-007
+
+- Global state 282:	1.38369e-007
+
+- Global state 283:	1.38369e-007
+
+- Global state 284:	3.88275e-008
+
+- Global state 285:	2.26911e-008
+
+- Global state 286:	2.26911e-008
+
+- Global state 287:	3.57201e-007
+
+- Global state 288:	2.52794e-009
+
+- Global state 289:	2.52794e-009
+
+- Global state 290:	2.1136e-009
+
+- Global state 291:	2.71875e-009
+
+- Global state 292:	4.39112e-008
+
+- Global state 293:	2.43214e-010
+
+- Global state 294:	2.78083e-008
+
+- Global state 295:	3.41388e-011
+
+- Global state 296:	3.56802e-008
+
+- Global state 297:	1.61295e-012
+
+- Global state 298:	3.0609e-009
+
+- Global state 299:	4.78441e-009
+
+- Global state 300:	3.99732e-007
+
+- Global state 301:	1.89138e-007
+
+- Global state 302:	1.68107e-005
+
+- Global state 303:	1.8575e-005
+
+- Global state 304:	3.13533e-007
+
+- Global state 305:	3.37833e-007
+
+- Global state 306:	0.000422427
+
+- Global state 307:	0.000543369
+
+- Global state 308:	1.14613e-005
+
+- Global state 309:	1.48274e-005
+
+- Global state 310:	1.10996e-005
+
+- Global state 311:	1.48703e-005
+
+- Global state 312:	0.000255366
+
+- Global state 313:	1.69045e-007
+
+- Global state 314:	2.2971e-007
+
+- Global state 315:	7.82786e-006
+
+- Global state 316:	2.11517e-007
+
+- Global state 317:	2.33823e-007
+
+- Global state 318:	0.000187142
+
+- Global state 319:	1.19895e-010
+
+- Global state 320:	1.32028e-010
+
+- Global state 321:	1.07761e-007
+
+- Global state 322:	3.25478e-008
+
+- Global state 323:	0.00011535
+
+- Global state 324:	3.13118e-008
+
+- Global state 325:	0.00029681
+
+- Global state 326:	0.00024019
+
+- Global state 327:	0.00024019
+
+- Global state 328:	6.75198e-005
+
+- Global state 329:	3.93963e-005
+
+- Global state 330:	3.93963e-005
+
+- Global state 331:	0.000620319
+
+- Global state 332:	4.38958e-006
+
+- Global state 333:	4.38958e-006
+
+- Global state 334:	3.67007e-006
+
+- Global state 335:	4.72086e-006
+
+- Global state 336:	7.62411e-005
+
+- Global state 337:	4.22314e-007
+
+- Global state 338:	4.82801e-005
+
+- Global state 339:	5.92776e-008
+
+- Global state 340:	6.19431e-005
+
+- Global state 341:	2.80066e-009
+
+- Global state 342:	5.31389e-006
+
+- Global state 343:	8.3375e-006
+
+- Global state 344:	0.000694432
+
+- Global state 345:	0.00032893
+
+- Global state 346:	0.0291936
+
+- Global state 347:	0.0322456
+
+- Global state 348:	0.000544297
+
+- Global state 349:	0.000586409
+
+- Global state 350:	4.38991e-006
+
+- Global state 351:	4.38991e-006
+
+- Global state 352:	0.00120852
+
+- Global state 353:	9.06693e-006
+
+- Global state 354:	9.06693e-006
+
+- Global state 355:	6.96349e-007
+
+- Global state 356:	5.22436e-009
+
+- Global state 357:	5.22436e-009
+
+- Global state 358:	0.0018273
+
+- Global state 359:	1.37172e-005
+
+- Global state 360:	1.37172e-005
+
+- Global state 361:	0.000157738
+
+- Global state 362:	5.29226e-007
+
+- Global state 363:	2.75622e-005
+
+- Global state 364:	2.84143e-005
+
+- Global state 365:	6.65712e-005
+
+- Global state 366:	0.000105401
+
+- Global state 367:	0.00015859
+
+- Global state 368:	0.000256157
+
+- Global state 369:	5.29226e-007
+
+- Global state 370:	4.61364e-005
+
+- Global state 371:	0.00116154
+
+- Global state 372:	0.000607858
+
+- Global state 373:	0.000716633
+
+- Global state 374:	0.000116206
+
+- Global state 375:	1.00645e-005
+
+- Global state 376:	0.00154347
+
+- Global state 377:	0.0918419
+
+- Global state 378:	5.98275e-008
+
+- Global state 379:	3.98951e-008
+
+- Global state 380:	5.98373e-008
+
+- Global state 381:	5.21124e-009
+
+- Global state 382:	5.84879e-007
+
+- Global state 383:	3.63192e-005
+
+- Global state 384:	1.06603e-007
+
+- Global state 385:	1.90791e-008
+
+- Global state 386:	4.16695e-007
+
+- Global state 387:	1.98691e-007
+
+- Global state 388:	2.07722e-007
+
+- Global state 389:	3.27745e-008
+
+- Global state 390:	2.83134e-009
+
+- Global state 391:	0.000103831
+
+- Global state 392:	6.92383e-005
+
+- Global state 393:	0.000103848
+
+- Global state 394:	9.04413e-006
+
+- Global state 395:	0.0010151
+
+- Global state 396:	0.0630338
+
+- Global state 397:	0.000185016
+
+- Global state 398:	3.31127e-005
+
+- Global state 399:	0.00072316
+
+- Global state 400:	0.000344812
+
+- Global state 401:	0.000360476
+
+- Global state 402:	5.68756e-005
+
+- Global state 403:	4.91339e-006
+
+- Global state 404:	5.41827e-005
+
+- Global state 405:	2.52904e-009
+
+- Global state 406:	3.12143e-008
+
+- Global state 407:	4.07327e-006
+
+- Global state 408:	5.00186e-005
+
+- Global state 409:	1.80364e-007
+
+- Global state 410:	1.37853e-005
+
+- Global state 411:	1.41581e-005
+
+- Global state 412:	3.10024e-005
+
+- Global state 413:	3.45633e-005
+
+- Global state 414:	5.31986e-005
+
+- Global state 415:	2.15361e-008
+
+- Global state 416:	3.27046e-008
+
+- Global state 417:	2.8505e-009
+
+- Global state 418:	3.42856e-007
+
+- Global state 419:	3.7383e-005
+
+- Global state 420:	5.67689e-005
+
+- Global state 421:	4.94792e-006
+
+- Global state 422:	0.000595275
+
+- Global state 423:	0.000679854
+
+- Global state 424:	2.52904e-009
+
+- Global state 425:	3.91699e-007
+
+- Global state 426:	4.07327e-006
+
+- Global state 427:	0.000778982
+
+- Global state 428:	1.80364e-007
+
+- Global state 429:	3.67007e-006
+
+- Global state 430:	5.20857e-006
+
+- Global state 431:	0.00047556
+
+- Global state 432:	2.99963e-009
+
+- Global state 433:	2.73951e-007
+
+- Global state 434:	3.72343e-006
+
+- Global state 435:	0.000422744
+
+- Global state 436:	2.1136e-009
+
+- Global state 437:	2.62293e-006
+
+- Global state 438:	1.1551e-005
+
+- Global state 439:	4.90717e-006
+
+- Global state 440:	4.90717e-006
+
+- Global state 441:	7.12325e-006
+
+- Global state 442:	1.17524e-006
+
+- Global state 443:	1.17524e-006
+
+- Global state 444:	2.53962e-005
+
+- Global state 445:	1.5789e-007
+
+- Global state 446:	1.5789e-007
+
+- Global state 447:	1.30252e-007
+
+- Global state 448:	1.67344e-007
+
+- Global state 449:	2.38957e-006
+
+- Global state 450:	1.47593e-008
+
+- Global state 451:	1.40078e-006
+
+- Global state 452:	2.0409e-009
+
+- Global state 453:	1.61843e-006
+
+- Global state 454:	9.56961e-011
+
+- Global state 455:	1.37318e-007
+
+- Global state 456:	1.71305e-006
+
+- Global state 457:	4.0458e-005
+
+- Global state 458:	3.58258e-005
+
+- Global state 459:	0.00119891
+
+- Global state 460:	0.000754265
+
+- Global state 461:	1.3375e-005
+
+- Global state 462:	1.0951e-005
+
+- Global state 463:	8.21988e-008
+
+- Global state 464:	8.21988e-008
+
+- Global state 465:	1.32297e-005
+
+- Global state 466:	9.91197e-008
+
+- Global state 467:	9.91197e-008
+
+- Global state 468:	1.12916e-006
+
+- Global state 469:	7.51641e-007
+
+- Global state 470:	1.12165e-006
+
+- Global state 471:	9.76396e-008
+
+- Global state 472:	1.29044e-005
+
+- Global state 473:	0.000752265
+
+- Global state 474:	2.22123e-006
+
+- Global state 475:	3.92785e-007
+
+- Global state 476:	6.98493e-006
+
+- Global state 477:	2.91104e-006
+
+- Global state 478:	2.58836e-006
+
+- Global state 479:	3.92208e-007
+
+- Global state 480:	3.37511e-008
+
+- Global state 481:	1.06306e-006
+
+- Global state 482:	7.35001e-007
+
+- Global state 483:	1.08254e-006
+
+- Global state 484:	9.40783e-008
+
+- Global state 485:	1.80783e-005
+
+- Global state 486:	1.00718e-005
+
+- Global state 487:	1.30252e-007
+
+- Global state 488:	1.84352e-007
+
+- Global state 489:	1.06321e-005
+
+- Global state 490:	0.00037599
+
+- Global state 491:	0.000156679
+
+- Global state 492:	0.000156679
+
+- Global state 493:	0.000248574
+
+- Global state 494:	3.78258e-005
+
+- Global state 495:	3.78258e-005
+
+- Global state 496:	0.000814724
+
+- Global state 497:	5.06509e-006
+
+- Global state 498:	5.06509e-006
+
+- Global state 499:	4.17207e-006
+
+- Global state 500:	5.35967e-006
+
+- Global state 501:	7.62979e-005
+
+- Global state 502:	4.72179e-007
+
+- Global state 503:	4.46984e-005
+
+- Global state 504:	6.52383e-008
+
+- Global state 505:	5.16316e-005
+
+- Global state 506:	3.05789e-009
+
+- Global state 507:	4.38067e-006
+
+- Global state 508:	5.9423e-005
+
+- Global state 509:	0.00130011
+
+- Global state 510:	0.00121697
+
+- Global state 511:	0.0383982
+
+- Global state 512:	0.0240667
+
+- Global state 513:	0.000426773
+
+- Global state 514:	0.000349344
+
+- Global state 515:	2.62237e-006
+
+- Global state 516:	2.62237e-006
+
+- Global state 517:	0.000422028
+
+- Global state 518:	3.16192e-006
+
+- Global state 519:	3.16192e-006
+
+- Global state 520:	3.60204e-005
+
+- Global state 521:	2.39774e-005
+
+- Global state 522:	3.57808e-005
+
+- Global state 523:	3.1147e-006
+
+- Global state 524:	0.000411661
+
+- Global state 525:	0.0239974
+
+- Global state 526:	7.08573e-005
+
+- Global state 527:	1.25299e-005
+
+- Global state 528:	0.000222819
+
+- Global state 529:	9.28621e-005
+
+- Global state 530:	8.25688e-005
+
+- Global state 531:	1.25114e-005
+
+- Global state 532:	1.07666e-006
+
+- Global state 533:	3.39143e-005
+
+- Global state 534:	2.34473e-005
+
+- Global state 535:	3.45335e-005
+
+- Global state 536:	3.00112e-006
+
+- Global state 537:	0.000577034
+
+- Global state 538:	0.000321296
+
+- Global state 539:	4.17207e-006
+
+- Global state 540:	5.90371e-006
+
+- Global state 541:	0.000339253
+
+- Global state 542:	0.0262142
+
+- Global state 543:	0.0125245
+
+- Global state 544:	0.00307308
+
+- Global state 545:	0.000507167
+
+- Global state 546:	0.000342546
+
+- Global state 547:	0.0165314
+
+- Global state 548:	0.0119831
+
+- Global state 549:	0.000448517
+
+- Global state 550:	0.000522562
+
+- Global state 551:	0.00836931
+
+- Global state 552:	9.39147e-006
+
+- Global state 553:	0.000255568
+
+- Global state 554:	7.40781e-005
+
+- Global state 555:	0.00550969
+
+- Global state 556:	4.25812e-008
+
+- Global state 557:	3.17231e-006
+
+- Global state 558:	3.81379e-005
+
+- Global state 559:	0.00313947
+
+- Global state 560:	4.15996e-005
+
+- Global state 561:	1.22903e-005
+
+- Global state 562:	8.51577e-006
+
+- Global state 563:	0.000143626
+
+- Global state 564:	1.28066e-006
+
+- Global state 565:	1.28066e-006
+
+- Global state 566:	7.85624e-005
+
+- Global state 567:	7.85624e-005
+
+- Global state 568:	6.23846e-005
+
+- Global state 569:	2.59176e-008
+
+- Global state 570:	8.81816e-009
+
+- Global state 571:	1.13249e-007
+
+- Global state 572:	1.00879e-009
+
+- Global state 573:	1.00879e-009
+
+- Global state 574:	5.03517e-008
+
+- Global state 575:	5.03517e-008
+
+- Global state 576:	4.50613e-005
+
+- Global state 577:	1.53155e-005
+
+- Global state 578:	0.000196647
+
+- Global state 579:	1.75167e-006
+
+- Global state 580:	1.75167e-006
+
+- Global state 581:	8.74071e-005
+
+- Global state 582:	8.74071e-005
+
+- Global state 583:	4.34008e-006
+
+- Global state 584:	7.12144e-007
+
+- Global state 585:	7.01364e-006
+
+- Global state 586:	6.17797e-008
+
+- Global state 587:	6.17797e-008
+
+- Global state 588:	1.96087e-006
+
+- Global state 589:	1.96087e-006
+
+- Global state 590:	0.000145971
+
+- Global state 591:	2.35741e-005
+
+- Global state 592:	0.000228538
+
+- Global state 593:	1.99982e-006
+
+- Global state 594:	1.99982e-006
+
+- Global state 595:	6.26116e-005
+
+- Global state 596:	6.26116e-005
+
+- Global state 597:	3.1907e-025
+
+- Global state 598:	1.38056e-024
+
+- Global state 599:	3.1907e-025
+
+- Global state 600:	1.38056e-024
+
+- Global state 601:	6.19555e-027
+
+- Global state 602:	6.19555e-027
+
+- Global state 603:	4.10941e-025
+
+- Global state 604:	1.08804e-024
+
+- Global state 605:	1.68559e-025
+
+- Global state 606:	1.98098e-026
+
+- Global state 607:	1.66318e-026
+
+- Global state 608:	2.14019e-026
+
+- Global state 609:	3.64966e-025
+
+- Global state 610:	1.13979e-026
+
+- Global state 611:	1.92323e-027
+
+- Global state 612:	2.40218e-025
+
+- Global state 613:	1.03767e-027
+
+- Global state 614:	2.71286e-028
+
+- Global state 615:	3.27885e-025
+
+- Global state 616:	1.48342e-028
+
+- Global state 617:	2.81725e-029
+
+- Global state 618:	2.12924e-024
+
+- Global state 619:	1.56294e-029
+
+- Global state 620:	2.87065e-024
+
+- Global state 621:	8.62162e-024
+
+- Global state 622:	1.55579e-021
+
+- Global state 623:	4.38054e-024
+
+- Global state 624:	5.82007e-023
+
+- Global state 625:	2.34036e-025
+
+- Global state 626:	1.60892e-025
+
+- Global state 627:	9.62293e-025
+
+- Global state 628:	2.89739e-025
+
+- Global state 629:	2.63154e-024
+
+- Global state 630:	1.55078e-025
+
+- Global state 631:	7.1303e-026
+
+- Global state 632:	4.10055e-025
+
+- Global state 633:	1.77129e-025
+
+- Global state 634:	1.6903e-024
+
+- Global state 635:	2.19522e-025
+
+- Global state 636:	6.80726e-026
+
+- Global state 637:	3.9571e-025
+
+- Global state 638:	2.44042e-025
+
+- Global state 639:	2.43738e-024
+
+- Global state 640:	1.82339e-026
+
+- Global state 641:	8.84765e-027
+
+- Global state 642:	8.16098e-028
+
+- Global state 643:	1.96325e-025
+
+- Global state 644:	4.10941e-025
+
+- Global state 645:	1.08804e-024
+
+- Global state 646:	1.68559e-025
+
+- Global state 647:	1.98098e-026
+
+- Global state 648:	1.66318e-026
+
+- Global state 649:	2.36246e-026
+
+- Global state 650:	3.06231e-024
+
+- Global state 651:	1.25996e-026
+
+- Global state 652:	3.47929e-024
+
+- Global state 653:	8.92189e-024
+
+- Global state 654:	1.69727e-024
+
+- Global state 655:	3.20284e-025
+
+- Global state 656:	2.2025e-023
+
+- Global state 657:	1.53352e-021
+
+- Global state 658:	5.09145e-024
+
+- Global state 659:	3.09725e-024
+
+- Global state 660:	5.65589e-025
+
+- Global state 661:	1.66136e-023
+
+- Global state 662:	4.46835e-023
+
+- Global state 663:	1.82339e-026
+
+- Global state 664:	8.84765e-027
+
+- Global state 665:	8.16098e-028
+
+- Global state 666:	1.96325e-025
+
+- Global state 667:	5.46053e-030
+
+- Global state 668:	5.46053e-030
+
+- Global state 669:	2.88487e-028
+
+- Global state 670:	6.69159e-028
+
+- Global state 671:	1.2411e-028
+
+- Global state 672:	1.9353e-029
+
+- Global state 673:	1.62374e-029
+
+- Global state 674:	2.08926e-029
+
+- Global state 675:	3.46629e-028
+
+- Global state 676:	1.87556e-030
+
+- Global state 677:	2.22733e-028
+
+- Global state 678:	2.64199e-031
+
+- Global state 679:	2.90807e-028
+
+- Global state 680:	2.7385e-032
+
+- Global state 681:	1.41871e-027
+
+- Global state 682:	2.29999e-027
+
+- Global state 683:	1.8949e-026
+
+- Global state 684:	2.03016e-028
+
+- Global state 685:	1.7996e-027
+
+- Global state 686:	1.23549e-028
+
+- Global state 687:	1.32118e-027
+
+- Global state 688:	1.66112e-028
+
+- Global state 689:	2.11293e-027
+
+- Global state 690:	1.15535e-029
+
+- Global state 691:	1.99973e-028
+
+- Global state 692:	2.88487e-028
+
+- Global state 693:	6.69159e-028
+
+- Global state 694:	1.2411e-028
+
+- Global state 695:	1.9353e-029
+
+- Global state 696:	1.62374e-029
+
+- Global state 697:	2.30597e-029
+
+- Global state 698:	2.27888e-027
+
+- Global state 699:	2.79266e-027
+
+- Global state 700:	2.45555e-027
+
+- Global state 701:	4.37119e-028
+
+- Global state 702:	8.49586e-027
+
+- Global state 703:	1.27942e-026
+
+- Global state 704:	1.15535e-029
+
+- Global state 705:	1.99973e-028
+
+- Global state 706:	9.48297e-027
+
+- Global state 707:	9.48297e-027
+
+- Global state 708:	5.00821e-025
+
+- Global state 709:	1.16157e-024
+
+- Global state 710:	2.15537e-025
+
+- Global state 711:	3.36117e-026
+
+- Global state 712:	2.82001e-026
+
+- Global state 713:	3.6285e-026
+
+- Global state 714:	6.01926e-025
+
+- Global state 715:	3.25731e-027
+
+- Global state 716:	3.86751e-025
+
+- Global state 717:	4.5883e-028
+
+- Global state 718:	5.04912e-025
+
+- Global state 719:	4.75582e-029
+
+- Global state 720:	2.46267e-024
+
+- Global state 721:	3.992e-024
+
+- Global state 722:	3.28807e-023
+
+- Global state 723:	3.52424e-025
+
+- Global state 724:	3.12265e-024
+
+- Global state 725:	2.14477e-025
+
+- Global state 726:	2.29253e-024
+
+- Global state 727:	2.88363e-025
+
+- Global state 728:	3.66665e-024
+
+- Global state 729:	2.00548e-026
+
+- Global state 730:	3.47164e-025
+
+- Global state 731:	5.00821e-025
+
+- Global state 732:	1.16157e-024
+
+- Global state 733:	2.15537e-025
+
+- Global state 734:	3.36117e-026
+
+- Global state 735:	2.82001e-026
+
+- Global state 736:	4.00487e-026
+
+- Global state 737:	3.95626e-024
+
+- Global state 738:	4.84727e-024
+
+- Global state 739:	4.26132e-024
+
+- Global state 740:	7.58539e-025
+
+- Global state 741:	1.47422e-023
+
+- Global state 742:	2.22004e-023
+
+- Global state 743:	2.00548e-026
+
+- Global state 744:	3.47164e-025
+
+- Global state 745:	3.95934e-028
+
+- Global state 746:	3.95934e-028
+
+- Global state 747:	1.25557e-026
+
+- Global state 748:	2.39252e-026
+
+- Global state 749:	9.14362e-027
+
+- Global state 750:	1.52495e-027
+
+- Global state 751:	1.25856e-027
+
+- Global state 752:	1.61702e-027
+
+- Global state 753:	2.30934e-026
+
+- Global state 754:	1.42657e-028
+
+- Global state 755:	1.35318e-026
+
+- Global state 756:	1.97301e-029
+
+- Global state 757:	1.56208e-026
+
+- Global state 758:	2.00419e-030
+
+- Global state 759:	5.02071e-026
+
+- Global state 760:	6.02341e-026
+
+- Global state 761:	1.01852e-025
+
+- Global state 762:	8.0249e-027
+
+- Global state 763:	6.57632e-027
+
+- Global state 764:	5.03683e-027
+
+- Global state 765:	6.5138e-027
+
+- Global state 766:	6.61052e-027
+
+- Global state 767:	2.24878e-026
+
+- Global state 768:	3.87696e-028
+
+- Global state 769:	8.73236e-027
+
+- Global state 770:	1.25557e-026
+
+- Global state 771:	2.39252e-026
+
+- Global state 772:	9.14362e-027
+
+- Global state 773:	1.52495e-027
+
+- Global state 774:	1.25856e-027
+
+- Global state 775:	1.78141e-027
+
+- Global state 776:	1.02453e-025
+
+- Global state 777:	7.99063e-026
+
+- Global state 778:	3.1364e-026
+
+- Global state 779:	4.21665e-027
+
+- Global state 780:	4.64967e-026
+
+- Global state 781:	5.53526e-026
+
+- Global state 782:	3.87696e-028
+
+- Global state 783:	8.73236e-027
+
+- Global state 784:	1.28574e-026
+
+- Global state 785:	1.28574e-026
+
+- Global state 786:	4.00996e-025
+
+- Global state 787:	7.63847e-025
+
+- Global state 788:	2.96083e-025
+
+- Global state 789:	4.90181e-026
+
+- Global state 790:	4.03715e-026
+
+- Global state 791:	5.1863e-026
+
+- Global state 792:	7.37604e-025
+
+- Global state 793:	4.56855e-027
+
+- Global state 794:	4.31841e-025
+
+- Global state 795:	6.3114e-028
+
+- Global state 796:	4.98354e-025
+
+- Global state 797:	6.40565e-029
+
+- Global state 798:	1.60162e-024
+
+- Global state 799:	1.92147e-024
+
+- Global state 800:	3.24367e-024
+
+- Global state 801:	2.55998e-025
+
+- Global state 802:	1.85236e-025
+
+- Global state 803:	1.60685e-025
+
+- Global state 804:	1.17084e-025
+
+- Global state 805:	2.10909e-025
+
+- Global state 806:	1.69563e-025
+
+- Global state 807:	1.23701e-026
+
+- Global state 808:	1.42729e-026
+
+- Global state 809:	4.00996e-025
+
+- Global state 810:	7.63847e-025
+
+- Global state 811:	2.96083e-025
+
+- Global state 812:	4.90181e-026
+
+- Global state 813:	4.03715e-026
+
+- Global state 814:	5.71268e-026
+
+- Global state 815:	3.26942e-024
+
+- Global state 816:	2.54906e-024
+
+- Global state 817:	4.52715e-025
+
+- Global state 818:	8.0043e-026
+
+- Global state 819:	1.41947e-024
+
+- Global state 820:	1.76333e-024
+
+- Global state 821:	1.23701e-026
+
+- Global state 822:	1.42729e-026
+
+- Global state 823:	3.65843e-027
+
+- Global state 824:	1.05839e-025
+
+- Global state 825:	6.09541e-029
+
+- Global state 826:	7.33243e-026
+
+- Global state 827:	1.10832e-025
+
+- Global state 828:	2.89592e-024
+
+- Global state 829:	3.30068e-027
+
+- Global state 830:	5.73275e-024
+
+- Global state 831:	2.70752e-025
+
+- Global state 832:	8.69707e-024
+
+- Global state 833:	1.09954e-024
+
+- Global state 834:	1.59956e-024
+
+- Global state 835:	7.61978e-025
+
+- Global state 836:	4.62574e-023
+
+- Global state 837:	4.26195e-028
+
+- Global state 838:	2.66398e-026
+
+- Global state 839:	1.4027e-026
+
+- Global state 840:	2.59072e-023
+
+- Global state 841:	2.71052e-028
+
+- Global state 842:	6.93948e-025
+
+- Global state 843:	7.34121e-027
+
+- Global state 844:	7.34121e-027
+
+- Global state 845:	5.04509e-005
+
+- Global state 846:	6.8416e-025
+
+- Global state 847:	5.12376e-005
+
+- Global state 848:	2.68961e-024
+
+- Global state 849:	1.04817e-026
+
+- Global state 850:	7.96629e-007
+
+- Global state 851:	7.54793e-026
+
+- Global state 852:	1.03644e-026
+
+- Global state 853:	8.10039e-007
+
+- Global state 854:	4.72871e-025
+
+- Global state 855:	5.84873e-030
+
+- Global state 856:	4.57375e-010
+
+- Global state 857:	2.71616e-028
+
+- Global state 858:	2.75013e-028
+
+- Global state 859:	2.215e-008
+
+- Global state 860:	1.48607e-025
+
+- Global state 861:	8.08265e-030
+
+- Global state 862:	7.40911e-010
+
+- Global state 863:	3.86326e-027
+
+- Global state 864:	2.11441e-025
+
+- Global state 865:	2.11441e-025
+
+- Global state 866:	8.14154e-007
+
+- Global state 867:	1.20525e-025
+
+- Global state 868:	7.71336e-026
+
+- Global state 869:	1.04044e-026
+
+- Global state 870:	1.04044e-026
+
+- Global state 871:	9.78535e-006
+
+- Global state 872:	1.00769e-025
+
+- Global state 873:	1.56073e-005
+
+- Global state 874:	1.46951e-024
+
+- Global state 875:	1.93674e-027
+
+- Global state 876:	3.33009e-007
+
+- Global state 877:	4.48888e-026
+
+- Global state 878:	2.46812e-026
+
+- Global state 879:	5.82199e-006
+
+- Global state 880:	1.06147e-024
+
+- Global state 881:	1.42014e-029
+
+- Global state 882:	3.3514e-009
+
+- Global state 883:	6.11216e-028
+
+- Global state 884:	1.64351e-026
+
+- Global state 885:	3.99859e-006
+
+- Global state 886:	6.93466e-025
+
+- Global state 887:	2.49263e-026
+
+- Global state 888:	6.17791e-006
+
+- Global state 889:	4.22974e-026
+
+- Global state 890:	4.54496e-028
+
+- Global state 891:	4.54496e-028
+
+- Global state 892:	9.74173e-006
+
+- Global state 893:	1.37804e-024
+
+- Global state 894:	0.000320721
+
+- Global state 895:	4.18729e-026
+
+- Global state 896:	9.74852e-006
+
+- Global state 897:	1.51145e-024
+
+- Global state 898:	0.000356517
+
+- Global state 899:	8.70592e-028
+
+- Global state 900:	2.05354e-007
+
+- Global state 901:	1.49002e-024
+
+- Global state 902:	0.000356638
+
+- Global state 903:	2.41227e-023
+
+- Global state 904:	0.00858521
+
+- Global state 905:	1.02822e-007
+
+- Global state 906:	1.02822e-007
+
+- Global state 907:	6.23846e-005
+
+- Global state 908:	0.00028776
+
+- Global state 909:	4.40889e-005
+
+- Global state 910:	2.13816e-006
+
+- Global state 911:	1.80996e-006
+
+- Global state 912:	2.33074e-006
+
+- Global state 913:	4.29503e-005
+
+- Global state 914:	2.11206e-007
+
+- Global state 915:	2.9598e-005
+
+- Global state 916:	3.00492e-008
+
+- Global state 917:	4.31789e-005
+
+- Global state 918:	1.42942e-009
+
+- Global state 919:	3.74988e-006
+
+- Global state 920:	2.88672e-008
+
+- Global state 921:	1.67373e-005
+
+- Global state 922:	3.65207e-006
+
+- Global state 923:	1.37024e-007
+
+- Global state 924:	1.53933e-005
+
+- Global state 925:	5.11939e-005
+
+- Global state 926:	6.20312e-008
+
+- Global state 927:	3.71467e-009
+
+- Global state 928:	2.29211e-007
+
+- Global state 929:	1.52047e-006
+
+- Global state 930:	1.76184e-009
+
+- Global state 931:	3.65679e-008
+
+- Global state 932:	2.78691e-007
+
+- Global state 933:	3.25015e-005
+
+- Global state 934:	1.73759e-008
+
+- Global state 935:	2.10303e-011
+
+- Global state 936:	1.57897e-010
+
+- Global state 937:	1.87132e-008
+
+- Global state 938:	9.99295e-012
+
+- Global state 939:	1.09084e-008
+
+- Global state 940:	2.79602e-008
+
+- Global state 941:	1.8049e-005
+
+- Global state 942:	5.16022e-009
+
+- Global state 943:	4.8063e-009
+
+- Global state 944:	1.02727e-008
+
+- Global state 945:	1.96991e-005
+
+- Global state 946:	1.55651e-009
+
+- Global state 947:	3.25114e-007
+
+- Global state 948:	6.34514e-006
+
+- Global state 949:	7.0464e-010
+
+- Global state 950:	3.07077e-006
+
+- Global state 951:	2.92173e-006
+
+- Global state 952:	6.73816e-012
+
+- Global state 953:	8.67598e-008
+
+- Global state 954:	2.82704e-008
+
+- Global state 955:	3.0546e-012
+
+- Global state 956:	8.39738e-007
+
+- Global state 957:	1.30358e-008
+
+- Global state 958:	1.68228e-015
+
+- Global state 959:	4.82917e-010
+
+- Global state 960:	7.1847e-012
+
+- Global state 961:	3.62188e-014
+
+- Global state 962:	2.21968e-007
+
+- Global state 963:	1.5734e-010
+
+- Global state 964:	4.54792e-016
+
+- Global state 965:	7.99269e-008
+
+- Global state 966:	2.01004e-012
+
+- Global state 967:	0.000266606
+
+- Global state 968:	0.00179645
+
+- Global state 969:	2.12501e-005
+
+- Global state 970:	0.000176111
+
+- Global state 971:	2.74702e-005
+
+- Global state 972:	0.000278572
+
+- Global state 973:	4.38975e-007
+
+- Global state 974:	6.79722e-008
+
+- Global state 975:	0.000377448
+
+- Global state 976:	0.00167412
+
+- Global state 977:	2.20974e-005
+
+- Global state 978:	0.000116173
+
+- Global state 979:	1.78569e-005
+
+- Global state 980:	0.000255495
+
+- Global state 981:	9.86141e-007
+
+- Global state 982:	1.54165e-007
+
+- Global state 983:	5.25107e-007
+
+- Global state 984:	1.75921e-006
+
+- Global state 985:	2.43597e-008
+
+- Global state 986:	9.67632e-008
+
+- Global state 987:	1.46968e-008
+
+- Global state 988:	2.65106e-007
+
+- Global state 989:	1.81011e-009
+
+- Global state 990:	2.96267e-010
+
+- Global state 991:	0.000912386
+
+- Global state 992:	0.00305545
+
+- Global state 993:	4.23103e-005
+
+- Global state 994:	0.000168016
+
+- Global state 995:	2.55188e-005
+
+- Global state 996:	0.000460441
+
+- Global state 997:	3.14641e-006
+
+- Global state 998:	5.15139e-007
+
+- Global state 999:	6.02436e-005
+
+- Global state 1000:	0.000143941
+
+- Global state 1001:	2.07097e-006
+
+- Global state 1002:	5.77094e-006
+
+- Global state 1003:	8.64346e-007
+
+- Global state 1004:	2.15123e-005
+
+- Global state 1005:	2.6929e-007
+
+- Global state 1006:	5.15377e-008
+
+- Global state 1007:	0.0020567
+
+- Global state 1008:	0.00480748
+
+- Global state 1009:	6.92164e-005
+
+- Global state 1010:	0.000189444
+
+- Global state 1011:	2.83943e-005
+
+- Global state 1012:	0.000720239
+
+- Global state 1013:	9.35691e-006
+
+- Global state 1014:	1.86434e-006
+
+- Global state 1015:	0.000135815
+
+- Global state 1016:	0.00021732
+
+- Global state 1017:	3.16963e-006
+
+- Global state 1018:	5.23012e-006
+
+- Global state 1019:	0.00028776
+
+- Global state 1020:	4.40889e-005
+
+- Global state 1021:	2.13816e-006
+
+- Global state 1022:	1.80996e-006
+
+- Global state 1023:	2.57515e-006
+
+- Global state 1024:	0.000570274
+
+- Global state 1025:	0.00142982
+
+- Global state 1026:	0.000235112
+
+- Global state 1027:	4.36529e-005
+
+- Global state 1028:	0.00223434
+
+- Global state 1029:	0.00167053
+
+- Global state 1030:	0.00319046
+
+- Global state 1031:	0.000564555
+
+- Global state 1032:	4.92746e-005
+
+- Global state 1033:	0.0001759
+
+- Global state 1034:	0.00253886
+
+- Global state 1035:	0.00016512
+
+- Global state 1036:	0.00248864
+
+- Global state 1037:	0.000595624
+
+- Global state 1038:	2.46639e-006
+
+- Global state 1039:	3.80139e-005
+
+- Global state 1040:	1.65117e-005
+
+- Global state 1041:	2.32193e-006
+
+- Global state 1042:	3.74335e-005
+
+- Global state 1043:	7.56547e-005
+
+- Global state 1044:	1.30891e-009
+
+- Global state 1045:	2.11222e-008
+
+- Global state 1046:	4.34023e-008
+
+- Global state 1047:	5.85449e-008
+
+- Global state 1048:	1.02784e-006
+
+- Global state 1049:	1.07248e-005
+
+- Global state 1050:	1.55873e-009
+
+- Global state 1051:	7.60725e-008
+
+- Global state 1052:	2.53895e-007
+
+- Global state 1053:	3.49468e-005
+
+- Global state 1054:	0.00131536
+
+- Global state 1055:	1.1767e-006
+
+- Global state 1056:	0.000309202
+
+- Global state 1057:	0.00013782
+
+- Global state 1058:	0.0167218
+
+- Global state 1059:	0.000364633
+
+- Global state 1060:	3.13374e-006
+
+- Global state 1061:	3.13374e-006
+
+- Global state 1062:	2.62293e-006
+
+- Global state 1063:	3.37428e-006
+
+- Global state 1064:	5.58127e-005
+
+- Global state 1065:	3.02254e-007
+
+- Global state 1066:	3.60523e-005
+
+- Global state 1067:	4.24928e-008
+
+- Global state 1068:	4.79428e-005
+
+- Global state 1069:	2.00934e-009
+
+- Global state 1070:	4.12777e-006
+
+- Global state 1071:	4.64247e-006
+
+- Global state 1072:	1.38155e-005
+
+- Global state 1073:	0.000415546
+
+- Global state 1074:	2.77311e-006
+
+- Global state 1075:	5.98021e-006
+
+- Global state 1076:	1.78033e-005
+
+- Global state 1077:	0.000712636
+
+- Global state 1078:	1.67353e-005
+
+- Global state 1079:	0.000690632
+
+- Global state 1080:	0.000225598
+
+- Global state 1081:	2.50139e-007
+
+- Global state 1082:	1.05154e-005
+
+- Global state 1083:	6.80675e-006
+
+- Global state 1084:	2.3795e-007
+
+- Global state 1085:	1.26018e-005
+
+- Global state 1086:	9.14774e-005
+
+- Global state 1087:	1.34167e-010
+
+- Global state 1088:	7.13786e-009
+
+- Global state 1089:	5.26388e-008
+
+- Global state 1090:	6.78476e-009
+
+- Global state 1091:	1.68944e-006
+
+- Global state 1092:	3.10645e-005
+
+- Global state 1093:	5.39047e-010
+
+- Global state 1094:	1.57764e-006
+
+- Global state 1095:	8.07472e-007
+
+- Global state 1096:	2.5387e-009
+
+- Global state 1097:	0.00794418
+
+- Global state 1098:	0.00019373
+
+- Global state 1099:	0.000229276
+
+- Global state 1100:	0.000229276
+
+- Global state 1101:	3.06415e-005
+
+- Global state 1102:	3.48347e-005
+
+- Global state 1103:	3.48347e-005
+
+- Global state 1104:	8.31091e-009
+
+- Global state 1105:	7.21214e-006
+
+- Global state 1106:	1.76696e-006
+
+- Global state 1107:	1.70921e-007
+
+- Global state 1108:	1.38369e-007
+
+- Global state 1109:	1.38369e-007
+
+- Global state 1110:	3.88275e-008
+
+- Global state 1111:	2.26911e-008
+
+- Global state 1112:	2.26911e-008
+
+- Global state 1113:	3.57201e-007
+
+- Global state 1114:	2.52794e-009
+
+- Global state 1115:	2.52794e-009
+
+- Global state 1116:	2.1136e-009
+
+- Global state 1117:	2.71875e-009
+
+- Global state 1118:	4.39112e-008
+
+- Global state 1119:	2.43214e-010
+
+- Global state 1120:	2.78083e-008
+
+- Global state 1121:	3.41388e-011
+
+- Global state 1122:	3.56802e-008
+
+- Global state 1123:	1.61295e-012
+
+- Global state 1124:	3.0609e-009
+
+- Global state 1125:	4.78441e-009
+
+- Global state 1126:	3.99732e-007
+
+- Global state 1127:	1.89138e-007
+
+- Global state 1128:	1.68107e-005
+
+- Global state 1129:	1.8575e-005
+
+- Global state 1130:	3.13533e-007
+
+- Global state 1131:	3.37833e-007
+
+- Global state 1132:	0.000422427
+
+- Global state 1133:	0.000543369
+
+- Global state 1134:	1.14613e-005
+
+- Global state 1135:	1.48274e-005
+
+- Global state 1136:	1.10996e-005
+
+- Global state 1137:	1.48703e-005
+
+- Global state 1138:	0.000255366
+
+- Global state 1139:	1.69045e-007
+
+- Global state 1140:	2.2971e-007
+
+- Global state 1141:	7.82786e-006
+
+- Global state 1142:	2.11517e-007
+
+- Global state 1143:	2.33823e-007
+
+- Global state 1144:	0.000187142
+
+- Global state 1145:	1.19895e-010
+
+- Global state 1146:	1.32028e-010
+
+- Global state 1147:	1.07761e-007
+
+- Global state 1148:	3.25478e-008
+
+- Global state 1149:	0.00011535
+
+- Global state 1150:	3.13118e-008
+
+- Global state 1151:	0.00029681
+
+- Global state 1152:	0.00024019
+
+- Global state 1153:	0.00024019
+
+- Global state 1154:	6.75198e-005
+
+- Global state 1155:	3.93963e-005
+
+- Global state 1156:	3.93963e-005
+
+- Global state 1157:	0.000620319
+
+- Global state 1158:	4.38958e-006
+
+- Global state 1159:	4.38958e-006
+
+- Global state 1160:	3.67007e-006
+
+- Global state 1161:	4.72086e-006
+
+- Global state 1162:	7.62411e-005
+
+- Global state 1163:	4.22314e-007
+
+- Global state 1164:	4.82801e-005
+
+- Global state 1165:	5.92776e-008
+
+- Global state 1166:	6.19431e-005
+
+- Global state 1167:	2.80066e-009
+
+- Global state 1168:	5.31389e-006
+
+- Global state 1169:	8.3375e-006
+
+- Global state 1170:	0.000694432
+
+- Global state 1171:	0.00032893
+
+- Global state 1172:	0.0291936
+
+- Global state 1173:	0.0322456
+
+- Global state 1174:	0.000544297
+
+- Global state 1175:	0.000586409
+
+- Global state 1176:	4.38991e-006
+
+- Global state 1177:	4.38991e-006
+
+- Global state 1178:	0.00120852
+
+- Global state 1179:	9.06693e-006
+
+- Global state 1180:	9.06693e-006
+
+- Global state 1181:	6.96349e-007
+
+- Global state 1182:	5.22436e-009
+
+- Global state 1183:	5.22436e-009
+
+- Global state 1184:	0.0018273
+
+- Global state 1185:	1.37172e-005
+
+- Global state 1186:	1.37172e-005
+
+- Global state 1187:	0.000157738
+
+- Global state 1188:	5.29226e-007
+
+- Global state 1189:	2.75622e-005
+
+- Global state 1190:	2.84143e-005
+
+- Global state 1191:	6.65712e-005
+
+- Global state 1192:	0.000105401
+
+- Global state 1193:	0.00015859
+
+- Global state 1194:	0.000256157
+
+- Global state 1195:	5.29226e-007
+
+- Global state 1196:	4.61364e-005
+
+- Global state 1197:	0.00116154
+
+- Global state 1198:	0.000607858
+
+- Global state 1199:	0.000716633
+
+- Global state 1200:	0.000116206
+
+- Global state 1201:	1.00645e-005
+
+- Global state 1202:	0.00154347
+
+- Global state 1203:	0.0918419
+
+- Global state 1204:	5.98275e-008
+
+- Global state 1205:	3.98951e-008
+
+- Global state 1206:	5.98373e-008
+
+- Global state 1207:	5.21124e-009
+
+- Global state 1208:	5.84879e-007
+
+- Global state 1209:	3.63192e-005
+
+- Global state 1210:	1.06603e-007
+
+- Global state 1211:	1.90791e-008
+
+- Global state 1212:	4.16695e-007
+
+- Global state 1213:	1.98691e-007
+
+- Global state 1214:	2.07722e-007
+
+- Global state 1215:	3.27745e-008
+
+- Global state 1216:	2.83134e-009
+
+- Global state 1217:	0.000103831
+
+- Global state 1218:	6.92383e-005
+
+- Global state 1219:	0.000103848
+
+- Global state 1220:	9.04413e-006
+
+- Global state 1221:	0.0010151
+
+- Global state 1222:	0.0630338
+
+- Global state 1223:	0.000185016
+
+- Global state 1224:	3.31127e-005
+
+- Global state 1225:	0.00072316
+
+- Global state 1226:	0.000344812
+
+- Global state 1227:	0.000360476
+
+- Global state 1228:	5.68756e-005
+
+- Global state 1229:	4.91339e-006
+
+- Global state 1230:	5.41827e-005
+
+- Global state 1231:	2.52904e-009
+
+- Global state 1232:	3.12143e-008
+
+- Global state 1233:	4.07327e-006
+
+- Global state 1234:	5.00186e-005
+
+- Global state 1235:	1.80364e-007
+
+- Global state 1236:	1.37853e-005
+
+- Global state 1237:	1.41581e-005
+
+- Global state 1238:	3.10024e-005
+
+- Global state 1239:	3.45633e-005
+
+- Global state 1240:	5.31986e-005
+
+- Global state 1241:	2.15361e-008
+
+- Global state 1242:	3.27046e-008
+
+- Global state 1243:	2.8505e-009
+
+- Global state 1244:	3.42856e-007
+
+- Global state 1245:	3.7383e-005
+
+- Global state 1246:	5.67689e-005
+
+- Global state 1247:	4.94792e-006
+
+- Global state 1248:	0.000595275
+
+- Global state 1249:	0.000679854
+
+- Global state 1250:	2.52904e-009
+
+- Global state 1251:	3.91699e-007
+
+- Global state 1252:	4.07327e-006
+
+- Global state 1253:	0.000778982
+
+- Global state 1254:	1.80364e-007
+
+- Global state 1255:	3.67007e-006
+
+- Global state 1256:	5.20857e-006
+
+- Global state 1257:	0.00047556
+
+- Global state 1258:	2.99963e-009
+
+- Global state 1259:	2.73951e-007
+
+- Global state 1260:	3.72343e-006
+
+- Global state 1261:	0.000422744
+
+- Global state 1262:	2.1136e-009
+
+- Global state 1263:	2.62293e-006
+
+- Global state 1264:	1.1551e-005
+
+- Global state 1265:	4.90717e-006
+
+- Global state 1266:	4.90717e-006
+
+- Global state 1267:	7.12325e-006
+
+- Global state 1268:	1.17524e-006
+
+- Global state 1269:	1.17524e-006
+
+- Global state 1270:	2.53962e-005
+
+- Global state 1271:	1.5789e-007
+
+- Global state 1272:	1.5789e-007
+
+- Global state 1273:	1.30252e-007
+
+- Global state 1274:	1.67344e-007
+
+- Global state 1275:	2.38957e-006
+
+- Global state 1276:	1.47593e-008
+
+- Global state 1277:	1.40078e-006
+
+- Global state 1278:	2.0409e-009
+
+- Global state 1279:	1.61843e-006
+
+- Global state 1280:	9.56961e-011
+
+- Global state 1281:	1.37318e-007
+
+- Global state 1282:	1.71305e-006
+
+- Global state 1283:	4.0458e-005
+
+- Global state 1284:	3.58258e-005
+
+- Global state 1285:	0.00119891
+
+- Global state 1286:	0.000754265
+
+- Global state 1287:	1.3375e-005
+
+- Global state 1288:	1.0951e-005
+
+- Global state 1289:	8.21988e-008
+
+- Global state 1290:	8.21988e-008
+
+- Global state 1291:	1.32297e-005
+
+- Global state 1292:	9.91197e-008
+
+- Global state 1293:	9.91197e-008
+
+- Global state 1294:	1.12916e-006
+
+- Global state 1295:	7.51641e-007
+
+- Global state 1296:	1.12165e-006
+
+- Global state 1297:	9.76396e-008
+
+- Global state 1298:	1.29044e-005
+
+- Global state 1299:	0.000752265
+
+- Global state 1300:	2.22123e-006
+
+- Global state 1301:	3.92785e-007
+
+- Global state 1302:	6.98493e-006
+
+- Global state 1303:	2.91104e-006
+
+- Global state 1304:	2.58836e-006
+
+- Global state 1305:	3.92208e-007
+
+- Global state 1306:	3.37511e-008
+
+- Global state 1307:	1.06306e-006
+
+- Global state 1308:	7.35001e-007
+
+- Global state 1309:	1.08254e-006
+
+- Global state 1310:	9.40783e-008
+
+- Global state 1311:	1.80783e-005
+
+- Global state 1312:	1.00718e-005
+
+- Global state 1313:	1.30252e-007
+
+- Global state 1314:	1.84352e-007
+
+- Global state 1315:	1.06321e-005
+
+- Global state 1316:	0.00037599
+
+- Global state 1317:	0.000156679
+
+- Global state 1318:	0.000156679
+
+- Global state 1319:	0.000248574
+
+- Global state 1320:	3.78258e-005
+
+- Global state 1321:	3.78258e-005
+
+- Global state 1322:	0.000814724
+
+- Global state 1323:	5.06509e-006
+
+- Global state 1324:	5.06509e-006
+
+- Global state 1325:	4.17207e-006
+
+- Global state 1326:	5.35967e-006
+
+- Global state 1327:	7.62979e-005
+
+- Global state 1328:	4.72179e-007
+
+- Global state 1329:	4.46984e-005
+
+- Global state 1330:	6.52383e-008
+
+- Global state 1331:	5.16316e-005
+
+- Global state 1332:	3.05789e-009
+
+- Global state 1333:	4.38067e-006
+
+- Global state 1334:	5.9423e-005
+
+- Global state 1335:	0.00130011
+
+- Global state 1336:	0.00121697
+
+- Global state 1337:	0.0383982
+
+- Global state 1338:	0.0240667
+
+- Global state 1339:	0.000426773
+
+- Global state 1340:	0.000349344
+
+- Global state 1341:	2.62237e-006
+
+- Global state 1342:	2.62237e-006
+
+- Global state 1343:	0.000422028
+
+- Global state 1344:	3.16192e-006
+
+- Global state 1345:	3.16192e-006
+
+- Global state 1346:	3.60204e-005
+
+- Global state 1347:	2.39774e-005
+
+- Global state 1348:	3.57808e-005
+
+- Global state 1349:	3.1147e-006
+
+- Global state 1350:	0.000411661
+
+- Global state 1351:	0.0239974
+
+- Global state 1352:	7.08573e-005
+
+- Global state 1353:	1.25299e-005
+
+- Global state 1354:	0.000222819
+
+- Global state 1355:	9.28621e-005
+
+- Global state 1356:	8.25688e-005
+
+- Global state 1357:	1.25114e-005
+
+- Global state 1358:	1.07666e-006
+
+- Global state 1359:	3.39143e-005
+
+- Global state 1360:	2.34473e-005
+
+- Global state 1361:	3.45335e-005
+
+- Global state 1362:	3.00112e-006
+
+- Global state 1363:	0.000577034
+
+- Global state 1364:	0.000321296
+
+- Global state 1365:	4.17207e-006
+
+- Global state 1366:	5.90371e-006
+
+- Global state 1367:	0.000339253
+
+- Global state 1368:	0.0262142
+
+- Global state 1369:	0.0125245
+
+- Global state 1370:	0.00307308
+
+- Global state 1371:	0.000507167
+
+- Global state 1372:	0.000342546
+
+- Global state 1373:	0.0165314
+
+- Global state 1374:	0.0119831
+
+- Global state 1375:	0.000448517
+
+- Global state 1376:	0.000522562
+
+- Global state 1377:	0.00836931
+
+- Global state 1378:	9.39147e-006
+
+- Global state 1379:	0.000255568
+
+- Global state 1380:	7.40781e-005
+
+- Global state 1381:	0.00550969
+
+- Global state 1382:	4.25812e-008
+
+- Global state 1383:	3.17231e-006
+
+- Global state 1384:	3.81379e-005
+
+- Global state 1385:	0.00313947
+
+- Global state 1386:	4.15996e-005
+
+- Global state 1387:	1.22903e-005
+
+- Global state 1388:	8.51577e-006
+
+- Global state 1389:	0.000143626
+
+- Global state 1390:	1.28066e-006
+
+- Global state 1391:	1.28066e-006
+
+- Global state 1392:	7.85624e-005
+
+- Global state 1393:	7.85624e-005
+
+- Global state 1394:	6.23846e-005
+
+- Global state 1395:	2.59176e-008
+
+- Global state 1396:	8.81816e-009
+
+- Global state 1397:	1.13249e-007
+
+- Global state 1398:	1.00879e-009
+
+- Global state 1399:	1.00879e-009
+
+- Global state 1400:	5.03517e-008
+
+- Global state 1401:	5.03517e-008
+
+- Global state 1402:	4.50613e-005
+
+- Global state 1403:	1.53155e-005
+
+- Global state 1404:	0.000196647
+
+- Global state 1405:	1.75167e-006
+
+- Global state 1406:	1.75167e-006
+
+- Global state 1407:	8.74071e-005
+
+- Global state 1408:	8.74071e-005
+
+- Global state 1409:	4.34008e-006
+
+- Global state 1410:	7.12144e-007
+
+- Global state 1411:	7.01364e-006
+
+- Global state 1412:	6.17797e-008
+
+- Global state 1413:	6.17797e-008
+
+- Global state 1414:	1.96087e-006
+
+- Global state 1415:	1.96087e-006
+
+- Global state 1416:	0.000145971
+
+- Global state 1417:	2.35741e-005
+
+- Global state 1418:	0.000228538
+
+- Global state 1419:	1.99982e-006
+
+- Global state 1420:	1.99982e-006
+
+- Global state 1421:	6.26116e-005
+
+- Global state 1422:	6.26116e-005
+
+- Global state 1423:	3.1907e-025
+
+- Global state 1424:	1.38056e-024
+
+- Global state 1425:	3.1907e-025
+
+- Global state 1426:	1.38056e-024
+
+- Global state 1427:	6.19555e-027
+
+- Global state 1428:	6.19555e-027
+
+- Global state 1429:	4.10941e-025
+
+- Global state 1430:	1.08804e-024
+
+- Global state 1431:	1.68559e-025
+
+- Global state 1432:	1.98098e-026
+
+- Global state 1433:	1.66318e-026
+
+- Global state 1434:	2.14019e-026
+
+- Global state 1435:	3.64966e-025
+
+- Global state 1436:	1.13979e-026
+
+- Global state 1437:	1.92323e-027
+
+- Global state 1438:	2.40218e-025
+
+- Global state 1439:	1.03767e-027
+
+- Global state 1440:	2.71286e-028
+
+- Global state 1441:	3.27885e-025
+
+- Global state 1442:	1.48342e-028
+
+- Global state 1443:	2.81725e-029
+
+- Global state 1444:	2.12924e-024
+
+- Global state 1445:	1.56294e-029
+
+- Global state 1446:	2.87065e-024
+
+- Global state 1447:	8.62162e-024
+
+- Global state 1448:	1.55579e-021
+
+- Global state 1449:	4.38054e-024
+
+- Global state 1450:	5.82007e-023
+
+- Global state 1451:	2.34036e-025
+
+- Global state 1452:	1.60892e-025
+
+- Global state 1453:	9.62293e-025
+
+- Global state 1454:	2.89739e-025
+
+- Global state 1455:	2.63154e-024
+
+- Global state 1456:	1.55078e-025
+
+- Global state 1457:	7.1303e-026
+
+- Global state 1458:	4.10055e-025
+
+- Global state 1459:	1.77129e-025
+
+- Global state 1460:	1.6903e-024
+
+- Global state 1461:	2.19522e-025
+
+- Global state 1462:	6.80726e-026
+
+- Global state 1463:	3.9571e-025
+
+- Global state 1464:	2.44042e-025
+
+- Global state 1465:	2.43738e-024
+
+- Global state 1466:	1.82339e-026
+
+- Global state 1467:	8.84765e-027
+
+- Global state 1468:	8.16098e-028
+
+- Global state 1469:	1.96325e-025
+
+- Global state 1470:	4.10941e-025
+
+- Global state 1471:	1.08804e-024
+
+- Global state 1472:	1.68559e-025
+
+- Global state 1473:	1.98098e-026
+
+- Global state 1474:	1.66318e-026
+
+- Global state 1475:	2.36246e-026
+
+- Global state 1476:	3.06231e-024
+
+- Global state 1477:	1.25996e-026
+
+- Global state 1478:	3.47929e-024
+
+- Global state 1479:	8.92189e-024
+
+- Global state 1480:	1.69727e-024
+
+- Global state 1481:	3.20284e-025
+
+- Global state 1482:	2.2025e-023
+
+- Global state 1483:	1.53352e-021
+
+- Global state 1484:	5.09145e-024
+
+- Global state 1485:	3.09725e-024
+
+- Global state 1486:	5.65589e-025
+
+- Global state 1487:	1.66136e-023
+
+- Global state 1488:	4.46835e-023
+
+- Global state 1489:	1.82339e-026
+
+- Global state 1490:	8.84765e-027
+
+- Global state 1491:	8.16098e-028
+
+- Global state 1492:	1.96325e-025
+
+- Global state 1493:	5.46053e-030
+
+- Global state 1494:	5.46053e-030
+
+- Global state 1495:	2.88487e-028
+
+- Global state 1496:	6.69159e-028
+
+- Global state 1497:	1.2411e-028
+
+- Global state 1498:	1.9353e-029
+
+- Global state 1499:	1.62374e-029
+
+- Global state 1500:	2.08926e-029
+
+- Global state 1501:	3.46629e-028
+
+- Global state 1502:	1.87556e-030
+
+- Global state 1503:	2.22733e-028
+
+- Global state 1504:	2.64199e-031
+
+- Global state 1505:	2.90807e-028
+
+- Global state 1506:	2.7385e-032
+
+- Global state 1507:	1.41871e-027
+
+- Global state 1508:	2.29999e-027
+
+- Global state 1509:	1.8949e-026
+
+- Global state 1510:	2.03016e-028
+
+- Global state 1511:	1.7996e-027
+
+- Global state 1512:	1.23549e-028
+
+- Global state 1513:	1.32118e-027
+
+- Global state 1514:	1.66112e-028
+
+- Global state 1515:	2.11293e-027
+
+- Global state 1516:	1.15535e-029
+
+- Global state 1517:	1.99973e-028
+
+- Global state 1518:	2.88487e-028
+
+- Global state 1519:	6.69159e-028
+
+- Global state 1520:	1.2411e-028
+
+- Global state 1521:	1.9353e-029
+
+- Global state 1522:	1.62374e-029
+
+- Global state 1523:	2.30597e-029
+
+- Global state 1524:	2.27888e-027
+
+- Global state 1525:	2.79266e-027
+
+- Global state 1526:	2.45555e-027
+
+- Global state 1527:	4.37119e-028
+
+- Global state 1528:	8.49586e-027
+
+- Global state 1529:	1.27942e-026
+
+- Global state 1530:	1.15535e-029
+
+- Global state 1531:	1.99973e-028
+
+- Global state 1532:	9.48297e-027
+
+- Global state 1533:	9.48297e-027
+
+- Global state 1534:	5.00821e-025
+
+- Global state 1535:	1.16157e-024
+
+- Global state 1536:	2.15537e-025
+
+- Global state 1537:	3.36117e-026
+
+- Global state 1538:	2.82001e-026
+
+- Global state 1539:	3.6285e-026
+
+- Global state 1540:	6.01926e-025
+
+- Global state 1541:	3.25731e-027
+
+- Global state 1542:	3.86751e-025
+
+- Global state 1543:	4.5883e-028
+
+- Global state 1544:	5.04912e-025
+
+- Global state 1545:	4.75582e-029
+
+- Global state 1546:	2.46267e-024
+
+- Global state 1547:	3.992e-024
+
+- Global state 1548:	3.28807e-023
+
+- Global state 1549:	3.52424e-025
+
+- Global state 1550:	3.12265e-024
+
+- Global state 1551:	2.14477e-025
+
+- Global state 1552:	2.29253e-024
+
+- Global state 1553:	2.88363e-025
+
+- Global state 1554:	3.66665e-024
+
+- Global state 1555:	2.00548e-026
+
+- Global state 1556:	3.47164e-025
+
+- Global state 1557:	5.00821e-025
+
+- Global state 1558:	1.16157e-024
+
+- Global state 1559:	2.15537e-025
+
+- Global state 1560:	3.36117e-026
+
+- Global state 1561:	2.82001e-026
+
+- Global state 1562:	4.00487e-026
+
+- Global state 1563:	3.95626e-024
+
+- Global state 1564:	4.84727e-024
+
+- Global state 1565:	4.26132e-024
+
+- Global state 1566:	7.58539e-025
+
+- Global state 1567:	1.47422e-023
+
+- Global state 1568:	2.22004e-023
+
+- Global state 1569:	2.00548e-026
+
+- Global state 1570:	3.47164e-025
+
+- Global state 1571:	3.95934e-028
+
+- Global state 1572:	3.95934e-028
+
+- Global state 1573:	1.25557e-026
+
+- Global state 1574:	2.39252e-026
+
+- Global state 1575:	9.14362e-027
+
+- Global state 1576:	1.52495e-027
+
+- Global state 1577:	1.25856e-027
+
+- Global state 1578:	1.61702e-027
+
+- Global state 1579:	2.30934e-026
+
+- Global state 1580:	1.42657e-028
+
+- Global state 1581:	1.35318e-026
+
+- Global state 1582:	1.97301e-029
+
+- Global state 1583:	1.56208e-026
+
+- Global state 1584:	2.00419e-030
+
+- Global state 1585:	5.02071e-026
+
+- Global state 1586:	6.02341e-026
+
+- Global state 1587:	1.01852e-025
+
+- Global state 1588:	8.0249e-027
+
+- Global state 1589:	6.57632e-027
+
+- Global state 1590:	5.03683e-027
+
+- Global state 1591:	6.5138e-027
+
+- Global state 1592:	6.61052e-027
+
+- Global state 1593:	2.24878e-026
+
+- Global state 1594:	3.87696e-028
+
+- Global state 1595:	8.73236e-027
+
+- Global state 1596:	1.25557e-026
+
+- Global state 1597:	2.39252e-026
+
+- Global state 1598:	9.14362e-027
+
+- Global state 1599:	1.52495e-027
+
+- Global state 1600:	1.25856e-027
+
+- Global state 1601:	1.78141e-027
+
+- Global state 1602:	1.02453e-025
+
+- Global state 1603:	7.99063e-026
+
+- Global state 1604:	3.1364e-026
+
+- Global state 1605:	4.21665e-027
+
+- Global state 1606:	4.64967e-026
+
+- Global state 1607:	5.53526e-026
+
+- Global state 1608:	3.87696e-028
+
+- Global state 1609:	8.73236e-027
+
+- Global state 1610:	1.28574e-026
+
+- Global state 1611:	1.28574e-026
+
+- Global state 1612:	4.00996e-025
+
+- Global state 1613:	7.63847e-025
+
+- Global state 1614:	2.96083e-025
+
+- Global state 1615:	4.90181e-026
+
+- Global state 1616:	4.03715e-026
+
+- Global state 1617:	5.1863e-026
+
+- Global state 1618:	7.37604e-025
+
+- Global state 1619:	4.56855e-027
+
+- Global state 1620:	4.31841e-025
+
+- Global state 1621:	6.3114e-028
+
+- Global state 1622:	4.98354e-025
+
+- Global state 1623:	6.40565e-029
+
+- Global state 1624:	1.60162e-024
+
+- Global state 1625:	1.92147e-024
+
+- Global state 1626:	3.24367e-024
+
+- Global state 1627:	2.55998e-025
+
+- Global state 1628:	1.85236e-025
+
+- Global state 1629:	1.60685e-025
+
+- Global state 1630:	1.17084e-025
+
+- Global state 1631:	2.10909e-025
+
+- Global state 1632:	1.69563e-025
+
+- Global state 1633:	1.23701e-026
+
+- Global state 1634:	1.42729e-026
+
+- Global state 1635:	4.00996e-025
+
+- Global state 1636:	7.63847e-025
+
+- Global state 1637:	2.96083e-025
+
+- Global state 1638:	4.90181e-026
+
+- Global state 1639:	4.03715e-026
+
+- Global state 1640:	5.71268e-026
+
+- Global state 1641:	3.26942e-024
+
+- Global state 1642:	2.54906e-024
+
+- Global state 1643:	4.52715e-025
+
+- Global state 1644:	8.0043e-026
+
+- Global state 1645:	1.41947e-024
+
+- Global state 1646:	1.76333e-024
+
+- Global state 1647:	1.23701e-026
+
+- Global state 1648:	1.42729e-026
+
+- Global state 1649:	3.65843e-027
+
+- Global state 1650:	1.05839e-025
+
+- Global state 1651:	6.09541e-029
+
+- Global state 1652:	7.33243e-026
+
+- Global state 1653:	1.10832e-025
+
+- Global state 1654:	2.89592e-024
+
+- Global state 1655:	3.30068e-027
+
+- Global state 1656:	5.73275e-024
+
+- Global state 1657:	2.70752e-025
+
+- Global state 1658:	8.69707e-024
+
+- Global state 1659:	4.25579e-024
+
+- Global state 1660:	4.25579e-024
+
+- Global state 1661:	6.39907e-025
+
+- Global state 1662:	4.28997e-024
+
+- Global state 1663:	4.43453e-025
+
+- Global state 1664:	3.32734e-022
+
+- Global state 1665:	2.48036e-028
+
+- Global state 1666:	1.91713e-025
+
+- Global state 1667:	8.16337e-027
+
+- Global state 1668:	4.49348e-022
+
+- Global state 1669:	1.57746e-028
+
+- Global state 1670:	1.23785e-023
+
+- Global state 1671:	1.20941e-023
+
+- Global state 1672:	5.66875e-023
+
+- Global state 1673:	1.84435e-025
+
+- Global state 1674:	1.61639e-024
+
+- Global state 1675:	1.81008e-025
+
+- Global state 1676:	1.37328e-023
+
+- Global state 1677:	1.02128e-028
+
+- Global state 1678:	7.89506e-027
+
+- Global state 1679:	4.9238e-027
+
+- Global state 1680:	5.60356e-024
+
+- Global state 1681:	3.275e-028
+
+- Global state 1682:	1.48456e-025
+
+- Global state 1683:	2.99476e-024
+
+- Global state 1684:	1.55332e-026
+
+- Global state 1685:	1.9671e-024
+
+- Global state 1686:	2.12955e-025
+
+- Global state 1687:	2.26607e-024
+
+- Global state 1688:	9.805e-026
+
+- Global state 1689:	6.31786e-027
+
+- Global state 1690:	4.04158e-026
+
+- Global state 1691:	2.95976e-027
+
+- Global state 1692:	1.33594e-025
+
+- Global state 1693:	3.0609e-025
+
+- Global state 1694:	6.29599e-026
+
+- Global state 1695:	7.69178e-029
+
+- Global state 1696:	1.75926e-028
+
+- Global state 1697:	3.62499e-029
+
+- Global state 1698:	7.36172e-026
+
+- Global state 1699:	1.55615e-025
+
+- Global state 1700:	3.47356e-026
+
+- Global state 1701:	7.92927e-026
+
+- Global state 1702:	1.67453e-025
+
+- Global state 1703:	2.55419e-026
+
+- Global state 1704:	5.56345e-025
+
+- Global state 1705:	1.17596e-026
+
+- Global state 1706:	8.38157e-024
+
+- Global state 1707:	1.13774e-028
+
+- Global state 1708:	2.45434e-025
+
+- Global state 1709:	5.24553e-029
+
+- Global state 1710:	3.70037e-024
+
+- Global state 1711:	2.89106e-032
+
+- Global state 1712:	2.12967e-027
+
+- Global state 1713:	6.33034e-031
+
+- Global state 1714:	1.52388e-024
+
+- Global state 1715:	8.08597e-033
+
+- Global state 1716:	1.06765e-024
+
+- Global state 1717:	7.22975e-024
+
+- Global state 1718:	8.5852e-026
+
+- Global state 1719:	7.10552e-025
+
+- Global state 1720:	1.12129e-024
+
+- Global state 1721:	6.82433e-024
+
+- Global state 1722:	9.04656e-026
+
+- Global state 1723:	4.76857e-025
+
+- Global state 1724:	1.04207e-024
+
+- Global state 1725:	7.22194e-027
+
+- Global state 1726:	1.00558e-028
+
+- Global state 1727:	4.00618e-028
+
+- Global state 1728:	1.08959e-027
+
+- Global state 1729:	1.25434e-023
+
+- Global state 1730:	1.74661e-025
+
+- Global state 1731:	6.95626e-025
+
+- Global state 1732:	1.89244e-024
+
+- Global state 1733:	5.95944e-025
+
+- Global state 1734:	8.64002e-027
+
+- Global state 1735:	2.41476e-026
+
+- Global state 1736:	8.93639e-026
+
+- Global state 1737:	1.99141e-023
+
+- Global state 1738:	2.88974e-025
+
+- Global state 1739:	7.93043e-025
+
+- Global state 1740:	9.10806e-025
+
+- Global state 1741:	1.34473e-026
+
+- Global state 1742:	2.22339e-026
+
+- Global state 1743:	6.35315e-027
+
+- Global state 1744:	1.26095e-028
+
+- Global state 1745:	1.02925e-029
+
+- Global state 1746:	1.301e-023
+
+- Global state 1747:	3.3332e-023
+
+- Global state 1748:	4.90259e-025
+
+- Global state 1749:	8.24111e-025
+
+- Global state 1750:	6.96857e-027
+
+- Global state 1751:	1.34384e-028
+
+- Global state 1752:	3.61746e-029
+
+- Global state 1753:	1.33156e-026
+
+- Global state 1754:	3.06059e-026
+
+- Global state 1755:	4.65058e-028
+
+- Global state 1756:	7.37357e-028
+
+- Global state 1757:	3.08529e-029
+
+- Global state 1758:	5.25246e-031
+
+- Global state 1759:	5.86746e-031
+
+- Global state 1760:	2.3127e-023
+
+- Global state 1761:	5.31506e-023
+
+- Global state 1762:	8.0765e-025
+
+- Global state 1763:	1.28046e-024
+
+- Global state 1764:	5.44828e-026
+
+- Global state 1765:	9.2693e-028
+
+- Global state 1766:	1.03917e-027
+
+- Global state 1767:	1.09121e-024
+
+- Global state 1768:	2.18225e-024
+
+- Global state 1769:	3.43653e-026
+
+- Global state 1770:	5.06101e-026
+
+- Global state 1771:	4.60453e-026
+
+- Global state 1772:	7.54991e-028
+
+- Global state 1773:	1.02262e-027
+
+- Global state 1774:	3.57573e-023
+
+- Global state 1775:	7.11594e-023
+
+- Global state 1776:	1.12154e-024
+
+- Global state 1777:	1.6479e-024
+
+- Global state 1778:	3.02653e-024
+
+- Global state 1779:	4.96129e-026
+
+- Global state 1780:	6.62176e-026
+
+- Global state 1781:	3.12686e-024
+
+- Global state 1782:	5.12863e-026
+
+- Global state 1783:	6.60613e-026
+
+- Global state 1784:	5.87908e-025
+
+- Global state 1785:	7.34834e-023
+
+- Global state 1786:	1.15139e-022
+
+- Global state 1787:	1.89147e-024
+
+- Global state 1788:	2.42208e-024
+
+- Global state 1789:	8.4708e-028
+
+- Global state 1790:	7.58717e-026
+
+- Global state 1791:	8.31738e-026
+
+- Global state 1792:	1.42871e-027
+
+- Global state 1793:	1.52983e-027
+
+- Global state 1794:	1.47333e-024
+
+- Global state 1795:	1.31763e-022
+
+- Global state 1796:	1.44388e-022
+
+- Global state 1797:	2.48028e-024
+
+- Global state 1798:	2.65549e-024
+
+- Global state 1799:	1.69047e-025
+
+- Global state 1800:	5.55937e-024
+
+- Global state 1801:	3.44516e-024
+
+- Global state 1802:	6.20122e-026
+
+- Global state 1803:	5.03609e-026
+
+- Global state 1804:	5.7521e-024
+
+- Global state 1805:	1.78085e-022
+
+- Global state 1806:	1.09928e-022
+
+- Global state 1807:	1.97873e-024
+
+- Global state 1808:	1.60655e-024
+
+- Global state 1809:	1.90422e-024
+
+- Global state 1810:	1.07177e-022
+
+- Global state 1811:	6.39907e-025
+
+- Global state 1812:	4.28997e-024
+
+- Global state 1813:	4.43453e-025
+
+- Global state 1814:	3.32734e-022
+
+- Global state 1815:	2.48036e-028
+
+- Global state 1816:	1.91713e-025
+
+- Global state 1817:	8.16337e-027
+
+- Global state 1818:	4.49348e-022
+
+- Global state 1819:	1.57746e-028
+
+- Global state 1820:	1.23785e-023
+
+- Global state 1821:	1.20941e-023
+
+- Global state 1822:	5.66875e-023
+
+- Global state 1823:	1.84435e-025
+
+- Global state 1824:	1.61639e-024
+
+- Global state 1825:	1.81008e-025
+
+- Global state 1826:	1.37328e-023
+
+- Global state 1827:	1.02128e-028
+
+- Global state 1828:	7.89506e-027
+
+- Global state 1829:	4.9238e-027
+
+- Global state 1830:	5.60356e-024
+
+- Global state 1831:	3.275e-028
+
+- Global state 1832:	1.48456e-025
+
+- Global state 1833:	2.99476e-024
+
+- Global state 1834:	1.55332e-026
+
+- Global state 1835:	1.9671e-024
+
+- Global state 1836:	2.12955e-025
+
+- Global state 1837:	2.26607e-024
+
+- Global state 1838:	9.805e-026
+
+- Global state 1839:	6.31786e-027
+
+- Global state 1840:	4.04158e-026
+
+- Global state 1841:	2.95976e-027
+
+- Global state 1842:	1.33594e-025
+
+- Global state 1843:	3.0609e-025
+
+- Global state 1844:	6.29599e-026
+
+- Global state 1845:	7.69178e-029
+
+- Global state 1846:	1.75926e-028
+
+- Global state 1847:	3.62499e-029
+
+- Global state 1848:	7.36172e-026
+
+- Global state 1849:	1.55615e-025
+
+- Global state 1850:	3.47356e-026
+
+- Global state 1851:	7.92927e-026
+
+- Global state 1852:	1.67453e-025
+
+- Global state 1853:	2.55419e-026
+
+- Global state 1854:	5.56345e-025
+
+- Global state 1855:	1.17596e-026
+
+- Global state 1856:	8.38157e-024
+
+- Global state 1857:	1.13774e-028
+
+- Global state 1858:	2.45434e-025
+
+- Global state 1859:	5.24553e-029
+
+- Global state 1860:	3.70037e-024
+
+- Global state 1861:	2.89106e-032
+
+- Global state 1862:	2.12967e-027
+
+- Global state 1863:	6.33034e-031
+
+- Global state 1864:	1.52388e-024
+
+- Global state 1865:	8.08597e-033
+
+- Global state 1866:	1.06765e-024
+
+- Global state 1867:	7.22975e-024
+
+- Global state 1868:	8.5852e-026
+
+- Global state 1869:	7.10552e-025
+
+- Global state 1870:	1.12129e-024
+
+- Global state 1871:	6.82433e-024
+
+- Global state 1872:	9.04656e-026
+
+- Global state 1873:	4.76857e-025
+
+- Global state 1874:	1.04207e-024
+
+- Global state 1875:	7.22194e-027
+
+- Global state 1876:	1.00558e-028
+
+- Global state 1877:	4.00618e-028
+
+- Global state 1878:	1.08959e-027
+
+- Global state 1879:	1.25434e-023
+
+- Global state 1880:	1.74661e-025
+
+- Global state 1881:	6.95626e-025
+
+- Global state 1882:	1.89244e-024
+
+- Global state 1883:	5.95944e-025
+
+- Global state 1884:	8.64002e-027
+
+- Global state 1885:	2.41476e-026
+
+- Global state 1886:	8.93639e-026
+
+- Global state 1887:	1.99141e-023
+
+- Global state 1888:	2.88974e-025
+
+- Global state 1889:	7.93043e-025
+
+- Global state 1890:	9.10806e-025
+
+- Global state 1891:	1.34473e-026
+
+- Global state 1892:	2.22339e-026
+
+- Global state 1893:	6.35315e-027
+
+- Global state 1894:	1.26095e-028
+
+- Global state 1895:	1.02925e-029
+
+- Global state 1896:	1.301e-023
+
+- Global state 1897:	3.3332e-023
+
+- Global state 1898:	4.90259e-025
+
+- Global state 1899:	8.24111e-025
+
+- Global state 1900:	6.96857e-027
+
+- Global state 1901:	1.34384e-028
+
+- Global state 1902:	3.61746e-029
+
+- Global state 1903:	1.33156e-026
+
+- Global state 1904:	3.06059e-026
+
+- Global state 1905:	4.65058e-028
+
+- Global state 1906:	7.37357e-028
+
+- Global state 1907:	3.08529e-029
+
+- Global state 1908:	5.25246e-031
+
+- Global state 1909:	5.86746e-031
+
+- Global state 1910:	2.3127e-023
+
+- Global state 1911:	5.31506e-023
+
+- Global state 1912:	8.0765e-025
+
+- Global state 1913:	1.28046e-024
+
+- Global state 1914:	5.44828e-026
+
+- Global state 1915:	9.2693e-028
+
+- Global state 1916:	1.03917e-027
+
+- Global state 1917:	1.09121e-024
+
+- Global state 1918:	2.18225e-024
+
+- Global state 1919:	3.43653e-026
+
+- Global state 1920:	5.06101e-026
+
+- Global state 1921:	4.60453e-026
+
+- Global state 1922:	7.54991e-028
+
+- Global state 1923:	1.02262e-027
+
+- Global state 1924:	3.57573e-023
+
+- Global state 1925:	7.11594e-023
+
+- Global state 1926:	1.12154e-024
+
+- Global state 1927:	1.6479e-024
+
+- Global state 1928:	3.02653e-024
+
+- Global state 1929:	4.96129e-026
+
+- Global state 1930:	6.62176e-026
+
+- Global state 1931:	3.12686e-024
+
+- Global state 1932:	5.12863e-026
+
+- Global state 1933:	6.60613e-026
+
+- Global state 1934:	5.87908e-025
+
+- Global state 1935:	7.34834e-023
+
+- Global state 1936:	1.15139e-022
+
+- Global state 1937:	1.89147e-024
+
+- Global state 1938:	2.42208e-024
+
+- Global state 1939:	8.4708e-028
+
+- Global state 1940:	7.58717e-026
+
+- Global state 1941:	8.31738e-026
+
+- Global state 1942:	1.42871e-027
+
+- Global state 1943:	1.52983e-027
+
+- Global state 1944:	1.47333e-024
+
+- Global state 1945:	1.31763e-022
+
+- Global state 1946:	1.44388e-022
+
+- Global state 1947:	2.48028e-024
+
+- Global state 1948:	2.65549e-024
+
+- Global state 1949:	1.69047e-025
+
+- Global state 1950:	5.55937e-024
+
+- Global state 1951:	3.44516e-024
+
+- Global state 1952:	6.20122e-026
+
+- Global state 1953:	5.03609e-026
+
+- Global state 1954:	5.7521e-024
+
+- Global state 1955:	1.78085e-022
+
+- Global state 1956:	1.09928e-022
+
+- Global state 1957:	1.97873e-024
+
+- Global state 1958:	1.60655e-024
+
+- Global state 1959:	1.90422e-024
+
+- Global state 1960:	1.07177e-022
