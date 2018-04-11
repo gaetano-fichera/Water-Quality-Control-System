@@ -12,4 +12,7 @@
 \BOOKMARK [0][-]{chapter.7}{Model WCS With Execution Graphs}{}% 12
 \BOOKMARK [1][-]{section.7.1}{Demand Vector}{chapter.7}% 13
 \BOOKMARK [0][-]{chapter.8}{Queueing Network Model}{}% 14
-\BOOKMARK [0][-]{chapter.9}{AEmilia Model}{}% 15
+\BOOKMARK [0][-]{chapter.9}{Parameterization}{}% 15
+\BOOKMARK [0][-]{chapter.10}{Queueing Network Solving And BottleNeckAnaliysis}{}% 16
+\BOOKMARK [1][-]{section.10.1}{Refactoring}{chapter.10}% 17
+\BOOKMARK [0][-]{chapter.11}{AEmilia Model}{}% 18
