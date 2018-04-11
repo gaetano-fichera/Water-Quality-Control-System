@@ -9,8 +9,8 @@
 \contentsline {chapter}{\numberline {4}\textbf {Use Cases Decision}}{7}{chapter.4}
 \contentsline {chapter}{\numberline {5}\textbf {Identification Of Performance Requirements}}{8}{chapter.5}
 \contentsline {chapter}{\numberline {6}\textbf {Development Of Component Diagram Into Deployment Diagram}}{9}{chapter.6}
-\contentsline {chapter}{\numberline {7}\textbf {Model WCS With Execution Graphs}}{10}{chapter.7}
-\contentsline {section}{\numberline {7.1}Demand Vector}{12}{section.7.1}
-\contentsline {chapter}{\numberline {8}\textbf {Queueing Network Model}}{15}{chapter.8}
-\contentsline {chapter}{\numberline {9}\textbf {AEmilia Model}}{17}{chapter.9}
+\contentsline {chapter}{\numberline {7}\textbf {Model WCS With Execution Graphs}}{11}{chapter.7}
+\contentsline {section}{\numberline {7.1}Demand Vector}{11}{section.7.1}
+\contentsline {chapter}{\numberline {8}\textbf {Queueing Network Model}}{14}{chapter.8}
+\contentsline {chapter}{\numberline {9}\textbf {AEmilia Model}}{16}{chapter.9}
 \contentsfinish 

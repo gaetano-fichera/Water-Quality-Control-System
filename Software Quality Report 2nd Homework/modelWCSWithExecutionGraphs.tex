@@ -1,68 +1,53 @@
 \newpage \chapter{\textbf{Model WCS With Execution Graphs}}
 
-The Use Cases we have considered are:
-\begin{itemize}
-\item UC1 StartUp Sampling Water activated by Sample Supervisor;
-\item UC3 Check Water Quality activated by Quality Control Supervisor.
-\end{itemize}
-In reference to the Use Cases taken into consideration, to better understand our architecture, we have combined the Deployment Diagram with Component Diagram. In the figure below this is represented.
+\section{Demand Vector}
 
-\begin{center}
-  \makebox[\textwidth]{\includegraphics[width=\textwidth]{DeploymentDiagramEComponentDiagram.jpg}}
-\end{center}
-\bigskip
-\captionof{figure}{Deployment Diagram + Component Diagram}
+Analyzing the sequence diagram, component and deployment diagram we have obtained this demand vector which represents virtual resources related to our architecture:
 
-\newpage \section{Demand Vector}
-
-Il Demand Vector scelto in base alle risorse virtuali che risaltano dal deployment diagram sono: 
-
-\begin{longtable}{|p{4cm}|p{9cm}|}
+\begin{longtable}{|p{6cm}|p{9cm}|}
 
 \hline
-\textbf{
-Wired Connection Request} & \\
+\textbf{Wired Connection Request} & Estimated consumption of the 											request to the Wired Connection \\
 
 \hline
-\textbf{Wireless Connection Request} & \\
+\textbf{Wireless Connection Request} & Estimated consumption of the 										   request to the Wireless 												   Connection \\
 
 \hline
-\textbf{Internet Connection Request} & \\
+\textbf{Internet Connection Request} & Estimated consumption of the 										   request to the Internet 												   Connection \\
 
 \hline
-\textbf{Database Request} & \\
+\textbf{Database Request} & Estimated consumption of the request to 								the Database \\ 
 
 \hline
-\textbf{Control Center Server CPU} & \\
+\textbf{Control Center Server CPU} & Estimated consumption of the 											 request to the Control Center 											 Server CPU\\
 
 \hline
-\textbf{Water Company Server CPU} & \\
+\textbf{Water Company Server CPU} & Estimated consumption of the 											request to theWater Company Server										CPU\\
 
 \hline
-\textbf{Purification System Pomezia CPU} & \\
+\textbf{Purification System Pomezia CPU} & Estimated consumption of 											   the request to the 													   Purification System Pomezia 										   CPU\\
+
 
 \hline
-\textbf{Seaweed Picking Inland Control Unit CPU} & \\
+\textbf{Seaweed Picking Inland Control Unit CPU} & Estimated 															   consumption of 											   			   the request to the 													   Seaweed Picking 														   Inland Control Unit 												   CPU\\
 
 \hline
-\textbf{Seaweed Picking Outgoing Control Unit CPU} & \\
+\textbf{Seaweed Picking Outgoing Control Unit CPU} & Estimated 															   consumption of 											   			   the request to the 													   Seaweed Picking 														   Outgoing Control 													   Unit CPU\\
 
 \hline
-\textbf{Seaweed Picking Outgoings Sample Request} & \\
+\textbf{Seaweed Picking Outgoings Sample Request} & Estimated 															   consumption of 											   			   the request to the 													   Seaweed Picking 														   Outgoing Sample \\
 
 \hline
-\textbf{Seaweed Picking Inlands Sample Request} & \\
-
+\textbf{Seaweed Picking Inlands Sample Request} & Estimated 															  consumption of 											   			  the request to the 													  Seaweed Picking 														  Inlands Sample \\
 \hline
 \end{longtable}
 
-\textbf{Spiegare cosa sono queste risorse virtuali}\\
 \newpage
 
 The Execution Graphs obtained are:
 
 \begin{itemize}
-\item UC1 Sampling Water activated by Sample Supervisor:
+\item Sampling Water activated by Sample Supervisor:
 	\bigskip
 	\bigskip
 	\begin{center}
@@ -71,7 +56,7 @@ The Execution Graphs obtained are:
 	\bigskip
 	\captionof{figure}{EG UC1 StartUp Sampling Water}
 \newpage
-\item UC3 Check Water Quality activated by Quality Control Supervisor:
+\item Check Water Quality activated by Quality Control Supervisor:
 	\bigskip
 	\bigskip
 	\bigskip
