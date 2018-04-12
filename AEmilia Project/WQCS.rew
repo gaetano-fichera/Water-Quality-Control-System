@@ -15,8 +15,6 @@ MEASURE WaterCompanyDiskUtilization IS
 	ENABLED(WCDISK.getExpectedParametersOutGoing_db_response) -> TRANS_REWARD(1)
 	ENABLED(WCDISK.save_sample_response_ack) -> TRANS_REWARD(1);
 
-
-%l'Utilization di due SeaweedPickingControlUnit risulterà 0 o molto basso se il delay impostato nel aem è molto alto come da specifica
 MEASURE SeaweedPickingINControlUnitUtilization IS
 	ENABLED(INCU.send_StartUpSampling_response) -> TRANS_REWARD(1)
 	ENABLED(INCU.send_sample) -> TRANS_REWARD(1)

@@ -271,8 +271,8 @@ ARCHI_ELEM_TYPES
 
 
 
-		% SeaweedPickingControlUnit aggiustare statediagram
-
+		% SeaweedPickingControlUnit 
+		
 		ELEM_TYPE SeaweedPickingControlUnit_Type(const rate SPCU_send_StartUpSampling_response_rate, const rate SPCU_send_sample_request_rate, 
 			const rate SPCU_send_sample_rate, const rate SPCU_delay_rate, const integer sensors_num)
 

@@ -14,6 +14,12 @@
 \contentsline {chapter}{\numberline {8}\textbf {Queueing Network Model}}{10}{chapter.8}
 \contentsline {chapter}{\numberline {9}\textbf {Parameterization}}{14}{chapter.9}
 \contentsline {chapter}{\numberline {10}\textbf {Queueing Network Solving And BottleNeckAnaliysis}}{15}{chapter.10}
-\contentsline {section}{\numberline {10.1}Refactoring}{16}{section.10.1}
-\contentsline {chapter}{\numberline {11}\textbf {AEmilia Model}}{16}{chapter.11}
+\contentsline {section}{\numberline {10.1}Refactoring}{17}{section.10.1}
+\contentsline {chapter}{\numberline {11}\textbf {AEmilia Model}}{18}{chapter.11}
+\contentsline {section}{\numberline {11.1}Work Planning}{18}{section.11.1}
+\contentsline {section}{\numberline {11.2}Aemilia Flow Graph}{18}{section.11.2}
+\contentsline {section}{\numberline {11.3}Aemilia State Diagram}{19}{section.11.3}
+\contentsline {section}{\numberline {11.4}Implementation Of The Model}{20}{section.11.4}
+\contentsline {section}{\numberline {11.5}Test And Analysis Of Results}{21}{section.11.5}
+\contentsline {chapter}{\numberline {12}\textbf {Our Conclusion}}{21}{chapter.12}
 \contentsfinish 

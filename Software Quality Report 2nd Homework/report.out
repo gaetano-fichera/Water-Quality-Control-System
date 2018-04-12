@@ -16,3 +16,9 @@
 \BOOKMARK [0][-]{chapter.10}{Queueing Network Solving And BottleNeckAnaliysis}{}% 16
 \BOOKMARK [1][-]{section.10.1}{Refactoring}{chapter.10}% 17
 \BOOKMARK [0][-]{chapter.11}{AEmilia Model}{}% 18
+\BOOKMARK [1][-]{section.11.1}{Work Planning}{chapter.11}% 19
+\BOOKMARK [1][-]{section.11.2}{Aemilia Flow Graph}{chapter.11}% 20
+\BOOKMARK [1][-]{section.11.3}{Aemilia State Diagram}{chapter.11}% 21
+\BOOKMARK [1][-]{section.11.4}{Implementation Of The Model}{chapter.11}% 22
+\BOOKMARK [1][-]{section.11.5}{Test And Analysis Of Results}{chapter.11}% 23
+\BOOKMARK [0][-]{chapter.12}{Our Conclusion}{}% 24
