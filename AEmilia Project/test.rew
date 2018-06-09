@@ -1,0 +1,2 @@
+MEASURE test IS
+	ENABLED(CO.out) -> STATE_REWARD(1)

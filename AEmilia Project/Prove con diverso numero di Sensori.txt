@@ -1,129 +1,43 @@
-Stationary value of the performance measures for wcs:
-
-- Value of measure "ControlCenterServerUtilization":
-	0.003647
-
-- Value of measure "WaterCompanyServerUtilization":
-	0.00271904
-
-- Value of measure "WaterCompanyDiskUtilization":
-	0.00225506
-
-- Value of measure "SeaweedPickingINControlUnitUtilization":
-	0.0017911
-
-- Value of measure "SeaweedPickingOUTControlUnitUtilization":
-	0.0017911
-
-- Value of measure "PurificationSystemServerUtilization":
-	0.000463978
-
-Prova #2) 2000 Sensori IN e 2000 OUT
+# 1000 in 1000 out
 
 Stationary value of the performance measures for wcs:
 
 - Value of measure "ControlCenterServerUtilization":
-	0.00509466
+	0.0628304
 
 - Value of measure "WaterCompanyServerUtilization":
-	0.0041685
+	0.0200761
 
 - Value of measure "WaterCompanyDiskUtilization":
-	0.00370547
+	0.144287
 
 - Value of measure "SeaweedPickingINControlUnitUtilization":
-	0.00324255
+	0.0622846
 
 - Value of measure "SeaweedPickingOUTControlUnitUtilization":
-	0.00324255
+	0.0622846
 
 - Value of measure "PurificationSystemServerUtilization":
-	0.000463039
+	0.00105396
 
-Prova #3) 5000 Sensori IN e 5000 OUT
+# 4000 in 4000 out
 
 Stationary value of the performance measures for wcs:
 
 - Value of measure "ControlCenterServerUtilization":
-	0.00814508
+	0.105874
 
 - Value of measure "WaterCompanyServerUtilization":
-	0.00722278
+	0.0318778
 
 - Value of measure "WaterCompanyDiskUtilization":
-	0.00676261
+	0.239735
 
 - Value of measure "SeaweedPickingINControlUnitUtilization":
-	0.00630443
+	0.105415
 
 - Value of measure "SeaweedPickingOUTControlUnitUtilization":
-	0.00630443
+	0.105415
 
 - Value of measure "PurificationSystemServerUtilization":
-	0.000460403
-
-Prova #4) 10000 Sensori IN e 10000 OUT
-
-Stationary value of the performance measures for wcs:
-
-- Value of measure "ControlCenterServerUtilization":
-	0.0109936
-
-- Value of measure "WaterCompanyServerUtilization":
-	0.0100729
-
-- Value of measure "WaterCompanyDiskUtilization":
-	0.00961984
-
-- Value of measure "SeaweedPickingINControlUnitUtilization":
-	0.00917919
-
-- Value of measure "SeaweedPickingOUTControlUnitUtilization":
-	0.00917919
-
-- Value of measure "PurificationSystemServerUtilization":
-	0.000455281
-
-Prova #5) 15000 Sensori IN e 15000 OUT
-
-Stationary value of the performance measures for wcs:
-
-- Value of measure "ControlCenterServerUtilization":
-	0.0125812
-
-- Value of measure "WaterCompanyServerUtilization":
-	0.0116577
-
-- Value of measure "WaterCompanyDiskUtilization":
-	0.0112152
-
-- Value of measure "SeaweedPickingINControlUnitUtilization":
-	0.0108016
-
-- Value of measure "SeaweedPickingOUTControlUnitUtilization":
-	0.0108016
-
-- Value of measure "PurificationSystemServerUtilization":
-	0.000449044
-
-Prova #6) 20000 Sensori IN e 20000 OUT
-
-Stationary value of the performance measures for wcs:
-
-- Value of measure "ControlCenterServerUtilization":
-	0.0135714
-
-- Value of measure "WaterCompanyServerUtilization":
-	0.0126432
-
-- Value of measure "WaterCompanyDiskUtilization":
-	0.0122133
-
-- Value of measure "SeaweedPickingINControlUnitUtilization":
-	0.0118298
-
-- Value of measure "SeaweedPickingOUTControlUnitUtilization":
-	0.0118298
-
-- Value of measure "PurificationSystemServerUtilization":
-	0.00044243
+	0.00103089

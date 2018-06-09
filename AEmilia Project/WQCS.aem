@@ -5,8 +5,8 @@
 ARCHI_TYPE wcs(	
 	const rate QSQualityControlApp_request_rate := 0.001, % 1/1000
 
-	const rate SampleWaterCompanyServer_rate := 2.817, % 1/0.355,
-	const rate CheckWaterCompanyServer_rate := 1.6, % 1/0.625,
+	const rate SampleWaterCompanyServer_rate := 0.322, % 1/3.1,
+	const rate CheckWaterCompanyServer_rate := 0.16, % 1/6.25,
 
 	const rate SampleWaterCompanyDisk_rate := 0.04, % 1/25,
 	const rate CheckWaterCompanyDisk_rate := 0.08, % 1/12.5,
@@ -14,23 +14,23 @@ ARCHI_TYPE wcs(
 	const rate WiredConnectionUp_rate := 0.05, % 1/20,
 	const rate WiredConnectionDown_rate := 0.05, % 1/20,
 
-	const rate CCS_send_StartUpSampling_request_rate := 1.913, % 1/0.5225,  
-	const rate CCS_send_wired_StartUpSampling_response_rate := 1.913, % 1/0.5225, 
+	const rate CCS_send_StartUpSampling_request_rate := 0.1913, % 1/5.25,  
+	const rate CCS_send_wired_StartUpSampling_response_rate := 0.1913, % 1/5.225, 
 
-	const rate CCS_send_wired_getExpectedParametersInland_request_rate := 3.33, % 1/0.3,
-	const rate CCS_send_wired_getExpectedParametersOutGoing_request_rate := 3.33, % 1/0.3,
-	const rate CCS_send_wired_CheckWaterInland_response_rate := 3.33, % 1/0.3,
+	const rate CCS_send_wired_getExpectedParametersInland_request_rate := 3.33, % 1/3,
+	const rate CCS_send_wired_getExpectedParametersOutGoing_request_rate := 3.33, % 1/3,
+	const rate CCS_send_wired_CheckWaterInland_response_rate := 3.33, % 1/3,
 	const rate CCS_send_wired_CheckWaterOutGoing_response_rate := 3.33, % 1/0.3,
 	const weight CCS_CheckWaterInland_prob_request := 0.5, %probabilità di scelta Inland
 
-	const rate CCS_send_sample_rate := 1.316, % 1/0.76, 
+	const rate CCS_send_sample_rate := 0.089, % 1/11.2, 
 
-	const rate SPCU_send_StartUpSampling_response_rate := 0.478, % 1/2.09,
+	const rate SPCU_send_StartUpSampling_response_rate := 0.0478, % 1/20.9,
 
-	const rate SPCU_send_sample_request_rate := 1.316, % 1/0.76, 
-	const rate SPCU_send_sample_rate := 1.316, % 1/0.76, 
+	const rate SPCU_send_sample_request_rate := 0.089, % 1/11.2, 
+	const rate SPCU_send_sample_rate := 0.089, % 1/11.2, 
 
-	const rate SPCU_delay_rate := 0.000002, % 1/500000, %delay di campionamento
+	const rate SPCU_delay_rate := 0.00001, % 1/100000, %delay di campionamento
 
 	const rate WirelessConnectionUp_rate := 0.036, % 1/28,
 	const rate WirelessConnectionDown_rate := 0.036, % 1/28,
@@ -42,8 +42,7 @@ ARCHI_TYPE wcs(
 
 	const rate PSS_getExpectedParametersInland_response_rate := 0.4348, % 1/2.3,
 
-	const integer sensors_num_IN := 1000,
-	const integer sensors_num_OUT := 1000
+	const integer sensors_num := 000
 )
 
 ARCHI_ELEM_TYPES
@@ -170,15 +169,26 @@ ARCHI_ELEM_TYPES
 
 		% QSSamplingApp
 
-		ELEM_TYPE QSSamplingApp_Type(void)
+		ELEM_TYPE QSSamplingApp_Type(const integer sensors_num)
 
 		BEHAVIOR
 
-			AppCalled(void;void) =
-				<generate_sampling_request, inf> . <send_request, inf> . WaitForResponse();
+			Replicating(integer(0..sensors_num) sensors_done_num := 0, boolean start_finish := false; void) =
+				choice{
+					cond(start_finish = false) -> 
+						choice{
+							cond(sensors_done_num < sensors_num) ->	<send_request, inf> . Replicating(sensors_done_num + 1, false),
+							cond(sensors_done_num = sensors_num) -> <idle_request, inf> . Replicating(sensors_num, true)
+						},
+					<receive_response, _> . 
+						choice{
+							cond(sensors_done_num > 0) -> <received_response, inf> . Replicating(sensors_done_num - 1, true),
+							cond(sensors_done_num = 0) -> <idle_request, inf> . Idle()
+						}				
+				};
 
-			WaitForResponse(void;void) =
-				<receive_response, _> . Idle(); %non deve fare più niente
+			AppCalled(void;void) =
+				<generate_sampling_request, inf> . <send_request, inf> . Replicating(1, false);							
 
 			Idle(void;void) = 
 				stop
@@ -229,7 +239,13 @@ ARCHI_ELEM_TYPES
 
 			ServerCalled(void;void) = 
 				choice{
-					<receive_wired_StartUpSampling_request, _> . <send_StartUpSampling_request, exp(CCS_send_StartUpSampling_request_rate)> .WaitingStartUpSampling(),
+					<receive_wired_StartUpSampling_request, _> . 
+						choice{
+							<sample_inLand, inf(1, 0.5)> . <send_StartUpSampling_in_request, exp(CCS_send_StartUpSampling_request_rate)> .WaitingStartUpSampling(),
+							<sample_outGoing, inf(1, 0.5)> . <send_StartUpSampling_out_request, exp(CCS_send_StartUpSampling_request_rate)> .WaitingStartUpSampling()
+
+						},
+
 					<receive_sample, _> . <send_sample, exp(CCS_send_sample_rate)> . ServerCalled(),
 					<receive_wired_CheckWater_request, _> . 
 						choice{
@@ -265,16 +281,15 @@ ARCHI_ELEM_TYPES
 				send_wired_CheckWater_response;
 				send_wired_getExpectedParametersInland_request;
 				send_wired_getExpectedParametersOutGoing_request;
-				send_sample
-
-			OR 	send_StartUpSampling_request
-
+				send_sample;
+				send_StartUpSampling_in_request;
+				send_StartUpSampling_out_request
 
 
 		% SeaweedPickingControlUnit 
 		
 		ELEM_TYPE SeaweedPickingControlUnit_Type(const rate SPCU_send_StartUpSampling_response_rate, const rate SPCU_send_sample_request_rate, 
-			const rate SPCU_send_sample_rate, const rate SPCU_delay_rate, const integer sensors_num)
+			const rate SPCU_send_sample_rate, const rate SPCU_delay_rate)
 
 		BEHAVIOR
 
@@ -288,7 +303,7 @@ ARCHI_ELEM_TYPES
 				<receive_sample_response, _> . <send_sample, exp(SPCU_send_sample_rate)> . Delay();
 
 			Delay(void;void) =
-				<delay, exp(SPCU_delay_rate * sensors_num)> . Sampling()
+				<delay, exp(SPCU_delay_rate)> . Sampling()
 
 
 		INPUT_INTERACTIONS
@@ -463,13 +478,13 @@ ARCHI_TOPOLOGY
 		WCU: WiredConnectionUp_Type(WiredConnectionUp_rate);
 		WCD : WiredConnectionDown_Type(WiredConnectionDown_rate);
 		WCDISK : WaterCompanyDisk_Type(SampleWaterCompanyDisk_rate, CheckWaterCompanyDisk_rate);
-		QSS : QSSamplingApp_Type();
+		QSS : QSSamplingApp_Type(sensors_num);
 		QSQC : QSQualityControlApp_Type(QSQualityControlApp_request_rate);
 		CCS : ControlCenterServer_Type(CCS_send_StartUpSampling_request_rate, CCS_CheckWaterInland_prob_request, CCS_send_wired_getExpectedParametersInland_request_rate, 
 			CCS_send_wired_getExpectedParametersOutGoing_request_rate, CCS_send_wired_StartUpSampling_response_rate, CCS_send_sample_rate, CCS_send_wired_CheckWaterInland_response_rate, 
 			CCS_send_wired_CheckWaterOutGoing_response_rate);
-		INCU : SeaweedPickingControlUnit_Type(SPCU_send_StartUpSampling_response_rate, SPCU_send_sample_request_rate, SPCU_send_sample_rate, SPCU_delay_rate, sensors_num_IN);
-		OUTCU : SeaweedPickingControlUnit_Type(SPCU_send_StartUpSampling_response_rate, SPCU_send_sample_request_rate, SPCU_send_sample_rate, SPCU_delay_rate, sensors_num_OUT);
+		INCU : SeaweedPickingControlUnit_Type(SPCU_send_StartUpSampling_response_rate, SPCU_send_sample_request_rate, SPCU_send_sample_rate, SPCU_delay_rate);
+		OUTCU : SeaweedPickingControlUnit_Type(SPCU_send_StartUpSampling_response_rate, SPCU_send_sample_request_rate, SPCU_send_sample_rate, SPCU_delay_rate);
 		WLCU : WirelessConnectionUp_Type(WirelessConnectionUp_rate);
 		WLCD : WirelessConnectionDown_Type(WirelessConnectionDown_rate);
 		ICD : InternetConnectionDown_Type(InternetConnectionDown_rate);
@@ -499,8 +514,8 @@ ARCHI_TOPOLOGY
 	FROM CCS.send_wired_getExpectedParametersInland_request						TO ICD.receive_pss_params_request;
 	FROM CCS.send_wired_getExpectedParametersOutGoing_request 					TO ICD.receive_WCS_params_request;
 	FROM CCS.send_sample 														TO ICD.receive_save_sample_request;
-	FROM CCS.send_StartUpSampling_request 										TO INCU.receive_StartUpSampling_request; % Controllare se si fa così
-	FROM CCS.send_StartUpSampling_request 										TO OUTCU.receive_StartUpSampling_request; 
+	FROM CCS.send_StartUpSampling_in_request 									TO INCU.receive_StartUpSampling_request; % Controllare se si fa così
+	FROM CCS.send_StartUpSampling_out_request 									TO OUTCU.receive_StartUpSampling_request; 
 	FROM INCU.send_StartUpSampling_response 									TO CCS.receive_StartUpSampling_response;
 	FROM INCU.send_sample 														TO CCS.receive_sample;
 	FROM INCU.send_sample_request 												TO WLCD.receive_incu_request;
