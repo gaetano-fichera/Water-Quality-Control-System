@@ -1,0 +1,11 @@
+MEASURE ControlCenterServerUtilization IS
+	ENABLED(CCS.forward_check_water) -> STATE_REWARD(1)
+	ENABLED(CCS.forward_startup_in) -> STATE_REWARD(1)
+	ENABLED(CCS.forward_startup_out) -> STATE_REWARD(1)
+	ENABLED(CCS.forward_sample_in) -> STATE_REWARD(1)
+	ENABLED(CCS.forward_sample_out) -> STATE_REWARD(1);
+
+MEASURE WaterCompanyDiskUtilization IS
+	ENABLED(WCDISK.forward_check_out_response) -> STATE_REWARD(1)
+	ENABLED(WCDISK.forward_sample_in) -> STATE_REWARD(1)
+	ENABLED(WCDISK.forward_sample_out) -> STATE_REWARD(1)

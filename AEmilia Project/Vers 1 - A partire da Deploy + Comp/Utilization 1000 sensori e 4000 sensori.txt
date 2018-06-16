@@ -1,43 +1,48 @@
-# 1000 in 1000 out
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	1000 in & 1000 out						%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Stationary value of the performance measures for wcs:
 
 - Value of measure "ControlCenterServerUtilization":
-	0.0628304
+	0.0676752
 
 - Value of measure "WaterCompanyServerUtilization":
-	0.0200761
+	0.0200398
 
 - Value of measure "WaterCompanyDiskUtilization":
-	0.144287
+	0.144073
 
 - Value of measure "SeaweedPickingINControlUnitUtilization":
-	0.0622846
+	0.0622001
 
 - Value of measure "SeaweedPickingOUTControlUnitUtilization":
-	0.0622846
+	0.0622001
 
 - Value of measure "PurificationSystemServerUtilization":
-	0.00105396
+	0.00104919
 
-# 4000 in 4000 out
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	4000 in & 4000 out						%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Stationary value of the performance measures for wcs:
 
 - Value of measure "ControlCenterServerUtilization":
-	0.105874
+	0.110484
 
 - Value of measure "WaterCompanyServerUtilization":
-	0.0318778
+	0.031807
 
 - Value of measure "WaterCompanyDiskUtilization":
-	0.239735
+	0.239235
 
 - Value of measure "SeaweedPickingINControlUnitUtilization":
-	0.105415
+	0.1052
 
 - Value of measure "SeaweedPickingOUTControlUnitUtilization":
-	0.105415
+	0.1052
 
 - Value of measure "PurificationSystemServerUtilization":
-	0.00103089
+	0.00102665

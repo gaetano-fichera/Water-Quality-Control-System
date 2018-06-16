@@ -1,0 +1,41 @@
+const rate QSQualityControlApp_request_rate := 0.001, % 1/1000
+
+const rate SampleWaterCompanyServer_rate := 0.322, % 1/3.1,
+const rate CheckWaterCompanyServer_rate := 0.16, % 1/6.25,
+
+const rate SampleWaterCompanyDisk_rate := 0.04, % 1/25,
+const rate CheckWaterCompanyDisk_rate := 0.08, % 1/12.5,
+
+const rate WiredConnectionUp_rate := 0.05, % 1/20,
+const rate WiredConnectionDown_rate := 0.05, % 1/20,
+
+const rate CCS_send_StartUpSampling_request_rate := 0.1913, % 1/5.25,  
+const rate CCS_send_wired_StartUpSampling_response_rate := 0.1913, % 1/5.225, 
+
+const rate CCS_send_wired_getExpectedParametersInland_request_rate := 0.333, % 1/3,
+const rate CCS_send_wired_getExpectedParametersOutGoing_request_rate := 0.333, % 1/3,
+const rate CCS_send_wired_CheckWaterInland_response_rate := 0.333, % 1/3,
+const rate CCS_send_wired_CheckWaterOutGoing_response_rate := 0.333, % 1/3,
+const weight CCS_CheckWaterInland_prob_request := 0.5, %probabilità di scelta Inland
+
+const rate CCS_send_sample_rate := 0.089, % 1/11.2, 
+
+const rate SPCU_send_StartUpSampling_response_rate := 0.0478, % 1/20.9,
+
+const rate SPCU_send_sample_request_rate := 0.089, % 1/11.2, 
+const rate SPCU_send_sample_rate := 0.089, % 1/11.2, 
+
+const rate SPCU_delay_rate := 1, % 1/10000, %delay di campionamento
+
+const rate WirelessConnectionUp_rate := 0.036, % 1/28,
+const rate WirelessConnectionDown_rate := 0.036, % 1/28,
+
+const rate SP_send_sample_response_rate := 62.5, % 1/0.016,
+
+const rate InternetConnectionUp_rate := 0.29, % 1/35,
+const rate InternetConnectionDown_rate := 0.29, % 1/35,
+
+const rate PSS_getExpectedParametersInland_response_rate := 0.4348, % 1/2.3,
+
+const integer sensors_num_IN := 1000,
+const integer sensors_num_OUT := 1000

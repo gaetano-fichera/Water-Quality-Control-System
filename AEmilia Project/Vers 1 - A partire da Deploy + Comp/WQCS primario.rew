@@ -4,8 +4,7 @@ MEASURE ControlCenterServerUtilization IS
 	ENABLED(CCS.send_wired_getExpectedParametersInland_request) -> STATE_REWARD(1)
 	ENABLED(CCS.send_wired_getExpectedParametersOutGoing_request) -> STATE_REWARD(1)
 	ENABLED(CCS.send_sample) -> STATE_REWARD(1)
-	ENABLED(CCS.send_StartUpSampling_in_request) -> STATE_REWARD(1)
-	ENABLED(CCS.send_StartUpSampling_out_request) -> STATE_REWARD(1);
+	ENABLED(CCS.send_StartUpSampling_request) -> STATE_REWARD(1);
 
 MEASURE WaterCompanyServerUtilization IS
 	ENABLED(WCS.getExpectedParametersOutGoing_response) -> STATE_REWARD(1)
@@ -27,4 +26,4 @@ MEASURE SeaweedPickingOUTControlUnitUtilization IS
 	ENABLED(OUTCU.send_sample_request) -> STATE_REWARD(1);
 
 MEASURE PurificationSystemServerUtilization IS	
-	ENABLED(PSS.getExpectedParametersInland_response) -> STATE_REWARD(1)	
+	ENABLED(PSS.getExpectedParametersInland_response) -> STATE_REWARD(1)

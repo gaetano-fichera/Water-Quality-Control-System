@@ -1,0 +1,2473 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<archive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="UC1 UC2 QN Finale con tempo su mean in us - Refactoring.jsimg" timestamp="Sat Jun 16 20:55:18 CEST 2018" xsi:noNamespaceSchemaLocation="Archive.xsd">
+    <sim disableStatisticStop="false" logDecimalSeparator="," logDelimiter=";" logPath="C:\Users\Gaetano/JMT/" logReplaceMode="0" maxSamples="100000000" name="UC1 UC2 QN Finale con tempo su mean in us - Refactoring.jsimg" polling="1.0" xsi:noNamespaceSchemaLocation="SIMmodeldefinition.xsd">
+        <userClass customers="500" name="StartUp Sampling Water In" priority="0" referenceSource="Delay Samples" type="closed"/>
+        <userClass customers="500" name="StartUp Sampling Water Out" priority="0" referenceSource="Delay Samples" type="closed"/>
+        <userClass customers="0" name="Sampling In" priority="0" referenceSource="Delay Samples" type="closed"/>
+        <userClass customers="0" name="Sampling Out" priority="0" referenceSource="Delay Samples" type="closed"/>
+        <userClass name="Check Water Quality" priority="0" referenceSource="QS Quality Control App" type="open"/>
+        <node name="Lan Wired">
+            <section className="Queue">
+                <parameter classPath="java.lang.Integer" name="size">
+                    <value>-1</value>
+                </parameter>
+                <parameter array="true" classPath="java.lang.String" name="dropStrategies">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                </parameter>
+                <parameter classPath="jmt.engine.NetStrategies.QueueGetStrategies.FCFSstrategy" name="FCFSstrategy"/>
+                <parameter array="true" classPath="jmt.engine.NetStrategies.QueuePutStrategy" name="QueuePutStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                </parameter>
+            </section>
+            <section className="Delay">
+                <parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>0.00125</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>0.00125</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>0.005</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>0.005</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>0.00125</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                </parameter>
+            </section>
+            <section className="Router">
+                <parameter array="true" classPath="jmt.engine.NetStrategies.RoutingStrategy" name="RoutingStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                </parameter>
+            </section>
+        </node>
+        <node name="Control Center Server">
+            <section className="Queue">
+                <parameter classPath="java.lang.Integer" name="size">
+                    <value>-1</value>
+                </parameter>
+                <parameter array="true" classPath="java.lang.String" name="dropStrategies">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                </parameter>
+                <parameter classPath="jmt.engine.NetStrategies.QueueGetStrategies.FCFSstrategy" name="FCFSstrategy"/>
+                <parameter array="true" classPath="jmt.engine.NetStrategies.QueuePutStrategy" name="QueuePutStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                </parameter>
+            </section>
+            <section className="Server">
+                <parameter classPath="java.lang.Integer" name="maxJobs">
+                    <value>1</value>
+                </parameter>
+                <parameter array="true" classPath="java.lang.Integer" name="numberOfVisits">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="java.lang.Integer" name="numberOfVisits">
+                        <value>1</value>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="java.lang.Integer" name="numberOfVisits">
+                        <value>1</value>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="java.lang.Integer" name="numberOfVisits">
+                        <value>1</value>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="java.lang.Integer" name="numberOfVisits">
+                        <value>1</value>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="java.lang.Integer" name="numberOfVisits">
+                        <value>1</value>
+                    </subParameter>
+                </parameter>
+                <parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>0.8333333333333334</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>0.8333333333333334</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>0.8928571428571428</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>0.8928571428571428</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>0.8333333333333334</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                </parameter>
+            </section>
+            <section className="Router">
+                <parameter array="true" classPath="jmt.engine.NetStrategies.RoutingStrategy" name="RoutingStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+                        <subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>SP CU In</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>1.0</value>
+                                </subParameter>
+                            </subParameter>
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>Lan Internet</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>0.0</value>
+                                </subParameter>
+                            </subParameter>
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>SP CU Out</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>0.0</value>
+                                </subParameter>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+                        <subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>SP CU In</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>0.0</value>
+                                </subParameter>
+                            </subParameter>
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>Lan Internet</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>0.0</value>
+                                </subParameter>
+                            </subParameter>
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>SP CU Out</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>1.0</value>
+                                </subParameter>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+                        <subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>SP CU In</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>1.0</value>
+                                </subParameter>
+                            </subParameter>
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>Lan Internet</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>0.0</value>
+                                </subParameter>
+                            </subParameter>
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>SP CU Out</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>0.0</value>
+                                </subParameter>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+                        <subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>SP CU In</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>0.0</value>
+                                </subParameter>
+                            </subParameter>
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>Lan Internet</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>0.0</value>
+                                </subParameter>
+                            </subParameter>
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>SP CU Out</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>1.0</value>
+                                </subParameter>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+                        <subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>SP CU In</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>0.0</value>
+                                </subParameter>
+                            </subParameter>
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>Lan Internet</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>1.0</value>
+                                </subParameter>
+                            </subParameter>
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>SP CU Out</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>0.0</value>
+                                </subParameter>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                </parameter>
+            </section>
+        </node>
+        <node name="SP Inland Sensors">
+            <section className="Queue">
+                <parameter classPath="java.lang.Integer" name="size">
+                    <value>-1</value>
+                </parameter>
+                <parameter array="true" classPath="java.lang.String" name="dropStrategies">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                </parameter>
+                <parameter classPath="jmt.engine.NetStrategies.QueueGetStrategies.FCFSstrategy" name="FCFSstrategy"/>
+                <parameter array="true" classPath="jmt.engine.NetStrategies.QueuePutStrategy" name="QueuePutStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                </parameter>
+            </section>
+            <section className="Delay">
+                <parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>1.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>1.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>0.017241379310344827</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>1.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>1.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                </parameter>
+            </section>
+            <section className="Router">
+                <parameter array="true" classPath="jmt.engine.NetStrategies.RoutingStrategy" name="RoutingStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                </parameter>
+            </section>
+        </node>
+        <node name="SP CU In">
+            <section className="Queue">
+                <parameter classPath="java.lang.Integer" name="size">
+                    <value>-1</value>
+                </parameter>
+                <parameter array="true" classPath="java.lang.String" name="dropStrategies">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                </parameter>
+                <parameter classPath="jmt.engine.NetStrategies.QueueGetStrategies.FCFSstrategy" name="FCFSstrategy"/>
+                <parameter array="true" classPath="jmt.engine.NetStrategies.QueuePutStrategy" name="QueuePutStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                </parameter>
+            </section>
+            <section className="Server">
+                <parameter classPath="java.lang.Integer" name="maxJobs">
+                    <value>1</value>
+                </parameter>
+                <parameter array="true" classPath="java.lang.Integer" name="numberOfVisits">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="java.lang.Integer" name="numberOfVisits">
+                        <value>1</value>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="java.lang.Integer" name="numberOfVisits">
+                        <value>1</value>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="java.lang.Integer" name="numberOfVisits">
+                        <value>1</value>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="java.lang.Integer" name="numberOfVisits">
+                        <value>1</value>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="java.lang.Integer" name="numberOfVisits">
+                        <value>1</value>
+                    </subParameter>
+                </parameter>
+                <parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>0.47619047619047616</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>1.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>0.4464285714285714</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>1.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>1.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                </parameter>
+            </section>
+            <section className="Router">
+                <parameter array="true" classPath="jmt.engine.NetStrategies.RoutingStrategy" name="RoutingStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+                        <subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>Lan Wireless</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>0.0</value>
+                                </subParameter>
+                            </subParameter>
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>Switch StartUp Sampling In &amp; Out</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>1.0</value>
+                                </subParameter>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+                        <subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>Lan Wireless</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>1.0</value>
+                                </subParameter>
+                            </subParameter>
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>Switch StartUp Sampling In &amp; Out</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>0.0</value>
+                                </subParameter>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                </parameter>
+            </section>
+        </node>
+        <node name="SP Outgoing Sensors">
+            <section className="Queue">
+                <parameter classPath="java.lang.Integer" name="size">
+                    <value>-1</value>
+                </parameter>
+                <parameter array="true" classPath="java.lang.String" name="dropStrategies">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                </parameter>
+                <parameter classPath="jmt.engine.NetStrategies.QueueGetStrategies.FCFSstrategy" name="FCFSstrategy"/>
+                <parameter array="true" classPath="jmt.engine.NetStrategies.QueuePutStrategy" name="QueuePutStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                </parameter>
+            </section>
+            <section className="Delay">
+                <parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>1.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>1.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>1.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>0.017241379310344827</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>1.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                </parameter>
+            </section>
+            <section className="Router">
+                <parameter array="true" classPath="jmt.engine.NetStrategies.RoutingStrategy" name="RoutingStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                </parameter>
+            </section>
+        </node>
+        <node name="Lan Wireless">
+            <section className="Queue">
+                <parameter classPath="java.lang.Integer" name="size">
+                    <value>-1</value>
+                </parameter>
+                <parameter array="true" classPath="java.lang.String" name="dropStrategies">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                </parameter>
+                <parameter classPath="jmt.engine.NetStrategies.QueueGetStrategies.FCFSstrategy" name="FCFSstrategy"/>
+                <parameter array="true" classPath="jmt.engine.NetStrategies.QueuePutStrategy" name="QueuePutStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                </parameter>
+            </section>
+            <section className="Delay">
+                <parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>1.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>1.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>0.0017857142857142857</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>0.0017857142857142857</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>1.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                </parameter>
+            </section>
+            <section className="Router">
+                <parameter array="true" classPath="jmt.engine.NetStrategies.RoutingStrategy" name="RoutingStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+                        <subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>SP Inland Sensors</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>1.0</value>
+                                </subParameter>
+                            </subParameter>
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>SP Outgoing Sensors</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>0.0</value>
+                                </subParameter>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+                        <subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>SP Inland Sensors</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>0.0</value>
+                                </subParameter>
+                            </subParameter>
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>SP Outgoing Sensors</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>1.0</value>
+                                </subParameter>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                </parameter>
+            </section>
+        </node>
+        <node name="Lan Internet">
+            <section className="Queue">
+                <parameter classPath="java.lang.Integer" name="size">
+                    <value>-1</value>
+                </parameter>
+                <parameter array="true" classPath="java.lang.String" name="dropStrategies">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                </parameter>
+                <parameter classPath="jmt.engine.NetStrategies.QueueGetStrategies.FCFSstrategy" name="FCFSstrategy"/>
+                <parameter array="true" classPath="jmt.engine.NetStrategies.QueuePutStrategy" name="QueuePutStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                </parameter>
+            </section>
+            <section className="Delay">
+                <parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>1.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>1.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>0.005714285714285714</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>0.005714285714285714</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>0.002857142857142857</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                </parameter>
+            </section>
+            <section className="Router">
+                <parameter array="true" classPath="jmt.engine.NetStrategies.RoutingStrategy" name="RoutingStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+                        <subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>Purification System</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>0.0</value>
+                                </subParameter>
+                            </subParameter>
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>Water Company Server</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>1.0</value>
+                                </subParameter>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+                        <subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>Purification System</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>0.0</value>
+                                </subParameter>
+                            </subParameter>
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>Water Company Server</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>1.0</value>
+                                </subParameter>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+                        <subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>Purification System</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>0.5</value>
+                                </subParameter>
+                            </subParameter>
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>Water Company Server</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>0.5</value>
+                                </subParameter>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                </parameter>
+            </section>
+        </node>
+        <node name="Purification System">
+            <section className="Queue">
+                <parameter classPath="java.lang.Integer" name="size">
+                    <value>-1</value>
+                </parameter>
+                <parameter array="true" classPath="java.lang.String" name="dropStrategies">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                </parameter>
+                <parameter classPath="jmt.engine.NetStrategies.QueueGetStrategies.FCFSstrategy" name="FCFSstrategy"/>
+                <parameter array="true" classPath="jmt.engine.NetStrategies.QueuePutStrategy" name="QueuePutStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                </parameter>
+            </section>
+            <section className="Server">
+                <parameter classPath="java.lang.Integer" name="maxJobs">
+                    <value>1</value>
+                </parameter>
+                <parameter array="true" classPath="java.lang.Integer" name="numberOfVisits">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="java.lang.Integer" name="numberOfVisits">
+                        <value>1</value>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="java.lang.Integer" name="numberOfVisits">
+                        <value>1</value>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="java.lang.Integer" name="numberOfVisits">
+                        <value>1</value>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="java.lang.Integer" name="numberOfVisits">
+                        <value>1</value>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="java.lang.Integer" name="numberOfVisits">
+                        <value>1</value>
+                    </subParameter>
+                </parameter>
+                <parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>1.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>1.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>1.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>1.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>0.4347826086956522</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                </parameter>
+            </section>
+            <section className="Router">
+                <parameter array="true" classPath="jmt.engine.NetStrategies.RoutingStrategy" name="RoutingStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+                        <subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>Check Water Quality Sink</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>1.0</value>
+                                </subParameter>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                </parameter>
+            </section>
+        </node>
+        <node name="Water Company Server">
+            <section className="Queue">
+                <parameter classPath="java.lang.Integer" name="size">
+                    <value>-1</value>
+                </parameter>
+                <parameter array="true" classPath="java.lang.String" name="dropStrategies">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                </parameter>
+                <parameter classPath="jmt.engine.NetStrategies.QueueGetStrategies.FCFSstrategy" name="FCFSstrategy"/>
+                <parameter array="true" classPath="jmt.engine.NetStrategies.QueuePutStrategy" name="QueuePutStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                </parameter>
+            </section>
+            <section className="Server">
+                <parameter classPath="java.lang.Integer" name="maxJobs">
+                    <value>1</value>
+                </parameter>
+                <parameter array="true" classPath="java.lang.Integer" name="numberOfVisits">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="java.lang.Integer" name="numberOfVisits">
+                        <value>1</value>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="java.lang.Integer" name="numberOfVisits">
+                        <value>1</value>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="java.lang.Integer" name="numberOfVisits">
+                        <value>1</value>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="java.lang.Integer" name="numberOfVisits">
+                        <value>1</value>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="java.lang.Integer" name="numberOfVisits">
+                        <value>1</value>
+                    </subParameter>
+                </parameter>
+                <parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>1.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>1.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>3.2258064516129035</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>3.2258064516129035</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>1.6</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                </parameter>
+            </section>
+            <section className="Router">
+                <parameter array="true" classPath="jmt.engine.NetStrategies.RoutingStrategy" name="RoutingStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                </parameter>
+            </section>
+        </node>
+        <node name="Water Company Disk">
+            <section className="Queue">
+                <parameter classPath="java.lang.Integer" name="size">
+                    <value>-1</value>
+                </parameter>
+                <parameter array="true" classPath="java.lang.String" name="dropStrategies">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                </parameter>
+                <parameter classPath="jmt.engine.NetStrategies.QueueGetStrategies.FCFSstrategy" name="FCFSstrategy"/>
+                <parameter array="true" classPath="jmt.engine.NetStrategies.QueuePutStrategy" name="QueuePutStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                </parameter>
+            </section>
+            <section className="Server">
+                <parameter classPath="java.lang.Integer" name="maxJobs">
+                    <value>1</value>
+                </parameter>
+                <parameter array="true" classPath="java.lang.Integer" name="numberOfVisits">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="java.lang.Integer" name="numberOfVisits">
+                        <value>1</value>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="java.lang.Integer" name="numberOfVisits">
+                        <value>1</value>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="java.lang.Integer" name="numberOfVisits">
+                        <value>1</value>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="java.lang.Integer" name="numberOfVisits">
+                        <value>1</value>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="java.lang.Integer" name="numberOfVisits">
+                        <value>1</value>
+                    </subParameter>
+                </parameter>
+                <parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>1.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>1.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>0.04</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>0.04</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>0.08</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                </parameter>
+            </section>
+            <section className="Router">
+                <parameter array="true" classPath="jmt.engine.NetStrategies.RoutingStrategy" name="RoutingStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+                        <subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>Check Water Quality Sink</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>0.0</value>
+                                </subParameter>
+                            </subParameter>
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>Delay Samples</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>1.0</value>
+                                </subParameter>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+                        <subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>Check Water Quality Sink</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>0.0</value>
+                                </subParameter>
+                            </subParameter>
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>Delay Samples</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>1.0</value>
+                                </subParameter>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+                        <subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>Check Water Quality Sink</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>1.0</value>
+                                </subParameter>
+                            </subParameter>
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>Delay Samples</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>0.0</value>
+                                </subParameter>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                </parameter>
+            </section>
+        </node>
+        <node name="Check Water Quality Sink">
+            <section className="JobSink"/>
+        </node>
+        <node name="Delay Samples">
+            <section className="Queue">
+                <parameter classPath="java.lang.Integer" name="size">
+                    <value>-1</value>
+                </parameter>
+                <parameter array="true" classPath="java.lang.String" name="dropStrategies">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                </parameter>
+                <parameter classPath="jmt.engine.NetStrategies.QueueGetStrategies.FCFSstrategy" name="FCFSstrategy"/>
+                <parameter array="true" classPath="jmt.engine.NetStrategies.QueuePutStrategy" name="QueuePutStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                </parameter>
+            </section>
+            <section className="Delay">
+                <parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>1.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>1.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
+                        <subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="t">
+                                <value>100000.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.DeterministicDistr" name="Deterministic"/>
+                        <subParameter classPath="jmt.engine.random.DeterministicDistrPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="t">
+                                <value>100000.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>1.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                </parameter>
+            </section>
+            <section className="Router">
+                <parameter array="true" classPath="jmt.engine.NetStrategies.RoutingStrategy" name="RoutingStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                </parameter>
+            </section>
+        </node>
+        <node name="QS Quality Control App">
+            <section className="RandomSource">
+                <parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <value>null</value>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <value>null</value>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <value>null</value>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <value>null</value>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>0.001</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                </parameter>
+            </section>
+            <section className="ServiceTunnel"/>
+            <section className="Router">
+                <parameter array="true" classPath="jmt.engine.NetStrategies.RoutingStrategy" name="RoutingStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                </parameter>
+            </section>
+        </node>
+        <node name="SP CU Out">
+            <section className="Queue">
+                <parameter classPath="java.lang.Integer" name="size">
+                    <value>-1</value>
+                </parameter>
+                <parameter array="true" classPath="java.lang.String" name="dropStrategies">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                </parameter>
+                <parameter classPath="jmt.engine.NetStrategies.QueueGetStrategies.FCFSstrategy" name="FCFSstrategy"/>
+                <parameter array="true" classPath="jmt.engine.NetStrategies.QueuePutStrategy" name="QueuePutStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                </parameter>
+            </section>
+            <section className="Server">
+                <parameter classPath="java.lang.Integer" name="maxJobs">
+                    <value>1</value>
+                </parameter>
+                <parameter array="true" classPath="java.lang.Integer" name="numberOfVisits">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="java.lang.Integer" name="numberOfVisits">
+                        <value>1</value>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="java.lang.Integer" name="numberOfVisits">
+                        <value>1</value>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="java.lang.Integer" name="numberOfVisits">
+                        <value>1</value>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="java.lang.Integer" name="numberOfVisits">
+                        <value>1</value>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="java.lang.Integer" name="numberOfVisits">
+                        <value>1</value>
+                    </subParameter>
+                </parameter>
+                <parameter array="true" classPath="jmt.engine.NetStrategies.ServiceStrategy" name="ServiceStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>1.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>0.47619047619047616</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>1.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>0.4464285714285714</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.ServiceStrategies.ServiceTimeStrategy" name="ServiceTimeStrategy">
+                        <subParameter classPath="jmt.engine.random.Exponential" name="Exponential"/>
+                        <subParameter classPath="jmt.engine.random.ExponentialPar" name="distrPar">
+                            <subParameter classPath="java.lang.Double" name="lambda">
+                                <value>1.0</value>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                </parameter>
+            </section>
+            <section className="Router">
+                <parameter array="true" classPath="jmt.engine.NetStrategies.RoutingStrategy" name="RoutingStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+                        <subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>Lan Wireless</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>0.0</value>
+                                </subParameter>
+                            </subParameter>
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>Switch StartUp Sampling In &amp; Out</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>1.0</value>
+                                </subParameter>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.EmpiricalStrategy" name="Probabilities">
+                        <subParameter array="true" classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntryArray">
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>Lan Wireless</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>1.0</value>
+                                </subParameter>
+                            </subParameter>
+                            <subParameter classPath="jmt.engine.random.EmpiricalEntry" name="EmpiricalEntry">
+                                <subParameter classPath="java.lang.String" name="stationName">
+                                    <value>Switch StartUp Sampling In &amp; Out</value>
+                                </subParameter>
+                                <subParameter classPath="java.lang.Double" name="probability">
+                                    <value>0.0</value>
+                                </subParameter>
+                            </subParameter>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                </parameter>
+            </section>
+        </node>
+        <node name="Switch StartUp Sampling In &amp; Out">
+            <section className="Queue">
+                <parameter classPath="java.lang.Integer" name="size">
+                    <value>-1</value>
+                </parameter>
+                <parameter array="true" classPath="java.lang.String" name="dropStrategies">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="java.lang.String" name="dropStrategy">
+                        <value>drop</value>
+                    </subParameter>
+                </parameter>
+                <parameter classPath="jmt.engine.NetStrategies.QueueGetStrategies.FCFSstrategy" name="FCFSstrategy"/>
+                <parameter array="true" classPath="jmt.engine.NetStrategies.QueuePutStrategy" name="QueuePutStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.QueuePutStrategies.TailStrategy" name="TailStrategy"/>
+                </parameter>
+            </section>
+            <section className="ClassSwitch">
+                <parameter array="true" classPath="java.lang.Object" name="matrix">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter array="true" classPath="java.lang.Float" name="row">
+                        <refClass>StartUp Sampling Water In</refClass>
+                        <subParameter classPath="java.lang.Float" name="cell">
+                            <value>0.0</value>
+                        </subParameter>
+                        <refClass>StartUp Sampling Water Out</refClass>
+                        <subParameter classPath="java.lang.Float" name="cell">
+                            <value>0.0</value>
+                        </subParameter>
+                        <refClass>Sampling In</refClass>
+                        <subParameter classPath="java.lang.Float" name="cell">
+                            <value>1.0</value>
+                        </subParameter>
+                        <refClass>Sampling Out</refClass>
+                        <subParameter classPath="java.lang.Float" name="cell">
+                            <value>0.0</value>
+                        </subParameter>
+                        <refClass>Check Water Quality</refClass>
+                        <subParameter classPath="java.lang.Float" name="cell">
+                            <value>0.0</value>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter array="true" classPath="java.lang.Float" name="row">
+                        <refClass>StartUp Sampling Water In</refClass>
+                        <subParameter classPath="java.lang.Float" name="cell">
+                            <value>0.0</value>
+                        </subParameter>
+                        <refClass>StartUp Sampling Water Out</refClass>
+                        <subParameter classPath="java.lang.Float" name="cell">
+                            <value>0.0</value>
+                        </subParameter>
+                        <refClass>Sampling In</refClass>
+                        <subParameter classPath="java.lang.Float" name="cell">
+                            <value>0.0</value>
+                        </subParameter>
+                        <refClass>Sampling Out</refClass>
+                        <subParameter classPath="java.lang.Float" name="cell">
+                            <value>1.0</value>
+                        </subParameter>
+                        <refClass>Check Water Quality</refClass>
+                        <subParameter classPath="java.lang.Float" name="cell">
+                            <value>0.0</value>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling In</refClass>
+                    <subParameter array="true" classPath="java.lang.Float" name="row">
+                        <refClass>StartUp Sampling Water In</refClass>
+                        <subParameter classPath="java.lang.Float" name="cell">
+                            <value>0.0</value>
+                        </subParameter>
+                        <refClass>StartUp Sampling Water Out</refClass>
+                        <subParameter classPath="java.lang.Float" name="cell">
+                            <value>0.0</value>
+                        </subParameter>
+                        <refClass>Sampling In</refClass>
+                        <subParameter classPath="java.lang.Float" name="cell">
+                            <value>1.0</value>
+                        </subParameter>
+                        <refClass>Sampling Out</refClass>
+                        <subParameter classPath="java.lang.Float" name="cell">
+                            <value>0.0</value>
+                        </subParameter>
+                        <refClass>Check Water Quality</refClass>
+                        <subParameter classPath="java.lang.Float" name="cell">
+                            <value>0.0</value>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter array="true" classPath="java.lang.Float" name="row">
+                        <refClass>StartUp Sampling Water In</refClass>
+                        <subParameter classPath="java.lang.Float" name="cell">
+                            <value>0.0</value>
+                        </subParameter>
+                        <refClass>StartUp Sampling Water Out</refClass>
+                        <subParameter classPath="java.lang.Float" name="cell">
+                            <value>0.0</value>
+                        </subParameter>
+                        <refClass>Sampling In</refClass>
+                        <subParameter classPath="java.lang.Float" name="cell">
+                            <value>0.0</value>
+                        </subParameter>
+                        <refClass>Sampling Out</refClass>
+                        <subParameter classPath="java.lang.Float" name="cell">
+                            <value>1.0</value>
+                        </subParameter>
+                        <refClass>Check Water Quality</refClass>
+                        <subParameter classPath="java.lang.Float" name="cell">
+                            <value>0.0</value>
+                        </subParameter>
+                    </subParameter>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter array="true" classPath="java.lang.Float" name="row">
+                        <refClass>StartUp Sampling Water In</refClass>
+                        <subParameter classPath="java.lang.Float" name="cell">
+                            <value>0.0</value>
+                        </subParameter>
+                        <refClass>StartUp Sampling Water Out</refClass>
+                        <subParameter classPath="java.lang.Float" name="cell">
+                            <value>0.0</value>
+                        </subParameter>
+                        <refClass>Sampling In</refClass>
+                        <subParameter classPath="java.lang.Float" name="cell">
+                            <value>0.0</value>
+                        </subParameter>
+                        <refClass>Sampling Out</refClass>
+                        <subParameter classPath="java.lang.Float" name="cell">
+                            <value>0.0</value>
+                        </subParameter>
+                        <refClass>Check Water Quality</refClass>
+                        <subParameter classPath="java.lang.Float" name="cell">
+                            <value>1.0</value>
+                        </subParameter>
+                    </subParameter>
+                </parameter>
+            </section>
+            <section className="Router">
+                <parameter array="true" classPath="jmt.engine.NetStrategies.RoutingStrategy" name="RoutingStrategy">
+                    <refClass>StartUp Sampling Water In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>StartUp Sampling Water Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>Sampling In</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>Sampling Out</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                    <refClass>Check Water Quality</refClass>
+                    <subParameter classPath="jmt.engine.NetStrategies.RoutingStrategies.RandomStrategy" name="Random"/>
+                </parameter>
+            </section>
+        </node>
+        <measure alpha="0.01" name="Control Center Server_Utilization" nodeType="station" precision="0.03" referenceNode="Control Center Server" referenceUserClass="" type="Utilization" verbose="false"/>
+        <measure alpha="0.01" name="SP CU In_Utilization" nodeType="station" precision="0.1" referenceNode="SP CU In" referenceUserClass="" type="Utilization" verbose="false"/>
+        <measure alpha="0.01" name="Purification System_Utilization" nodeType="station" precision="0.1" referenceNode="Purification System" referenceUserClass="" type="Utilization" verbose="false"/>
+        <measure alpha="0.01" name="Water Company Server_Utilization" nodeType="station" precision="0.1" referenceNode="Water Company Server" referenceUserClass="" type="Utilization" verbose="false"/>
+        <measure alpha="0.01" name="Water Company Disk_Utilization" nodeType="station" precision="0.1" referenceNode="Water Company Disk" referenceUserClass="" type="Utilization" verbose="false"/>
+        <measure alpha="0.01" name="Control Center Server_Sampling In_Response Time" nodeType="station" precision="0.03" referenceNode="Control Center Server" referenceUserClass="Sampling In" type="Response Time" verbose="false"/>
+        <measure alpha="0.01" name="SP CU In_Sampling In_Response Time" nodeType="station" precision="0.1" referenceNode="SP CU In" referenceUserClass="Sampling In" type="Response Time" verbose="false"/>
+        <measure alpha="0.01" name="Water Company Server_Sampling In_Response Time" nodeType="station" precision="0.1" referenceNode="Water Company Server" referenceUserClass="Sampling In" type="Response Time" verbose="false"/>
+        <measure alpha="0.01" name="Water Company Disk_Sampling In_Response Time" nodeType="station" precision="0.1" referenceNode="Water Company Disk" referenceUserClass="Sampling In" type="Response Time" verbose="false"/>
+        <measure alpha="0.01" name="Control Center Server_Sampling Out_Response Time" nodeType="station" precision="0.03" referenceNode="Control Center Server" referenceUserClass="Sampling Out" type="Response Time" verbose="false"/>
+        <measure alpha="0.01" name="SP CU Out_Sampling Out_Response Time" nodeType="station" precision="0.1" referenceNode="SP CU Out" referenceUserClass="Sampling Out" type="Response Time" verbose="false"/>
+        <measure alpha="0.01" name="Water Company Server_Sampling Out_Response Time" nodeType="station" precision="0.1" referenceNode="Water Company Server" referenceUserClass="Sampling Out" type="Response Time" verbose="false"/>
+        <measure alpha="0.01" name="Water Company Disk_Sampling Out_Response Time" nodeType="station" precision="0.1" referenceNode="Water Company Disk" referenceUserClass="Sampling Out" type="Response Time" verbose="false"/>
+        <measure alpha="0.01" name="Check Water Quality Sink_Check Water Quality_Throughput per Sink" nodeType="station" precision="0.03" referenceNode="Check Water Quality Sink" referenceUserClass="Check Water Quality" type="Throughput per Sink" verbose="false"/>
+        <measure alpha="0.01" name="Check Water Quality Sink_Check Water Quality_Response Time per Sink" nodeType="station" precision="0.03" referenceNode="Check Water Quality Sink" referenceUserClass="Check Water Quality" type="Response Time per Sink" verbose="false"/>
+        <measure alpha="0.01" name="SP CU Out_Utilization" nodeType="station" precision="0.1" referenceNode="SP CU Out" referenceUserClass="" type="Utilization" verbose="false"/>
+        <connection source="Lan Wired" target="Control Center Server"/>
+        <connection source="Control Center Server" target="SP CU In"/>
+        <connection source="Control Center Server" target="Lan Internet"/>
+        <connection source="Control Center Server" target="SP CU Out"/>
+        <connection source="SP Inland Sensors" target="Lan Internet"/>
+        <connection source="SP CU In" target="Lan Wireless"/>
+        <connection source="SP CU In" target="Switch StartUp Sampling In &amp; Out"/>
+        <connection source="SP Outgoing Sensors" target="Lan Internet"/>
+        <connection source="Lan Wireless" target="SP Inland Sensors"/>
+        <connection source="Lan Wireless" target="SP Outgoing Sensors"/>
+        <connection source="Lan Internet" target="Purification System"/>
+        <connection source="Lan Internet" target="Water Company Server"/>
+        <connection source="Purification System" target="Check Water Quality Sink"/>
+        <connection source="Water Company Server" target="Water Company Disk"/>
+        <connection source="Water Company Disk" target="Check Water Quality Sink"/>
+        <connection source="Water Company Disk" target="Delay Samples"/>
+        <connection source="Delay Samples" target="Lan Wired"/>
+        <connection source="QS Quality Control App" target="Lan Wired"/>
+        <connection source="SP CU Out" target="Lan Wireless"/>
+        <connection source="SP CU Out" target="Switch StartUp Sampling In &amp; Out"/>
+        <connection source="Switch StartUp Sampling In &amp; Out" target="Control Center Server"/>
+        <preload>
+            <stationPopulations stationName="Delay Samples">
+                <classPopulation population="500" refClass="StartUp Sampling Water In"/>
+                <classPopulation population="500" refClass="StartUp Sampling Water Out"/>
+            </stationPopulations>
+        </preload>
+    </sim>
+    <jmodel xsi:noNamespaceSchemaLocation="JModelGUI.xsd">
+        <userClass color="#FF0000FF" name="StartUp Sampling Water In"/>
+        <userClass color="#FFFF0000" name="StartUp Sampling Water Out"/>
+        <userClass color="#FF00FF00" name="Sampling In"/>
+        <userClass color="#FFFF00FF" name="Sampling Out"/>
+        <userClass color="#FFFFC800" name="Check Water Quality"/>
+        <station name="Lan Wired">
+            <position rotate="false" x="237.0" y="239.0"/>
+        </station>
+        <station name="Control Center Server">
+            <position rotate="false" x="339.0" y="258.0"/>
+        </station>
+        <station name="SP Inland Sensors">
+            <position rotate="false" x="914.0" y="436.0"/>
+        </station>
+        <station name="SP CU In">
+            <position rotate="false" x="526.0" y="466.0"/>
+        </station>
+        <station name="SP Outgoing Sensors">
+            <position rotate="false" x="905.0" y="620.0"/>
+        </station>
+        <station name="Lan Wireless">
+            <position rotate="false" x="760.0" y="495.0"/>
+        </station>
+        <station name="Lan Internet">
+            <position rotate="false" x="1100.0" y="236.0"/>
+        </station>
+        <station name="Purification System">
+            <position rotate="false" x="1334.0" y="539.0"/>
+        </station>
+        <station name="Water Company Server">
+            <position rotate="false" x="1226.0" y="255.0"/>
+        </station>
+        <station name="Water Company Disk">
+            <position rotate="false" x="1412.0" y="255.0"/>
+        </station>
+        <station name="Check Water Quality Sink">
+            <position rotate="false" x="1606.0" y="540.0"/>
+        </station>
+        <station name="Delay Samples">
+            <position rotate="false" x="1600.0" y="55.0"/>
+        </station>
+        <station name="QS Quality Control App">
+            <position rotate="false" x="32.0" y="261.0"/>
+        </station>
+        <station name="SP CU Out">
+            <position rotate="false" x="524.0" y="592.0"/>
+        </station>
+        <station name="Switch StartUp Sampling In &amp; Out">
+            <position rotate="false" x="650.0" y="672.0"/>
+        </station>
+        <parametric classPath="jmt.gui.common.definitions.parametric.NumberOfCustomerParametricAnalysis" enabled="true">
+            <field name="Is single class" value="false"/>
+            <field name="Steps" value="20"/>
+            <field name="To" value="20000.0"/>
+            <field name="Type" value="Number of customers"/>
+        </parametric>
+    </jmodel>
+    <results elapsedTime="0" logDecimalSeparator="," logDelimiter=";" pollingInterval="0.0" xsi:noNamespaceSchemaLocation="Results.xsd">
+        <measure alpha="0.99" analyzedSamples="20" name="Control Center Server_All classes_Utilization" nodeType="station" precision="0.03" referenceClass="All classes" referenceStation="Control Center Server" type="4">
+            <sample lowerBound="0.011976658050684602" meanValue="0.012296892477222333" upperBound="0.012617126903760064" validity="true"/>
+            <sample lowerBound="0.022569257961584106" meanValue="0.0232641369740342" upperBound="0.02395901598648429" validity="true"/>
+            <sample lowerBound="0.03364798448834021" meanValue="0.03422992683408667" upperBound="0.03481186917983313" validity="true"/>
+            <sample lowerBound="0.041988523562336386" meanValue="0.043229530164160104" upperBound="0.04447053676598382" validity="true"/>
+            <sample lowerBound="0.044068311811214976" meanValue="0.04525228713217973" upperBound="0.04643626245314448" validity="true"/>
+            <sample lowerBound="0.0443727804582985" meanValue="0.04549365248242874" upperBound="0.04661452450655898" validity="true"/>
+            <sample lowerBound="0.0449275683588474" meanValue="0.04594068346305702" upperBound="0.04695379856726664" validity="true"/>
+            <sample lowerBound="0.04469853885635046" meanValue="0.04574861637496742" upperBound="0.046798693893584375" validity="true"/>
+            <sample lowerBound="0.045367108404808044" meanValue="0.04571514935548006" upperBound="0.04606319030615207" validity="true"/>
+            <sample lowerBound="0.04536165250287332" meanValue="0.045718960293383654" upperBound="0.046076268083893986" validity="true"/>
+            <sample lowerBound="0.04537172127178409" meanValue="0.04573136114864199" upperBound="0.04609100102549989" validity="true"/>
+            <sample lowerBound="0.04535252965965946" meanValue="0.04572407859891039" upperBound="0.046095627538161314" validity="true"/>
+            <sample lowerBound="0.044927858106209334" meanValue="0.04603842947876884" upperBound="0.04714900085132835" validity="true"/>
+            <sample lowerBound="0.04443039215153732" meanValue="0.04537791585912498" upperBound="0.04632543956671263" validity="true"/>
+            <sample lowerBound="0.04377065002322722" meanValue="0.0446550210818968" upperBound="0.045539392140566376" validity="true"/>
+            <sample lowerBound="0.044710571209945434" meanValue="0.0455412500151684" upperBound="0.046371928820391366" validity="true"/>
+            <sample lowerBound="0.045037173216022304" meanValue="0.045876825689873044" upperBound="0.04671647816372378" validity="true"/>
+            <sample lowerBound="0.04400413874390801" meanValue="0.04524674714855323" upperBound="0.04648935555319845" validity="true"/>
+            <sample lowerBound="0.04488742375883594" meanValue="0.0455345956862537" upperBound="0.04618176761367145" validity="true"/>
+            <sample lowerBound="0.04426967336844964" meanValue="0.04503138189319846" upperBound="0.04579309041794728" validity="true"/>
+        </measure>
+        <measure alpha="0.99" analyzedSamples="20" name="SP CU In_All classes_Utilization" nodeType="station" precision="0.1" referenceClass="All classes" referenceStation="SP CU In" type="4">
+            <sample lowerBound="0.009859609318046265" meanValue="0.010872598776290978" upperBound="0.011885588234535692" validity="true"/>
+            <sample lowerBound="0.01965135287764715" meanValue="0.02136983875973734" upperBound="0.023088324641827532" validity="true"/>
+            <sample lowerBound="0.027965484028807032" meanValue="0.03090515159533299" upperBound="0.03384481916185895" validity="true"/>
+            <sample lowerBound="0.03448035610815502" meanValue="0.03651144402732209" upperBound="0.03854253194648916" validity="true"/>
+            <sample lowerBound="0.03666017937406571" meanValue="0.03893546304294074" upperBound="0.041210746711815766" validity="true"/>
+            <sample lowerBound="0.04270591546645489" meanValue="0.04462988593705713" upperBound="0.04655385640765936" validity="true"/>
+            <sample lowerBound="0.04237922546930875" meanValue="0.04424080205382701" upperBound="0.046102378638345265" validity="true"/>
+            <sample lowerBound="0.04061774803595093" meanValue="0.04448919448404673" upperBound="0.048360640932142526" validity="true"/>
+            <sample lowerBound="0.042687089042133676" meanValue="0.04434377209466433" upperBound="0.04600045514719498" validity="true"/>
+            <sample lowerBound="0.836572587411448" meanValue="0.9035726912244254" upperBound="0.9705727950374028" validity="true"/>
+            <sample lowerBound="0.8169936924200704" meanValue="0.8803441358468138" upperBound="0.9436945792735573" validity="true"/>
+            <sample lowerBound="0.042774010411460166" meanValue="0.0448558443002327" upperBound="0.04693767818900523" validity="true"/>
+            <sample lowerBound="0.04047250551247048" meanValue="0.04450480399611952" upperBound="0.048537102479768564" validity="true"/>
+            <sample lowerBound="0.037443756390524406" meanValue="0.039716615241170095" upperBound="0.04198947409181578" validity="true"/>
+            <sample lowerBound="0.8190548896671984" meanValue="0.896424254298092" upperBound="0.9737936189289856" validity="true"/>
+            <sample lowerBound="0.8510221169099325" meanValue="0.8908392802355024" upperBound="0.9306564435610724" validity="true"/>
+            <sample lowerBound="0.04064352832003604" meanValue="0.04386735857110174" upperBound="0.04709118882216744" validity="true"/>
+            <sample lowerBound="0.7980421982148653" meanValue="0.864458660942747" upperBound="0.9308751236706287" validity="true"/>
+            <sample lowerBound="0.8416114635202949" meanValue="0.8918708457907217" upperBound="0.9421302280611485" validity="true"/>
+            <sample lowerBound="0.841617805113649" meanValue="0.8910806802055" upperBound="0.940543555297351" validity="true"/>
+        </measure>
+        <measure alpha="0.99" analyzedSamples="20" name="Purification System_All classes_Utilization" nodeType="station" precision="0.1" referenceClass="All classes" referenceStation="Purification System" type="4">
+            <sample lowerBound="0.0010822481265991002" meanValue="0.0011736807246560622" upperBound="0.0012651133227130243" validity="true"/>
+            <sample lowerBound="0.0010515266921593885" meanValue="0.0011340553148819269" upperBound="0.0012165839376044652" validity="true"/>
+            <sample lowerBound="0.0010639918523752923" meanValue="0.0011412042265163663" upperBound="0.0012184166006574402" validity="true"/>
+            <sample lowerBound="0.0010718245341774014" meanValue="0.0011579632495387537" upperBound="0.001244101964900106" validity="true"/>
+            <sample lowerBound="0.001102678806585926" meanValue="0.001150267271633247" upperBound="0.0011978557366805682" validity="true"/>
+            <sample lowerBound="0.001088919318209283" meanValue="0.0011509434039402248" upperBound="0.0012129674896711666" validity="true"/>
+            <sample lowerBound="0.0010719383297797497" meanValue="0.0011436899321741736" upperBound="0.0012154415345685976" validity="true"/>
+            <sample lowerBound="0.0010649027467278486" meanValue="0.0011546832889654647" upperBound="0.0012444638312030809" validity="true"/>
+            <sample lowerBound="0.0010512359326775966" meanValue="0.0011199985822693125" upperBound="0.0011887612318610284" validity="true"/>
+            <sample lowerBound="0.0010463102895346714" meanValue="0.001151142572452118" upperBound="0.0012559748553695647" validity="true"/>
+            <sample lowerBound="0.0010663564736752603" meanValue="0.0011522250083707824" upperBound="0.0012380935430663044" validity="true"/>
+            <sample lowerBound="0.0011022633998563852" meanValue="0.001191815515117068" upperBound="0.001281367630377751" validity="true"/>
+            <sample lowerBound="0.0010867598690764908" meanValue="0.0011728408904512332" upperBound="0.0012589219118259757" validity="true"/>
+            <sample lowerBound="0.0010783262736130082" meanValue="0.0011625542350330877" upperBound="0.0012467821964531672" validity="true"/>
+            <sample lowerBound="0.0010637145440819528" meanValue="0.001153216634178659" upperBound="0.001242718724275365" validity="true"/>
+            <sample lowerBound="0.0010823664917215085" meanValue="0.0011726021704651368" upperBound="0.001262837849208765" validity="true"/>
+            <sample lowerBound="0.00104908539316862" meanValue="0.0011334393426204797" upperBound="0.0012177932920723394" validity="true"/>
+            <sample lowerBound="0.0010689658453965657" meanValue="0.0011522716371285425" upperBound="0.0012355774288605192" validity="true"/>
+            <sample lowerBound="0.0010932234529894922" meanValue="0.0011703910285546315" upperBound="0.0012475586041197709" validity="true"/>
+            <sample lowerBound="0.001051283244811838" meanValue="0.0011263744988478659" upperBound="0.0012014657528838938" validity="true"/>
+        </measure>
+        <measure alpha="0.99" analyzedSamples="20" name="Water Company Server_All classes_Utilization" nodeType="station" precision="0.1" referenceClass="All classes" referenceStation="Water Company Server" type="4">
+            <sample lowerBound="0.003057815620450228" meanValue="0.003366235608844619" upperBound="0.0036746555972390097" validity="true"/>
+            <sample lowerBound="0.00579961374867856" meanValue="0.0061178392136902226" upperBound="0.0064360646787018855" validity="true"/>
+            <sample lowerBound="0.008349218569142306" meanValue="0.008859403874556927" upperBound="0.009369589179971547" validity="true"/>
+            <sample lowerBound="0.008782380929877449" meanValue="0.009562180104616862" upperBound="0.010341979279356275" validity="true"/>
+            <sample lowerBound="0.008742730284804674" meanValue="0.009575357248968623" upperBound="0.010407984213132573" validity="true"/>
+            <sample lowerBound="0.012014450891316445" meanValue="0.012650724085624116" upperBound="0.013286997279931786" validity="true"/>
+            <sample lowerBound="0.011867848463852788" meanValue="0.01262868421815291" upperBound="0.013389519972453032" validity="true"/>
+            <sample lowerBound="0.011849221840212" meanValue="0.012387449197829583" upperBound="0.012925676555447164" validity="true"/>
+            <sample lowerBound="0.009007777132720286" meanValue="0.009624166406902383" upperBound="0.01024055568108448" validity="true"/>
+            <sample lowerBound="0.00887824817162799" meanValue="0.009631965191984612" upperBound="0.010385682212341233" validity="true"/>
+            <sample lowerBound="0.012162931371729068" meanValue="0.012553792273763319" upperBound="0.01294465317579757" validity="true"/>
+            <sample lowerBound="0.012013581559653857" meanValue="0.012386365792165616" upperBound="0.012759150024677375" validity="true"/>
+            <sample lowerBound="0.012081359436263532" meanValue="0.012558494673131741" upperBound="0.01303562990999995" validity="true"/>
+            <sample lowerBound="0.009163072397462923" meanValue="0.010118998982228206" upperBound="0.011074925566993488" validity="true"/>
+            <sample lowerBound="0.012023412109570784" meanValue="0.012500378127475231" upperBound="0.012977344145379679" validity="true"/>
+            <sample lowerBound="0.009563655674223967" meanValue="0.010133471915138704" upperBound="0.010703288156053441" validity="true"/>
+            <sample lowerBound="0.009676947727993374" meanValue="0.01039702338199683" upperBound="0.011117099036000286" validity="true"/>
+            <sample lowerBound="0.0101623637530406" meanValue="0.01073286108736945" upperBound="0.0113033584216983" validity="true"/>
+            <sample lowerBound="0.2513219028012356" meanValue="0.26436120340025676" upperBound="0.2774005039992779" validity="true"/>
+            <sample lowerBound="0.00993225705778053" meanValue="0.010612218006997777" upperBound="0.011292178956215024" validity="true"/>
+        </measure>
+        <measure alpha="0.99" analyzedSamples="20" name="Water Company Disk_All classes_Utilization" nodeType="station" precision="0.1" referenceClass="All classes" referenceStation="Water Company Disk" type="4">
+            <sample lowerBound="0.23878784105270512" meanValue="0.25519745498697954" upperBound="0.27160706892125397" validity="true"/>
+            <sample lowerBound="0.45762923117671295" meanValue="0.5017652487079871" upperBound="0.5459012662392613" validity="true"/>
+            <sample lowerBound="0.6975107281283401" meanValue="0.7530845851004174" upperBound="0.8086584420724947" validity="true"/>
+            <sample lowerBound="0.9791772848751289" meanValue="0.9941310782633361" upperBound="1.0090848716515433" validity="true"/>
+            <sample lowerBound="0.9713515668682959" meanValue="1.0" upperBound="1.028648433131704" validity="true"/>
+            <sample lowerBound="0.9713515668682959" meanValue="1.0" upperBound="1.028648433131704" validity="true"/>
+            <sample lowerBound="0.9713515668682959" meanValue="1.0" upperBound="1.028648433131704" validity="true"/>
+            <sample lowerBound="0.9713515668682959" meanValue="1.0" upperBound="1.028648433131704" validity="true"/>
+            <sample lowerBound="0.9713515668682959" meanValue="1.0" upperBound="1.028648433131704" validity="true"/>
+            <sample lowerBound="0.9713515668682959" meanValue="1.0" upperBound="1.028648433131704" validity="true"/>
+            <sample lowerBound="0.9713515668682959" meanValue="1.0" upperBound="1.028648433131704" validity="true"/>
+            <sample lowerBound="0.9713515668682959" meanValue="1.0" upperBound="1.028648433131704" validity="true"/>
+            <sample lowerBound="0.9713515668682959" meanValue="1.0" upperBound="1.028648433131704" validity="true"/>
+            <sample lowerBound="0.9713515668682959" meanValue="1.0" upperBound="1.028648433131704" validity="true"/>
+            <sample lowerBound="0.9713515668682959" meanValue="1.0" upperBound="1.028648433131704" validity="true"/>
+            <sample lowerBound="0.9713515668682959" meanValue="1.0" upperBound="1.028648433131704" validity="true"/>
+            <sample lowerBound="0.9713515668682959" meanValue="1.0" upperBound="1.028648433131704" validity="true"/>
+            <sample lowerBound="0.9713515668682959" meanValue="1.0" upperBound="1.028648433131704" validity="true"/>
+            <sample lowerBound="0.9713515668682959" meanValue="1.0" upperBound="1.028648433131704" validity="true"/>
+            <sample lowerBound="0.9713515668682959" meanValue="1.0" upperBound="1.028648433131704" validity="true"/>
+        </measure>
+        <measure alpha="0.99" analyzedSamples="20" name="Control Center Server_Sampling In_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling In" referenceStation="Control Center Server" type="2">
+            <sample lowerBound="1.1263795795815645" meanValue="1.152665758673153" upperBound="1.1789519377647415" validity="true"/>
+            <sample lowerBound="1.1332065924802879" meanValue="1.1680000790006435" upperBound="1.2027935655209991" validity="true"/>
+            <sample lowerBound="1.1437930531795917" meanValue="1.1702093445378141" upperBound="1.1966256358960365" validity="true"/>
+            <sample lowerBound="1.1293328464156287" meanValue="1.1593757566341258" upperBound="1.189418666852623" validity="true"/>
+            <sample lowerBound="1.1449668398807102" meanValue="1.1741040784556702" upperBound="1.2032413170306302" validity="true"/>
+            <sample lowerBound="1.1529543317273343" meanValue="1.1726091014290023" upperBound="1.1922638711306703" validity="true"/>
+            <sample lowerBound="1.1517121314764118" meanValue="1.178563957914492" upperBound="1.2054157843525721" validity="true"/>
+            <sample lowerBound="1.1494635835165044" meanValue="1.1721861588721763" upperBound="1.1949087342278482" validity="true"/>
+            <sample lowerBound="1.1634413578846043" meanValue="1.1901753486682634" upperBound="1.2169093394519224" validity="true"/>
+            <sample lowerBound="1.1472060568044566" meanValue="1.1813427714732279" upperBound="1.215479486141999" validity="true"/>
+            <sample lowerBound="1.155686257850865" meanValue="1.1859800902265851" upperBound="1.2162739226023052" validity="true"/>
+            <sample lowerBound="1.1281165073695567" meanValue="1.1561682161316387" upperBound="1.1842199248937206" validity="true"/>
+            <sample lowerBound="1.1516502996110476" meanValue="1.169478481326431" upperBound="1.1873066630418143" validity="true"/>
+            <sample lowerBound="1.1327929838005848" meanValue="1.1661200023806335" upperBound="1.1994470209606822" validity="true"/>
+            <sample lowerBound="1.1444698083744145" meanValue="1.1739244159989235" upperBound="1.2033790236234325" validity="true"/>
+            <sample lowerBound="1.1465280355853802" meanValue="1.1712713032245625" upperBound="1.1960145708637449" validity="true"/>
+            <sample lowerBound="1.1457161135875185" meanValue="1.1736934425590335" upperBound="1.2016707715305486" validity="true"/>
+            <sample lowerBound="1.140552466821426" meanValue="1.1728368661591568" upperBound="1.2051212654968877" validity="true"/>
+            <sample lowerBound="1.1508129396039783" meanValue="1.1686349492540726" upperBound="1.186456958904167" validity="true"/>
+            <sample lowerBound="1.1541493306668174" meanValue="1.1723174863793142" upperBound="1.190485642091811" validity="true"/>
+        </measure>
+        <measure alpha="0.99" analyzedSamples="20" name="SP CU In_Sampling In_Response Time" nodeType="station" precision="0.1" referenceClass="Sampling In" referenceStation="SP CU In" type="2">
+            <sample lowerBound="2.255488874992511" meanValue="2.310142588197664" upperBound="2.3647963014028166" validity="true"/>
+            <sample lowerBound="2.3022404920425594" meanValue="2.3484495435127384" upperBound="2.3946585949829173" validity="true"/>
+            <sample lowerBound="2.2881442332192266" meanValue="2.3347575621177215" upperBound="2.3813708910162164" validity="true"/>
+            <sample lowerBound="2.309303368963348" meanValue="2.355535771978529" upperBound="2.4017681749937094" validity="true"/>
+            <sample lowerBound="2.2880919994391706" meanValue="2.343360380012032" upperBound="2.3986287605848937" validity="true"/>
+            <sample lowerBound="2.2623627281333216" meanValue="2.3180338036095547" upperBound="2.3737048790857878" validity="true"/>
+            <sample lowerBound="2.2259430940911193" meanValue="2.3521254198821095" upperBound="2.4783077456730997" validity="true"/>
+            <sample lowerBound="2.229751199788046" meanValue="2.2947043104392497" upperBound="2.3596574210904535" validity="true"/>
+            <sample lowerBound="2.281423325953575" meanValue="2.328223235527655" upperBound="2.375023145101735" validity="true"/>
+            <sample lowerBound="2.27659965540051" meanValue="2.320531795143562" upperBound="2.364463934886614" validity="true"/>
+            <sample lowerBound="2.3066016384251777" meanValue="2.3616415123797565" upperBound="2.4166813863343353" validity="true"/>
+            <sample lowerBound="2.238019646869023" meanValue="2.305882782347271" upperBound="2.3737459178255187" validity="true"/>
+            <sample lowerBound="2.252129375174604" meanValue="2.311595561335667" upperBound="2.37106174749673" validity="true"/>
+            <sample lowerBound="2.2760357613944255" meanValue="2.3396135562497102" upperBound="2.403191351104995" validity="true"/>
+            <sample lowerBound="2.309370922512488" meanValue="2.364253553576964" upperBound="2.41913618464144" validity="true"/>
+            <sample lowerBound="2.316523222357954" meanValue="2.370465348049665" upperBound="2.424407473741376" validity="true"/>
+            <sample lowerBound="2.2499695466742637" meanValue="2.316127714075944" upperBound="2.382285881477624" validity="true"/>
+            <sample lowerBound="2.2855806819788445" meanValue="2.3515878026543944" upperBound="2.4175949233299443" validity="true"/>
+            <sample lowerBound="2.2966324262689497" meanValue="2.367898808769387" upperBound="2.439165191269824" validity="true"/>
+            <sample lowerBound="2.2126964602062547" meanValue="2.316339084413412" upperBound="2.4199817086205693" validity="true"/>
+        </measure>
+        <measure alpha="0.99" analyzedSamples="20" name="Water Company Server_Sampling In_Response Time" nodeType="station" precision="0.1" referenceClass="Sampling In" referenceStation="Water Company Server" type="2">
+            <sample lowerBound="0.30451270626176286" meanValue="0.32035185628044394" upperBound="0.336191006299125" validity="true"/>
+            <sample lowerBound="0.28435928512491754" meanValue="0.313555250050542" upperBound="0.3427512149761665" validity="true"/>
+            <sample lowerBound="0.302209357863684" meanValue="0.3165842329333229" upperBound="0.33095910800296174" validity="true"/>
+            <sample lowerBound="0.30763881638403845" meanValue="0.31447526368999407" upperBound="0.3213117109959497" validity="true"/>
+            <sample lowerBound="0.3029603524396666" meanValue="0.3105639863486297" upperBound="0.31816762025759276" validity="true"/>
+            <sample lowerBound="0.29929586292804977" meanValue="0.3140259577999719" upperBound="0.328756052671894" validity="true"/>
+            <sample lowerBound="0.3028736321948303" meanValue="0.3147361000045911" upperBound="0.3265985678143519" validity="true"/>
+            <sample lowerBound="0.3068055915399617" meanValue="0.3135538962123178" upperBound="0.32030220088467387" validity="true"/>
+            <sample lowerBound="0.3062932566076421" meanValue="0.3140456737694336" upperBound="0.3217980909312251" validity="true"/>
+            <sample lowerBound="0.2978174371388518" meanValue="0.3275423295112835" upperBound="0.3572672218837152" validity="true"/>
+            <sample lowerBound="0.3307365097440643" meanValue="0.35552801299800424" upperBound="0.38031951625194416" validity="true"/>
+            <sample lowerBound="0.3530219917130968" meanValue="0.39044773799292704" upperBound="0.4278734842727573" validity="true"/>
+            <sample lowerBound="0.3051408005573831" meanValue="0.3379527687957901" upperBound="0.37076473703419716" validity="true"/>
+            <sample lowerBound="0.33868204838765825" meanValue="0.37442005658137295" upperBound="0.41015806477508765" validity="true"/>
+            <sample lowerBound="0.35999012485889004" meanValue="0.395330832244694" upperBound="0.430671539630498" validity="true"/>
+            <sample lowerBound="0.3759843486018966" meanValue="0.3989887786130558" upperBound="0.421993208624215" validity="true"/>
+            <sample lowerBound="0.3627500312194525" meanValue="0.3945762725799449" upperBound="0.42640251394043727" validity="true"/>
+            <sample lowerBound="0.34102606713474415" meanValue="0.36941591896259124" upperBound="0.39780577079043833" validity="true"/>
+            <sample lowerBound="0.38151204619603546" meanValue="0.4083080717355923" upperBound="0.43510409727514915" validity="true"/>
+            <sample lowerBound="0.3664088124017333" meanValue="0.39783553076767525" upperBound="0.4292622491336172" validity="true"/>
+        </measure>
+        <measure alpha="0.99" analyzedSamples="20" name="Water Company Disk_Sampling In_Response Time" nodeType="station" precision="0.1" referenceClass="Sampling In" referenceStation="Water Company Disk" type="2">
+            <sample lowerBound="52.28177485368114" meanValue="56.65483465803237" upperBound="61.0278944623836" validity="true"/>
+            <sample lowerBound="97.47384249554604" meanValue="107.42375879128225" upperBound="117.37367508701847" validity="true"/>
+            <sample lowerBound="125.38863014582458" meanValue="136.57751369385093" upperBound="147.76639724187729" validity="true"/>
+            <sample lowerBound="1056.9659848453146" meanValue="1121.8206183787356" upperBound="1186.6752519121567" validity="true"/>
+            <sample lowerBound="23389.81766398398" meanValue="23908.734475248213" upperBound="24427.651286512446" validity="true"/>
+            <sample lowerBound="47559.08931442019" meanValue="49171.877371898525" upperBound="50784.66542937686" validity="true"/>
+            <sample lowerBound="73988.92415260828" meanValue="75110.11761361171" upperBound="76231.31107461515" validity="true"/>
+            <sample lowerBound="100343.99367568413" meanValue="101857.85372325" upperBound="103371.71377081586" validity="true"/>
+            <sample lowerBound="123261.88822505268" meanValue="125133.89308823564" upperBound="127005.89795141859" validity="true"/>
+            <sample lowerBound="148076.3086341806" meanValue="150206.95787235047" upperBound="152337.60711052033" validity="true"/>
+            <sample lowerBound="174410.69707384592" meanValue="176510.28042810253" upperBound="178609.86378235914" validity="true"/>
+            <sample lowerBound="195160.6732585534" meanValue="201080.15970618522" upperBound="206999.64615381704" validity="true"/>
+            <sample lowerBound="223236.15582899388" meanValue="226290.4406211548" upperBound="229344.7254133157" validity="true"/>
+            <sample lowerBound="242713.4991878659" meanValue="250308.53880841454" upperBound="257903.57842896317" validity="true"/>
+            <sample lowerBound="268134.28825448756" meanValue="275715.88002035196" upperBound="283297.47178621637" validity="true"/>
+            <sample lowerBound="294645.1727854173" meanValue="303763.1619200581" upperBound="312881.15105469886" validity="true"/>
+            <sample lowerBound="319615.27649507945" meanValue="323742.60275334516" upperBound="327869.92901161086" validity="true"/>
+            <sample lowerBound="348807.1507409379" meanValue="353582.18973567087" upperBound="358357.2287304038" validity="true"/>
+            <sample lowerBound="368668.2568150632" meanValue="373415.8842287887" upperBound="378163.51164251426" validity="true"/>
+            <sample lowerBound="397022.16560715734" meanValue="402106.8247130539" upperBound="407191.4838189504" validity="true"/>
+        </measure>
+        <measure alpha="0.99" analyzedSamples="20" name="Control Center Server_Sampling Out_Response Time" nodeType="station" precision="0.03" referenceClass="Sampling Out" referenceStation="Control Center Server" type="2">
+            <sample lowerBound="1.1240830473851917" meanValue="1.1536565032577688" upperBound="1.183229959130346" validity="true"/>
+            <sample lowerBound="1.121531129962449" meanValue="1.1498126088040044" upperBound="1.1780940876455597" validity="true"/>
+            <sample lowerBound="1.1382389266234514" meanValue="1.168409078656869" upperBound="1.1985792306902867" validity="true"/>
+            <sample lowerBound="1.1421655593012647" meanValue="1.167541718625622" upperBound="1.1929178779499794" validity="true"/>
+            <sample lowerBound="1.1512366455909762" meanValue="1.1759870062960136" upperBound="1.200737367001051" validity="true"/>
+            <sample lowerBound="1.152251269287922" meanValue="1.1737360664030005" upperBound="1.195220863518079" validity="true"/>
+            <sample lowerBound="1.1429531826842438" meanValue="1.1767589506826197" upperBound="1.2105647186809956" validity="true"/>
+            <sample lowerBound="1.1376710905030474" meanValue="1.1698026162962702" upperBound="1.2019341420894931" validity="true"/>
+            <sample lowerBound="1.1438109047748288" meanValue="1.1715142452638045" upperBound="1.1992175857527803" validity="true"/>
+            <sample lowerBound="1.1521297451507853" meanValue="1.1703323315188618" upperBound="1.1885349178869384" validity="true"/>
+            <sample lowerBound="1.1585879087547135" meanValue="1.1875213802542717" upperBound="1.2164548517538298" validity="true"/>
+            <sample lowerBound="1.158167639706112" meanValue="1.1796258797759207" upperBound="1.2010841198457294" validity="true"/>
+            <sample lowerBound="1.1293457385145405" meanValue="1.1607159532486602" upperBound="1.1920861679827799" validity="true"/>
+            <sample lowerBound="1.127454412223903" meanValue="1.1603670498127576" upperBound="1.1932796874016123" validity="true"/>
+            <sample lowerBound="1.1471375721235817" meanValue="1.1785357389539173" upperBound="1.2099339057842529" validity="true"/>
+            <sample lowerBound="1.161100696277003" meanValue="1.1850052192123757" upperBound="1.2089097421477484" validity="true"/>
+            <sample lowerBound="1.15483144174914" meanValue="1.1770716997799744" upperBound="1.1993119578108087" validity="true"/>
+            <sample lowerBound="1.1461554478582303" meanValue="1.168116755764504" upperBound="1.1900780636707777" validity="true"/>
+            <sample lowerBound="1.1497156374713946" meanValue="1.1708066020701713" upperBound="1.191897566668948" validity="true"/>
+            <sample lowerBound="1.1370939773585915" meanValue="1.1627865572023552" upperBound="1.188479137046119" validity="true"/>
+        </measure>
+        <measure alpha="0.99" analyzedSamples="20" name="SP CU Out_Sampling Out_Response Time" nodeType="station" precision="0.1" referenceClass="Sampling Out" referenceStation="SP CU Out" type="2">
+            <sample lowerBound="2.2086093997883545" meanValue="2.272653810936754" upperBound="2.336698222085153" validity="true"/>
+            <sample lowerBound="2.2551462109634475" meanValue="2.323158949479853" upperBound="2.391171687996258" validity="true"/>
+            <sample lowerBound="2.261267905385153" meanValue="2.3312945958402147" upperBound="2.401321286295276" validity="true"/>
+            <sample lowerBound="2.2982564058037918" meanValue="2.3599788506669057" upperBound="2.4217012955300197" validity="true"/>
+            <sample lowerBound="2.2163337494723967" meanValue="2.310912890226907" upperBound="2.405492030981417" validity="true"/>
+            <sample lowerBound="2.31104679590436" meanValue="2.3585053885748435" upperBound="2.405963981245327" validity="true"/>
+            <sample lowerBound="2.2979816163501123" meanValue="2.342153957856408" upperBound="2.386326299362704" validity="true"/>
+            <sample lowerBound="2.2736636200900344" meanValue="2.336131840223293" upperBound="2.398600060356552" validity="true"/>
+            <sample lowerBound="2.26237288315951" meanValue="2.3303414573908814" upperBound="2.3983100316222528" validity="true"/>
+            <sample lowerBound="2.2679642273803537" meanValue="2.3253900498174116" upperBound="2.3828158722544694" validity="true"/>
+            <sample lowerBound="2.2637217860325487" meanValue="2.32636501461604" upperBound="2.389008243199531" validity="true"/>
+            <sample lowerBound="2.2494067132581645" meanValue="2.3093581687341693" upperBound="2.369309624210174" validity="true"/>
+            <sample lowerBound="2.2755272450388957" meanValue="2.3352997162259093" upperBound="2.395072187412923" validity="true"/>
+            <sample lowerBound="2.252909356221542" meanValue="2.313371378125755" upperBound="2.3738334000299686" validity="true"/>
+            <sample lowerBound="2.2867428752789842" meanValue="2.348217795165312" upperBound="2.4096927150516394" validity="true"/>
+            <sample lowerBound="2.2203321039684027" meanValue="2.3375370730377165" upperBound="2.4547420421070303" validity="true"/>
+            <sample lowerBound="2.2887299605673443" meanValue="2.3470696689040835" upperBound="2.4054093772408227" validity="true"/>
+            <sample lowerBound="2.2896105796067796" meanValue="2.3535941029770973" upperBound="2.417577626347415" validity="true"/>
+            <sample lowerBound="2.269423659404732" meanValue="2.3340035889083994" upperBound="2.398583518412067" validity="true"/>
+            <sample lowerBound="2.2965590191028227" meanValue="2.3514158370064435" upperBound="2.4062726549100644" validity="true"/>
+        </measure>
+        <measure alpha="0.99" analyzedSamples="20" name="Water Company Server_Sampling Out_Response Time" nodeType="station" precision="0.1" referenceClass="Sampling Out" referenceStation="Water Company Server" type="2">
+            <sample lowerBound="0.29566231665384995" meanValue="0.31226447818238595" upperBound="0.32886663971092195" validity="true"/>
+            <sample lowerBound="0.30381178148724824" meanValue="0.3151076011421992" upperBound="0.3264034207971502" validity="true"/>
+            <sample lowerBound="0.3030149614631821" meanValue="0.3107662192326785" upperBound="0.3185174770021749" validity="true"/>
+            <sample lowerBound="0.29795853717920323" meanValue="0.3179945866791892" upperBound="0.3380306361791751" validity="true"/>
+            <sample lowerBound="0.3049332490873811" meanValue="0.316331640883247" upperBound="0.3277300326791129" validity="true"/>
+            <sample lowerBound="0.3064491876779988" meanValue="0.31261748440365916" upperBound="0.31878578112931955" validity="true"/>
+            <sample lowerBound="0.3129195876674623" meanValue="0.3356164285145359" upperBound="0.35831326936160945" validity="true"/>
+            <sample lowerBound="0.3065242613870674" meanValue="0.31432620325842053" upperBound="0.32212814512977367" validity="true"/>
+            <sample lowerBound="0.3084804530909848" meanValue="0.31450610085322095" upperBound="0.3205317486154571" validity="true"/>
+            <sample lowerBound="0.31674722322922266" meanValue="0.3486496563233028" upperBound="0.38055208941738294" validity="true"/>
+            <sample lowerBound="0.3238608037756561" meanValue="0.35833649364830344" upperBound="0.39281218352095076" validity="true"/>
+            <sample lowerBound="0.3098583046922807" meanValue="0.31630275656258056" upperBound="0.3227472084328804" validity="true"/>
+            <sample lowerBound="0.35197194755765865" meanValue="0.38529940942328594" upperBound="0.41862687128891324" validity="true"/>
+            <sample lowerBound="0.3244418782748771" meanValue="0.353324976453036" upperBound="0.38220807463119494" validity="true"/>
+            <sample lowerBound="0.3225637259739944" meanValue="0.3562201285851714" upperBound="0.38987653119634835" validity="true"/>
+            <sample lowerBound="0.35972937906109437" meanValue="0.39091392714280354" upperBound="0.4220984752245127" validity="true"/>
+            <sample lowerBound="0.35615868742274837" meanValue="0.38605034207072475" upperBound="0.41594199671870113" validity="true"/>
+            <sample lowerBound="0.35530806765302214" meanValue="0.387595834868778" upperBound="0.4198836020845339" validity="true"/>
+            <sample lowerBound="0.3749072796539578" meanValue="0.4106872798923169" upperBound="0.446467280130676" validity="true"/>
+            <sample lowerBound="0.31879666865947676" meanValue="0.3518534825853783" upperBound="0.38491029651127984" validity="true"/>
+        </measure>
+        <measure alpha="0.99" analyzedSamples="20" name="Water Company Disk_Sampling Out_Response Time" nodeType="station" precision="0.1" referenceClass="Sampling Out" referenceStation="Water Company Disk" type="2">
+            <sample lowerBound="57.80810625073977" meanValue="61.96179860438016" upperBound="66.11549095802054" validity="true"/>
+            <sample lowerBound="94.22748180217559" meanValue="102.62396126433393" upperBound="111.02044072649227" validity="true"/>
+            <sample lowerBound="124.72235139766074" meanValue="136.92662323041932" upperBound="149.13089506317792" validity="true"/>
+            <sample lowerBound="1056.9834697814326" meanValue="1145.9797569128602" upperBound="1234.9760440442878" validity="true"/>
+            <sample lowerBound="23086.937727496148" meanValue="23460.89081440093" upperBound="23834.84390130571" validity="true"/>
+            <sample lowerBound="48565.174394052665" meanValue="49346.15472799348" upperBound="50127.1350619343" validity="true"/>
+            <sample lowerBound="74586.94901488727" meanValue="75766.26902175945" upperBound="76945.58902863163" validity="true"/>
+            <sample lowerBound="99068.3010546996" meanValue="100303.11358232301" upperBound="101537.92610994643" validity="true"/>
+            <sample lowerBound="123835.99260265674" meanValue="127104.60242397399" upperBound="130373.21224529124" validity="true"/>
+            <sample lowerBound="149585.33479360375" meanValue="151450.75274763184" upperBound="153316.17070165992" validity="true"/>
+            <sample lowerBound="174037.92703744353" meanValue="176289.23635374702" upperBound="178540.54567005052" validity="true"/>
+            <sample lowerBound="199061.3984810375" meanValue="201862.96789054983" upperBound="204664.53730006216" validity="true"/>
+            <sample lowerBound="219248.0851244171" meanValue="225900.46868489045" upperBound="232552.8522453638" validity="true"/>
+            <sample lowerBound="246668.33438216706" meanValue="249978.49484165202" upperBound="253288.65530113698" validity="true"/>
+            <sample lowerBound="274011.70971838717" meanValue="277587.8783076194" upperBound="281164.0468968517" validity="true"/>
+            <sample lowerBound="297919.9138214907" meanValue="301846.3266775192" upperBound="305772.73953354766" validity="true"/>
+            <sample lowerBound="319618.53424010763" meanValue="323745.10959374026" upperBound="327871.6849473729" validity="true"/>
+            <sample lowerBound="345009.21559662785" meanValue="349535.4088023108" upperBound="354061.6020079938" validity="true"/>
+            <sample lowerBound="368213.91132021206" meanValue="372990.34624921094" upperBound="377766.7811782098" validity="true"/>
+            <sample lowerBound="395979.4197002368" meanValue="400938.1548676917" upperBound="405896.89003514656" validity="true"/>
+        </measure>
+        <measure alpha="0.99" analyzedSamples="20" name="Check Water Quality Sink_Check Water Quality_Throughput per Sink" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Check Water Quality Sink" type="13">
+            <sample lowerBound="9.81708936513121E-4" meanValue="0.0010047862626978335" upperBound="0.0010289746788530786" validity="true"/>
+            <sample lowerBound="9.811135743732207E-4" meanValue="9.97490211753014E-4" upperBound="0.001014422843708292" validity="true"/>
+            <sample lowerBound="9.684165665830891E-4" meanValue="9.935971908862486E-4" upperBound="0.001020122258953424" validity="true"/>
+            <sample lowerBound="9.854387433152003E-4" meanValue="0.0010019140991587995" upperBound="0.0010189497183801127" validity="true"/>
+            <sample lowerBound="9.803584209895843E-4" meanValue="9.964159030627399E-4" upperBound="0.001013008161615154" validity="true"/>
+            <sample lowerBound="9.825161030369988E-4" meanValue="9.978032684537699E-4" upperBound="0.0010135736647115345" validity="true"/>
+            <sample lowerBound="9.81707031005155E-4" meanValue="0.001000240551101154" upperBound="0.0010194873203952634" validity="true"/>
+            <sample lowerBound="9.802236049606765E-4" meanValue="0.0010018066775483731" upperBound="0.0010243616035192618" validity="true"/>
+            <sample lowerBound="9.855208660740705E-4" meanValue="0.0010034176649968438" upperBound="0.0010219764884032063" validity="true"/>
+            <sample lowerBound="9.848920082328803E-4" meanValue="0.0010016428973949585" upperBound="0.001018973438184662" validity="true"/>
+            <sample lowerBound="9.779792579115796E-4" meanValue="9.955315540757933E-4" upperBound="0.0010137254047004852" validity="true"/>
+            <sample lowerBound="9.817764796569769E-4" meanValue="9.962117582779006E-4" upperBound="0.0010110778616556743" validity="true"/>
+            <sample lowerBound="9.761395643896423E-4" meanValue="0.0010000907523958719" upperBound="0.0010252468687989144" validity="true"/>
+            <sample lowerBound="9.787338330483147E-4" meanValue="0.0010029584317416452" upperBound="0.001028412628139705" validity="true"/>
+            <sample lowerBound="9.891975734712746E-4" meanValue="0.0010067043992474667" upperBound="0.0010248420614281115" validity="true"/>
+            <sample lowerBound="9.894822613128222E-4" meanValue="0.0010047554149684773" upperBound="0.0010205074580550682" validity="true"/>
+            <sample lowerBound="9.733669725604503E-4" meanValue="9.92519887727401E-4" upperBound="0.001012441674735109" validity="true"/>
+            <sample lowerBound="9.820920020997231E-4" meanValue="0.0010040935428672752" upperBound="0.0010271034631899672" validity="true"/>
+            <sample lowerBound="9.758680530449152E-4" meanValue="9.950598592540073E-4" upperBound="0.0010150216760634163" validity="true"/>
+            <sample lowerBound="9.718417821956704E-4" meanValue="9.94407071888699E-4" upperBound="0.0010180451623999338" validity="true"/>
+        </measure>
+        <measure alpha="0.99" analyzedSamples="20" name="Check Water Quality Sink_Check Water Quality_Response Time per Sink" nodeType="station" precision="0.03" referenceClass="Check Water Quality" referenceStation="Check Water Quality Sink" type="12">
+            <sample lowerBound="1131.6803231546144" meanValue="1165.916574889746" upperBound="1200.1528266248777" validity="true"/>
+            <sample lowerBound="1149.020996120399" meanValue="1173.5273547537483" upperBound="1198.0337133870976" validity="true"/>
+            <sample lowerBound="1168.0061471820493" meanValue="1189.6298349842502" upperBound="1211.2535227864512" validity="true"/>
+            <sample lowerBound="1669.6774553359742" meanValue="1713.2874543576286" upperBound="1756.897453379283" validity="true"/>
+            <sample lowerBound="13411.748644080082" meanValue="13675.407577395532" upperBound="13939.066510710982" validity="true"/>
+            <sample lowerBound="25457.7081660751" meanValue="25964.289043211007" upperBound="26470.869920346915" validity="true"/>
+            <sample lowerBound="38236.7757913665" meanValue="38744.56543983768" upperBound="39252.35508830886" validity="true"/>
+            <sample lowerBound="50602.10319971755" meanValue="51514.04978760259" upperBound="52425.99637548763" validity="true"/>
+            <sample lowerBound="62669.75385265588" meanValue="63766.073885970465" upperBound="64862.39391928505" validity="true"/>
+            <sample lowerBound="74874.22887896476" meanValue="76348.88160856701" upperBound="77823.53433816927" validity="true"/>
+            <sample lowerBound="87938.1814611206" meanValue="89598.50861148047" upperBound="91258.83576184034" validity="true"/>
+            <sample lowerBound="100219.69384939202" meanValue="102037.82780374958" upperBound="103855.96175810714" validity="true"/>
+            <sample lowerBound="110121.71073677692" meanValue="113231.45054046212" upperBound="116341.19034414731" validity="true"/>
+            <sample lowerBound="123520.40967601154" meanValue="126335.46024153286" upperBound="129150.51080705418" validity="true"/>
+            <sample lowerBound="136360.82302244133" meanValue="139324.61835574405" upperBound="142288.41368904678" validity="true"/>
+            <sample lowerBound="147787.36974614311" meanValue="151324.09824051504" upperBound="154860.82673488697" validity="true"/>
+            <sample lowerBound="162051.5706317613" meanValue="164440.13410925938" upperBound="166828.69758675745" validity="true"/>
+            <sample lowerBound="172639.33065968863" meanValue="177837.92639222412" upperBound="183036.52212475962" validity="true"/>
+            <sample lowerBound="186727.1560948986" meanValue="190129.06521006319" upperBound="193530.97432522778" validity="true"/>
+            <sample lowerBound="200010.97497313426" meanValue="203609.37765401075" upperBound="207207.78033488724" validity="true"/>
+        </measure>
+        <measure alpha="0.99" analyzedSamples="20" name="SP CU Out_All classes_Utilization" nodeType="station" precision="0.1" referenceClass="All classes" referenceStation="SP CU Out" type="4">
+            <sample lowerBound="0.010520128883886601" meanValue="0.011181368778716744" upperBound="0.011842608673546888" validity="true"/>
+            <sample lowerBound="0.019730682800136547" meanValue="0.021376435799151446" upperBound="0.023022188798166345" validity="true"/>
+            <sample lowerBound="0.03060380467040792" meanValue="0.032171921395008095" upperBound="0.033740038119608275" validity="true"/>
+            <sample lowerBound="0.03582341461705121" meanValue="0.03760409742290534" upperBound="0.03938478022875947" validity="true"/>
+            <sample lowerBound="0.04201560948655879" meanValue="0.04392343692009454" upperBound="0.04583126435363029" validity="true"/>
+            <sample lowerBound="0.037313948351897025" meanValue="0.039261835685016566" upperBound="0.04120972301813611" validity="true"/>
+            <sample lowerBound="0.04113891729318908" meanValue="0.043402779406735884" upperBound="0.045666641520282686" validity="true"/>
+            <sample lowerBound="0.03675335445184535" meanValue="0.03886127703019379" upperBound="0.040969199608542235" validity="true"/>
+            <sample lowerBound="0.041661107057624824" meanValue="0.043979971496928505" upperBound="0.046298835936232186" validity="true"/>
+            <sample lowerBound="0.837045380181209" meanValue="0.9035156954646921" upperBound="0.9699860107481753" validity="true"/>
+            <sample lowerBound="0.04329210954962966" meanValue="0.044900038633571476" upperBound="0.04650796771751329" validity="true"/>
+            <sample lowerBound="0.04236946828220176" meanValue="0.04392774370238861" upperBound="0.04548601912257546" validity="true"/>
+            <sample lowerBound="0.042118683176668725" meanValue="0.04410076720147537" upperBound="0.046082851226282015" validity="true"/>
+            <sample lowerBound="0.041507948757154134" meanValue="0.043419531510628225" upperBound="0.045331114264102315" validity="true"/>
+            <sample lowerBound="0.037051403701791115" meanValue="0.03924823388951507" upperBound="0.04144506407723903" validity="true"/>
+            <sample lowerBound="0.042481338870149765" meanValue="0.04465908824609295" upperBound="0.04683683762203614" validity="true"/>
+            <sample lowerBound="0.03731973272604251" meanValue="0.03986959902641149" upperBound="0.04241946532678047" validity="true"/>
+            <sample lowerBound="0.03808952261216829" meanValue="0.040218997481942166" upperBound="0.04234847235171604" validity="true"/>
+            <sample lowerBound="0.7972802319932208" meanValue="0.8796731641087764" upperBound="0.9620660962243319" validity="true"/>
+            <sample lowerBound="0.8497128799258765" meanValue="0.9112932036319168" upperBound="0.9728735273379571" validity="true"/>
+        </measure>
+    </results>
+</archive>

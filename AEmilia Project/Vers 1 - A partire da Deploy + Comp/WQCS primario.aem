@@ -1,0 +1,533 @@
+
+% StartUp 
+% Sample
+% Check 
+
+ARCHI_TYPE wcs(	
+	const rate QSQualityControlApp_request_rate := 0.001, % 1/1000
+
+	const rate SampleWaterCompanyServer_rate := 0.322, % 1/3.1,
+	const rate CheckWaterCompanyServer_rate := 0.16, % 1/6.25,
+
+	const rate SampleWaterCompanyDisk_rate := 0.04, % 1/25,
+	const rate CheckWaterCompanyDisk_rate := 0.08, % 1/12.5,
+
+	const rate WiredConnectionUp_rate := 0.05, % 1/20,
+	const rate WiredConnectionDown_rate := 0.05, % 1/20,
+
+	const rate CCS_send_StartUpSampling_request_rate := 0.1913, % 1/5.25,  
+	const rate CCS_send_wired_StartUpSampling_response_rate := 0.1913, % 1/5.225, 
+
+	const rate CCS_send_wired_getExpectedParametersInland_request_rate := 0.333, % 1/3,
+	const rate CCS_send_wired_getExpectedParametersOutGoing_request_rate := 0.333, % 1/3,
+	const rate CCS_send_wired_CheckWaterInland_response_rate := 0.333, % 1/3,
+	const rate CCS_send_wired_CheckWaterOutGoing_response_rate := 0.333, % 1/3,
+	const weight CCS_CheckWaterInland_prob_request := 0.5, %probabilità di scelta Inland
+
+	const rate CCS_send_sample_rate := 0.089, % 1/11.2, 
+
+	const rate SPCU_send_StartUpSampling_response_rate := 0.0478, % 1/20.9,
+
+	const rate SPCU_send_sample_request_rate := 0.089, % 1/11.2, 
+	const rate SPCU_send_sample_rate := 0.089, % 1/11.2, 
+
+	const rate SPCU_delay_rate := 0.00001, % 1/10000, %delay di campionamento
+
+	const rate WirelessConnectionUp_rate := 0.036, % 1/28,
+	const rate WirelessConnectionDown_rate := 0.036, % 1/28,
+
+	const rate SP_send_sample_response_rate := 62.5, % 1/0.016,
+
+	const rate InternetConnectionUp_rate := 0.29, % 1/35,
+	const rate InternetConnectionDown_rate := 0.29, % 1/35,
+
+	const rate PSS_getExpectedParametersInland_response_rate := 0.4348, % 1/2.3,
+
+	const integer sensors_num_IN := 1000,
+	const integer sensors_num_OUT := 1000
+)
+
+ARCHI_ELEM_TYPES
+
+	% Water Company Server
+
+	ELEM_TYPE WaterCompanyServer_Type(const rate SampleWaterCompanyServer_rate, const rate CheckWaterCompanyServer_rate)
+
+		BEHAVIOR
+
+			ServerCalled (void;void) =
+				choice{
+					<save_sample_request, _> . <save_sample_Db, exp(SampleWaterCompanyServer_rate)> . WaitingSaveSampleAck(),
+					<getExpectedParametersOutGoing_request, _> . <getExpectedParametersOutGoing_db_request, exp(CheckWaterCompanyServer_rate)> . WaitingParamsRequest()
+				};
+
+
+			WaitingParamsRequest (void;void) = 
+				<getExpectedParametersOutGoing_db_response, _> . <getExpectedParametersOutGoing_response, inf> . ServerCalled();
+
+			WaitingSaveSampleAck (void;void) =
+				<save_sample_ack, _> . ServerCalled()
+				
+
+		INPUT_INTERACTIONS
+
+			UNI save_sample_request;
+				getExpectedParametersOutGoing_request;
+				getExpectedParametersOutGoing_db_response;
+				save_sample_ack
+
+		OUTPUT_INTERACTIONS
+
+			UNI getExpectedParametersOutGoing_response;
+				save_sample_Db;
+				getExpectedParametersOutGoing_db_request
+
+
+
+	% Wired Connection Up
+
+	ELEM_TYPE WiredConnectionUp_Type(const rate WiredConnectionUp_rate)
+
+		BEHAVIOR
+
+			WiredCalled(void;void) =
+				choice{
+					<receive_qss_response, _> . <forward_qss, exp(WiredConnectionUp_rate)> . WiredCalled(),
+					<receive_params_response, _> . <forward_params_response, exp(WiredConnectionUp_rate)> . WiredCalled(),
+					<receive_qsqc_response, _> . <forward_qsqc, exp(WiredConnectionUp_rate)> . WiredCalled()
+				}
+
+
+		INPUT_INTERACTIONS
+
+			UNI receive_qss_response;
+				receive_params_response;
+				receive_qsqc_response
+
+		OUTPUT_INTERACTIONS
+
+			UNI forward_qss;
+				forward_params_response;
+				forward_qsqc
+
+
+
+		% Wired Connection Down
+
+		ELEM_TYPE WiredConnectionDown_Type(const rate WiredConnectionDown_rate)
+
+		BEHAVIOR
+
+			WiredCalled(void;void) =
+				choice{
+					<receive_qss_request, _> . <forward_qss, exp(WiredConnectionDown_rate)> . WiredCalled(),
+					<receive_params_request, _> . <forward_params_request, exp(WiredConnectionDown_rate)> . WiredCalled(),
+					<receive_qsqc_request, _> . <forward_qsqc, exp(WiredConnectionDown_rate)> . WiredCalled(),
+					<receive_save_sample_request, _> . <forward_save_sample_request, exp(WiredConnectionDown_rate)> . WiredCalled()
+				}
+
+
+		INPUT_INTERACTIONS
+
+			UNI receive_qss_request;
+				receive_params_request;
+				receive_qsqc_request;
+				receive_save_sample_request
+
+		OUTPUT_INTERACTIONS
+
+			UNI forward_qss;
+				forward_params_request;
+				forward_qsqc;
+				forward_save_sample_request
+
+
+
+		% Water Company Disk
+
+		ELEM_TYPE WaterCompanyDisk_Type(const rate SampleWaterCompanyDisk_rate, const rate CheckWaterCompanyDisk_rate)
+
+		BEHAVIOR
+
+			DiskCalled(void;void) =
+				choice{
+					<save_sample_Db, _> . <save_sample_response_ack, exp(SampleWaterCompanyDisk_rate)> . DiskCalled(), %invece dei underscore ci va il tempo del disco
+					<getExpectedParametersOutGoing_db_request, _> . <getExpectedParametersOutGoing_db_response, exp(CheckWaterCompanyDisk_rate)> . DiskCalled()
+				}
+
+
+		INPUT_INTERACTIONS 
+
+			UNI save_sample_Db;
+				getExpectedParametersOutGoing_db_request
+
+		OUTPUT_INTERACTIONS
+
+			UNI getExpectedParametersOutGoing_db_response;
+				save_sample_response_ack
+
+
+
+
+		% QSSamplingApp
+
+		ELEM_TYPE QSSamplingApp_Type(void)
+
+		BEHAVIOR
+
+			AppCalled(void;void) =
+				<generate_sampling_request, inf> . <send_request, inf> . WaitForResponse();
+
+			WaitForResponse(void;void) =
+				<receive_response, _> . Idle(); %non deve fare più niente
+
+			Idle(void;void) = 
+				stop
+
+		INPUT_INTERACTIONS
+
+			UNI generate_sampling_request;
+				receive_response
+
+		OUTPUT_INTERACTIONS
+
+			UNI send_request
+
+
+
+		% QSQualityControlApp
+
+		ELEM_TYPE QSQualityControlApp_Type(const rate QSQualityControlApp_request_rate)
+
+		BEHAVIOR
+
+			AppCalled(void;void) =
+				<generate_checkWaterQuality_request, exp(QSQualityControlApp_request_rate)> . <send_request, inf> . WaitForResponse();
+
+			WaitForResponse(void;void) =
+				<receive_response, _> . AppCalled()
+
+		INPUT_INTERACTIONS
+
+			UNI generate_checkWaterQuality_request;
+				receive_response
+
+		OUTPUT_INTERACTIONS
+
+			UNI send_request
+
+
+
+
+		%ControlCenterServer
+
+		ELEM_TYPE ControlCenterServer_Type(const rate CCS_send_StartUpSampling_request_rate,  const weight CCS_CheckWaterInland_prob_request, 
+			const rate CCS_send_wired_getExpectedParametersInland_request_rate, const rate CCS_send_wired_getExpectedParametersOutGoing_request_rate,
+			const rate CCS_send_wired_StartUpSampling_response_rate, const rate CCS_send_sample_rate, const rate CCS_send_wired_CheckWaterInland_response_rate,
+			const rate CCS_send_wired_CheckWaterOutGoing_response_rate)
+
+		BEHAVIOR
+
+			ServerCalled(void;void) = 
+				choice{
+					<receive_wired_StartUpSampling_request, _> . <send_StartUpSampling_request, exp(CCS_send_StartUpSampling_request_rate)> .WaitingStartUpSampling(),
+					<receive_sample, _> . <send_sample, exp(CCS_send_sample_rate)> . ServerCalled(),
+					<receive_wired_CheckWater_request, _> . 
+						choice{
+							<inLand, inf(1, CCS_CheckWaterInland_prob_request)> . <send_wired_getExpectedParametersInland_request, exp(CCS_send_wired_getExpectedParametersInland_request_rate)> . WaitingForInParameters(),
+							<outGoing, inf(1, 1 - CCS_CheckWaterInland_prob_request)> . <send_wired_getExpectedParametersOutGoing_request, exp(CCS_send_wired_getExpectedParametersOutGoing_request_rate)> . WaitingForOutParameters()
+
+						}
+			};
+
+			WaitingStartUpSampling(void;void) =
+				<receive_StartUpSampling_response, _> . <send_wired_StartUpSampling_response, exp(CCS_send_wired_StartUpSampling_response_rate)> .ServerCalled();
+
+			WaitingForInParameters(void;void) = 
+				<receive_wired_getExpectedParametersInland_response, _> . <send_wired_CheckWater_response, exp(CCS_send_wired_CheckWaterInland_response_rate)> .ServerCalled();
+
+			WaitingForOutParameters(void;void) = 
+				<receive_wired_getExpectedParametersOutGoing_response, _> . <send_wired_CheckWater_response, exp(CCS_send_wired_CheckWaterOutGoing_response_rate)> . ServerCalled()
+
+
+		INPUT_INTERACTIONS
+
+			UNI receive_wired_StartUpSampling_request;
+				receive_wired_CheckWater_request;
+				receive_wired_getExpectedParametersInland_response;
+				receive_wired_getExpectedParametersOutGoing_response
+
+			OR  receive_StartUpSampling_response;
+				receive_sample
+
+		OUTPUT_INTERACTIONS
+
+			UNI send_wired_StartUpSampling_response;
+				send_wired_CheckWater_response;
+				send_wired_getExpectedParametersInland_request;
+				send_wired_getExpectedParametersOutGoing_request;
+				send_sample
+
+			OR 	send_StartUpSampling_request
+
+
+
+		% SeaweedPickingControlUnit 
+		
+		ELEM_TYPE SeaweedPickingControlUnit_Type(const rate SPCU_send_StartUpSampling_response_rate, const rate SPCU_send_sample_request_rate, 
+			const rate SPCU_send_sample_rate, const rate SPCU_delay_rate, const integer sensors_num)
+
+		BEHAVIOR
+
+			ControlUnitCalled(void;void) = 
+				<receive_StartUpSampling_request, _> . <send_StartUpSampling_response, exp(SPCU_send_StartUpSampling_response_rate)> . Sampling();
+
+			Sampling(void;void) = 
+				<send_sample_request, exp(SPCU_send_sample_request_rate)> . WaitingSample();
+
+			WaitingSample(void;void) = 
+				<receive_sample_response, _> . <send_sample, exp(SPCU_send_sample_rate)> . Delay();
+
+			Delay(void;void) =
+				<delay, exp(SPCU_delay_rate * sensors_num)> . Sampling()
+
+
+		INPUT_INTERACTIONS
+
+			UNI receive_StartUpSampling_request;
+				receive_sample_response
+
+		OUTPUT_INTERACTIONS 
+
+			UNI send_StartUpSampling_response;
+				send_sample;
+				send_sample_request
+
+		% WirelessConnectionUp
+
+		ELEM_TYPE WirelessConnectionUp_Type(const rate WirelessConnectionUp_rate)
+
+		BEHAVIOR 
+
+			TransferData(void;void) =
+				choice{
+					<receive_outcu_request, _> . <forward_outcu, exp(WirelessConnectionUp_rate)> . TransferData(),
+					<receive_incu_request, _> . <forward_incu, exp(WirelessConnectionUp_rate)> . TransferData()
+				}
+
+
+		INPUT_INTERACTIONS
+
+			UNI receive_outcu_request;
+				receive_incu_request
+				
+
+
+		OUTPUT_INTERACTIONS
+
+			UNI forward_incu;
+				forward_outcu
+
+
+		% WirelessConnectionDown
+
+		ELEM_TYPE WirelessConnectionDown_Type(const rate WirelessConnectionDown_rate)
+
+		BEHAVIOR 
+
+			TransferData(void;void) =
+				choice{
+					<receive_outcu_request, _> . <forward_outcu, exp(WirelessConnectionDown_rate)> . TransferData(),
+					<receive_incu_request, _> . <forward_incu, exp(WirelessConnectionDown_rate)> . TransferData()
+				}
+
+
+
+		INPUT_INTERACTIONS
+
+			UNI receive_incu_request;
+				receive_outcu_request
+
+
+		OUTPUT_INTERACTIONS
+
+			AND forward_incu;
+				forward_outcu
+
+
+
+		% SeaweedPicking
+
+		ELEM_TYPE SeaweedPicking_Type(const rate SP_send_sample_response_rate)
+
+		BEHAVIOR
+
+			SeaweedPickingCalled(void;void) = 
+				<receive_sample_request, _> . <send_sample_response, exp(SP_send_sample_response_rate)> . SeaweedPickingCalled()
+
+
+
+		INPUT_INTERACTIONS
+
+			UNI receive_sample_request
+
+		OUTPUT_INTERACTIONS
+
+			UNI send_sample_response
+
+
+
+
+		% InternetConnectionDown
+
+		ELEM_TYPE InternetConnectionDown_Type(const rate InternetConnectionDown_rate)
+
+		BEHAVIOR
+
+			TransferData(void;void) = 
+				choice{
+					<receive_save_sample_request, _> . <forward_save_sample, exp(InternetConnectionDown_rate)> . TransferData(),
+					<receive_pss_params_request, _> . <forward_pss_params, exp(InternetConnectionDown_rate)> . TransferData(),
+					<receive_WCS_params_request, _> . <forward_WCS_params, exp(InternetConnectionDown_rate)> . TransferData()
+				}
+
+
+
+
+		INPUT_INTERACTIONS
+
+			UNI receive_pss_params_request;
+				receive_save_sample_request;
+				receive_WCS_params_request
+
+
+		OUTPUT_INTERACTIONS
+
+			UNI forward_pss_params;
+				forward_save_sample;
+				forward_WCS_params
+
+
+
+		% InternetConnectionUP
+
+		ELEM_TYPE InternetConnectionUP_Type(const rate InternetConnectionUp_rate)
+
+		BEHAVIOR
+
+			TransferData(void;void) = 
+				choice{
+					<receive_pss_params, _> . <forward_pss_params, exp(InternetConnectionUp_rate)> . TransferData(),
+					<receive_WCS_params, _> . <forward_WCS_params, exp(InternetConnectionUp_rate)> . TransferData()
+				}
+
+		INPUT_INTERACTIONS
+
+			UNI receive_pss_params;
+				receive_WCS_params
+
+		OUTPUT_INTERACTIONS
+
+			UNI forward_pss_params;
+				forward_WCS_params
+
+
+
+		% PurificationSystemServer
+
+		ELEM_TYPE PurificationSystemServer_Type(const rate PSS_getExpectedParametersInland_response_rate)
+
+		BEHAVIOR
+
+			ServerCalled(void;void) = 
+
+				<getExpectedParametersInland_request, _> . <getExpectedParametersInland_response, exp(PSS_getExpectedParametersInland_response_rate)> . ServerCalled()
+
+
+		INPUT_INTERACTIONS
+
+			UNI getExpectedParametersInland_request
+
+
+
+		OUTPUT_INTERACTIONS
+
+			UNI getExpectedParametersInland_response
+
+
+
+
+ARCHI_TOPOLOGY
+
+	ARCHI_ELEM_INSTANCES
+		WCS : WaterCompanyServer_Type(SampleWaterCompanyServer_rate, CheckWaterCompanyServer_rate);
+		WCU: WiredConnectionUp_Type(WiredConnectionUp_rate);
+		WCD : WiredConnectionDown_Type(WiredConnectionDown_rate);
+		WCDISK : WaterCompanyDisk_Type(SampleWaterCompanyDisk_rate, CheckWaterCompanyDisk_rate);
+		QSS : QSSamplingApp_Type();
+		QSQC : QSQualityControlApp_Type(QSQualityControlApp_request_rate);
+		CCS : ControlCenterServer_Type(CCS_send_StartUpSampling_request_rate, CCS_CheckWaterInland_prob_request, CCS_send_wired_getExpectedParametersInland_request_rate, 
+			CCS_send_wired_getExpectedParametersOutGoing_request_rate, CCS_send_wired_StartUpSampling_response_rate, CCS_send_sample_rate, CCS_send_wired_CheckWaterInland_response_rate, 
+			CCS_send_wired_CheckWaterOutGoing_response_rate);
+		INCU : SeaweedPickingControlUnit_Type(SPCU_send_StartUpSampling_response_rate, SPCU_send_sample_request_rate, SPCU_send_sample_rate, SPCU_delay_rate, sensors_num_IN);
+		OUTCU : SeaweedPickingControlUnit_Type(SPCU_send_StartUpSampling_response_rate, SPCU_send_sample_request_rate, SPCU_send_sample_rate, SPCU_delay_rate, sensors_num_OUT);
+		WLCU : WirelessConnectionUp_Type(WirelessConnectionUp_rate);
+		WLCD : WirelessConnectionDown_Type(WirelessConnectionDown_rate);
+		ICD : InternetConnectionDown_Type(InternetConnectionDown_rate);
+		ICU : InternetConnectionUP_Type(InternetConnectionUp_rate);
+		PSS : PurificationSystemServer_Type(PSS_getExpectedParametersInland_response_rate);
+
+		SPIN : SeaweedPicking_Type(SP_send_sample_response_rate);
+
+		SPOUT : SeaweedPicking_Type(SP_send_sample_response_rate)
+
+
+	ARCHI_INTERACTIONS
+
+		QSS.generate_sampling_request;
+		QSQC.generate_checkWaterQuality_request
+
+	ARCHI_ATTACHMENTS
+
+	FROM QSS.send_request 														TO WCD.receive_qss_request;
+	FROM QSQC.send_request 														TO WCD.receive_qsqc_request;
+	FROM WCU.forward_qss 														TO QSS.receive_response;
+	FROM WCU.forward_qsqc														TO QSQC.receive_response;
+	FROM WCD.forward_qss 														TO CCS.receive_wired_StartUpSampling_request;
+	FROM WCD.forward_qsqc														TO CCS.receive_wired_CheckWater_request;
+	FROM CCS.send_wired_StartUpSampling_response  								TO WCU.receive_qss_response;
+	FROM CCS.send_wired_CheckWater_response 									TO WCU.receive_qsqc_response;
+	FROM CCS.send_wired_getExpectedParametersInland_request						TO ICD.receive_pss_params_request;
+	FROM CCS.send_wired_getExpectedParametersOutGoing_request 					TO ICD.receive_WCS_params_request;
+	FROM CCS.send_sample 														TO ICD.receive_save_sample_request;
+	FROM CCS.send_StartUpSampling_request 										TO INCU.receive_StartUpSampling_request; % Controllare se si fa così
+	FROM CCS.send_StartUpSampling_request 										TO OUTCU.receive_StartUpSampling_request; 
+	FROM INCU.send_StartUpSampling_response 									TO CCS.receive_StartUpSampling_response;
+	FROM INCU.send_sample 														TO CCS.receive_sample;
+	FROM INCU.send_sample_request 												TO WLCD.receive_incu_request;
+	FROM OUTCU.send_StartUpSampling_response 									TO CCS.receive_StartUpSampling_response;
+	FROM OUTCU.send_sample 														TO CCS.receive_sample;
+	FROM OUTCU.send_sample_request 												TO WLCD.receive_outcu_request;
+	FROM WLCU.forward_incu 														TO INCU.receive_sample_response;
+	FROM WLCU.forward_outcu 													TO OUTCU.receive_sample_response;
+	FROM ICD.forward_pss_params 												TO PSS.getExpectedParametersInland_request;
+	FROM ICD.forward_save_sample 												TO WCS.save_sample_request;
+	FROM ICD.forward_WCS_params 												TO WCS.getExpectedParametersOutGoing_request;
+	FROM ICU.forward_pss_params 												TO CCS.receive_wired_getExpectedParametersInland_response;
+	FROM ICU.forward_WCS_params 												TO CCS.receive_wired_getExpectedParametersOutGoing_response;
+	FROM PSS.getExpectedParametersInland_response 								TO ICU.receive_pss_params;
+	FROM WCS.getExpectedParametersOutGoing_response 							TO ICU.receive_WCS_params;
+	FROM WCS.save_sample_Db 													TO WCD.receive_save_sample_request;
+	FROM WCS.getExpectedParametersOutGoing_db_request 							TO WCD.receive_params_request;
+	FROM WCU.forward_params_response											TO WCS.getExpectedParametersOutGoing_db_response;
+	FROM WCD.forward_save_sample_request										TO WCDISK.save_sample_Db;
+	FROM WCD.forward_params_request												TO WCDISK.getExpectedParametersOutGoing_db_request;
+	FROM WCDISK.getExpectedParametersOutGoing_db_response  						TO WCU.receive_params_response;
+	FROM WLCD.forward_incu 														TO SPIN.receive_sample_request;
+	FROM WLCD.forward_outcu 													TO SPOUT.receive_sample_request;
+	FROM SPIN.send_sample_response 												TO WLCU.receive_incu_request;
+	FROM SPOUT.send_sample_response 											TO WLCU.receive_outcu_request;
+
+	FROM WCDISK.save_sample_response_ack										TO WCS.save_sample_ack
+
+END

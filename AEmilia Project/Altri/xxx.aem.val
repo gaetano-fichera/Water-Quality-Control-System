@@ -1,0 +1,19 @@
+Stationary value of the performance measures for wcs:
+
+- Value of measure "ControlCenterServerUtilization":
+	0.0863827
+
+- Value of measure "WaterCompanyServerUtilization":
+	0.0265555
+
+- Value of measure "WaterCompanyDiskUtilization":
+	0.196598
+
+- Value of measure "SeaweedPickingINControlUnitUtilization":
+	0.08586
+
+- Value of measure "SeaweedPickingOUTControlUnitUtilization":
+	0.08586
+
+- Value of measure "PurificationSystemServerUtilization":
+	0.0010455

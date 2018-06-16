@@ -1,0 +1,30 @@
+cambiamenti parametri:
+CCS:
+	1.05    10.5   startupin
+	1.05	10.5   startupout
+	1.12	11.2   samplein
+	1.12	11.2   sampleout
+	non cambiato	checkWater
+SPinCU:
+	2.1		21
+	non cambiato
+	2.24	22.4
+	non CAMBIATO
+	non cambiato
+
+SPoutCU:
+	non cambiato
+	2.1		21	
+	non CAMBIATO
+	2.24	22.4
+	non cambiato
+
+WaterCompanyServer:
+	non cambiato
+	non cambiato
+	0.31	3.1
+	0.31	3.1
+	0.625	6.25
+
+DelaySample:
+500000	100000
