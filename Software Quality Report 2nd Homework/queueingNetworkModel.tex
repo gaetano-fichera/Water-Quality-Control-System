@@ -1,13 +1,13 @@
 \chapter{\textbf{Queueing Network Model}}
 
-The jobs identified in our Queueing Network Model are:
+The classes of jobs identified in our Queueing Network Model are:
 \begin{itemize}
-\item StartUp Sampling Water Inland;
-\item StartUp Sampling Water Outgoing;
-\item Check Water Quality.
+\item StartUp Sampling Water Inland a closed class of job becuase of the deterministic numbers of inland sensors;
+\item StartUp Sampling Water Outgoing a closed class of job becuase of the deterministic numbers of Outgoing sensors;
+\item Check Water Quality a open class.
 \end{itemize}
 
-The first two jobs refer to the same Execution Graph.
+The first two classes of jobs refer to the same Execution Graph EG UC1, this because of the presence of the case node.
 In the diagram below you can see how the jobs interface with our system and how the nodes are interconnected with each other:
 
 \bigskip
@@ -36,7 +36,7 @@ Below physical nodes will be listed:
 	\item Water Company Server;
 	\item Purification System.
 \end{itemize}
-\item Node that store data:
+\item Node that store datas:
 \begin{itemize}
 	\item Water Company Disk.
 \end{itemize}	
@@ -58,14 +58,23 @@ Below physical nodes will be listed:
 \end{itemize}
 
 \bigskip
-After several tests, we agreed to reduce the sampling time to 500 ms to refine the performance analysis. On JMT for the same reason we have only one SeaweedPicking Control Unit with doubled performance and no two for In / Out.\\
+After several tests, in the analysis phase of Chapter 10, we noticed some problems during simulations infact they demanded too long a wait, so we agreed to reduce the sampling time to 100 ms to refine the performance analysis.\\
 We have also decided to eliminate the finite capacity regions as useless for the purposes of our project. \\
 After other tests we have splitted each StartUp Sampling Water job into:
 \begin{itemize}
 	\item StartUp Sampling Water;
 	\item Sampling.
 \end{itemize}
-This choice was driven by the fact that we did not know how many times the samples were made, as you can see in EG UC1.
+So we obtained the following final calsses of jobs for our Queueing Network: 
+\begin{itemize}
+	\item StartUp Sampling Water In;
+	\item StartUp Sampling Water Out;
+	\item Sampling In;
+	\item Sampling Out;
+	\item Check Water Quality.
+\end{itemize}
+
+This choice was driven by the fact that the condition of the loop node in the EG UC1 doesn't specify a deterministic number of repetitions.
 
 \begin{center}
  \makebox[\textwidth]{\includegraphics[width=14cm]				{SplittingStartUpSamplingWaterJob.jpg}}

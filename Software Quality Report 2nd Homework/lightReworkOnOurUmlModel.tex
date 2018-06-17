@@ -12,7 +12,7 @@ After serious consideration of our last homework, we noticed that there were fai
 	\end{itemize}					 
 	and , for this purpose we have also inserted a new profile called 		"Control Unit" from the	server 	stereotype, these 3 new nodes are 		connected to the server with a wired connection and to sensors 			with a wireless connection;
 	\item For the connections between the Control Center Server and 		the	two Inland and Outgoing Seaweed Picking Control Units we 			have inserted a new communication path stereotype that does 			not consume resources because when we started the modeling 				work for the Queueing Network we considered the two Control 			Units located in the same physical space as the Control 				Center Server, then we use a "Internal Connection" stereotype with 	zero consumption of resources;
-	\item We have added the operations to the components subsequently 		reused in the Sequence Diagram;
+	\item We have added the operations to the components subsequently 		reused in the Sequence Diagram, not done in the first homework;
 	\item we realized the lack of an internal server to the Control 		Center 	Pomezia that managed the requests coming from the App 			inside it;
 	\item we realized that in the sequence diagram "check quality" the 	call from the component "check quality parameters inland /				outgoing" was missing to the component "parameters Quality 				archieve" to retrieve the desired water parameters;
 	\item we have established the types of connections between one 			node and the other of the deployment diagram, obtaining:
@@ -23,7 +23,7 @@ After serious consideration of our last homework, we noticed that there were fai
 		\item between the Control Center Server and the Water Company 			Server and the Purification System Center an Internet 					Connection.
 	\end{itemize}
 
-	\item we have agreed that there is a single database that is 			connected to the water company server or water archives;
+	\item we have agreed that there is a single database that is 			connected to the water company server;
 	\item we realized that in the water sampling phase, the sensors 		will send the data of the water samples to the Control Center 			Server which, in turn, using the sample archieve component will 		send the data to the water company server, the problem is that in 		the SD 	after the component sample archive is not invoked any 			component that refers to the water company server. Solution:
 	\begin{itemize}
 	\item We have decided to add a component called "Sample Archive" 		to the water company server which is responsible for saving data 		on the DB. In going to add this correction we realized 	that in			fact we have failed to use sample sender. Then we have made a 			small change: 
@@ -32,7 +32,7 @@ After serious consideration of our last homework, we noticed that there were fai
 		\item sample archive is located inside the water company 				server and	manages the data on the db.
 		\end{itemize}
 	\end{itemize}	
-	\item We modified the sequence diagram of "SturtUpSamplingWater" 		as 	we realized that the component sample data on the 					SeadweedPIckingInland / Outgoing node communicated with the 			"SampleSender" component on the ControlCenterServer node but from 		our component + deployment diagram it was not.
+	\item We modified the sequence diagram of "StartUpSamplingWater" 		as 	we realized that the component sample data on the 					SeadweedPIckingInland / Outgoing node communicated with the 			"SampleSender" component on the ControlCenterServer node.
 \end{itemize}
 
 Below you can find the description of the new profiles popping out.
