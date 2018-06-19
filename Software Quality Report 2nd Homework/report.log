@@ -1,95 +1,411 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.6.2)  19 JUN 2018 15:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.14)  19 JUN 2018 17:37
 entering extended mode
- restricted \write18 enabled.
- %&-line parsing enabled.
-**report.tex
-(./report.tex
-LaTeX2e <2018-04-01> patch level 2
-Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
-(c:/texlive/2018/texmf-dist/tex/latex/base/report.cls
+**./report.tex
+(report.tex
+LaTeX2e <2017-04-15>
+Babel <3.18> and hyphenation patterns for 75 language(s) loaded.
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\report.cls"
 Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
-(c:/texlive/2018/texmf-dist/tex/latex/base/size10.clo
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\size10.clo"
 File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
-\c@part=\count80
-\c@chapter=\count81
-\c@section=\count82
-\c@subsection=\count83
-\c@subsubsection=\count84
-\c@paragraph=\count85
-\c@subparagraph=\count86
-\c@figure=\count87
-\c@table=\count88
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(c:/texlive/2018/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2018/04/06 v1.3b Input encoding file
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\inputenc.st
+y"
+Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
+ ("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def"
+File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
+Now handling font encoding OML ...
+... no UTF-8 mapping file for font encoding OML
+Now handling font encoding T1 ...
+... processing UTF-8 mapping file for font encoding T1
+ ("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
+File: t1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
+   defining Unicode char U+00A0 (decimal 160)
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00AD (decimal 173)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C0 (decimal 192)
+   defining Unicode char U+00C1 (decimal 193)
+   defining Unicode char U+00C2 (decimal 194)
+   defining Unicode char U+00C3 (decimal 195)
+   defining Unicode char U+00C4 (decimal 196)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00C7 (decimal 199)
+   defining Unicode char U+00C8 (decimal 200)
+   defining Unicode char U+00C9 (decimal 201)
+   defining Unicode char U+00CA (decimal 202)
+   defining Unicode char U+00CB (decimal 203)
+   defining Unicode char U+00CC (decimal 204)
+   defining Unicode char U+00CD (decimal 205)
+   defining Unicode char U+00CE (decimal 206)
+   defining Unicode char U+00CF (decimal 207)
+   defining Unicode char U+00D0 (decimal 208)
+   defining Unicode char U+00D1 (decimal 209)
+   defining Unicode char U+00D2 (decimal 210)
+   defining Unicode char U+00D3 (decimal 211)
+   defining Unicode char U+00D4 (decimal 212)
+   defining Unicode char U+00D5 (decimal 213)
+   defining Unicode char U+00D6 (decimal 214)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00D9 (decimal 217)
+   defining Unicode char U+00DA (decimal 218)
+   defining Unicode char U+00DB (decimal 219)
+   defining Unicode char U+00DC (decimal 220)
+   defining Unicode char U+00DD (decimal 221)
+   defining Unicode char U+00DE (decimal 222)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E0 (decimal 224)
+   defining Unicode char U+00E1 (decimal 225)
+   defining Unicode char U+00E2 (decimal 226)
+   defining Unicode char U+00E3 (decimal 227)
+   defining Unicode char U+00E4 (decimal 228)
+   defining Unicode char U+00E5 (decimal 229)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00E7 (decimal 231)
+   defining Unicode char U+00E8 (decimal 232)
+   defining Unicode char U+00E9 (decimal 233)
+   defining Unicode char U+00EA (decimal 234)
+   defining Unicode char U+00EB (decimal 235)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F0 (decimal 240)
+   defining Unicode char U+00F1 (decimal 241)
+   defining Unicode char U+00F2 (decimal 242)
+   defining Unicode char U+00F3 (decimal 243)
+   defining Unicode char U+00F4 (decimal 244)
+   defining Unicode char U+00F5 (decimal 245)
+   defining Unicode char U+00F6 (decimal 246)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+00F9 (decimal 249)
+   defining Unicode char U+00FA (decimal 250)
+   defining Unicode char U+00FB (decimal 251)
+   defining Unicode char U+00FC (decimal 252)
+   defining Unicode char U+00FD (decimal 253)
+   defining Unicode char U+00FE (decimal 254)
+   defining Unicode char U+00FF (decimal 255)
+   defining Unicode char U+0100 (decimal 256)
+   defining Unicode char U+0101 (decimal 257)
+   defining Unicode char U+0102 (decimal 258)
+   defining Unicode char U+0103 (decimal 259)
+   defining Unicode char U+0104 (decimal 260)
+   defining Unicode char U+0105 (decimal 261)
+   defining Unicode char U+0106 (decimal 262)
+   defining Unicode char U+0107 (decimal 263)
+   defining Unicode char U+0108 (decimal 264)
+   defining Unicode char U+0109 (decimal 265)
+   defining Unicode char U+010A (decimal 266)
+   defining Unicode char U+010B (decimal 267)
+   defining Unicode char U+010C (decimal 268)
+   defining Unicode char U+010D (decimal 269)
+   defining Unicode char U+010E (decimal 270)
+   defining Unicode char U+010F (decimal 271)
+   defining Unicode char U+0110 (decimal 272)
+   defining Unicode char U+0111 (decimal 273)
+   defining Unicode char U+0112 (decimal 274)
+   defining Unicode char U+0113 (decimal 275)
+   defining Unicode char U+0114 (decimal 276)
+   defining Unicode char U+0115 (decimal 277)
+   defining Unicode char U+0116 (decimal 278)
+   defining Unicode char U+0117 (decimal 279)
+   defining Unicode char U+0118 (decimal 280)
+   defining Unicode char U+0119 (decimal 281)
+   defining Unicode char U+011A (decimal 282)
+   defining Unicode char U+011B (decimal 283)
+   defining Unicode char U+011C (decimal 284)
+   defining Unicode char U+011D (decimal 285)
+   defining Unicode char U+011E (decimal 286)
+   defining Unicode char U+011F (decimal 287)
+   defining Unicode char U+0120 (decimal 288)
+   defining Unicode char U+0121 (decimal 289)
+   defining Unicode char U+0122 (decimal 290)
+   defining Unicode char U+0123 (decimal 291)
+   defining Unicode char U+0124 (decimal 292)
+   defining Unicode char U+0125 (decimal 293)
+   defining Unicode char U+0128 (decimal 296)
+   defining Unicode char U+0129 (decimal 297)
+   defining Unicode char U+012A (decimal 298)
+   defining Unicode char U+012B (decimal 299)
+   defining Unicode char U+012C (decimal 300)
+   defining Unicode char U+012D (decimal 301)
+   defining Unicode char U+012E (decimal 302)
+   defining Unicode char U+012F (decimal 303)
+   defining Unicode char U+0130 (decimal 304)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0132 (decimal 306)
+   defining Unicode char U+0133 (decimal 307)
+   defining Unicode char U+0134 (decimal 308)
+   defining Unicode char U+0135 (decimal 309)
+   defining Unicode char U+0136 (decimal 310)
+   defining Unicode char U+0137 (decimal 311)
+   defining Unicode char U+0139 (decimal 313)
+   defining Unicode char U+013A (decimal 314)
+   defining Unicode char U+013B (decimal 315)
+   defining Unicode char U+013C (decimal 316)
+   defining Unicode char U+013D (decimal 317)
+   defining Unicode char U+013E (decimal 318)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0143 (decimal 323)
+   defining Unicode char U+0144 (decimal 324)
+   defining Unicode char U+0145 (decimal 325)
+   defining Unicode char U+0146 (decimal 326)
+   defining Unicode char U+0147 (decimal 327)
+   defining Unicode char U+0148 (decimal 328)
+   defining Unicode char U+014A (decimal 330)
+   defining Unicode char U+014B (decimal 331)
+   defining Unicode char U+014C (decimal 332)
+   defining Unicode char U+014D (decimal 333)
+   defining Unicode char U+014E (decimal 334)
+   defining Unicode char U+014F (decimal 335)
+   defining Unicode char U+0150 (decimal 336)
+   defining Unicode char U+0151 (decimal 337)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0154 (decimal 340)
+   defining Unicode char U+0155 (decimal 341)
+   defining Unicode char U+0156 (decimal 342)
+   defining Unicode char U+0157 (decimal 343)
+   defining Unicode char U+0158 (decimal 344)
+   defining Unicode char U+0159 (decimal 345)
+   defining Unicode char U+015A (decimal 346)
+   defining Unicode char U+015B (decimal 347)
+   defining Unicode char U+015C (decimal 348)
+   defining Unicode char U+015D (decimal 349)
+   defining Unicode char U+015E (decimal 350)
+   defining Unicode char U+015F (decimal 351)
+   defining Unicode char U+0160 (decimal 352)
+   defining Unicode char U+0161 (decimal 353)
+   defining Unicode char U+0162 (decimal 354)
+   defining Unicode char U+0163 (decimal 355)
+   defining Unicode char U+0164 (decimal 356)
+   defining Unicode char U+0165 (decimal 357)
+   defining Unicode char U+0168 (decimal 360)
+   defining Unicode char U+0169 (decimal 361)
+   defining Unicode char U+016A (decimal 362)
+   defining Unicode char U+016B (decimal 363)
+   defining Unicode char U+016C (decimal 364)
+   defining Unicode char U+016D (decimal 365)
+   defining Unicode char U+016E (decimal 366)
+   defining Unicode char U+016F (decimal 367)
+   defining Unicode char U+0170 (decimal 368)
+   defining Unicode char U+0171 (decimal 369)
+   defining Unicode char U+0172 (decimal 370)
+   defining Unicode char U+0173 (decimal 371)
+   defining Unicode char U+0174 (decimal 372)
+   defining Unicode char U+0175 (decimal 373)
+   defining Unicode char U+0176 (decimal 374)
+   defining Unicode char U+0177 (decimal 375)
+   defining Unicode char U+0178 (decimal 376)
+   defining Unicode char U+0179 (decimal 377)
+   defining Unicode char U+017A (decimal 378)
+   defining Unicode char U+017B (decimal 379)
+   defining Unicode char U+017C (decimal 380)
+   defining Unicode char U+017D (decimal 381)
+   defining Unicode char U+017E (decimal 382)
+   defining Unicode char U+01CD (decimal 461)
+   defining Unicode char U+01CE (decimal 462)
+   defining Unicode char U+01CF (decimal 463)
+   defining Unicode char U+01D0 (decimal 464)
+   defining Unicode char U+01D1 (decimal 465)
+   defining Unicode char U+01D2 (decimal 466)
+   defining Unicode char U+01D3 (decimal 467)
+   defining Unicode char U+01D4 (decimal 468)
+   defining Unicode char U+01E2 (decimal 482)
+   defining Unicode char U+01E3 (decimal 483)
+   defining Unicode char U+01E6 (decimal 486)
+   defining Unicode char U+01E7 (decimal 487)
+   defining Unicode char U+01E8 (decimal 488)
+   defining Unicode char U+01E9 (decimal 489)
+   defining Unicode char U+01EA (decimal 490)
+   defining Unicode char U+01EB (decimal 491)
+   defining Unicode char U+01F0 (decimal 496)
+   defining Unicode char U+01F4 (decimal 500)
+   defining Unicode char U+01F5 (decimal 501)
+   defining Unicode char U+0218 (decimal 536)
+   defining Unicode char U+0219 (decimal 537)
+   defining Unicode char U+021A (decimal 538)
+   defining Unicode char U+021B (decimal 539)
+   defining Unicode char U+0232 (decimal 562)
+   defining Unicode char U+0233 (decimal 563)
+   defining Unicode char U+1E02 (decimal 7682)
+   defining Unicode char U+1E03 (decimal 7683)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2010 (decimal 8208)
+   defining Unicode char U+2011 (decimal 8209)
+   defining Unicode char U+2012 (decimal 8210)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2015 (decimal 8213)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201A (decimal 8218)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+201E (decimal 8222)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+2039 (decimal 8249)
+   defining Unicode char U+203A (decimal 8250)
+   defining Unicode char U+2423 (decimal 9251)
+   defining Unicode char U+1E20 (decimal 7712)
+   defining Unicode char U+1E21 (decimal 7713)
 )
-(c:/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
+Now handling font encoding OT1 ...
+... processing UTF-8 mapping file for font encoding OT1
 
-(c:/texlive/2018/texmf-dist/tex/latex/base/t1enc.def
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
+File: ot1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
+   defining Unicode char U+00A0 (decimal 160)
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AD (decimal 173)
+   defining Unicode char U+00B8 (decimal 184)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0174 (decimal 372)
+   defining Unicode char U+0175 (decimal 373)
+   defining Unicode char U+0176 (decimal 374)
+   defining Unicode char U+0177 (decimal 375)
+   defining Unicode char U+0218 (decimal 536)
+   defining Unicode char U+0219 (decimal 537)
+   defining Unicode char U+021A (decimal 538)
+   defining Unicode char U+021B (decimal 539)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+)
+Now handling font encoding OMS ...
+... processing UTF-8 mapping file for font encoding OMS
+ ("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omsenc.dfu
+"
+File: omsenc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+)
+Now handling font encoding OMX ...
+... no UTF-8 mapping file for font encoding OMX
+Now handling font encoding U ...
+... no UTF-8 mapping file for font encoding U
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+02C6 (decimal 710)
+   defining Unicode char U+02DC (decimal 732)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2026 (decimal 8230)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2423 (decimal 9251)
+))
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\fontenc.sty
+"
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
+ ("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1enc.def"
 File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
-(c:/texlive/2018/texmf-dist/tex/latex/tools/tabularx.sty
-Package: tabularx 2016/02/03 v2.11b `tabularx' package (DPC)
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\tabularx.s
+ty"
+Package: tabularx 2016/02/03 v2.11 `tabularx' package (DPC)
 
-(c:/texlive/2018/texmf-dist/tex/latex/tools/array.sty
-Package: array 2018/04/07 v2.4g Tabular extension package (FMi)
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
 \col@sep=\dimen103
-\ar@mcellbox=\box26
 \extrarowheight=\dimen104
 \NC@list=\toks16
 \extratabsurround=\skip43
 \backup@length=\skip44
-\ar@cellbox=\box27
 )
 \TX@col@width=\dimen105
 \TX@old@table=\dimen106
 \TX@old@col=\dimen107
 \TX@target=\dimen108
 \TX@delta=\dimen109
-\TX@cols=\count89
+\TX@cols=\count88
 \TX@ftn=\toks17
 )
-(c:/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphic
+x.sty"
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-(c:/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval.
+sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks18
 )
-(c:/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphic
+s.sty"
 Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
-(c:/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\trig.st
+y"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(c:/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-cfg\gra
+phics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
 
-(c:/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-def\pdf
+tex.def"
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen110
 \Gin@req@width=\dimen111
 )
-(c:/texlive/2018/texmf-dist/tex/latex/enumitem/enumitem.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\enumitem\enumite
+m.sty"
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \labelindent=\skip45
 \enit@outerparindent=\dimen112
 \enit@toks=\toks19
-\enit@inbox=\box28
-\enitdp@description=\count90
+\enit@inbox=\box26
+\enitdp@description=\count89
 )
-(c:/texlive/2018/texmf-dist/tex/latex/lm/lmodern.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\lmodern.sty"
 Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
@@ -124,7 +440,8 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
-(c:/texlive/2018/texmf-dist/tex/latex/base/textcomp.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\textcomp.st
+y"
 Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
@@ -139,13 +456,12 @@ Package textcomp Info: Sub-encoding information:
 (textcomp)             See the documentation for details.
 Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
 
-(c:/texlive/2018/texmf-dist/tex/latex/base/ts1enc.def
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1enc.def"
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 Now handling font encoding TS1 ...
 ... processing UTF-8 mapping file for font encoding TS1
-
-(c:/texlive/2018/texmf-dist/tex/latex/base/ts1enc.dfu
-File: ts1enc.dfu 2018/04/05 v1.2c UTF-8 support for inputenc
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1enc.dfu"
+File: ts1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+00A2 (decimal 162)
    defining Unicode char U+00A3 (decimal 163)
    defining Unicode char U+00A4 (decimal 164)
@@ -215,7 +531,6 @@ File: ts1enc.dfu 2018/04/05 v1.2c UTF-8 support for inputenc
    defining Unicode char U+25E6 (decimal 9702)
    defining Unicode char U+25EF (decimal 9711)
    defining Unicode char U+266A (decimal 9834)
-   defining Unicode char U+FEFF (decimal 65279)
 ))
 LaTeX Info: Redefining \oldstylenums on input line 334.
 Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
@@ -281,8 +596,9 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
-(c:/texlive/2018/texmf-dist/tex/latex/booktabs/booktabs.sty
-Package: booktabs 2016/04/27 v1.618033 publication quality tables
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\booktabs\booktab
+s.sty"
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \heavyrulewidth=\dimen113
 \lightrulewidth=\dimen114
 \cmidrulewidth=\dimen115
@@ -293,35 +609,37 @@ Package: booktabs 2016/04/27 v1.618033 publication quality tables
 \cmidrulesep=\dimen120
 \cmidrulekern=\dimen121
 \defaultaddspace=\dimen122
-\@cmidla=\count91
-\@cmidlb=\count92
+\@cmidla=\count90
+\@cmidlb=\count91
 \@aboverulesep=\dimen123
 \@belowrulesep=\dimen124
-\@thisruleclass=\count93
-\@lastruleclass=\count94
+\@thisruleclass=\count92
+\@lastruleclass=\count93
 \@thisrulewidth=\dimen125
 )
-(c:/texlive/2018/texmf-dist/tex/latex/tools/longtable.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\longtable.
+sty"
 Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip46
 \LTright=\skip47
 \LTpre=\skip48
 \LTpost=\skip49
-\LTchunksize=\count95
+\LTchunksize=\count94
 \LTcapwidth=\dimen126
-\LT@head=\box29
-\LT@firsthead=\box30
-\LT@foot=\box31
-\LT@lastfoot=\box32
-\LT@cols=\count96
-\LT@rows=\count97
-\c@LT@tables=\count98
-\c@LT@chunks=\count99
+\LT@head=\box27
+\LT@firsthead=\box28
+\LT@foot=\box29
+\LT@lastfoot=\box30
+\LT@cols=\count95
+\LT@rows=\count96
+\c@LT@tables=\count97
+\c@LT@chunks=\count98
 \LT@p@ftn=\toks20
 )
-(c:/texlive/2018/texmf-dist/tex/latex/titlesec/titlesec.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\titlesec\titlese
+c.sty"
 Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
-\ttl@box=\box33
+\ttl@box=\box31
 \beforetitleunit=\skip50
 \aftertitleunit=\skip51
 \ttl@plus=\dimen127
@@ -331,45 +649,51 @@ Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
 \titlewidthlast=\dimen130
 \titlewidthfirst=\dimen131
 )
-(c:/texlive/2018/texmf-dist/tex/latex/graphics/rotating.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\rotatin
+g.sty"
 Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
 
-(c:/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ifthen.sty"
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@r@tfl@t=\count100
+\c@r@tfl@t=\count99
 \rotFPtop=\skip52
 \rotFPbot=\skip53
-\rot@float@box=\box34
+\rot@float@box=\box32
 \rot@mess@toks=\toks22
 )
-(c:/texlive/2018/texmf-dist/tex/latex/makecell/makecell.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\makecell\makecel
+l.sty"
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 \rotheadsize=\dimen132
-\c@nlinenum=\count101
+\c@nlinenum=\count100
 \TeXr@lab=\toks23
 )
-(c:/texlive/2018/texmf-dist/tex/latex/multirow/multirow.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\multirow\multiro
+w.sty"
 Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
 \multirow@colwidth=\skip54
-\multirow@cntb=\count102
+\multirow@cntb=\count101
 \multirow@dima=\skip55
 \bigstrutjot=\dimen133
 )
-(c:/texlive/2018/texmf-dist/tex/latex/xcolor/xcolor.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xcolor\xcolor.st
+y"
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-(c:/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-cfg\col
+or.cfg"
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-(c:/texlive/2018/texmf-dist/tex/latex/colortbl/colortbl.sty
-Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\colortbl\colortb
+l.sty"
+Package: colortbl 2018/05/02 v1.0c Color table columns (DPC)
 \everycr=\toks24
 \minrowclearance=\skip56
 )
-\rownum=\count103
+\rownum=\count102
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
 Package xcolor Info: Model `RGB' extended on input line 1364.
@@ -380,18 +704,22 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 
-(c:/texlive/2018/texmf-dist/tex/latex/graphics/dvipsnam.def
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\dvipsna
+m.def"
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 ))
-(c:/texlive/2018/texmf-dist/tex/latex/tools/hhline.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\hhline.sty
+"
 Package: hhline 2014/10/28 v2.03 Table rule package (DPC)
 )
-(c:/texlive/2018/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\caption\caption.
+sty"
+Package: caption 2018/05/01 v3.3-147 Customizing captions (AR)
 
-(c:/texlive/2018/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 67.
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\caption\caption3
+.sty"
+Package: caption3 2018/05/27 v1.8a caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 64.
 \captionmargin=\dimen134
 \captionmargin@=\dimen135
 \captionwidth=\dimen136
@@ -400,28 +728,33 @@ Package caption3 Info: TeX engine: e-TeX on input line 67.
 \caption@parindent=\dimen139
 \caption@hangindent=\dimen140
 )
-\c@ContinuedFloat=\count104
+\c@ContinuedFloat=\count103
 Package caption Info: longtable package is loaded.
 
-(c:/texlive/2018/texmf-dist/tex/latex/caption/ltcaption.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\caption\ltcaptio
+n.sty"
 Package: ltcaption 2013/06/09 v1.4-94 longtable captions (AR)
 )
 Package caption Info: rotating package is loaded.
 )
-(c:/texlive/2018/texmf-dist/tex/latex/tools/verbatim.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\verbatim.s
+ty"
 Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks25
 \verbatim@line=\toks26
 \verbatim@in@stream=\read1
 )
-(c:/texlive/2018/texmf-dist/tex/latex/hyperref/hyperref.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\hyperre
+f.sty"
 Package: hyperref 2018/02/06 v6.86b Hypertext links for LaTeX
 
-(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\hobsu
+b-hyperref.sty"
 Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
 
 
-(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\hobsu
+b-generic.sty"
 Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
@@ -439,7 +772,7 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO
+Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
@@ -461,27 +794,32 @@ Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
 Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
 Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 )
-(c:/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ifxetex\ifxete
+x.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/auxhook.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\auxhook
+.sty"
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
-(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\kvoptio
+ns.sty"
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
 \@linkdim=\dimen141
-\Hy@linkcounter=\count105
-\Hy@pagecounter=\count106
+\Hy@linkcounter=\count104
+\Hy@pagecounter=\count105
 
-(c:/texlive/2018/texmf-dist/tex/latex/hyperref/pd1enc.def
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\pd1enc.
+def"
 File: pd1enc.def 2018/02/06 v6.86b Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count107
+\Hy@SavedSpaceFactor=\count106
 
-(c:/texlive/2018/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\hyperre
+f.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Hyper figures OFF on input line 4509.
@@ -491,15 +829,15 @@ Package hyperref Info: Plain pages OFF on input line 4524.
 Package hyperref Info: Backreferencing OFF on input line 4529.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4762.
-\c@Hy@tempcnt=\count108
+\c@Hy@tempcnt=\count107
 
-(c:/texlive/2018/texmf-dist/tex/latex/url/url.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty"
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5115.
 \XeTeXLinkMargin=\dimen142
-\Fld@menulength=\count109
+\Fld@menulength=\count108
 \Field@Width=\dimen143
 \Fld@charsize=\dimen144
 Package hyperref Info: Hyper figures OFF on input line 6369.
@@ -511,18 +849,20 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6394.
 Package hyperref Info: PDF/A mode OFF on input line 6399.
 LaTeX Info: Redefining \ref on input line 6439.
 LaTeX Info: Redefining \pageref on input line 6443.
-\Hy@abspage=\count110
-\c@Item=\count111
-\c@Hfootnote=\count112
+\Hy@abspage=\count109
+\c@Item=\count110
+\c@Hfootnote=\count111
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
-(c:/texlive/2018/texmf-dist/tex/latex/hyperref/hpdftex.def
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\hpdftex
+.def"
 File: hpdftex.def 2018/02/06 v6.86b Hyperref driver for pdfTeX
-\Fld@listcount=\count113
-\c@bookmark@seq@number=\count114
+\Fld@listcount=\count112
+\c@bookmark@seq@number=\count113
 
-(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\rerunfi
+lecheck.sty"
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
@@ -531,26 +871,29 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 25.
 
-(c:/texlive/2018/texmf-dist/tex/latex/titlesec/titletoc.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\titlesec\titleto
+c.sty"
 Package: titletoc 2011/12/15 v1.6 TOC entries
 \ttl@leftsep=\dimen145
 )
-(c:/texlive/2018/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\etoolbox\etoolbo
+x.sty"
 Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count115
+\etb@tempcnta=\count114
 )
-(c:/texlive/2018/texmf-dist/tex/latex/lettrine/lettrine.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lettrine\lettrin
+e.sty"
 File: lettrine.sty 2015/08/31 v1.9 (Daniel Flipo)
-\c@DefaultLines=\count116
-\c@DefaultDepth=\count117
+\c@DefaultLines=\count115
+\c@DefaultDepth=\count116
 \DefaultFindent=\dimen146
 \DefaultNindent=\dimen147
 \DefaultSlope=\dimen148
 \DiscardVskip=\dimen149
-\L@lbox=\box35
-\L@tbox=\box36
-\c@L@lines=\count118
-\c@L@depth=\count119
+\L@lbox=\box33
+\L@tbox=\box34
+\c@L@lines=\count117
+\c@L@depth=\count118
 \L@Pindent=\dimen150
 \L@Findent=\dimen151
 \L@Nindent=\dimen152
@@ -565,12 +908,15 @@ File: lettrine.sty 2015/08/31 v1.9 (Daniel Flipo)
 \LettrineDepth=\dimen161
 
 Loading lettrine.cfg
-(c:/texlive/2018/texmf-dist/tex/latex/lettrine/lettrine.cfg))
-(c:/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty
-Package: geometry 2018/03/24 v5.7 Page Geometry
-\Gm@cnth=\count120
-\Gm@cntv=\count121
-\c@Gm@tempcnt=\count122
+
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lettrine\lettrin
+e.cfg"))
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometr
+y.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
+\Gm@cnth=\count119
+\Gm@cntv=\count120
+\c@Gm@tempcnt=\count121
 \Gm@bindingoffset=\dimen162
 \Gm@wd@mp=\dimen163
 \Gm@odd@mp=\dimen164
@@ -580,40 +926,48 @@ Package: geometry 2018/03/24 v5.7 Page Geometry
 \Gm@layouthoffset=\dimen168
 \Gm@layoutvoffset=\dimen169
 \Gm@dimlist=\toks27
-)
-(c:/texlive/2018/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count123
-\lst@gtempboxa=\box37
+
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometr
+y.cfg"))
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\listing
+s.sty"
+\lst@mode=\count122
+\lst@gtempboxa=\box35
 \lst@token=\toks28
-\lst@length=\count124
+\lst@length=\count123
 \lst@currlwidth=\dimen170
-\lst@column=\count125
-\lst@pos=\count126
+\lst@column=\count124
+\lst@pos=\count125
 \lst@lostspace=\dimen171
 \lst@width=\dimen172
-\lst@newlines=\count127
-\lst@lineno=\count128
+\lst@newlines=\count126
+\lst@lineno=\count127
 \lst@maxwidth=\dimen173
 
-(c:/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstmisc
+.sty"
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count129
-\lst@skipnumbers=\count130
-\lst@framebox=\box38
+\c@lstnumber=\count128
+\lst@skipnumbers=\count129
+\lst@framebox=\box36
 )
-(c:/texlive/2018/texmf-dist/tex/latex/listings/listings.cfg
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\listing
+s.cfg"
 File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
-(c:/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstlang
+1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-(c:/texlive/2018/texmf-dist/tex/latex/sectsty/sectsty.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\sectsty\sectsty.
+sty"
 Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading sty
 les
 )
-(c:/texlive/2018/texmf-dist/tex/latex/fncychap/fncychap.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fncychap\fncycha
+p.sty"
 Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
 \RW=\skip58
 \mylen=\skip59
@@ -622,7 +976,7 @@ Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
 \py=\skip62
 \pyy=\skip63
 \pxx=\skip64
-) (./report.aux)
+) (report.aux)
 \openout1 = `report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 78.
@@ -640,34 +994,37 @@ LaTeX Font Info:    ... okay on input line 78.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 78.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 78.
 
-(c:/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 78.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 78.
 LaTeX Font Info:    ... okay on input line 78.
 LaTeX Font Info:    Try loading font information for T1+lmr on input line 78.
-
-(c:/texlive/2018/texmf-dist/tex/latex/lm/t1lmr.fd
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-(c:/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.
+mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count131
+\scratchcounter=\count130
 \scratchdimen=\dimen174
-\scratchbox=\box39
-\nofMPsegments=\count132
-\nofMParguments=\count133
+\scratchbox=\box37
+\nofMPsegments=\count131
+\nofMParguments=\count132
 \everyMPshowfont=\toks29
-\MPscratchCnt=\count134
+\MPscratchCnt=\count133
 \MPscratchDim=\dimen175
-\MPnumerator=\count135
-\makeMPintoPDFobject=\count136
+\MPnumerator=\count134
+\makeMPintoPDFobject=\count135
 \everyMPtoPDFconversion=\toks30
-) (c:/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+)
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopd
+f-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\grfext.
+sty"
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 )
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -676,31 +1033,28 @@ Package grfext Info: Graphics extension search list:
 (grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
-
-(c:/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
+)
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\AtBeginShipoutBox=\box40
+\AtBeginShipoutBox=\box38
 Package hyperref Info: Link coloring ON on input line 78.
 
-(c:/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref
+.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
-(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\getti
+tlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count137
+\c@section@level=\count136
 )
 LaTeX Info: Redefining \ref on input line 78.
 LaTeX Info: Redefining \pageref on input line 78.
 LaTeX Info: Redefining \nameref on input line 78.
-
-(./report.out) (./report.out)
+ (report.out) (report.out)
 \@outlinefile=\write3
 \openout3 = `report.out'.
 
@@ -739,29 +1093,30 @@ LaTeX Info: Redefining \nameref on input line 78.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count138
+\c@lstlisting=\count137
 LaTeX Font Info:    Try loading font information for T1+lmss on input line 80.
-(c:/texlive/2018/texmf-dist/tex/latex/lm/t1lmss.fd
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmss.fd"
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) (./primapagina.tex
+)
+(primapagina.tex
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 7.
 
-(c:/texlive/2018/texmf-dist/tex/latex/lm/ot1lmr.fd
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OML+lmm on input line 7.
 
-(c:/texlive/2018/texmf-dist/tex/latex/lm/omllmm.fd
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 7.
 
-(c:/texlive/2018/texmf-dist/tex/latex/lm/omslmsy.fd
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OMX+lmex on input line 7.
 
-(c:/texlive/2018/texmf-dist/tex/latex/lm/omxlmex.fd
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -770,7 +1125,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 7.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 7.
-<./Immagini/logo.png, id=116, 304.13625pt x 363.3575pt>
+<./Immagini/logo.png, id=115, 304.13625pt x 363.3575pt>
 File: ./Immagini/logo.png Graphic file (type png)
 <use ./Immagini/logo.png>
 Package pdftex.def Info: ./Immagini/logo.png  used on input line 8.
@@ -780,7 +1135,7 @@ Package pdftex.def Info: ./Immagini/logo.png  used on input line 8.
 LaTeX Font Warning: Font shape `T1/lmss/bx/sc' undefined
 (Font)              using `T1/lmss/bx/n' instead on input line 15.
 
-<./Immagini/disim.png, id=118, 325.215pt x 305.14pt>
+<./Immagini/disim.png, id=117, 325.215pt x 305.14pt>
 File: ./Immagini/disim.png Graphic file (type png)
 <use ./Immagini/disim.png>
 Package pdftex.def Info: ./Immagini/disim.png  used on input line 17.
@@ -793,8 +1148,8 @@ LaTeX Font Warning: Font shape `T1/lmss/m/sc' in size <10> not available
 
 [1
 
-{c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./Immagini/logo
-.png> <./Immagini/disim.png>]) (./report.toc)
+{C:/Users/Gaetano/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./Immagin
+i/logo.png> <./Immagini/disim.png>]) (report.toc)
 \tf@toc=\write4
 \openout4 = `report.toc'.
 
@@ -803,23 +1158,25 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.83 \newpage
-              [1] (./ourHomework1.tex
+              [1] (ourHomework1.tex
 Chapter 1.
 LaTeX Font Info:    Try loading font information for OT1+phv on input line 1.
-(c:/texlive/2018/texmf-dist/tex/latex/psnfss/ot1phv.fd
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ot1phv.fd
+"
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 1.
 
-(c:/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd
+"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-)) (./workPlanning.tex
+)) (workPlanning.tex
 Chapter 2.
 LaTeX Font Info:    Try loading font information for TS1+lmss on input line 6.
-(c:/texlive/2018/texmf-dist/tex/latex/lm/ts1lmss.fd
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ts1lmss.fd"
 File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [2])
-(./lightReworkOnOurUmlModel.tex
+)
+[2]) (lightReworkOnOurUmlModel.tex
 Chapter 3.
 [3]
 Underfull \vbox (badness 10000) detected at line 61
@@ -841,13 +1198,13 @@ Underfull \vbox (badness 10000) detected at line 130
 Underfull \vbox (badness 10000) detected at line 153
  []
 
-) (./useCasesDecision.tex
+) (useCasesDecision.tex
 Chapter 4.
-) (./identificationOfPerformanceRequirements.tex
+) (identificationOfPerformanceRequirements.tex
 Chapter 5.
-[5]) (./developmentComponentIntoDeploymentDiagram.tex
+[5]) (developmentComponentIntoDeploymentDiagram.tex
 Chapter 6.
-<./Immagini/DeploymentDiagramEComponentDiagram.jpg, id=189, 1144.275pt x 1366.1
+<./Immagini/DeploymentDiagramEComponentDiagram.jpg, id=187, 1144.275pt x 1366.1
 0374pt>
 File: ./Immagini/DeploymentDiagramEComponentDiagram.jpg Graphic file (type jpg)
 
@@ -866,14 +1223,14 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 9.
 See the caption package documentation for explanation.
 
-) (./modelWCSWithExecutionGraphs.tex
+) (modelWCSWithExecutionGraphs.tex
 Chapter 7.
 [7 <./Immagini/DeploymentDiagramEComponentDiagram.jpg>]
 Underfull \vbox (badness 10000) detected at line 44
  []
 
 [8]
-<./Immagini/EGUC1StartUpSamplingWater.jpg, id=205, 801.99625pt x 842.14626pt>
+<./Immagini/EGUC1StartUpSamplingWater.jpg, id=203, 801.99625pt x 842.14626pt>
 File: ./Immagini/EGUC1StartUpSamplingWater.jpg Graphic file (type jpg)
 <use ./Immagini/EGUC1StartUpSamplingWater.jpg>
 Package pdftex.def Info: ./Immagini/EGUC1StartUpSamplingWater.jpg  used on inpu
@@ -890,7 +1247,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 See the caption package documentation for explanation.
 
 [9 <./Immagini/EGUC1StartUpSamplingWater.jpg>]
-<./Immagini/EGUC3CheckWaterQuality.jpg, id=211, 1008.76875pt x 827.09pt>
+<./Immagini/EGUC3CheckWaterQuality.jpg, id=209, 1008.76875pt x 827.09pt>
 File: ./Immagini/EGUC3CheckWaterQuality.jpg Graphic file (type jpg)
 <use ./Immagini/EGUC3CheckWaterQuality.jpg>
 Package pdftex.def Info: ./Immagini/EGUC3CheckWaterQuality.jpg  used on input l
@@ -902,10 +1259,10 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 69.
 See the caption package documentation for explanation.
 
-) (./queueingNetworkModel.tex
+) (queueingNetworkModel.tex
 Chapter 8.
 [10 <./Immagini/EGUC3CheckWaterQuality.jpg>]
-<./Immagini/PhysicalNodes.png, id=217, 773.89125pt x 532.99126pt>
+<./Immagini/PhysicalNodes.png, id=215, 773.89125pt x 532.99126pt>
 File: ./Immagini/PhysicalNodes.png Graphic file (type png)
 <use ./Immagini/PhysicalNodes.png>
 Package pdftex.def Info: ./Immagini/PhysicalNodes.png  used on input line 15.
@@ -916,7 +1273,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 18.
 See the caption package documentation for explanation.
 
-<./Immagini/QueueingNetwork.jpg, id=218, 2021.5525pt x 638.385pt>
+<./Immagini/QueueingNetwork.jpg, id=216, 2021.5525pt x 638.385pt>
 File: ./Immagini/QueueingNetwork.jpg Graphic file (type jpg)
 <use ./Immagini/QueueingNetwork.jpg>
 Package pdftex.def Info: ./Immagini/QueueingNetwork.jpg  used on input line 24.
@@ -928,7 +1285,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 See the caption package documentation for explanation.
 
 [11 <./Immagini/PhysicalNodes.png> <./Immagini/QueueingNetwork.jpg>]
-<./Immagini/SplittingStartUpSamplingWaterJob.jpg, id=226, 801.99625pt x 842.146
+<./Immagini/SplittingStartUpSamplingWaterJob.jpg, id=224, 801.99625pt x 842.146
 26pt>
 File: ./Immagini/SplittingStartUpSamplingWaterJob.jpg Graphic file (type jpg)
 <use ./Immagini/SplittingStartUpSamplingWaterJob.jpg>
@@ -941,7 +1298,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 83.
 See the caption package documentation for explanation.
 
-<./Immagini/QueuingNetworkFinal.jpg, id=232, 1335.48938pt x 543.53062pt>
+<./Immagini/QueuingNetworkFinal.jpg, id=230, 1335.48938pt x 543.53062pt>
 File: ./Immagini/QueuingNetworkFinal.jpg Graphic file (type jpg)
 <use ./Immagini/QueuingNetworkFinal.jpg>
 Package pdftex.def Info: ./Immagini/QueuingNetworkFinal.jpg  used on input line
@@ -953,9 +1310,9 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 See the caption package documentation for explanation.
 
 [13 <./Immagini/SplittingStartUpSamplingWaterJob.jpg> <./Immagini/QueuingNetwor
-kFinal.jpg>]) (./parameterization.tex
+kFinal.jpg>]) (parameterization.tex
 Chapter 9.
-<./Immagini/1-OverheadMatrix.jpg, id=238, 892.08281pt x 192.72pt>
+<./Immagini/1-OverheadMatrix.jpg, id=236, 892.08281pt x 192.72pt>
 File: ./Immagini/1-OverheadMatrix.jpg Graphic file (type jpg)
 <use ./Immagini/1-OverheadMatrix.jpg>
 Package pdftex.def Info: ./Immagini/1-OverheadMatrix.jpg  used on input line 7.
@@ -966,7 +1323,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 9.
 See the caption package documentation for explanation.
 
-<./Immagini/2-VirtualResUsagebyeachNode.jpg, id=239, 960.58875pt x 188.20313pt>
+<./Immagini/2-VirtualResUsagebyeachNode.jpg, id=237, 960.58875pt x 188.20313pt>
 
 File: ./Immagini/2-VirtualResUsagebyeachNode.jpg Graphic file (type jpg)
 <use ./Immagini/2-VirtualResUsagebyeachNode.jpg>
@@ -978,7 +1335,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 19.
 See the caption package documentation for explanation.
 
-<./Immagini/3-Probeachnode.jpg, id=240, 255.95625pt x 113.67468pt>
+<./Immagini/3-Probeachnode.jpg, id=238, 255.95625pt x 113.67468pt>
 File: ./Immagini/3-Probeachnode.jpg Graphic file (type jpg)
 <use ./Immagini/3-Probeachnode.jpg>
 Package pdftex.def Info: ./Immagini/3-Probeachnode.jpg  used on input line 24.
@@ -990,7 +1347,7 @@ See the caption package documentation for explanation.
 
 [14 <./Immagini/1-OverheadMatrix.jpg> <./Immagini/2-VirtualResUsagebyeachNode.j
 pg> <./Immagini/3-Probeachnode.jpg>]
-<./Immagini/4-FinalRes.jpg, id=249, 892.08281pt x 218.31563pt>
+<./Immagini/4-FinalRes.jpg, id=247, 892.08281pt x 218.31563pt>
 File: ./Immagini/4-FinalRes.jpg Graphic file (type jpg)
 <use ./Immagini/4-FinalRes.jpg>
 Package pdftex.def Info: ./Immagini/4-FinalRes.jpg  used on input line 33.
@@ -1001,10 +1358,10 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 35.
 See the caption package documentation for explanation.
 
-) (./queueingNetworkSolvingAndBottleNeckAnaliysis.tex
+) (queueingNetworkSolvingAndBottleNeckAnaliysis.tex
 Chapter 10.
 [15 <./Immagini/4-FinalRes.jpg>]
-<./Immagini/UtilizationWaterCompanyDisk.jpg, id=255, 754.31813pt x 460.72125pt>
+<./Immagini/UtilizationWaterCompanyDisk.jpg, id=253, 754.31813pt x 460.72125pt>
 
 File: ./Immagini/UtilizationWaterCompanyDisk.jpg Graphic file (type jpg)
 <use ./Immagini/UtilizationWaterCompanyDisk.jpg>
@@ -1017,37 +1374,46 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 56.
 See the caption package documentation for explanation.
 
-) (./aemiliaModel.tex
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--62
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
+
+ []
+
+) (aemiliaModel.tex
 Chapter 11.
-[17 <./Immagini/UtilizationWaterCompanyDisk.JPG>]
-<./Immagini/schermata1.JPG, id=270, 801.59476pt x 591.4095pt>
+[17 <./Immagini/UtilizationWaterCompanyDisk.jpg>]
+<./Immagini/schermata1.JPG, id=268, 801.59476pt x 591.4095pt>
 File: ./Immagini/schermata1.JPG Graphic file (type jpg)
 <use ./Immagini/schermata1.JPG>
 Package pdftex.def Info: ./Immagini/schermata1.JPG  used on input line 21.
 (pdftex.def)             Requested size: 483.69684pt x 356.87888pt.
-
+ [18]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 24.
 See the caption package documentation for explanation.
 
-[18 <./Immagini/schermata1.JPG>]
-<./Immagini/Legenda.JPG, id=277, 174.05025pt x 136.1085pt>
+<./Immagini/Legenda.JPG, id=274, 174.05025pt x 136.1085pt>
 File: ./Immagini/Legenda.JPG Graphic file (type jpg)
 <use ./Immagini/Legenda.JPG>
 Package pdftex.def Info: ./Immagini/Legenda.JPG  used on input line 32.
 (pdftex.def)             Requested size: 227.62204pt x 178.00435pt.
 
-
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 33.
 See the caption package documentation for explanation.
 
-<./Immagini/stateDiagram.JPG, id=278, 587.19376pt x 424.58624pt>
+<./Immagini/stateDiagram.JPG, id=275, 587.19376pt x 424.58624pt>
 File: ./Immagini/stateDiagram.JPG Graphic file (type jpg)
 <use ./Immagini/stateDiagram.JPG>
 Package pdftex.def Info: ./Immagini/stateDiagram.JPG  used on input line 45.
 (pdftex.def)             Requested size: 483.69684pt x 349.75024pt.
+[19 <./Immagini/schermata1.JPG> <./Immagini/Legenda.JPG>]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 48.
@@ -1058,29 +1424,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 58--63
 
  []
 
-[19 <./Immagini/Legenda.JPG> <./Immagini/stateDiagram.JPG>]
-(c:/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
+
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstlang
+1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-(c:/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty
+("C:\Users\Gaetano\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstmisc
+.sty"
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-) [20]
+) [20 <./Immagini/stateDiagram.JPG>]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 110.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 110.
-
+ [21]
 Underfull \hbox (badness 10000) in paragraph at lines 140--141
 
  []
 
-<./Immagini/Aemiliacomejmt.PNG, id=321, 812.28468pt x 529.22719pt>
+<./Immagini/Aemiliacomejmt.PNG, id=336, 812.28468pt x 529.22719pt>
 File: ./Immagini/Aemiliacomejmt.PNG Graphic file (type png)
 <use ./Immagini/Aemiliacomejmt.PNG>
 Package pdftex.def Info: ./Immagini/Aemiliacomejmt.PNG  used on input line 154.
 
 (pdftex.def)             Requested size: 483.69684pt x 315.14038pt.
-[21]
+[22]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 157.
@@ -1091,17 +1459,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 160--161
 
  []
 
-[22 <./Immagini/Aemiliacomejmt.PNG>]) (./ourConclusion.tex
+
+Underfull \hbox (badness 10000) in paragraph at lines 189--190
+
+ []
+
+[23 <./Immagini/Aemiliacomejmt.PNG>]) (ourConclusion.tex
 Chapter 12.
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 96.
- [23]
+ [24]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 96.
- (./report.aux)
+ (report.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 96.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 96.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: E09E991C69C99F331471149D468AC1BB;1895.
+(rerunfilecheck)             Checksum: 2D2D102B19DC5B7D2C8A2D7B0ED5163D;1923.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1109,34 +1482,40 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 96.
  ) 
 Here is how much of TeX's memory you used:
- 11891 strings out of 492649
- 174168 string characters out of 6133385
- 377378 words of memory out of 5000000
- 15371 multiletter control sequences out of 15000+600000
- 81668 words of font info for 56 fonts, out of 8000000 for 9000
+ 12268 strings out of 493305
+ 184087 string characters out of 3128932
+ 405417 words of memory out of 3000000
+ 15402 multiletter control sequences out of 15000+200000
+ 81668 words of font info for 56 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,13n,49p,908b,1167s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/texlive/2018
-/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{c:/texlive/2018/texmf-dist/fonts/enc
-/dvips/lm/lm-ec.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c
-:/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2018/tex
-mf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2018/texmf-dist/fonts/type1/pub
-lic/lm/lmbx10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmbx12.pfb>
-<c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb><c:/texlive/2018/
-texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2018/texmf-dist/fonts/t
-ype1/public/lm/lmr10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr5
-.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/texlive/201
-8/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2018/texmf-dist/fonts
-/type1/public/lm/lmss8.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lm
-ssbx10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsso12.pfb><c:/te
-xlive/2018/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2018/texmf-d
-ist/fonts/type1/public/lm/lmsy7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/pub
-lic/lm/lmsy8.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pf
-b><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on report.pdf (24 pages, 2167439 bytes).
+ 41i,13n,49p,910b,1810s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Gaetano/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mat
+hsy.enc}{C:/Users/Gaetano/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/
+lm-ts1.enc}{C:/Users/Gaetano/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/
+lm/lm-ec.enc}{C:/Users/Gaetano/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvip
+s/lm/lm-rm.enc}{C:/Users/Gaetano/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dv
+ips/lm/lm-mathit.enc}{C:/Users/Gaetano/AppData/Local/Programs/MiKTeX 2.9/fonts/
+enc/dvips/base/8r.enc}<C:/Users/Gaetano/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/lm/lmbx10.pfb><C:/Users/Gaetano/AppData/Local/Programs/MiKTeX 2.9
+/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Gaetano/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Gaetano/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Gaetano/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/Gaetano/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr5.pfb><C:/Users/Gaetano/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Users/Gaetano/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmss10.pfb><C:/Users/Gae
+tano/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmss8.pfb><C:/User
+s/Gaetano/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb>
+<C:/Users/Gaetano/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsso
+12.pfb><C:/Users/Gaetano/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/l
+m/lmsy10.pfb><C:/Users/Gaetano/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/lm/lmsy7.pfb><C:/Users/Gaetano/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/lm/lmsy8.pfb><C:/Users/Gaetano/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/urw/helvetic/uhvr8a.pfb><C:/Users/Gaetano/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/urw/times/utmr8a.pfb>
+Output written on report.pdf (25 pages, 2211946 bytes).
 PDF statistics:
  480 PDF objects out of 1000 (max. 8388607)
- 412 compressed objects within 5 object streams
- 150 named destinations out of 1000 (max. 500000)
+ 151 named destinations out of 1000 (max. 500000)
  315 words of extra memory for PDF output out of 10000 (max. 10000000)
 
