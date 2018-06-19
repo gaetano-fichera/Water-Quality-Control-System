@@ -150,10 +150,40 @@ For this reason we tried to increase the number of sensors in a significant way 
 Not satisfied with the results of the previous simulations we have made a further model not starting from the deployment and the sequence diagram but from the queueing network. We know that this choice is wrong because we treat two different models but we wanted a comparison with the simulations performed on jmt.\\
 In the image below you can see the new Flow Graph:
 
-%%immagini Flow Graph
+\begin{center}
+	\makebox[\textwidth]{\includegraphics[width=\textwidth]	{Aemiliacomejmt.PNG}}
+\end{center}
+\bigskip
+\captionof{figure}{Flow Graph Extract}
+\bigskip
 
 But also in this case the simulation results both with 1000 inland and outgoing sensors and for the number of sensors for which the bottleneck should be presented on the Water Company Disk are not comparable to those of jmt.\\
 
-%%Immagini risultati simulazione
+\begin{lstlisting}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	1000 in & 1000 out						%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Stationary value of the performance measures for wcs:
+
+- Value of measure "ControlCenterServerUtilization":
+0.0197883
+
+- Value of measure "WaterCompanyDiskUtilization":
+0.0340923
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	4000 in & 4000 out						%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Stationary value of the performance measures for wcs:
+
+- Value of measure "ControlCenterServerUtilization":
+0.0207671
+
+- Value of measure "WaterCompanyDiskUtilization":
+0.0351357
+\end{lstlisting}
+
 
 Against this we came to the conclusion that the subsystem we considered was not comparable between jmt and Aemilia.

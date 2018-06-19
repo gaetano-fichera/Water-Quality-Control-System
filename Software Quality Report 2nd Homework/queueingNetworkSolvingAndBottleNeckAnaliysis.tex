@@ -46,24 +46,17 @@ After the first simulation all the requirements established at the beginning of 
 	\item Response Time Sink (Check Water Quality) = 1183.03576 us;
 \end{itemize}
 
-Then we choose to run multiple simulations increasing the number of sensors to understand how the system scales and how it responds to the increasing of inputs. For this purpose we have done a What-If simulation composed of twenty sub-simulation and it has come out that the Utilization performance of the Control Center Server, Water Company Disk gets worse when the fourteen thousand sensors are reached.\\
+Then we choose to run multiple simulations increasing the number of sensors to understand how the system scales and how it responds to the increasing of inputs. For this purpose we have done a What-If simulation composed of twenty sub-simulation and it has come out that the Utilization performance of the Water Company Disk gets worse when the four thousand sensors are reached.\\
 Other proof of this is the analysis of the Response Time.
 
 \begin{center}
   \makebox[\textwidth]{\includegraphics[width=\textwidth]
- {1-UtilizationControlCenterServer.jpg}}
-\end{center}
-\captionof{figure}{Control Center Server Utilization}
-
-\begin{center}
-  \makebox[\textwidth]{\includegraphics[width=\textwidth]
- {2-UtilizationWaterCompanyDisk.jpg}}
+ {UtilizationWaterCompanyDisk.jpg}}
 \end{center}
 \captionof{figure}{Water Company Disk Utilization}
 \bigskip
 
-Then we choose to run multiple simulations with increasing
-number of sensors to understand how the system scales and how it
+Then we choose to run multiple simulations with increasing number of sensors to understand how the system scales and how it
 respond to the increasing of inputs. For this purpose we have done a What-If simulation composed of one hundred sub-simulation and it has come out that the Utilization performance of the Water Company Disk gets worse when the fourteen thousand sensors are reached.\\
 Other proof of this is the analysis of the Response Time.
 
@@ -76,12 +69,4 @@ For the refactoring phase we wanted to consider the case in which we want to inc
 	\item Hardware Solution.
 \end{itemize}
 
-We have chosen a hybrid solution because we have halved the service time for each class of jobs for the Water Company Disk and for the Control Center Server, and decided to have two separate Water Company Disks one for the Sample Inland and one for the Sample Outgoing that translates into a modification of the architecture.\\
-In addition, by resolving the new model we noticed an unexpected increase in the use of SCPU and for this reason we have slightly reduced the service time of this node. The results are shown below:
-
-\bigskip
-\begin{center}
-  \makebox[\textwidth]{\includegraphics[width=12cm]
- {3-UtilizationRefactoring.jpg}}
-\end{center}
-\captionof{figure}{Utilization Refactoring}
+We have chosen a hardware solution because we have decided to have four separate Water Company Disks that translates into a modification of the architecture.\\ %%Mettere i RISULTATI

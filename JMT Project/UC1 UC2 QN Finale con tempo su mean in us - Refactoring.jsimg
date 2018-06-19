@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
-<archive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="UC1 UC2 QN Finale con tempo su mean in us - Refactoring.jsimg" timestamp="Sat Jun 16 20:55:18 CEST 2018" xsi:noNamespaceSchemaLocation="Archive.xsd">
-    <sim disableStatisticStop="false" logDecimalSeparator="," logDelimiter=";" logPath="C:\Users\Gaetano/JMT/" logReplaceMode="0" maxSamples="100000000" name="UC1 UC2 QN Finale con tempo su mean in us - Refactoring.jsimg" polling="1.0" xsi:noNamespaceSchemaLocation="SIMmodeldefinition.xsd">
+<archive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="UC1 UC2 QN Finale con tempo su mean in us - Refactoring.jsimg" timestamp="Sun Jun 17 22:26:57 CEST 2018" xsi:noNamespaceSchemaLocation="Archive.xsd">
+    <sim disableStatisticStop="false" logDecimalSeparator="," logDelimiter=";" logPath="C:\Users\Juan/JMT/" logReplaceMode="0" maxSamples="100000000" name="UC1 UC2 QN Finale con tempo su mean in us - Refactoring.jsimg" polling="1.0" xsi:noNamespaceSchemaLocation="SIMmodeldefinition.xsd">
         <userClass customers="500" name="StartUp Sampling Water In" priority="0" referenceSource="Delay Samples" type="closed"/>
         <userClass customers="500" name="StartUp Sampling Water Out" priority="0" referenceSource="Delay Samples" type="closed"/>
         <userClass customers="0" name="Sampling In" priority="0" referenceSource="Delay Samples" type="closed"/>
@@ -1373,7 +1373,7 @@
             </section>
             <section className="Server">
                 <parameter classPath="java.lang.Integer" name="maxJobs">
-                    <value>1</value>
+                    <value>4</value>
                 </parameter>
                 <parameter array="true" classPath="java.lang.Integer" name="numberOfVisits">
                     <refClass>StartUp Sampling Water In</refClass>
